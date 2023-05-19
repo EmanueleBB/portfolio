@@ -1,3 +1,5 @@
+
+import { forwardRef, ForwardRefRenderFunction, LegacyRef, MutableRefObject } from 'react';
 import styles from './button.module.css';
 
 
@@ -7,26 +9,26 @@ export enum ButtonVariants{
 }
 
 interface ButtonProps{
-   className?:string;
+   
    variant:ButtonVariants;
    label:string;
 }
-const Button:React.FC<ButtonProps> = ({
-   className:string,
-   variant,
-   label
-}) => {
-   
+const Button:ForwardRefRenderFunction<HTMLElement,ButtonProps> = ({variant,label},ref
+) => {
 
+   
    return (
-      <button className={`
-         ${styles.button} 
-         ${variant==='pink'?styles.pinkButton: null}
-         ${variant==='black'?styles.blackButton: null}
+      <button 
+         ref={ref as LegacyRef<HTMLButtonElement>}
+         className={` 
+            
+            ${styles.button} 
+            ${variant==='pink'?styles.pinkButton: null}
+            ${variant==='black'?styles.blackButton: null}
       `}>
          {label}
       </button>
    )
 }
 
-export default Button;
+export default forwardRef(Button);

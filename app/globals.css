@@ -4,6 +4,9 @@
 	--dim-pink:#8B6893;
 }
 
+*{
+	position:relative;
+}
 
 body{
 	min-width:320px;
