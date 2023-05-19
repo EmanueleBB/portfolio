@@ -1,17 +1,25 @@
 'use client'
 
+import useNavbarStore from '@/app/stores/NavbarStore';
+import useStackStore from '@/app/stores/StackStore';
 import gsap from 'gsap';
+import Link from 'next/link';
 import { useLayoutEffect, useRef } from 'react';
 import Button, { ButtonVariants } from '../Button';
 import styles from './heroSection.module.css'
 
 
 const HeroSection = () => {
+
+
    const wrapperRef=useRef<HTMLDivElement>(null);
 	const h2Ref=useRef<HTMLHeadingElement>(null);
 	const h1Ref=useRef<HTMLHeadingElement>(null);
 	const pRef=useRef<HTMLParagraphElement>(null);
 	const ButtonRef=useRef<HTMLButtonElement>(null);
+
+	const {toggleIsVisible}=useNavbarStore();
+	const {setStackIsOnScreen}=useStackStore();
 	
 
 	useLayoutEffect(() => {
@@ -55,7 +63,16 @@ const HeroSection = () => {
 		},'<+=0.25');
 	}, []);
 
+   const handleStackButtonClick = ():void => {
 
+		//I make the navbar disappear
+		toggleIsVisible();
+		setStackIsOnScreen();
+
+		gsap.to(wrapperRef.current,{
+			xPercent:-100,		
+		});
+   }
 
    return (
       <div className={styles.heroMainDiv} ref={wrapperRef}>
@@ -77,7 +94,11 @@ const HeroSection = () => {
                variant={ButtonVariants.pink}
                label='Contacts'
             />
-            <a href="" className={`${styles.navLink} stagger`} >See full stack</a>
+            <a
+					href='#stackDiv'
+               onClick={handleStackButtonClick} 
+               className={`${styles.navLink} stagger`} 
+            >See full stack</a>
          </div>
 		</div>
    )

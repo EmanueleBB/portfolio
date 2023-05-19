@@ -3,8 +3,11 @@ import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Button, {ButtonVariants} from '../Button'
 import styles from './navbar.module.css'
+import useNavbarStore from '@/app/stores/NavbarStore'
 
 const Navbar = () => {
+
+   const {isVisible}=useNavbarStore();
 
    const divRef=useRef<HTMLDivElement>(null);
    
@@ -26,6 +29,19 @@ const Navbar = () => {
          })
       }
    },[]);
+
+   useLayoutEffect(()=>{
+
+      if(isVisible){
+         gsap.to(divRef.current,{
+            opacity:1,
+         })
+      }else{
+         gsap.to(divRef.current,{
+            opacity:0,
+         })
+      }
+   },[isVisible]);
 
    return (
       <div className={styles.navbar} ref={divRef}>

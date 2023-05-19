@@ -59,3 +59,7 @@
    text-decoration: none;
    transition:color 0.25s ease;
 }
+
+#clickableP:hover{
+	cursor:pointer;
+}
