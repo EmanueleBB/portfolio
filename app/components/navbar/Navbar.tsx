@@ -8,7 +8,6 @@ import useNavbarStore from '@/app/stores/NavbarStore'
 const Navbar = () => {
 
    const {isVisible}=useNavbarStore();
-
    const divRef=useRef<HTMLDivElement>(null);
    
    useLayoutEffect(()=>{
@@ -31,7 +30,6 @@ const Navbar = () => {
    },[]);
 
    useLayoutEffect(()=>{
-
       if(isVisible){
          gsap.to(divRef.current,{
             opacity:1,

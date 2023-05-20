@@ -9,3 +9,25 @@
    z-index:100;
    color:white;
 }
+
+.closeIcon{
+   width:48px;
+   height: 48px;
+   fill:rgb(183, 183, 183);
+   transition:fill 0.35s ease;
+   position:absolute;
+   right:48px;
+   top:90vh;
+}
+
+.closeIcon:hover{
+   cursor:pointer;
+   fill:white;
+}
+
+@media only screen and (max-width:1068px){
+   .closeIcon{
+      width:48px;
+      height: 48px;
+   }
+}

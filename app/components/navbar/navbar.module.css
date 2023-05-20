@@ -11,6 +11,7 @@
    color:var(--dim-pink);
    justify-content: flex-end;
    z-index:100;
+   opacity:1;
    
 }
 
