@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import Navbar from './components/navbar/Navbar'
 import HeroSection from './components/hero/HeroSection'
 import Stack from './components/stack/Stack'
+import FirstText from './components/firstText/FirstText'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -24,6 +25,7 @@ export default function RootLayout({
 				<Navbar/>
 				<HeroSection/>
 				<Stack/>
+				<FirstText/>
 				{children}
 			</body>
 

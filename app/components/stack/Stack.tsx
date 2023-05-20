@@ -3,9 +3,11 @@
 import useNavbarStore from "@/app/stores/NavbarStore";
 import useStackStore from "@/app/stores/StackStore";
 import gsap from "gsap";
-import { ReactComponentElement, ReactNode, useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import HorizontalWrapper from "./HorizontalWrapper";
+import ProgressBar from "./ProgressBar";
 import XButton from "./XButton";
+import styles from './stack.module.css';
 
 
 
@@ -41,11 +43,20 @@ const Stack = () => {
       toggleStackIsOnScreen();
       toggleIsVisible();
    }
-
+   
    return (
       <HorizontalWrapper ref={horizontalWrapperRef}>
-         <div>
-            Belllaaaegaeg
+         <div className={styles.horizontalScroller}>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+         </div>
+         <div className={styles.progressBarAndCloseDiv}>
+            <ProgressBar/>
             <XButton onClick={handleClick}/>
          </div>
       </HorizontalWrapper>

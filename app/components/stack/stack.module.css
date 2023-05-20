@@ -1,23 +1,65 @@
+
 .horizontalWrapper{
    position:absolute;
    top:0;
    left:100vw;
    height:100vh;
    width:100vw;
-   background-color: blue;
-   overflow-x:hidden;
+   background-color: black;
    z-index:100;
    color:white;
+   display:flex;
+   overflow-x:scroll;
+   
+   box-sizing: border-box;  
+   transform: none;
+}
+
+.horizontalScroller{
+   height:100vh;
+   width:auto;
+   display:flex;
+   flex-direction: row;
+   gap:20px;
+}
+
+.dummy{
+   width:300px;
+   height:300px;
+   background-color: rgb(90, 90, 90);
+   flex-shrink:0;
+   
+}
+
+.progressBarAndCloseDiv{
+   position: fixed;
+   width:100vw;
+   padding:10vw;
+   height:48px;
+   top: 200px;
+   max-width: 980px;
+   left:0px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   gap:100px;
+
+}
+
+.progressBar{
+   width:100%;
+   background-color:rgb(55, 55, 55);
+   height:2px;
+   border-radius:2px;
 }
 
 .closeIcon{
    width:48px;
    height: 48px;
-   fill:rgb(183, 183, 183);
+   fill:rgb(55, 55, 55);
    transition:fill 0.35s ease;
-   position:absolute;
-   right:48px;
-   top:90vh;
+
 }
 
 .closeIcon:hover{

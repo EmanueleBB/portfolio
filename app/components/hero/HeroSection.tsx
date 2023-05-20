@@ -13,7 +13,7 @@ import styles from './heroSection.module.css'
 const HeroSection = () => {
 
 
-   const wrapperRef=useRef<HTMLDivElement>(null);
+   const heroMainDivRef=useRef<HTMLDivElement>(null);
 	const h2Ref=useRef<HTMLHeadingElement>(null);
 	const h1Ref=useRef<HTMLHeadingElement>(null);
 	const pRef=useRef<HTMLParagraphElement>(null);
@@ -23,13 +23,13 @@ const HeroSection = () => {
 	const {stackIsOnScreen,toggleStackIsOnScreen}=useStackStore();
 
 	
-	//if(1===2){
+	if(1===2){
 
 		useLayoutEffect(() => {
 			const tl = gsap.timeline();
 			console.log({ButtonRef})
 			
-			tl.from(wrapperRef.current, {
+			tl.from(heroMainDivRef.current, {
 				duration: 2,
 				backgroundImage:'radial-gradient(circle at center bottom, black 30%, #2B0A4F 60%, #AF4DC9 90%, #F9A2F0 120%)',
 				ease: 'power2.inOut',
@@ -65,9 +65,8 @@ const HeroSection = () => {
 				ease: 'power4.out',
 			},'<+=0.25');
 		}, []);
-	//}
+	}
 
-	
 
    const handleStackButtonClick = () => {
 		//Make the navbar disappear
@@ -76,19 +75,19 @@ const HeroSection = () => {
 		toggleStackIsOnScreen();
    } 
 
+
+	//This useEffect handles the left/right swipe
+
 	useEffect(() => {
-
-		const wrapperElement = wrapperRef.current;
-
 		const handleStackIsOnScreenChange = () => {
 			if (!stackIsOnScreen) {
-				gsap.to(wrapperElement, {
+				gsap.to(heroMainDivRef.current, {
 					xPercent: 0,
 					duration: 1,
 					ease: 'power2.inOut',
 				});
 			} else {
-				gsap.to(wrapperElement, {
+				gsap.to(heroMainDivRef.current, {
 					
 					xPercent: -100,
 					duration:1,
@@ -97,18 +96,18 @@ const HeroSection = () => {
 			}
 		};
   
-		handleStackIsOnScreenChange(); // Esegui l'animazione iniziale al caricamento della pagina
+		handleStackIsOnScreenChange(); // I execute the animation on the first loading (the div will remain still)
   
 		return () => {
 		  // Rimuovi l'ascoltatore dell'evento quando il componente viene smontato
 		  handleStackIsOnScreenChange();
 		};
-	 }, [stackIsOnScreen]);
+	}, [stackIsOnScreen]);
 
 	
 
    return (
-      <div className={styles.heroMainDiv} ref={wrapperRef}>
+      <div className={styles.heroMainDiv} ref={heroMainDivRef}>
 
 			<h2 className={styles.heroH2} ref={h2Ref}>	
 				Hi there, I'm Emanuele 👋🏻
