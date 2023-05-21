@@ -11,12 +11,13 @@
    border-radius:24px;
    font-weight:500;
    font-size:16px;
-   transition:all 0.25s ease;
+   transition:all 0.1s linear;
    opacity: 1;
 }
 
 .button:hover{
    cursor:pointer;
+   
 }
 
 .button.pinkButton{
@@ -24,7 +25,9 @@
    color:black;
 }
 .button.pinkButton:hover{
-   background-color: var(--main-pink-hover);
+   background-color: transparent;
+   color:var(--main-pink);
+   outline:1.5px solid var(--main-pink);
 }
 
 

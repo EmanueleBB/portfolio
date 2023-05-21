@@ -1,4 +1,11 @@
-
+.overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.5);
+}
 .horizontalWrapper{
    position:absolute;
    top:0;
@@ -11,24 +18,20 @@
    display:flex;
    overflow-x:scroll;
    overflow-y: hidden;
-   
+   white-space: nowrap;
    box-sizing: border-box;  
-   transform: none;
+   border:2px solid salmon;
+   
 }
 
-.horizontalScroller{
-   height:100vh;
-   width:auto;
-   display:flex;
-   flex-direction: row;
-   gap:20px;
-}
+
 
 .dummy{
    width:300px;
    height:300px;
    background-color: rgb(90, 90, 90);
    flex-shrink:0;
+   margin:20px;
    
 }
 

@@ -10,10 +10,6 @@ interface MainContainerProps{
 }
 
 
-
-
-
-
 const MainContainer:React.FC<MainContainerProps> = ({children}) => {
 
    const {stackIsOnScreen} = useStackStore();

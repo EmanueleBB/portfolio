@@ -11,8 +11,8 @@ import MainContainer from './components/mainContainer/MainContainer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-	title: 'Emanuele, web developer',
-	description: 'Welcome to my portfolio',
+	title: 'Title',
+	description: 'description',
 }
 
 export default function RootLayout({
@@ -23,8 +23,8 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<Navbar/>
 				<Stack/>
+				<Navbar/>
 				<MainContainer>
 					<HeroSection/>
 					<FirstText/>

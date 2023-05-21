@@ -23,7 +23,7 @@ const HeroSection = () => {
 	const {stackIsOnScreen,toggleStackIsOnScreen}=useStackStore();
 
 	
-	if(1===2){
+	//if(1===2){
 
 		useLayoutEffect(() => {
 			const tl = gsap.timeline();
@@ -65,7 +65,7 @@ const HeroSection = () => {
 				ease: 'power4.out',
 			},'<+=0.25');
 		}, []);
-	}
+	//}
 
 
    const handleStackButtonClick = () => {
@@ -75,36 +75,6 @@ const HeroSection = () => {
 		toggleStackIsOnScreen();
    } 
 
-
-	//This useEffect handles the left/right swipe
-
-	// useEffect(() => {
-	// 	const handleStackIsOnScreenChange = () => {
-	// 		if (!stackIsOnScreen) {
-	// 			gsap.to(heroMainDivRef.current, {
-	// 				xPercent: 0,
-	// 				duration: 1,
-	// 				ease: 'power2.inOut',
-	// 			});
-	// 		} else {
-	// 			gsap.to(heroMainDivRef.current, {
-					
-	// 				xPercent: -100,
-	// 				duration:1,
-	// 				ease: 'power2.inOut',
-	// 			});
-	// 		}
-	// 	};
-  
-	// 	handleStackIsOnScreenChange(); // I execute the animation on the first loading (the div will remain still)
-  
-	// 	return () => {
-	// 	  // Rimuovi l'ascoltatore dell'evento quando il componente viene smontato
-	// 	  handleStackIsOnScreenChange();
-	// 	};
-	// }, [stackIsOnScreen]);
-
-	
 
    return (
       <div className={styles.heroMainDiv} ref={heroMainDivRef}>
