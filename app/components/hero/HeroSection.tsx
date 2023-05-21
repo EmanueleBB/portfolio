@@ -78,31 +78,31 @@ const HeroSection = () => {
 
 	//This useEffect handles the left/right swipe
 
-	useEffect(() => {
-		const handleStackIsOnScreenChange = () => {
-			if (!stackIsOnScreen) {
-				gsap.to(heroMainDivRef.current, {
-					xPercent: 0,
-					duration: 1,
-					ease: 'power2.inOut',
-				});
-			} else {
-				gsap.to(heroMainDivRef.current, {
+	// useEffect(() => {
+	// 	const handleStackIsOnScreenChange = () => {
+	// 		if (!stackIsOnScreen) {
+	// 			gsap.to(heroMainDivRef.current, {
+	// 				xPercent: 0,
+	// 				duration: 1,
+	// 				ease: 'power2.inOut',
+	// 			});
+	// 		} else {
+	// 			gsap.to(heroMainDivRef.current, {
 					
-					xPercent: -100,
-					duration:1,
-					ease: 'power2.inOut',
-				});
-			}
-		};
+	// 				xPercent: -100,
+	// 				duration:1,
+	// 				ease: 'power2.inOut',
+	// 			});
+	// 		}
+	// 	};
   
-		handleStackIsOnScreenChange(); // I execute the animation on the first loading (the div will remain still)
+	// 	handleStackIsOnScreenChange(); // I execute the animation on the first loading (the div will remain still)
   
-		return () => {
-		  // Rimuovi l'ascoltatore dell'evento quando il componente viene smontato
-		  handleStackIsOnScreenChange();
-		};
-	}, [stackIsOnScreen]);
+	// 	return () => {
+	// 	  // Rimuovi l'ascoltatore dell'evento quando il componente viene smontato
+	// 	  handleStackIsOnScreenChange();
+	// 	};
+	// }, [stackIsOnScreen]);
 
 	
 

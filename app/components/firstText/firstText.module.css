@@ -1,7 +1,22 @@
 .blackToPinkDiv{
-   background-color: blueviolet;
+   background-image: radial-gradient(circle at center top, black 80%, #2B0A4F 100%, #AF4DC9 160%, #F9A2F0 220%);
+   height:150vh;
+   width:100vw;
+   position:relative;
+   left:0;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .wonderText{
    color:white;
+   font-size:24px;
+   font-weight: 600;
+   letter-spacing: -4%;
+   width:60vw;
+   background: linear-gradient(to bottom, var(--main-pink),rgb(255, 153, 255));
+   background-clip:text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

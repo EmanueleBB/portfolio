@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar'
 import HeroSection from './components/hero/HeroSection'
 import Stack from './components/stack/Stack'
 import FirstText from './components/firstText/FirstText'
+import MainContainer from './components/mainContainer/MainContainer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,9 +24,11 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<Navbar/>
-				<HeroSection/>
 				<Stack/>
-				<FirstText/>
+				<MainContainer>
+					<HeroSection/>
+					<FirstText/>
+				</MainContainer>
 				{children}
 			</body>
 
