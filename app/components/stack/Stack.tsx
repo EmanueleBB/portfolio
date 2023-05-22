@@ -13,38 +13,40 @@ import styles from './stack.module.css';
 
 const Stack = () => {
    const { stackIsOnScreen, toggleStackIsOnScreen } = useStackStore();
-   const { isVisible, toggleIsVisible } = useNavbarStore();
+   const { toggleIsVisible } = useNavbarStore();
    const horizontalWrapperRef = useRef<HTMLDivElement>(null);
-   const horizontalScrollerRef = useRef<HTMLDivElement>(null);
+   const bodyYPosition = document.body.getBoundingClientRect().y*(-1);
    
 
    useEffect(() => {
 
       if (stackIsOnScreen) {
-
-         gsap.to(document.body,{
-            overflowY:'hidden'
+         
+         gsap.to(horizontalWrapperRef.current,{
+            top:bodyYPosition,
+            duration:0,
          })
 
          gsap.to(horizontalWrapperRef.current, {
+            onStart:()=>{document.body.style.overflowY='hidden'},
             xPercent: -100,
             duration: 1,
             ease: 'power2.inOut'
-
          });
          
       } else {
-         gsap.to(document.body,{
-            overflowY:'auto'
-         })
+
          gsap.to(horizontalWrapperRef.current, {
+            onStart:()=>{document.body.style.overflowY='hidden'},
             xPercent: 0,
             duration: 1,
             ease: 'power2.inOut',
+            onComplete:()=>{document.body.style.overflowY='auto'}
          });
       }
    }, [stackIsOnScreen]);
  
+
    const handleClick = () => {
      toggleStackIsOnScreen();
      toggleIsVisible();
