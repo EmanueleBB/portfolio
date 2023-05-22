@@ -8,6 +8,7 @@ import gsap from 'gsap';
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import Button, { ButtonVariants } from '../Button';
 import styles from './heroSection.module.css'
+import IconsHeroGroup from './IconsHeroGroup';
 
 
 const HeroSection = () => {
@@ -23,7 +24,7 @@ const HeroSection = () => {
 	const {stackIsOnScreen,toggleStackIsOnScreen}=useStackStore();
 
 	
-	//if(1===2){
+	if(1===2){
 
 		useLayoutEffect(() => {
 			const tl = gsap.timeline();
@@ -65,7 +66,7 @@ const HeroSection = () => {
 				ease: 'power4.out',
 			},'<+=0.25');
 		}, []);
-	//}
+	}
 
 
    const handleStackButtonClick = () => {
@@ -90,6 +91,9 @@ const HeroSection = () => {
 				React and Next JS are the main frameworks I use for my projects.
 				I might have a slight obsession for Apple's designs 
 			</p>
+
+			<IconsHeroGroup/>
+
 			<div className={styles.bottomCtasDiv}>
             <Button
 					ref={ButtonRef}

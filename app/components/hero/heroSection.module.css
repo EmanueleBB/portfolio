@@ -39,6 +39,16 @@
 	letter-spacing: -4%;
 }
 
+.iconsBox{
+	position:absolute;
+	width:100vw;
+	height:auto;
+	border:1px solid red;
+	left:0px;
+	top:50%;
+	transform: translateY(-50%)
+}
+
 
 
 .bottomCtasDiv{
