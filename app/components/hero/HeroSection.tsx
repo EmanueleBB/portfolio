@@ -1,6 +1,5 @@
 'use client'
 
-
 import useNavbarStore from '@/app/stores/NavbarStore';
 import useStackStore from '@/app/stores/StackStore';
 import gsap from 'gsap';
@@ -74,6 +73,8 @@ const HeroSection = () => {
 		toggleIsVisible();
 		//Handling of the stack section.I need this to make the stack component know when to appear
 		toggleStackIsOnScreen();
+		
+		
    } 
 
 

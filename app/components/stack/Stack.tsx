@@ -21,23 +21,25 @@ const Stack = () => {
    useEffect(() => {
 
       if (stackIsOnScreen) {
+
+         const tl = gsap.timeline()
          
-         gsap.to(horizontalWrapperRef.current,{
+         tl.to(horizontalWrapperRef.current,{
             top:bodyYPosition,
             duration:0,
-         })
-
-         gsap.to(horizontalWrapperRef.current, {
+         }).to(horizontalWrapperRef.current, {
             onStart:()=>{document.body.style.overflowY='hidden'},
             xPercent: -100,
             duration: 1,
-            ease: 'power2.inOut'
-         });
+            ease: 'power2.inOut',
+            
+         })
          
       } else {
 
          gsap.to(horizontalWrapperRef.current, {
             onStart:()=>{document.body.style.overflowY='hidden'},
+            boxShadow:'none',
             xPercent: 0,
             duration: 1,
             ease: 'power2.inOut',

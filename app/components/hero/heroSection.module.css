@@ -45,8 +45,12 @@
 	height:auto;
 	border:1px solid red;
 	left:0px;
-	top:50%;
-	transform: translateY(-50%)
+	top:60%;
+	transform: translateY(-50%);
+	display: flex;
+	box-sizing: border-box;
+	justify-content: center;
+	overflow: show;
 }
 
 
