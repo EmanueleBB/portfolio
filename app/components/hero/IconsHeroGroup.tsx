@@ -1,6 +1,6 @@
 
 import styles from './heroSection.module.css'
-import HtmlIcon from './icons/HTMLIcon'
+import HtmlIcon from './icons/HtmlIcon'
 import IllustratorIcon from './icons/IllustratorIcon'
 import NextIcon from './icons/NextIcon'
 import ReactIcon from './icons/ReactIcon'

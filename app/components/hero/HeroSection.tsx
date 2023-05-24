@@ -23,7 +23,7 @@ const HeroSection = () => {
 	const {stackIsOnScreen,toggleStackIsOnScreen}=useStackStore();
 
 	
-	if(1===2){
+	//if(1===2){
 
 		useLayoutEffect(() => {
 			const tl = gsap.timeline();
@@ -65,7 +65,7 @@ const HeroSection = () => {
 				ease: 'power4.out',
 			},'<+=0.25');
 		}, []);
-	}
+	//}
 
 
    const handleStackButtonClick = () => {
@@ -85,7 +85,7 @@ const HeroSection = () => {
 				Hi there, I'm Emanuele 👋🏻
 			</h2>
 			<h1 className={styles.heroH1} ref={h1Ref}>
-				Full-stack Web and Mobile<br/>developer
+				Full-stack web and mobile<br/>developer
 			</h1>
 			<p className={styles.heroParagraph} ref={pRef}> 
 				I'm a full stack web developer based in Italy.
