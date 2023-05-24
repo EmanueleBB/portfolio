@@ -1,35 +1,41 @@
 'use client'
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Button, {ButtonVariants} from '../Button'
 import styles from './navbar.module.css'
 import useNavbarStore from '@/app/stores/NavbarStore'
+import useWindowSize from '@/app/hooks/useWindowSize'
+import LogoIcon from '@/app/LogoIcon'
 
 const Navbar = () => {
 
-   const {isVisible}=useNavbarStore();
+   const {isVisible,isCompact,setIsCompact}=useNavbarStore();
    const divRef=useRef<HTMLDivElement>(null);
+
+   const {windowWidth} = useWindowSize();
    
-   useLayoutEffect(()=>{
-      const tl = gsap.timeline();
+  
 
-      if(divRef.current){
-         const childrenArray = Array.from(divRef.current?.children)
+   // useLayoutEffect(()=>{
+   //    const tl = gsap.timeline();
 
-         tl.fromTo(childrenArray,{
-            opacity:0,
-            top:15,
-         },{
-            delay:5.10,
-            opacity:1,
-            top:0,
-            stagger:-0.1,
-            ease:'power4.out'
-         })
-      }
-   },[]);
+   //    if(divRef.current){
+   //       const childrenArray = Array.from(divRef.current?.children)
 
-   useLayoutEffect(()=>{
+   //       tl.fromTo(childrenArray,{
+   //          opacity:0,
+   //          top:15,
+   //       },{
+   //          delay:5.10,
+   //          opacity:1,
+   //          top:0,
+   //          stagger:-0.1,
+   //          ease:'power4.out'
+   //       })
+   //    }
+   // },[]);
+
+   useEffect(()=>{
       if(isVisible){
          gsap.to(divRef.current,{
             opacity:1,
@@ -41,8 +47,10 @@ const Navbar = () => {
       }
    },[isVisible]);
 
+
    return (
       <div className={styles.navbar} ref={divRef}>
+         <LogoIcon className={styles.logoIcon}/>
          <a href="" className={styles.navLink}>My tech stack</a>
          <a href="" className={styles.navLink}>Design</a>
          <a href="" className={styles.navLink}>Code</a>

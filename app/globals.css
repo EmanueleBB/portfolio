@@ -27,5 +27,17 @@ h4,h5,h6,hgroup,input,legend,li,ol,p,pre,ul{
 
 /* MEDIA QUERIES
 
+@media only screen and (max-width:734px){
+
+}
+
+@media only screen and (max-width:1068px){
+
+}
+
+@media only screen and (min-width:1069px){
+
+}
+
 Apple breakpoints */
 

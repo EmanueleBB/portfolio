@@ -2,9 +2,9 @@
    position:absolute;
    top:0px;
    width:100vw;
-   height:48px;
-   padding:48px;
-   gap:3vw;
+   height:78px;
+   padding:0px 24px;
+   gap:3.5vw;
    box-sizing: border-box;
    display:flex;
    align-items: center;
@@ -12,6 +12,7 @@
    justify-content: flex-end;
    z-index:100;
    opacity:1;
+   font-family: inherit;
    
 }
 
@@ -22,6 +23,31 @@
    transition:color 0.25s ease;
 }
 
+.logoIcon{
+   margin-right:auto;
+}
+
 .navLink:hover{
    color:var(--main-pink);
+}
+
+@media only screen and (max-width: 734px){
+   .navLink{
+      font-weight:500;
+      font-size:14px;
+   }
+}
+
+@media only screen and (min-width: 735px) and (max-width: 1068px){
+   .navLink{
+      font-weight:500;
+      font-size:16px;
+   }
+}
+
+@media only screen and (min-width: 1069px){
+   .navLink{
+      font-weight:500;
+      font-size:16px;
+   }
 }

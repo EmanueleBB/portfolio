@@ -4,7 +4,7 @@ import useNavbarStore from '@/app/stores/NavbarStore';
 import useStackStore from '@/app/stores/StackStore';
 import gsap from 'gsap';
 
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import {useLayoutEffect, useRef } from 'react';
 import Button, { ButtonVariants } from '../Button';
 import styles from './heroSection.module.css'
 import IconsHeroGroup from './IconsHeroGroup';
@@ -23,49 +23,49 @@ const HeroSection = () => {
 	const {stackIsOnScreen,toggleStackIsOnScreen}=useStackStore();
 
 	
-	//if(1===2){
+	// if(1===2){
 
-		useLayoutEffect(() => {
-			const tl = gsap.timeline();
-			console.log({ButtonRef})
+	// 	useLayoutEffect(() => {
+	// 		const tl = gsap.timeline();
+	// 		console.log({ButtonRef})
 			
-			tl.from(heroMainDivRef.current, {
-				duration: 2,
-				backgroundImage:'radial-gradient(circle at center bottom, black 30%, #2B0A4F 60%, #AF4DC9 90%, #F9A2F0 120%)',
-				ease: 'power2.inOut',
-				backgroundPosition: 'center top',
-			}).from(h2Ref.current, {
+	// 		tl.from(heroMainDivRef.current, {
+	// 			duration: 2,
+	// 			backgroundImage:'radial-gradient(circle at center bottom, black 30%, #2B0A4F 60%, #AF4DC9 90%, #F9A2F0 120%)',
+	// 			ease: 'power2.inOut',
+	// 			backgroundPosition: 'center top',
+	// 		}).from(h2Ref.current, {
 				
-				duration: 1,
-				top:35,
-				opacity:0,
-				ease: 'power3.out',
-			},'<+=1.5').from(h1Ref.current, {
-				duration: 1.5,
-				top:65,
-				opacity:0,
-				ease: 'power4.out',
-			},'<+=1').from(pRef.current, {
-				duration: 2,
-				top:25,
-				opacity:0,
-				ease: 'power4.out',
-			},'<+=1').fromTo(ButtonRef.current, {
-				top:15,
-				opacity:0,
-			},{
-				duration:0.15,
-				top:0,
-				opacity:1,
-				ease: 'power4.out',
-			},'<+=1.25').from('.stagger', {
-				duration: 0.15,
-				top:15,
-				opacity:0,
-				ease: 'power4.out',
-			},'<+=0.25');
-		}, []);
-	//}
+	// 			duration: 1,
+	// 			top:35,
+	// 			opacity:0,
+	// 			ease: 'power3.out',
+	// 		},'<+=1.5').from(h1Ref.current, {
+	// 			duration: 1.5,
+	// 			top:65,
+	// 			opacity:0,
+	// 			ease: 'power4.out',
+	// 		},'<+=1').from(pRef.current, {
+	// 			duration: 2,
+	// 			top:25,
+	// 			opacity:0,
+	// 			ease: 'power4.out',
+	// 		},'<+=1').fromTo(ButtonRef.current, {
+	// 			top:15,
+	// 			opacity:0,
+	// 		},{
+	// 			duration:0.15,
+	// 			top:0,
+	// 			opacity:1,
+	// 			ease: 'power4.out',
+	// 		},'<+=1.25').from('.stagger', {
+	// 			duration: 0.15,
+	// 			top:15,
+	// 			opacity:0,
+	// 			ease: 'power4.out',
+	// 		},'<+=0.25');
+	// 	}, []);
+	// }
 
 
    const handleStackButtonClick = () => {
@@ -102,7 +102,6 @@ const HeroSection = () => {
                label='Contacts'
             />
             <a
-					href='#stackDiv'
                onClick={handleStackButtonClick} 
                className={`${styles.navLink} stagger`} 
             >See full stack</a>
