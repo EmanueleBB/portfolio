@@ -22,6 +22,7 @@ const FirstText = () => {
       const tl = gsap.timeline();
 
       gsap.registerPlugin(ScrollTrigger);
+      
       ScrollTrigger.create({
          trigger:paragraphRef.current,
          scrub:true,
@@ -34,11 +35,23 @@ const FirstText = () => {
       })
 
       tl.fromTo(firstSpan.current,{
+         display:'none',
          opacity:0,
       },{
+         display:'inline',
          opacity:1,
       }).to(firstSpan.current,{
          opacity:0,
+         display:'none',
+      }).fromTo(secondSpan.current,{
+         display:'none',
+         opacity:0,
+      },{
+         display:'inline',
+         opacity:1,
+      }).to(secondSpan.current,{
+         opacity:0,
+         display:'none',
       })
 
    },[])

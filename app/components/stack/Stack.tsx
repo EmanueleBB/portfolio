@@ -29,6 +29,9 @@ const Stack = () => {
    
    useEffect(() => {
 
+      //In the animation it's necessary to use left instead of x or xPercent: using
+      //these will make the position:fixed of the children behave like position:absolute
+
       if (stackIsOnScreen) {
 
          const tl = gsap.timeline()
@@ -38,7 +41,7 @@ const Stack = () => {
             duration:0,
          }).to(horizontalWrapperRef.current, {
             onStart:()=>{document.body.style.overflowY='hidden'},
-            xPercent: -100,
+            left: '0%',
             duration: 1,
             ease: 'power2.inOut',
          })
@@ -46,7 +49,7 @@ const Stack = () => {
          gsap.to(horizontalWrapperRef.current, {
             onStart:()=>{document.body.style.overflowY='hidden'},
             boxShadow:'none',
-            xPercent: 0,
+            left: '100%',
             duration: 1,
             ease: 'power2.inOut',
             onComplete:()=>{document.body.style.overflowY='auto'}

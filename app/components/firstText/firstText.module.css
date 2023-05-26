@@ -23,11 +23,11 @@
 }
 
 .wonderText span{
-   display:flex;
+   display:none;
    z-index:100;
    top:10px;
    transform:translateY(-50%);
-   
+   position:fixed;
    color:white;
    margin:200px 0px;
 }

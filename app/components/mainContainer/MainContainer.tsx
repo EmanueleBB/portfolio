@@ -21,14 +21,14 @@ const MainContainer:React.FC<MainContainerProps> = ({children}) => {
       const handleStackIsOnScreenChange = () => {
          if (!stackIsOnScreen) {
             gsap.to(mainContainerRef.current, {
-               xPercent: 0,
+               left: 0,
                duration: 1,
                ease: 'power2.inOut',
             });
          } else {
             gsap.to(mainContainerRef.current, {
                
-               xPercent: -100,
+               left: '-100%',
                duration:1,
                ease: 'power2.inOut',
             });
@@ -44,7 +44,7 @@ const MainContainer:React.FC<MainContainerProps> = ({children}) => {
    }, [stackIsOnScreen]);
 
    return (
-      <div ref={mainContainerRef}>
+      <div ref={mainContainerRef} /*style={{border:'5px solid blue', boxSizing:'border-box'}}*/>
          {children}
       </div>
    )
