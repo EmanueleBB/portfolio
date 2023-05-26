@@ -15,9 +15,18 @@ const Stack = () => {
    const { stackIsOnScreen, toggleStackIsOnScreen } = useStackStore();
    const { toggleIsVisible } = useNavbarStore();
    const horizontalWrapperRef = useRef<HTMLDivElement>(null);
-   const bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
-   
+   let bodyYPosition:number|undefined;
 
+
+   //This useEffect is needed. If not present, on the console will appear an error, because on the 
+   //server side, the document object doesn't exist.
+
+   useEffect(()=>{
+      if(typeof document != 'undefined'){
+         bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
+      }
+   },[])
+   
    useEffect(() => {
 
       if (stackIsOnScreen) {
@@ -32,11 +41,8 @@ const Stack = () => {
             xPercent: -100,
             duration: 1,
             ease: 'power2.inOut',
-            
          })
-         
       } else {
-
          gsap.to(horizontalWrapperRef.current, {
             onStart:()=>{document.body.style.overflowY='hidden'},
             boxShadow:'none',

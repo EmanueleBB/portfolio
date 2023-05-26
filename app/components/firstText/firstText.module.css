@@ -1,28 +1,33 @@
 .blackToPinkDiv{
-   background-image: radial-gradient(circle at center top, black 80%, #2B0A4F 100%, #AF4DC9 160%, #F9A2F0 220%);
-   height:150vh;
+   background-image: radial-gradient(circle at center top, black 50%, #2B0A4F 65%, #AF4DC9 80%, #F9A2F0 95%);
+   height:300vh;
    width:100vw;
    position:relative;
    left:0;
    display:flex;
    flex-direction: column;
    align-items: center;
+   border:2px solid white;
+   box-sizing: border-box;
 }
 
 .wonderText{
-   position:sticky;
+
    top:20vh;
+   height:100%;
    font-size:24px;
    font-weight: 600;
    letter-spacing: -4%;
    width:60vw;
-   height:auto;
-   overflow: show;
-   display: flex;
-   flex-direction: column;
+   border:1px solid red;
 }
 
 .wonderText span{
+   display:flex;
+   z-index:100;
+   top:10px;
+   transform:translateY(-50%);
+   
    color:white;
    margin:200px 0px;
 }

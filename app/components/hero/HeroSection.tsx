@@ -73,8 +73,6 @@ const HeroSection = () => {
 		toggleIsVisible();
 		//Handling of the stack section.I need this to make the stack component know when to appear
 		toggleStackIsOnScreen();
-		
-		
    } 
 
 
