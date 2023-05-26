@@ -5,6 +5,8 @@ import styles from './firstText.module.css'
 import { ScrollTrigger } from 'gsap/all';
 import gsap from 'gsap'
 import { useLayoutEffect, useRef } from 'react';
+import Image from 'next/image';
+
 
 
 const FirstText = () => {
@@ -16,20 +18,21 @@ const FirstText = () => {
    const fourthSpan = useRef<HTMLSpanElement>(null);
    const fifthSpan = useRef<HTMLSpanElement>(null);
    const sixthSpan = useRef<HTMLSpanElement>(null);
+   const designHeading = useRef<HTMLHeadElement>(null);
 
    useLayoutEffect(()=>{
 
       const tl = gsap.timeline();
 
       gsap.registerPlugin(ScrollTrigger);
-      
+
       ScrollTrigger.create({
          trigger:paragraphRef.current,
          scrub:true,
          markers:true,
-         start:'top 80%',
+         start:'top 50%',
          end:'bottom 50%',
-         toggleActions: "play pause resume reset",
+         
          animation:tl,
          id:'soss'
       })
@@ -37,23 +40,87 @@ const FirstText = () => {
       tl.fromTo(firstSpan.current,{
          display:'none',
          opacity:0,
+         y:'25px'
       },{
-         display:'inline',
+         display:'inline-block',
          opacity:1,
+         y:'0',
+         duration:1,
+         
       }).to(firstSpan.current,{
          opacity:0,
          display:'none',
+         y:'-25px',
+         duration:1,
+         
       }).fromTo(secondSpan.current,{
          display:'none',
          opacity:0,
       },{
-         display:'inline',
+         display:'inline-block',
          opacity:1,
+         duration:1,
       }).to(secondSpan.current,{
          opacity:0,
          display:'none',
+         duration:1,
+      }).fromTo(thirdSpan.current,{
+         display:'none',
+         opacity:0,
+      },{
+         display:'inline-block',
+         opacity:1,
+         duration:1,
+      }).to(thirdSpan.current,{
+         opacity:0,
+         display:'none',
+         duration:1,
+      }).fromTo(fourthSpan.current,{
+         display:'none',
+         opacity:0,
+      },{
+         display:'inline-block',
+         opacity:1,
+         duration:1,
+      }).to(fourthSpan.current,{
+         opacity:0,
+         display:'none',
+         duration:1,
+      }).fromTo(fifthSpan.current,{
+         display:'none',
+         opacity:0,
+      },{
+         display:'inline-block',
+         opacity:1,
+         duration:1,
+      }).to(fifthSpan.current,{
+         opacity:0,
+         display:'none',
+         duration:1,
+      }).fromTo(sixthSpan.current,{
+         display:'none',
+         opacity:0,
+      },{
+         display:'inline-block',
+         opacity:1,
+         duration:1,
+      }).to(sixthSpan.current,{
+         opacity:0,
+         display:'none',
+         duration:3,
+         ease:'power4.out'
+      }).fromTo(designHeading.current,{
+         display:'none',
+         opacity:0,
+         position:'fixed',
+         top:'75vh'
+      },{
+         display:'inline-block',
+         
+         top:'5vh',
+         opacity:1,
+         duration:6,
       })
-
    },[])
 
 
@@ -62,7 +129,7 @@ const FirstText = () => {
       <div className={styles.blackToPinkDiv}>
          <p className={styles.wonderText} ref={paragraphRef}>
             <span ref={firstSpan}>
-               Think to the last time you thought <i>"Wow, that was wonderful"</i>
+               Just take a moment to recall the last time you thought <i>"Wow, that was wonderful"</i>
             </span>
             <span ref={secondSpan}>
                Maybe it happened while admiring a painting, or while listening to a song.
@@ -79,7 +146,11 @@ const FirstText = () => {
             <span ref={sixthSpan}>
                With the hope to be, one day,  one of them.
             </span>
+            <span ref={designHeading} id={styles.design}>
+               DESIGN
+            </span>
          </p>
+         <Image src='/mockups/spaceGreyIpad.png' width={200}  alt={'ipad'}/>
       </div>   
    )
 }
