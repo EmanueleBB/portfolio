@@ -10,13 +10,39 @@
 }
 
 .wonderText{
-   color:white;
+   position:sticky;
+   top:20vh;
    font-size:24px;
    font-weight: 600;
    letter-spacing: -4%;
    width:60vw;
-   background: linear-gradient(to bottom, var(--main-pink),rgb(255, 153, 255));
-   background-clip:text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+   height:auto;
+   overflow: show;
+   display: flex;
+   flex-direction: column;
+}
+
+.wonderText span{
+   color:white;
+   margin:200px 0px;
+}
+
+
+
+@media only screen and (max-width:734px){
+
+}
+
+@media only screen and (max-width:1068px){
+   .wonderText{
+      margin-top:150px;
+   }
+
+}
+
+
+@media only screen and (min-width:1069px){
+   .wonderText{
+      margin-top:250px;
+   }
 }

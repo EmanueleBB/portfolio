@@ -15,7 +15,7 @@ const Stack = () => {
    const { stackIsOnScreen, toggleStackIsOnScreen } = useStackStore();
    const { toggleIsVisible } = useNavbarStore();
    const horizontalWrapperRef = useRef<HTMLDivElement>(null);
-   const bodyYPosition = document.body.getBoundingClientRect().y*(-1);
+   const bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
    
 
    useEffect(() => {
