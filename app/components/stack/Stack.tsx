@@ -15,22 +15,14 @@ const Stack = () => {
    const { stackIsOnScreen, toggleStackIsOnScreen } = useStackStore();
    const { toggleIsVisible } = useNavbarStore();
    const horizontalWrapperRef = useRef<HTMLDivElement>(null);
+
    let bodyYPosition:number|undefined;
 
-
-   //This useEffect is needed. If not present, on the console will appear an error, because on the 
-   //server side, the document object doesn't exist.
-
-   useEffect(()=>{
-      if(typeof document != 'undefined'){
-         bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
-      }
-   },[])
-   
    useEffect(() => {
-
       //In the animation it's necessary to use left instead of x or xPercent: using
       //these will make the position:fixed of the children behave like position:absolute
+
+      bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
 
       if (stackIsOnScreen) {
 

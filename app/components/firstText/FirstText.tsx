@@ -11,6 +11,7 @@ import Image from 'next/image';
 
 const FirstText = () => {
 
+   const blackToPinkDiv = useRef<HTMLDivElement>(null)
    const paragraphRef = useRef<HTMLParagraphElement>(null)
    const firstSpan = useRef<HTMLSpanElement>(null);
    const secondSpan = useRef<HTMLSpanElement>(null);
@@ -19,22 +20,36 @@ const FirstText = () => {
    const fifthSpan = useRef<HTMLSpanElement>(null);
    const sixthSpan = useRef<HTMLSpanElement>(null);
    const designHeading = useRef<HTMLHeadElement>(null);
+   const designDescriptionSpanRef=useRef<HTMLSpanElement>(null);
+   const ipadRef=useRef<HTMLDivElement>(null);
 
    useLayoutEffect(()=>{
 
-      const tl = gsap.timeline();
-
       gsap.registerPlugin(ScrollTrigger);
 
+      const ipadTl = gsap.timeline();
+
+      const animateIpad = () => {
+         ipadTl.to(designDescriptionSpanRef.current,{
+            bottom:'60vh',
+            duration:1.5,
+            ease:'power3.out'
+         })
+      }
+
+      const tl = gsap.timeline({
+         onComplete:animateIpad,
+      });
+      
       ScrollTrigger.create({
-         trigger:paragraphRef.current,
+         trigger:blackToPinkDiv.current,
          scrub:true,
          markers:true,
          start:'top 50%',
-         end:'bottom 50%',
-         
+         end:'bottom bottom',
          animation:tl,
-         id:'soss'
+         id:'div',
+         
       })
 
       tl.fromTo(firstSpan.current,{
@@ -116,8 +131,7 @@ const FirstText = () => {
          top:'75vh'
       },{
          display:'inline-block',
-         
-         top:'5vh',
+         top:'1vh',
          opacity:1,
          duration:6,
       })
@@ -126,7 +140,7 @@ const FirstText = () => {
 
 
    return (
-      <div className={styles.blackToPinkDiv}>
+      <div className={styles.blackToPinkDiv} ref={blackToPinkDiv}>
          <p className={styles.wonderText} ref={paragraphRef}>
             <span ref={firstSpan}>
                Just take a moment to recall the last time you thought <i>"Wow, that was wonderful"</i>
@@ -146,11 +160,21 @@ const FirstText = () => {
             <span ref={sixthSpan}>
                With the hope to be, one day,  one of them.
             </span>
+         </p>
             <span ref={designHeading} id={styles.design}>
                DESIGN
             </span>
-         </p>
-         <Image src='/mockups/spaceGreyIpad.png' width={200}  alt={'ipad'}/>
+            <span className={styles.designDescriptionSpan} ref={designDescriptionSpanRef}>
+               My design process usually starts with a sketch on an iPad. If I have an idea 
+               I need to get it down as soon as possible
+            </span>
+         <div className={styles.ipadContainer} ref={ipadRef}>
+            <Image
+               src='/mockups/spaceGreyIpad.png' 
+               fill={true}
+               alt='image of an ipad'
+            />
+         </div>
       </div>   
    )
 }
