@@ -25,10 +25,9 @@ const Stack = () => {
       //these will make the position:fixed of the children behave like position:absolute
 
       bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
-
       if (stackIsOnScreen) {
          const tl = gsap.timeline();
-         
+   
          //This piece of code handles the left swipe of the stack section
          tl.to(horizontalWrapperRef.current,{
             top:bodyYPosition,
@@ -65,7 +64,6 @@ const Stack = () => {
       }
    }, [stackIsOnScreen]);
  
-
    const handleClick = () => {
      toggleStackIsOnScreen();
      toggleIsVisible();
@@ -74,6 +72,10 @@ const Stack = () => {
    return (  
       <HorizontalWrapper ref={horizontalWrapperRef}>
          {/* <div className={styles.horizontalScroller} ref={horizontalScrollerRef}> */}
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
