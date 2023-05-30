@@ -38,24 +38,24 @@
 
 .progressBarAndCloseDiv{
    position: absolute;
+   padding:0px 10vw;
+   bottom: 20px;
    width:100vw;
-   padding:10vw;
    height:48px;
-   top: 200px;
-   max-width: 980px;
    left:0px;
    display: flex;
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
-   gap:100px;
+   box-sizing: border-box;
 
 }
 
 .progressBar{
    width:100%;
+   max-width:1020px;
    background-color:rgb(55, 55, 55);
-   height:2px;
+   height:3px;
    border-radius:2px;
 }
 

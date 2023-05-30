@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { forwardRef, ForwardRefRenderFunction, Ref } from 'react'
 import styles from './stack.module.css'
 
-const ProgressBar = () => {
+const ProgressBar:ForwardRefRenderFunction<HTMLDivElement,{}> = (props,ref:Ref<HTMLDivElement>) => {
    return (
-      <div className={styles.progressBar}>
+      <div className={styles.progressBar} ref={ref}>
          <div className={styles.progressBarIndicator}>
          </div>
       </div>
    )
 }
 
-export default ProgressBar
+export default forwardRef(ProgressBar);

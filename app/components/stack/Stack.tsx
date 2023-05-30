@@ -8,6 +8,7 @@ import HorizontalWrapper from "./HorizontalWrapper";
 
 import XButton from "./XButton";
 import styles from './stack.module.css';
+import ProgressBar from "./ProgressBar";
 
 
 
@@ -15,6 +16,7 @@ const Stack = () => {
    const { stackIsOnScreen, toggleStackIsOnScreen } = useStackStore();
    const { toggleIsVisible } = useNavbarStore();
    const horizontalWrapperRef = useRef<HTMLDivElement>(null);
+   const progressBarAndCloseDivRef = useRef<HTMLDivElement>(null);
 
    let bodyYPosition:number|undefined;
 
@@ -25,26 +27,40 @@ const Stack = () => {
       bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
 
       if (stackIsOnScreen) {
-
-         const tl = gsap.timeline()
+         const tl = gsap.timeline();
          
+         //This piece of code handles the left swipe of the stack section
          tl.to(horizontalWrapperRef.current,{
             top:bodyYPosition,
             duration:0,
          }).to(horizontalWrapperRef.current, {
-            onStart:()=>{document.body.style.overflowY='hidden'},
+            onStart:()=>{
+               document.body.style.overflowY='hidden';
+               horizontalWrapperRef.current && (horizontalWrapperRef.current.style.overflow = 'hidden');
+            },
             left: '0%',
             duration: 1,
             ease: 'power2.inOut',
+            onComplete:()=>{
+               progressBarAndCloseDivRef.current && (progressBarAndCloseDivRef.current.style.position='fixed')
+               horizontalWrapperRef.current && (horizontalWrapperRef.current.style.overflowX = 'scroll');
+            }
          })
+      //This piece of code handles the right swipe of the stack section
       } else {
          gsap.to(horizontalWrapperRef.current, {
-            onStart:()=>{document.body.style.overflowY='hidden'},
+            onStart:()=>{
+               document.body.style.overflowY='hidden';
+               horizontalWrapperRef.current && (horizontalWrapperRef.current.style.overflow = 'hidden');
+               progressBarAndCloseDivRef.current && (progressBarAndCloseDivRef.current.style.position='absolute');
+            },
             boxShadow:'none',
             left: '100%',
             duration: 1,
             ease: 'power2.inOut',
-            onComplete:()=>{document.body.style.overflowY='auto'}
+            onComplete:()=>{
+               document.body.style.overflowY='auto';
+               horizontalWrapperRef.current && (horizontalWrapperRef.current.style.overflowX = 'scroll');}
          });
       }
    }, [stackIsOnScreen]);
@@ -66,8 +82,9 @@ const Stack = () => {
             <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
          {/* </div> */}
-         <div className={styles.progressBarAndCloseDiv}>
-            {/* <ProgressBar/> */}
+
+         <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>
+            <ProgressBar />
             <XButton onClick={handleClick} />
          </div>
       </HorizontalWrapper>

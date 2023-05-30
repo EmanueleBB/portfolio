@@ -36,7 +36,7 @@ const HeroSection = () => {
 		const tl = gsap.timeline({
 			onComplete:iconsSongSyncAnimation
 		});
-		console.log({ButtonRef})
+		
 		
 		tl.from(heroMainDivRef.current, {
 			duration: 2,
