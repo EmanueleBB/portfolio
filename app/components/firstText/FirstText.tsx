@@ -31,9 +31,9 @@ const FirstText = () => {
 
       const animateIpad = () => {
          ipadTl.to(designDescriptionSpanRef.current,{
-            bottom:'60vh',
-            duration:1.5,
-            ease:'power3.out'
+            bottom:'40vh',
+            duration:0.8,
+            ease:'power2.out'
          })
       }
 
@@ -49,7 +49,6 @@ const FirstText = () => {
          end:'bottom bottom',
          animation:tl,
          id:'div',
-         
       })
 
       tl.fromTo(firstSpan.current,{
@@ -131,7 +130,7 @@ const FirstText = () => {
          top:'75vh'
       },{
          display:'inline-block',
-         top:'1vh',
+         top:'-10%',
          opacity:1,
          duration:6,
       })

@@ -1,6 +1,6 @@
 .blackToPinkDiv{
    /* background-image: radial-gradient(circle at top, black 70%, #3e0c4f 80%,#ffffff 90%); */
-   background-image: radial-gradient(circle at top, black 100%);
+   background-image: radial-gradient(circle at top, black 80%,rgb(0, 0, 0) 100%);
    height:900vh;
    width:100vw;
    position:relative;
@@ -8,7 +8,7 @@
    display:flex;
    flex-direction: column;
    align-items: center;
-   /* border:2px solid white;  */
+   border:2px solid white; 
    box-sizing: border-box;
    overflow: hidden;
 }
@@ -40,10 +40,12 @@ span#design{
    position:sticky;
    width:100%;
    text-align: center;
-   font-weight: 300;
-   
-   font-size:128px;
-   color:white;
+   font-weight: 700;
+   font-family: 'Helvetica Neue';
+   font-size:25vw;
+
+   color:var(--main-pink);
+   color:rgb(49, 49, 49);
 }
 
 span.designDescriptionSpan{
@@ -60,7 +62,7 @@ span.designDescriptionSpan{
    width:70vw;
    aspect-ratio: 3000/2309;
    position:relative;
-   bottom:-450px;
+   bottom:-550px;
    
    flex-shrink: 0;
 

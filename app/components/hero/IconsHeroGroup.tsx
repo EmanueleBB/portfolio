@@ -20,10 +20,13 @@ import GraphQlIcon from './icons/GraphQlIcon'
 import MongoIcon from './icons/MongoIcon'
 import PostmanIcon from './icons/PostmanIcon'
 import FirebaseIcon from './icons/FirebaseIcon'
+import { forwardRef, ForwardRefRenderFunction, Ref } from 'react'
 
-const IconsHeroGroup = () => {
+
+
+const IconsHeroGroup:ForwardRefRenderFunction<HTMLDivElement,{}> = (props,ref: Ref<HTMLDivElement>) => {
    return (
-      <div className={styles.iconsBox}>
+      <div className={styles.iconsBox} ref={ref}>
          <IllustratorIcon/>
          <HtmlIcon/>
          <FigmaIcon/>
@@ -50,4 +53,4 @@ const IconsHeroGroup = () => {
    )
 }
 
-export default IconsHeroGroup
+export default forwardRef(IconsHeroGroup);
