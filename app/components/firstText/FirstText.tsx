@@ -27,29 +27,19 @@ const FirstText = () => {
 
       gsap.registerPlugin(ScrollTrigger);
 
-      const ipadTl = gsap.timeline();
-
-      const animateIpad = () => {
-         ipadTl.to(designDescriptionSpanRef.current,{
-            bottom:'40vh',
-            duration:0.8,
-            ease:'power2.out'
-         })
-      }
-
-      const tl = gsap.timeline({
-         onComplete:animateIpad,
-      });
+      
+      const tl = gsap.timeline();
       
       ScrollTrigger.create({
          trigger:blackToPinkDiv.current,
          scrub:true,
          markers:true,
-         start:'top 50%',
+         start:'top 25%',
          end:'bottom bottom',
          animation:tl,
          id:'div',
       })
+      
 
       tl.fromTo(firstSpan.current,{
          display:'none',
@@ -121,7 +111,7 @@ const FirstText = () => {
       }).to(sixthSpan.current,{
          opacity:0,
          display:'none',
-         duration:3,
+         duration:1,
          ease:'power4.out'
       }).fromTo(designHeading.current,{
          display:'none',
@@ -132,8 +122,20 @@ const FirstText = () => {
          display:'inline-block',
          top:'-10%',
          opacity:1,
-         duration:6,
+         duration:1.5,
+      }).to(ipadRef.current,{
+         display:'flex',
+         duration:0
+      }).to(ipadRef.current,{
+         top:'70vh',
+         duration:1.5
+      }).to(designDescriptionSpanRef.current,{
+         bottom:'40vh',
+         opacity:1,
+         duration:1,
+         ease:'power3.out'
       })
+      
    },[])
 
 
@@ -165,7 +167,7 @@ const FirstText = () => {
             </span>
             <span className={styles.designDescriptionSpan} ref={designDescriptionSpanRef}>
                My design process usually starts with a sketch on an iPad. If I have an idea 
-               I need to get it down as soon as possible
+               I try to get it down as fast as possible.
             </span>
          <div className={styles.ipadContainer} ref={ipadRef}>
             <Image

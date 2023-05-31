@@ -83,6 +83,9 @@ const Stack = () => {
             <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
+            <div className={styles.dummy}></div>
          {/* </div> */}
 
          <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>

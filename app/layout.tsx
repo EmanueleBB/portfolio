@@ -6,13 +6,14 @@ import HeroSection from './components/hero/HeroSection'
 import Stack from './components/stack/Stack'
 import FirstText from './components/firstText/FirstText'
 import MainContainer from './components/mainContainer/MainContainer'
+import CardSection from './components/cardsSection/CardSection'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-	title: 'Title',
-	description: 'description',
+	title: 'Emanuele | Web Developer',
+	description: 'I am a full stack web and mobile developer who loves to explore with design and functionalities',
 }
 
 export default function RootLayout({
@@ -28,6 +29,7 @@ export default function RootLayout({
 				<MainContainer>
 					<HeroSection/>
 					<FirstText/>
+					<CardSection/>
 				</MainContainer>
 				{children}
 			</body>
