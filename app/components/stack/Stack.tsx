@@ -9,6 +9,7 @@ import HorizontalWrapper from "./HorizontalWrapper";
 import XButton from "./XButton";
 import styles from './stack.module.css';
 import ProgressBar from "./ProgressBar";
+import FigmaDiv from "./FigmaDiv";
 
 
 
@@ -38,7 +39,7 @@ const Stack = () => {
       if (horizontalWrapperRef.current) {
          horizontalWrapperRef.current.addEventListener('scroll', updatePercentageScrolled);
       }
-      
+
       return () => {
          if (horizontalWrapperRef.current) {
             horizontalWrapperRef.current.removeEventListener('scroll', updatePercentageScrolled);
@@ -98,20 +99,8 @@ const Stack = () => {
    return (  
       <HorizontalWrapper ref={horizontalWrapperRef}>
 
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
-            <div className={styles.dummy}></div>
+         <FigmaDiv/>  
+         <FigmaDiv/>
 
          <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>
             <ProgressBar percentageScrolled={percentageScrolled}/>

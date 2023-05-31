@@ -83,9 +83,28 @@
    fill:white;
 }
 
+
 @media only screen and (max-width:1068px){
    .closeIcon{
       width:48px;
       height: 48px;
    }
+}
+
+
+
+.stackDiv{
+   width:100vw;
+   flex-shrink:0;
+   border:2px solid antiquewhite;
+   display:flex;
+   flex-direction:column;
+   align-items: center;
+}
+
+.stackDiv .stackH2{
+   position:absolute;
+   top:20%;
+   font-weight: 500;
+   font-size:48px;
 }
