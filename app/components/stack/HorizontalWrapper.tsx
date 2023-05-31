@@ -3,10 +3,12 @@ import styles from './stack.module.css'
 
 interface HorizontalWrapperProps{
    children:ReactNode;
-   
 }  
 
 const HorizontalWrapper: ForwardRefRenderFunction<HTMLDivElement,HorizontalWrapperProps> = ({ children },ref) => {
+
+   
+
    return (
       <div className={styles.horizontalWrapper} ref={ref}>
          {children}

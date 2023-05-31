@@ -21,6 +21,7 @@
    white-space: nowrap;
    box-sizing: border-box;  
 }
+
 .horizontalWrapper::-webkit-scrollbar{
    display:none;
 }
@@ -57,6 +58,16 @@
    background-color:rgb(55, 55, 55);
    height:3px;
    border-radius:2px;
+   position:relative;
+}
+
+.progressBarIndicator{
+   height:100%;
+   position:absolute;
+   border-radius:2px;
+   left:0px;
+   top:0px;
+   background-color: white;
 }
 
 .closeIcon{

@@ -3,7 +3,7 @@
 import useNavbarStore from "@/app/stores/NavbarStore";
 import useStackStore from "@/app/stores/StackStore";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import HorizontalWrapper from "./HorizontalWrapper";
 
 import XButton from "./XButton";
@@ -13,17 +13,42 @@ import ProgressBar from "./ProgressBar";
 
 
 const Stack = () => {
-   const { stackIsOnScreen, toggleStackIsOnScreen } = useStackStore();
-   const { toggleIsVisible } = useNavbarStore();
-   const horizontalWrapperRef = useRef<HTMLDivElement>(null);
-   const progressBarAndCloseDivRef = useRef<HTMLDivElement>(null);
 
    let bodyYPosition:number|undefined;
 
-   useEffect(() => {
-      //In the animation it's necessary to use left instead of x or xPercent: using
-      //these will make the position:fixed of the children behave like position:absolute
+   const horizontalWrapperRef = useRef<HTMLDivElement>(null);
+   const progressBarAndCloseDivRef = useRef<HTMLDivElement>(null);
+   const [percentageScrolled,setPercentageScrolled] = useState(0)
+   
+   const { toggleIsVisible } = useNavbarStore();
+   const { stackIsOnScreen, toggleStackIsOnScreen } = useStackStore();
 
+
+   //For the progressBar we need to know how much of the content has been scrolled
+   useEffect(() => {
+      const updatePercentageScrolled = () => {
+         if (horizontalWrapperRef.current) {
+            const scrollLeft = horizontalWrapperRef.current.scrollLeft;
+            const scrollWidth = horizontalWrapperRef.current.scrollWidth;
+            let currentPercentageScrolled = (scrollLeft / (scrollWidth - window.innerWidth));
+            setPercentageScrolled(currentPercentageScrolled);
+         };
+      }
+
+      if (horizontalWrapperRef.current) {
+         horizontalWrapperRef.current.addEventListener('scroll', updatePercentageScrolled);
+      }
+      
+      return () => {
+         if (horizontalWrapperRef.current) {
+            horizontalWrapperRef.current.removeEventListener('scroll', updatePercentageScrolled);
+         }
+      };
+   }, []);
+
+
+   useEffect(() => {
+     
       bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
       if (stackIsOnScreen) {
          const tl = gsap.timeline();
@@ -63,6 +88,7 @@ const Stack = () => {
          });
       }
    }, [stackIsOnScreen]);
+
  
    const handleClick = () => {
      toggleStackIsOnScreen();
@@ -71,7 +97,7 @@ const Stack = () => {
 
    return (  
       <HorizontalWrapper ref={horizontalWrapperRef}>
-         {/* <div className={styles.horizontalScroller} ref={horizontalScrollerRef}> */}
+
             <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
@@ -86,10 +112,9 @@ const Stack = () => {
             <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
             <div className={styles.dummy}></div>
-         {/* </div> */}
 
          <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>
-            <ProgressBar />
+            <ProgressBar percentageScrolled={percentageScrolled}/>
             <XButton onClick={handleClick} />
          </div>
       </HorizontalWrapper>
