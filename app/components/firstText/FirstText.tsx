@@ -4,7 +4,7 @@
 import styles from './firstText.module.css'
 import { ScrollTrigger } from 'gsap/all';
 import gsap from 'gsap'
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import Image from 'next/image';
 
 
@@ -22,6 +22,24 @@ const FirstText = () => {
    const designHeading = useRef<HTMLHeadElement>(null);
    const designDescriptionSpanRef=useRef<HTMLSpanElement>(null);
    const ipadRef=useRef<HTMLDivElement>(null);
+   const secondDesignDescriptionSpanRef=useRef<HTMLSpanElement>(null);
+
+   useEffect(() => {
+      const handleScroll = () => {
+         const element = blackToPinkDiv.current;
+         const scrollPosition = element?.getBoundingClientRect().top;
+         const windowHeight = window.innerHeight;
+         const scrollPercentage = scrollPosition && Math.abs(scrollPosition / windowHeight) * 100;
+
+         console.log(`Percentuale di scroll: ${scrollPercentage?.toFixed(2)}%`);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, []);
 
    useLayoutEffect(()=>{
 
@@ -42,32 +60,39 @@ const FirstText = () => {
       
 
       tl.fromTo(firstSpan.current,{
-         display:'none',
          opacity:0,
          y:'25px'
       },{
-         display:'inline-block',
          opacity:1,
          y:'0',
          duration:1,
-         
+         onStart:()=>{
+            firstSpan.current&&(firstSpan.current.style.display='inline-block');
+         }
       }).to(firstSpan.current,{
          opacity:0,
-         display:'none',
          y:'-25px',
          duration:1,
-         
+         onComplete:()=>{
+            firstSpan.current&&(firstSpan.current.style.display='none');
+         }
       }).fromTo(secondSpan.current,{
-         display:'none',
+         y:'25px',
          opacity:0,
       },{
-         display:'inline-block',
          opacity:1,
+         y:'0',
          duration:1,
+         onStart:()=>{
+            secondSpan.current&&(secondSpan.current.style.display='inline-block');
+         }
       }).to(secondSpan.current,{
          opacity:0,
-         display:'none',
+         y:'-25px',
          duration:1,
+         onComplete:()=>{
+            secondSpan.current&&(secondSpan.current.style.display='none');
+         }
       }).fromTo(thirdSpan.current,{
          display:'none',
          opacity:0,
@@ -113,27 +138,61 @@ const FirstText = () => {
          display:'none',
          duration:1,
          ease:'power4.out'
-      }).fromTo(designHeading.current,{
-         display:'none',
+      })
+      
+      .fromTo(designHeading.current,{
          opacity:0,
-         position:'fixed',
-         top:'75vh'
       },{
-         display:'inline-block',
-         top:'-10%',
+         onStart:()=>{
+            designHeading.current&&(designHeading.current.style.display='inline-block');
+         },
+         top:'10vh',
          opacity:1,
-         duration:1.5,
-      }).to(ipadRef.current,{
+         duration:3,
+         
+      })
+      
+      .to(ipadRef.current,{
          display:'flex',
          duration:0
       }).to(ipadRef.current,{
          top:'70vh',
-         duration:1.5
+         duration:3
       }).to(designDescriptionSpanRef.current,{
+         onStart:()=>{
+            designDescriptionSpanRef.current&&(designDescriptionSpanRef.current.style.display='inline-block')
+         },
          bottom:'40vh',
          opacity:1,
          duration:1,
-         ease:'power3.out'
+         ease:'power1.out'
+      }).to(designDescriptionSpanRef.current,{
+         bottom:'44vh',
+         opacity:0,
+         duration:1,
+         ease:'power2.in',
+         onComplete:()=>{
+            designDescriptionSpanRef.current&&(designDescriptionSpanRef.current.style.display='none')
+         },
+      }).to(secondDesignDescriptionSpanRef.current,{
+         onStart:()=>{
+            secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.display='inline-block')
+         },
+         bottom:'40vh',
+         opacity:1,
+         duration:1,
+         ease:'power1.out'
+      }).to(secondDesignDescriptionSpanRef.current,{
+         bottom:'44vh',
+         opacity:0,
+         duration:1,
+         ease:'power2.in',
+         onComplete:()=>{
+            secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.display='none')
+         },
+      }).to(ipadRef.current,{
+         top:'-5%',
+         duration:3,
       })
       
    },[])
@@ -168,6 +227,9 @@ const FirstText = () => {
             <span className={styles.designDescriptionSpan} ref={designDescriptionSpanRef}>
                My design process usually starts with a sketch on an iPad. If I have an idea 
                I try to get it down as fast as possible.
+            </span>
+            <span className={styles.designDescriptionSpan} ref={secondDesignDescriptionSpanRef}>
+               Lalala usususususu
             </span>
          <div className={styles.ipadContainer} ref={ipadRef}>
             <Image

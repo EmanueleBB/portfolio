@@ -1,7 +1,7 @@
 .blackToPinkDiv{
-   background-image: radial-gradient(circle at top, black 69.76%, #5d1067 76.744%,rgb(255, 184, 173) 83.72%);
+   background-image: radial-gradient(circle at top, black 58.82%, #5d1067 64.7%,rgb(255, 200, 191) 70.58%);
    /* background-image: radial-gradient(circle at top, black 80%,rgb(0, 0, 0) 100%); */
-   height:1075vh;
+   height:1275vh;
    width:100vw;
    position:relative;
    left:0;
@@ -37,13 +37,15 @@
 }
 
 span#design{
-   position:sticky;
+   position:fixed;
    width:100%;
    text-align: center;
    font-weight: 700;
    font-family: 'Helvetica Neue';
-   font-size:25vw;
-
+   font-size:240px;
+   top:50%;
+   left:50%;
+   transform: translate(-50%,-50%);
    color:var(--main-pink);
    color:black;
 }
@@ -52,10 +54,11 @@ span.designDescriptionSpan{
    font-weight:600;
    color:black;
    width:40vw;
-   position:absolute;
+   position:fixed;
    opacity:0;
    bottom:30vh;
    font-size:20px;
+   display: none;
 } 
 
 .ipadContainer{
@@ -69,11 +72,6 @@ span.designDescriptionSpan{
    flex-shrink: 0;
 }
 
-.ipadContainer > *::before {
-   content:"";
-   position:absolute;
-   box-shadow:-100px 20px 100px 10px grey;
-}
 
 
 
