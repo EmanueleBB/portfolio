@@ -55,7 +55,7 @@
 .progressBar{
    width:100%;
    max-width:1020px;
-   background-color:rgb(55, 55, 55);
+   background-color:rgb(32, 32, 32);
    height:3px;
    border-radius:2px;
    position:relative;
@@ -67,44 +67,91 @@
    border-radius:2px;
    left:0px;
    top:0px;
-   background-color: white;
+   background-color: rgb(125, 125, 125);
 }
 
 .closeIcon{
    width:48px;
    height: 48px;
-   fill:rgb(55, 55, 55);
+   fill:rgb(32, 32, 32);
    transition:fill 0.35s ease;
 
 }
 
 .closeIcon:hover{
    cursor:pointer;
-   fill:white;
+   fill:rgb(121, 121, 121);
 }
 
 
-@media only screen and (max-width:1068px){
-   .closeIcon{
-      width:48px;
-      height:48px;
-   }
-}
+
 
 
 
 .stackDiv{
    width:100vw;
    flex-shrink:0;
-   border:2px solid antiquewhite;
+   /* border:2px solid antiquewhite; */
    display:flex;
    flex-direction:column;
    align-items: center;
+   box-sizing: border-box;
 }
 
-.stackDiv .stackH2{
+.stackDiv .figmaIcon{
+   top:10%;
+   scale:0.8;
+}
+
+.stackDiv .figmaH2{
    position:absolute;
+   color:#FFC5B5;
    top:20%;
+   font-weight: 600;
+}
+
+.stackDiv .figmaP{
+   position: absolute;
+   top: 35%;
+   color: #FFC5B5;
+   width: 40vw;
+   display: inline-block;
+   word-wrap: break-word;
+   white-space: normal;
+   
+   text-align:center;
    font-weight: 500;
-   font-size:48px;
+}
+
+.stackDiv .figmaP span{
+   color:#FF814A;
+   font-weight: 600;
+}
+
+
+
+
+
+@media only screen and (max-width:734px){
+
+}
+
+@media only screen and (min-width:1068px) and (max-width:1068px){
+
+}
+
+@media only screen and (min-width:1069px){
+   .stackDiv h2{
+      font-size:42px;
+   }
+   .stackDiv p{
+      font-size:20px;
+   }
+}
+
+@media only screen and (max-width:1068px){
+   .closeIcon{
+      width:48px;
+      height:48px;
+   }
 }

@@ -98,7 +98,9 @@ const Stack = () => {
 
    return (  
       <HorizontalWrapper ref={horizontalWrapperRef}>
-
+         <div>
+            This is a somewhat detailed list of all the tech I've gained experience with in the last years.
+         </div>
          <FigmaDiv/>  
          <FigmaDiv/>
 
