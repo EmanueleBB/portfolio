@@ -141,21 +141,20 @@ const FirstText = () => {
       })
       
       .fromTo(designHeading.current,{
-         opacity:0,
+         opacity:1,
       },{
          onStart:()=>{
             designHeading.current&&(designHeading.current.style.display='inline-block');
          },
-         top:'10vh',
+         top:'0',
          opacity:1,
          duration:3,
+         ease:'power2.out'
          
-      })
-      
-      .to(ipadRef.current,{
-         display:'flex',
-         duration:0
       }).to(ipadRef.current,{
+         onStart:()=>{
+            ipadRef.current&&(ipadRef.current.style.display='flex')
+         },
          top:'70vh',
          duration:3
       }).to(designDescriptionSpanRef.current,{
@@ -188,11 +187,20 @@ const FirstText = () => {
          duration:1,
          ease:'power2.in',
          onComplete:()=>{
-            secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.display='none')
+            secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.display='none');
          },
       }).to(ipadRef.current,{
-         top:'-5%',
+         top:'10vh',
          duration:3,
+         height:'80vh',
+         width:'103.9411vh',
+         ease:'power2.Out'
+      }).to(ipadRef.current,{
+         top:'-5vh',
+         duration:2,
+         height:'110vh',
+         width:'142.919vh',
+         ease:'power2.in'
       })
       
    },[])
