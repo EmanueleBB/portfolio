@@ -10,6 +10,7 @@ import XButton from "./XButton";
 import styles from './stack.module.css';
 import ProgressBar from "./ProgressBar";
 import FigmaDiv from "./FigmaDiv";
+import PhotoshopDiv from "./PhotoshopDiv";
 
 
 
@@ -98,11 +99,11 @@ const Stack = () => {
 
    return (  
       <HorizontalWrapper ref={horizontalWrapperRef}>
-         <div>
+         <div className={styles.introDiv}>
             This is a somewhat detailed list of all the tech I've gained experience with in the last years.
          </div>
          <FigmaDiv/>  
-         <FigmaDiv/>
+         <PhotoshopDiv/>
 
          <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>
             <ProgressBar percentageScrolled={percentageScrolled}/>

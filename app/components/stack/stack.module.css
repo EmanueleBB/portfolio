@@ -6,6 +6,8 @@
    bottom: 0;
    background-color: rgba(0, 0, 0, 0.5);
 }
+
+
 .horizontalWrapper{
    position:absolute;
    top:0;
@@ -26,16 +28,6 @@
    display:none;
 }
 
-
-
-.dummy{
-   width:300px;
-   height:300px;
-   background-color: rgb(90, 90, 90);
-   flex-shrink:0;
-   margin:20px;
-   
-}
 
 .progressBarAndCloseDiv{
    position: absolute;
@@ -86,70 +78,140 @@
 
 
 
+/*  The styling for the actual content   */
 
-
+.introDiv{
+   width:75vw;
+   min-width: 75vw;
+}
 
 .stackDiv{
-   width:100vw;
+   width:75vw;
    flex-shrink:0;
-   /* border:2px solid antiquewhite; */
+   
    display:flex;
    flex-direction:column;
    align-items: center;
    box-sizing: border-box;
+   position: relative;
+   padding:8vh 0px;
+   /* border:2px solid salmon; */
 }
 
-.stackDiv .figmaIcon{
-   top:10%;
-   scale:0.8;
+.stackDiv:nth-of-type(3){
+   
+   padding:8vh 0px 0px 0px;
+   
 }
 
-.stackDiv .figmaH2{
-   position:absolute;
-   color:#FFC5B5;
-   top:20%;
+
+
+.stackDiv .generalIcon{
+   /* border:2px solid white; */
+   margin:unset;
+   scale:0.6;
+}
+
+.stackDiv .generalH2{
+   position:relative;
    font-weight: 600;
+   font-size:48px;
+   
+   /* border:2px solid green; */
+   
 }
 
-.stackDiv .figmaP{
-   position: absolute;
-   top: 35%;
-   color: #FFC5B5;
+.figmaH2{
+   color:#FFC5B5;
+   margin:unset;
+   padding:unset;
+   margin:0px 0px 5vh 0px;
+}
+
+.photoshopH2{
+   background-image: radial-gradient(ellipse at center top, #31A8FF 20%, #001E36 60% );
+   background-size: 300% 100%;
+   background-position:center ;
+   color:transparent;
+   background-clip: text;
+   margin:unset;
+   padding:unset;
+   margin:0px 0px 5vh 0px;
+}
+
+.stackDiv .generalP{
+   position: relative;
    width: 40vw;
    display: inline-block;
    word-wrap: break-word;
    white-space: normal;
-   
    text-align:center;
-   font-weight: 500;
+   font-weight: 400;
+   font-size:19px;
+   margin:0px 0px 5vh 0px;
 }
 
-.stackDiv .figmaP span{
+.figmaP{
+   color: #FFC5B5;
+}
+
+.figmaP span{
    color:#FF814A;
    font-weight: 600;
 }
 
+.photoshopP{
+   color: #416887;
+}
+
+.photoshopP span{
+   color:#84CBFF;
+}
+
+
 .mockupContainer{
    width: calc(50vh*(1370/835)) ;
    height:50vh;
-   position:absolute;
-   top:50vh;
+   position:relative;
    z-index:100;
 }
 
-.mockupContainer:nth-child(1){
-   z-index: 10;
+.ballerinaImageContainer{
+   /* border:2px solid blue; */
+   aspect-ratio: calc(4000/4854);
+   height: 70vh;
+   bottom:-7.5vh;
+   position:absolute;
+   z-index:100;
+   opacity: 1;
 }
+
+.coloredBallerinaImageContainer{
+   /* border:2px solid blue; */
+   aspect-ratio: calc(4000/4854);
+   height: 70vh;
+   z-index:101;
+}
+
+.maskDiv{
+   height: 20vh;
+   top:37.5vh;
+   position:absolute;
+   z-index:101;
+   overflow: hidden;
+   background-color: black;
+}
+
+
 
 .mockupContainer::after {
    content: "";
    position: absolute;
- 
    width: 100%;
    height: 50vh;
    z-index: 99;
    background: radial-gradient(ellipse at top, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 65%);
-   background-size: 150% 100%; 
+   background-size: 300% 100%; 
    /* border: 2px solid blue; */
    box-sizing: border-box;  
    background-position: center;

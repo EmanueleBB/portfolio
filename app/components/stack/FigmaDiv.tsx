@@ -6,13 +6,13 @@ const FigmaDiv = () => {
    return (
       <div className={styles.stackDiv}>
 
-         <FigmaIcon className={styles.figmaIcon}/>
+         <FigmaIcon className={styles.generalIcon}/>
 
-         <h2 className={styles.figmaH2}>
+         <h2 className={`${styles.generalH2} ${styles.figmaH2}`} >
             Figma
          </h2>
 
-         <p className={styles.figmaP}>
+         <p className={`${styles.generalP} ${styles.figmaP}`}>
          The main software I use to build my <span>designs</span>, from the initial <span>concept</span> to the final <span>mockup</span>. The image below is a concept mockup made in Figma. 
          </p>
          <div className={styles.mockupContainer}>

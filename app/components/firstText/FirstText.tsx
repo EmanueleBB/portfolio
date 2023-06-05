@@ -51,7 +51,7 @@ const FirstText = () => {
       ScrollTrigger.create({
          trigger:blackToPinkDiv.current,
          scrub:true,
-         markers:true,
+         markers:false,
          start:'top 25%',
          end:'bottom bottom',
          animation:tl,
