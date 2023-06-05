@@ -40,12 +40,10 @@ const FirstText = () => {
          window.removeEventListener('scroll', handleScroll);
       };
    }, []);
-
+   
    useLayoutEffect(()=>{
 
       gsap.registerPlugin(ScrollTrigger);
-
-      
       const tl = gsap.timeline();
       
       ScrollTrigger.create({

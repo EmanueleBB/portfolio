@@ -5,12 +5,14 @@ import useStackStore from "@/app/stores/StackStore";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import HorizontalWrapper from "./HorizontalWrapper";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import XButton from "./XButton";
 import styles from './stack.module.css';
 import ProgressBar from "./ProgressBar";
 import FigmaDiv from "./FigmaDiv";
 import PhotoshopDiv from "./PhotoshopDiv";
+import { TLSSocket } from "tls";
 
 
 
@@ -20,6 +22,9 @@ const Stack = () => {
 
    const horizontalWrapperRef = useRef<HTMLDivElement>(null);
    const progressBarAndCloseDivRef = useRef<HTMLDivElement>(null);
+   const photoshopDivRef=useRef<HTMLDivElement>(null);
+
+
    const [percentageScrolled,setPercentageScrolled] = useState(0)
    
    const { toggleIsVisible } = useNavbarStore();
@@ -104,6 +109,7 @@ const Stack = () => {
          </div>
          <FigmaDiv/>  
          <PhotoshopDiv/>
+         <FigmaDiv/>  
 
          <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>
             <ProgressBar percentageScrolled={percentageScrolled}/>

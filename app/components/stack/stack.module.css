@@ -95,7 +95,7 @@
    box-sizing: border-box;
    position: relative;
    padding:8vh 0px;
-   /* border:2px solid salmon; */
+    border:2px solid salmon; 
 }
 
 .stackDiv:nth-of-type(3){
@@ -115,7 +115,7 @@
 .stackDiv .generalH2{
    position:relative;
    font-weight: 600;
-   font-size:48px;
+   font-size:42px;
    
    /* border:2px solid green; */
    
@@ -137,6 +137,7 @@
    margin:unset;
    padding:unset;
    margin:0px 0px 5vh 0px;
+   opacity:0;
 }
 
 .stackDiv .generalP{
@@ -161,6 +162,7 @@
 }
 
 .photoshopP{
+   opacity:0;
    color: #416887;
 }
 
@@ -194,7 +196,8 @@
 }
 
 .maskDiv{
-   height: 20vh;
+   opacity:0;
+   height:70vh;
    top:37.5vh;
    position:absolute;
    z-index:101;
