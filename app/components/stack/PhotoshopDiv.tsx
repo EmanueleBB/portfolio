@@ -18,10 +18,12 @@ const PhotoshopDiv = () => {
    const h2Ref=useRef<HTMLHeadingElement>(null);
    const pRef=useRef<HTMLParagraphElement>(null);
    const imageDivRef=useRef<HTMLDivElement>(null);
+   const photoshopIconRef=useRef<SVGSVGElement>(null);
 
    
 
-   useEffect(() => {
+   useLayoutEffect(() => {
+
       const options = {
          root: null,
          rootMargin: `150px`,
@@ -37,25 +39,40 @@ const PhotoshopDiv = () => {
          if (entry.isIntersecting) {
 
             const tl=gsap.timeline();
-
-            tl.fromTo(h2Ref.current,{
+            tl.fromTo(photoshopIconRef.current,{
                y:-15,
                opacity:0,
             },{
                y:0,
                opacity:1,
                duration:0.5,
-            }).fromTo(pRef.current,{
+               ease:'power2.out'
+            }).fromTo(h2Ref.current,{
+               backgroundImage: 'radial-gradient(ellipse at center top, #31A8FF 20%, #001E36 70% )',
+               y:-15,
+               opacity:0,
+            },{
+               backgroundImage: 'radial-gradient(ellipse at center top, #31A8FF 20%, #001E36 100% )',
+               y:0,
+               opacity:1,
+               duration:1,
+               ease:'power2.out'
+            })
+            .fromTo(pRef.current,{
                y:-15,
                opacity:0,
             },{
                y:0,
                opacity:1,
                duration:0.5,
-            }).to(maskDivRef.current,{
+               ease:'power2.out'
+            },'<-=0.3')
+            .to(maskDivRef.current,{
+               delay:0,
                opacity:1,
-               duration:2,
-               ease:'power3.inOut'
+               duration:0.6,
+               ease:'linear',
+               
             })
 
             if (photoshopDivRef.current) {
@@ -85,7 +102,7 @@ const PhotoshopDiv = () => {
    return (
       <div className={styles.stackDiv} ref={photoshopDivRef}>
 
-         <PhotoshopIcon className={styles.generalIcon}/>
+         <PhotoshopIcon className={styles.generalIcon} ref={photoshopIconRef}/>
 
          <h2 className={`${styles.generalH2} ${styles.photoshopH2}`} ref={h2Ref}>
             Photoshop

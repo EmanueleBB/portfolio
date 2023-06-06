@@ -13,6 +13,9 @@ import ProgressBar from "./ProgressBar";
 import FigmaDiv from "./FigmaDiv";
 import PhotoshopDiv from "./PhotoshopDiv";
 import { TLSSocket } from "tls";
+import Image from "next/image";
+import useWindowSizeInfos from "@/app/hooks/useWindowSize";
+import IllustratorDiv from "./IllustratorDiv";
 
 
 
@@ -24,11 +27,11 @@ const Stack = () => {
    const progressBarAndCloseDivRef = useRef<HTMLDivElement>(null);
    const photoshopDivRef=useRef<HTMLDivElement>(null);
 
-
-   const [percentageScrolled,setPercentageScrolled] = useState(0)
-   
+   const {windowHeight,windowWidth,maxDimension,maxDimensionValue, minDimensionValue} = useWindowSizeInfos();
    const { toggleIsVisible } = useNavbarStore();
    const { stackIsOnScreen, toggleStackIsOnScreen } = useStackStore();
+   
+   const [percentageScrolled,setPercentageScrolled] = useState(0)
 
 
    //For the progressBar we need to know how much of the content has been scrolled
@@ -53,7 +56,7 @@ const Stack = () => {
       };
    }, []);
 
-
+   //logic for the left and right swipes
    useEffect(() => {
      
       bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
@@ -104,12 +107,20 @@ const Stack = () => {
 
    return (  
       <HorizontalWrapper ref={horizontalWrapperRef}>
-         <div className={styles.introDiv}>
-            This is a somewhat detailed list of all the tech I've gained experience with in the last years.
+         <div className={`${styles.introDiv} ${styles.stackDiv}`}>
+            <Image
+               src='/leonardoNotes.png'
+               alt='ciao'
+               fill
+               style={{objectFit: "cover",opacity: "0.2"}}
+            />
+            <p className={`${styles.generalP} ${styles.introP}`}>
+               This is a somewhat detailed list of all the tech I've gained experience with in the last years. It covers the main tools I use from the design stage to the front-end / back-end development.
+            </p>
          </div>
          <FigmaDiv/>  
          <PhotoshopDiv/>
-         <FigmaDiv/>  
+         <IllustratorDiv/>  
 
          <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>
             <ProgressBar percentageScrolled={percentageScrolled}/>
