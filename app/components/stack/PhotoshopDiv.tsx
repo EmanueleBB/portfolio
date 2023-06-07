@@ -105,7 +105,7 @@ const PhotoshopDiv = () => {
          <PhotoshopIcon className={styles.generalIcon} ref={photoshopIconRef}/>
 
          <h2 className={`${styles.generalH2} ${styles.photoshopH2}`} ref={h2Ref}>
-            Photoshop
+            Adobe Photoshop
          </h2>
 
          <p className={`${styles.generalP} ${styles.photoshopP}`} ref={pRef}>

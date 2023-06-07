@@ -3,7 +3,7 @@
 import useNavbarStore from "@/app/stores/NavbarStore";
 import useStackStore from "@/app/stores/StackStore";
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import HorizontalWrapper from "./HorizontalWrapper";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -25,13 +25,24 @@ const Stack = () => {
 
    const horizontalWrapperRef = useRef<HTMLDivElement>(null);
    const progressBarAndCloseDivRef = useRef<HTMLDivElement>(null);
+   const paragraphRef=useRef<HTMLParagraphElement>(null);
    const photoshopDivRef=useRef<HTMLDivElement>(null);
+   const spanRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
    const {windowHeight,windowWidth,maxDimension,maxDimensionValue, minDimensionValue} = useWindowSizeInfos();
+
    const { toggleIsVisible } = useNavbarStore();
-   const { stackIsOnScreen, toggleStackIsOnScreen } = useStackStore();
+   const { stackIsOnScreen, paragraphIsAnimated, toggleStackIsOnScreen } = useStackStore();
    
-   const [percentageScrolled,setPercentageScrolled] = useState(0)
+   const [percentageScrolled,setPercentageScrolled] = useState(0);
+   
+
+   const divideInSpans = (text: string) => {
+      const words = text.split(' ');
+      return words.map((word: string, index: number) => (
+        <span key={index} className={`${styles.word}`}>{word} </span>
+      ));
+    };
 
 
    //For the progressBar we need to know how much of the content has been scrolled
@@ -55,6 +66,7 @@ const Stack = () => {
          }
       };
    }, []);
+
 
    //logic for the left and right swipes
    useEffect(() => {
@@ -99,6 +111,34 @@ const Stack = () => {
       }
    }, [stackIsOnScreen]);
 
+
+
+   //This animates every word of the paragraph
+   useEffect(() => {
+      if (paragraphIsAnimated) {
+         const tl = gsap.timeline();
+         if (paragraphRef.current) {
+            const spanElements = paragraphRef.current.querySelectorAll(`.${styles.word}`);
+            tl.to(spanElements, {
+               onStart: () => { console.log('animation fired'); },
+               delay:1,
+               stagger: 0.08,
+               top:0,
+               duration: 0.4,
+               ease:'power3.out'
+            }).to(spanElements,{
+               opacity: 1,
+               duration: 1.5,
+               ease:'power1.out',
+               stagger: 0.08,
+               
+            },'<');
+         }
+      }
+    }, [paragraphIsAnimated]);
+
+   
+
  
    const handleClick = () => {
      toggleStackIsOnScreen();
@@ -110,12 +150,12 @@ const Stack = () => {
          <div className={`${styles.introDiv} ${styles.stackDiv}`}>
             <Image
                src='/leonardoNotes.png'
-               alt='ciao'
+               alt='a cool image'
                fill
-               style={{objectFit: "cover",opacity: "0.2"}}
+               style={{objectFit: "cover",opacity: "0.1"}}
             />
-            <p className={`${styles.generalP} ${styles.introP}`}>
-               This is a somewhat detailed list of all the tech I've gained experience with in the last years. It covers the main tools I use from the design stage to the front-end / back-end development.
+            <p className={`${styles.generalP} ${styles.introP}`} ref={paragraphRef}>
+               {divideInSpans("This is a somewhat detailed list of all the tech I've gained experience with in the last years. It covers the main tools I use from the design stage to the front-end / back-end development.")}
             </p>
          </div>
          <FigmaDiv/>  

@@ -13,7 +13,7 @@ const FigmaDiv = () => {
    const h2Ref=useRef<HTMLHeadingElement>(null);
    const pRef=useRef<HTMLParagraphElement>(null);
    const imageDivRef=useRef<HTMLDivElement>(null);
-   const figmaIconRef=useRef<HTMLOrSVGElement>(null);
+   const figmaIconRef=useRef<SVGSVGElement>(null);
 
 
    useLayoutEffect(() => {
@@ -94,7 +94,7 @@ const FigmaDiv = () => {
    return (
       <div className={styles.stackDiv} ref={figmaDivRef}>
 
-         <FigmaIcon className={styles.generalIcon}/>
+         <FigmaIcon className={styles.generalIcon} ref={figmaIconRef}/>
 
          <h2 className={`${styles.generalH2} ${styles.figmaH2}`} ref={h2Ref}>
             Figma
@@ -103,7 +103,7 @@ const FigmaDiv = () => {
          <p className={`${styles.generalP} ${styles.figmaP}`} ref={pRef}>
          The main software I use to build my <span>designs</span>, from the initial <span>concept</span> to the final <span>mockup</span>. The image below is a concept mockup made in Figma. 
          </p>
-         <div className={styles.mockupContainer} ref={imageDivRef}>
+         <div className={`${styles.mockupContainer}`} ref={imageDivRef}>
             <Image
                src='/mockups/rs6Mockup.png'
                alt='mockup'

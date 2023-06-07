@@ -20,8 +20,8 @@ const HeroSection = () => {
 	const ButtonRef=useRef<HTMLButtonElement>(null);
 	const iconsHeroGroupRef = useRef<HTMLDivElement>(null);
 
-	const {isVisible,toggleIsVisible}=useNavbarStore();
-	const {stackIsOnScreen,toggleStackIsOnScreen}=useStackStore();
+	const {toggleIsVisible}=useNavbarStore();
+	const {toggleStackIsOnScreen,toggleParagraphIsAnimated}=useStackStore();
 
 	
 	// if(1===2){
@@ -30,7 +30,6 @@ const HeroSection = () => {
 	useLayoutEffect(() => {
 
 		const iconsSongSyncAnimation = () => {
-			gsap.to
 		}
 
 		const tl = gsap.timeline({
@@ -82,6 +81,8 @@ const HeroSection = () => {
 		toggleIsVisible();
 		//Handling of the stack section.I need this to make the stack component know when to appear
 		toggleStackIsOnScreen();
+		toggleParagraphIsAnimated();
+		
    } 
 
 

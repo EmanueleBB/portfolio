@@ -49,7 +49,7 @@
 .progressBar{
    width:100%;
    max-width:1920px;
-   background-color:rgb(32, 32, 32);
+   background-color:rgb(40, 40, 40);
    height:3px;
    border-radius:2px;
    position:relative;
@@ -61,20 +61,20 @@
    border-radius:2px;
    left:0px;
    top:0px;
-   background-color: rgb(125, 125, 125);
+   background-color: rgb(255, 255, 255);
 }
 
 .closeIcon{
    width:48px;
    height: 48px;
-   fill:rgb(32, 32, 32);
+   fill:rgb(40, 40, 40);
    transition:fill 0.35s ease;
 
 }
 
 .closeIcon:hover{
    cursor:pointer;
-   fill:rgb(121, 121, 121);
+   fill:white;
 }
 
 
@@ -84,6 +84,13 @@
 .introDiv{
    width:100vw;
    min-width: 100vw;
+}
+
+.word{
+   opacity:0;
+   position:relative;
+   top:15px;
+   color:white;
 }
 
 .stackDiv{
@@ -123,11 +130,43 @@
    
 }
 
+
+
+.stackDiv .generalP{
+   position: relative;
+   width: 40vw;
+   display: inline-block;
+   word-wrap: break-word;
+   white-space: normal;
+   text-align:center;
+   font-weight: 500;
+   font-size:24px;
+   margin:0px 0px 5vh 0px;
+   
+}
+
+.stackDiv .generalP.introP{
+   position:relative;
+   top:50%;
+   transform:translateY(-50%);
+}
+
 .figmaH2{
    color:#FFC5B5;
    margin:unset;
    padding:unset;
    margin:0px 0px 5vh 0px;
+   opacity: 0;
+}
+
+.figmaP{
+   color: #FFC5B5;
+   opacity: 0;
+}
+
+.figmaP span{
+   color:#FF814A;
+   font-weight: 600;
 }
 
 .photoshopH2{
@@ -142,34 +181,6 @@
    opacity:0;
 }
 
-.stackDiv .generalP{
-   position: relative;
-   width: 40vw;
-   display: inline-block;
-   word-wrap: break-word;
-   white-space: normal;
-   text-align:center;
-   font-weight: 400;
-   font-size:19px;
-   margin:0px 0px 5vh 0px;
-   
-}
-
-.stackDiv .generalP.introP{
-   position:relative;
-   top:50%;
-   transform:translateY(-50%);
-}
-
-.figmaP{
-   color: #FFC5B5;
-}
-
-.figmaP span{
-   color:#FF814A;
-   font-weight: 600;
-}
-
 .photoshopP{
    opacity:0;
    color: #416887;
@@ -179,12 +190,37 @@
    color:#84CBFF;
 }
 
+.illustratorP{
+   color:#FFE6CA;
+}
+
+.illustratorP span{
+   color:#FF9A00;
+}
+
+.illustratorH2{
+   background-image: radial-gradient(ellipse at center top, #FF9A00 20%, #330000 70% );
+   background-size: 300% 100%;
+   background-position:center ;
+   color:transparent;
+   background-clip: text;
+   margin:unset;
+   padding:unset;
+   margin:0px 0px 5vh 0px;
+   opacity:1;
+}
+
+.generalIcon.illustratorIcon{
+   opacity:1;
+}
+
 
 .mockupContainer{
    width: calc(50vh*(1370/835)) ;
    height:50vh;
    position:relative;
    z-index:100;
+   opacity:0;
 }
 
 .ballerinaImageContainer{

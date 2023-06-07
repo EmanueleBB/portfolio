@@ -17,23 +17,15 @@ const IllustratorDiv = () => {
    return (
       <div className={styles.stackDiv} ref={illustratorDivRef}>
 
-         <IllustratorIcon className={styles.generalIcon} ref={illustratorIconRef}/>
+         <IllustratorIcon  ref={illustratorIconRef} className={`${styles.generalIcon} ${styles.illustratorIcon}`}/>
 
-         <h2 className={`${styles.generalH2} ${styles.figmaH2}`} ref={h2Ref}>
-            Illustrator
+         <h2 className={`${styles.generalH2} ${styles.illustratorH2}`} ref={h2Ref}>
+            Adobe Illustrator
          </h2>
 
-         <p className={`${styles.generalP} ${styles.figmaP}`} ref={pRef}>
+         <p className={`${styles.generalP} ${styles.illustratorP}`} ref={pRef}>
          The industry standard for manipulating <span>vector images </span>. It's not been a main component of my workflow until quite recently, when I started to love experimentin with it. 
          </p>
-         <div className={styles.mockupContainer} ref={imageDivRef}>
-            <Image
-               src='/mockups/rs6Mockup.png'
-               alt='mockup'
-               fill={true}
-            />
-         </div>
-
       </div>
    )
 }
