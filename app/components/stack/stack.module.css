@@ -79,19 +79,9 @@
 
 
 
-/*  The styling for the actual content   */
+/* General styling */
 
-.introDiv{
-   width:100vw;
-   min-width: 100vw;
-}
 
-.word{
-   opacity:0;
-   position:relative;
-   top:15px;
-   color:white;
-}
 
 .stackDiv{
    width:75vw;
@@ -103,14 +93,9 @@
    box-sizing: border-box;
    position: relative;
    padding:8vh 0px;
-   /* border:2px solid salmon;  */
+    /* border:2px solid salmon;  */
 }
 
-.stackDiv:nth-of-type(3){
-   
-   padding:8vh 0px 0px 0px;
-   
-}
 
 
 
@@ -151,6 +136,25 @@
    transform:translateY(-50%);
 }
 
+
+/* General styling */
+/* Intro section */
+
+.introDiv{
+   width:100vw;
+   min-width: 100vw;
+}
+
+.word{
+   opacity:0;
+   position:relative;
+   top:15px;
+   color:white;
+}
+
+/* Intro section */
+/* Figma Section */
+
 .figmaH2{
    color:#FFC5B5;
    margin:unset;
@@ -168,6 +172,25 @@
    color:#FF814A;
    font-weight: 600;
 }
+
+.mockupContainer{
+   width: calc(50vh*(1370/835)) ;
+   height:50vh;
+   position:relative;
+   z-index:100;
+   opacity:0;
+}
+
+/* Figma Section */
+/* Photoshop Section */
+
+
+.stackDiv:nth-of-type(3){ /*Photoshop Div*/
+   padding:8vh 0px 0px 0px;
+   border: 2px solid red;
+   margin-right: 25vw;
+}
+
 
 .photoshopH2{
    background-image: radial-gradient(ellipse at center top, #31A8FF 20%, #001E36 70% );
@@ -190,8 +213,13 @@
    color:#84CBFF;
 }
 
-.illustratorP{
-   color:#FFE6CA;
+/* Photoshop Section */
+/* Illustrator Section */
+
+.stackDiv .illustratorP{
+   color:rgb(30, 30, 30);
+   text-align: left;
+   width:35vw;
 }
 
 .illustratorP span{
@@ -199,7 +227,7 @@
 }
 
 .illustratorH2{
-   background-image: radial-gradient(ellipse at center top, #FF9A00 20%, #330000 70% );
+   background-image: radial-gradient(ellipse at center top, #FF9A00 20%, #330000 100% );
    background-size: 300% 100%;
    background-position:center ;
    color:transparent;
@@ -214,14 +242,18 @@
    opacity:1;
 }
 
-
-.mockupContainer{
-   width: calc(50vh*(1370/835)) ;
-   height:50vh;
-   position:relative;
-   z-index:100;
-   opacity:0;
+.illustratorSmokeCloud{
+   height:120vh;
+   position:absolute;
+   aspect-ratio: calc(998/870);
+   left:50%;
+   top:-2.5vh;
+   transform:translateX(-48%);
+   
 }
+
+
+
 
 .ballerinaImageContainer{
    /* border:2px solid blue; */

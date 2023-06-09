@@ -122,7 +122,7 @@ const Stack = () => {
             tl.to(spanElements, {
                onStart: () => { console.log('animation fired'); },
                delay:1,
-               stagger: 0.08,
+               stagger: 0.07,
                top:0,
                duration: 0.4,
                ease:'power3.out'
@@ -130,8 +130,7 @@ const Stack = () => {
                opacity: 1,
                duration: 1.5,
                ease:'power1.out',
-               stagger: 0.08,
-               
+               stagger: 0.07,
             },'<');
          }
       }
