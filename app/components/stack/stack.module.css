@@ -181,15 +181,36 @@
    opacity:0;
 }
 
+.mockupContainer::after {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 50vh;
+   z-index: 99;
+   background: radial-gradient(ellipse at top, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 65%);
+   background-size: 300% 100%; 
+   /* border: 2px solid blue; */
+   box-sizing: border-box;  
+   background-position: center;
+}
+
+
+
 /* Figma Section */
 /* Photoshop Section */
 
 
 .stackDiv:nth-of-type(3){ /*Photoshop Div*/
    padding:8vh 0px 0px 0px;
+   /* border: 2px solid red; */
+   margin-right: 25vw;
+}
+.stackDiv:nth-of-type(4){ /*Illustrator Div*/
+   padding:8vh 0px 0px 0px;
    border: 2px solid red;
    margin-right: 25vw;
 }
+
 
 
 .photoshopH2{
@@ -212,48 +233,6 @@
 .photoshopP span{
    color:#84CBFF;
 }
-
-/* Photoshop Section */
-/* Illustrator Section */
-
-.stackDiv .illustratorP{
-   color:rgb(30, 30, 30);
-   text-align: left;
-   width:35vw;
-}
-
-.illustratorP span{
-   color:#FF9A00;
-}
-
-.illustratorH2{
-   background-image: radial-gradient(ellipse at center top, #FF9A00 20%, #330000 100% );
-   background-size: 300% 100%;
-   background-position:center ;
-   color:transparent;
-   background-clip: text;
-   margin:unset;
-   padding:unset;
-   margin:0px 0px 5vh 0px;
-   opacity:1;
-}
-
-.generalIcon.illustratorIcon{
-   opacity:1;
-}
-
-.illustratorSmokeCloud{
-   height:120vh;
-   position:absolute;
-   aspect-ratio: calc(998/870);
-   left:50%;
-   top:-2.5vh;
-   transform:translateX(-48%);
-   
-}
-
-
-
 
 .ballerinaImageContainer{
    /* border:2px solid blue; */
@@ -309,12 +288,75 @@
 }
 
 
+/* Photoshop Section */
+/* Illustrator Section */
 
-.mockupContainer::after {
+.stackDiv .illustratorP{
+   color:rgb(30, 30, 30);
+   text-align: left;
+   width:35vw;
+}
+
+.illustratorP span{
+   color:#FF9A00;
+}
+
+.illustratorH2{
+   background-image: radial-gradient(ellipse at center top, #FF9A00 20%, #330000 100% );
+   background-size: 300% 100%;
+   background-position:center ;
+   color:transparent;
+   background-clip: text;
+   margin:unset;
+   padding:unset;
+   margin:0px 0px 5vh 0px;
+   opacity:1;
+}
+
+.generalIcon.illustratorIcon{
+   opacity:1;
+}
+
+.illustratorSmokeCloud{
+   height:120vh;
+   position:absolute;
+   aspect-ratio: calc(998/870);
+   left:50%;
+   top:-2.5vh;
+   transform:translateX(-48%);
+   
+}
+
+/* Illustrator Section */
+/* Midjourney Section */
+
+.midjourneyIconContainer{
+   width:48px;
+   height: 48px;
+   
+}
+
+.midjourneyH2{
+   background-image: white;
+   margin:unset;
+   padding:unset;
+   margin:0px 0px 5vh 0px;
+   opacity:1;
+}
+
+.queenOfHeartsDiv{
+   position:absolute;
+   top:35vh;
+   height:65vh;
+   aspect-ratio: 1;
+   
+}
+
+.queenOfHeartsDiv::after {
    content: "";
    position: absolute;
    width: 100%;
-   height: 50vh;
+   height: 65vh;
    z-index: 99;
    background: radial-gradient(ellipse at top, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 65%);
    background-size: 300% 100%; 
@@ -322,6 +364,55 @@
    box-sizing: border-box;  
    background-position: center;
 }
+
+.stackDiv .generalP.midjourneyP{
+   width:60vw;
+   color:rgb(163, 163, 163);
+}
+
+.stackDiv .generalP.midjourneyP span{
+   color:white;
+}
+
+.stackDiv .generalP.midjourneySubP{
+   position:absolute;
+   color:transparent;
+   background-image: radial-gradient(circle at center left, white 0%, rgb(58, 58, 58) 100%);
+   font-size:16px;
+   width:15vw;
+   text-align: left;
+   bottom:25vh;
+   left:15%;
+   background-clip: text;
+   
+   
+
+}
+/* Midjourney Section */
+/* React and Next JS Section */
+
+.iconsContainer{
+   display:flex;
+   gap:15px;
+   padding:0px 0px 0px 10px;
+   box-sizing: border-box;
+   
+   
+}
+
+
+/* React and Next JS Section */
+
+.generalIcon.reactIcon{
+   opacity:1;
+}
+
+.generalIcon.nextIcon{
+   opacity:1;
+}
+
+
+
 
 
 

@@ -16,6 +16,8 @@ import { TLSSocket } from "tls";
 import Image from "next/image";
 import useWindowSizeInfos from "@/app/hooks/useWindowSize";
 import IllustratorDiv from "./IllustratorDiv";
+import MidjourneyDiv from "./MidjourneyDiv";
+import ReactAndNextDiv from "./ReactAndNextDiv";
 
 
 
@@ -122,15 +124,15 @@ const Stack = () => {
             tl.to(spanElements, {
                onStart: () => { console.log('animation fired'); },
                delay:1,
-               stagger: 0.07,
+               stagger: 0.05,
                top:0,
                duration: 0.4,
-               ease:'power3.out'
+               ease:'expo.out'
             }).to(spanElements,{
                opacity: 1,
-               duration: 1.5,
+               duration: 1.2,
                ease:'power1.out',
-               stagger: 0.07,
+               stagger: 0.05,
             },'<');
          }
       }
@@ -160,6 +162,8 @@ const Stack = () => {
          <FigmaDiv/>  
          <PhotoshopDiv/>
          <IllustratorDiv/>  
+         <MidjourneyDiv/>
+         <ReactAndNextDiv/>
 
          <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>
             <ProgressBar percentageScrolled={percentageScrolled}/>
