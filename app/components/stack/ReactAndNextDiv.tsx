@@ -4,6 +4,7 @@ import FigmaIcon from '../hero/icons/FigmaIcon'
 import IllustratorIcon from '../hero/icons/IllustratorIcon'
 import NextIcon from '../hero/icons/NextIcon'
 import ReactIcon from '../hero/icons/ReactIcon'
+import FakeTerminal from './smallerComponents/FakeTerminal'
 import styles from './stack.module.css'
 
 const ReactAndNextDiv = () => {
@@ -29,17 +30,7 @@ const ReactAndNextDiv = () => {
             These are the two frameworks I worked the most. This porfolio is built using Next JS
          </p>
 
-         
-
-         <div className={styles.queenOfHeartsDiv}>
-            
-            <Image
-               src='/queenOfHearts.png'
-               alt='the queen of hearts'
-               fill
-               quality={100}
-            />
-         </div>
+            <FakeTerminal/>
       </div>
    )
 }

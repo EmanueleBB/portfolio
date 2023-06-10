@@ -1,0 +1,51 @@
+.mainContainer{
+   width:40vw;
+   height:8vw;
+   background-color:#2C2C2C;
+   border-radius: 15px;
+   
+   position:relative;
+   overflow: hidden;
+
+}
+
+.navbar{
+   background-color:#151515;
+   width:100%;
+   height:20%;
+   display:flex;
+   align-items: center;
+   position:relative;
+   top:0px;
+   gap:6px;
+   padding-left:1.5%;
+}
+
+.circle{
+   width:12px;
+   height:12px;
+   border-radius:50%;
+   background-color: antiquewhite;
+}
+
+.circle:nth-of-type(1){
+   background-color: #0089D7;
+}
+
+.circle:nth-of-type(2){
+   background-color: #C1C1C1;
+}
+
+.circle:nth-of-type(3){
+   background-color: #5BFFE2;
+}
+
+.terminalText{
+   
+   position:relative;
+   top:15%;
+   width:100%;
+   box-sizing: border-box;
+   padding-left: 10%;
+  
+}
