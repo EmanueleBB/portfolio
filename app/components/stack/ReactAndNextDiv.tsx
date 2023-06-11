@@ -29,7 +29,7 @@ const ReactAndNextDiv = () => {
          <p className={`${styles.generalP} ${styles.midjourneyP}`} ref={pRef}>
             These are the two frameworks I worked the most. This porfolio is built using Next JS
          </p>
-
+            
             <FakeTerminal/>
       </div>
    )

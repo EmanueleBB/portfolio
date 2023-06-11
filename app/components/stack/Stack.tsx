@@ -37,7 +37,7 @@ const Stack = () => {
    const { stackIsOnScreen, paragraphIsAnimated, toggleStackIsOnScreen } = useStackStore();
    
    const [percentageScrolled,setPercentageScrolled] = useState(0);
-   
+    
 
    const divideInSpans = (text: string) => {
       const words = text.split(' ');
