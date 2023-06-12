@@ -18,6 +18,8 @@ import useWindowSizeInfos from "@/app/hooks/useWindowSize";
 import IllustratorDiv from "./IllustratorDiv";
 import MidjourneyDiv from "./MidjourneyDiv";
 import ReactAndNextDiv from "./ReactAndNextDiv";
+import BackEndDiv from "./BackEndDiv";
+import SomeMoreThings from "./SomeMoreThings";
 
 
 
@@ -164,6 +166,8 @@ const Stack = () => {
          <IllustratorDiv/>  
          <MidjourneyDiv/>
          <ReactAndNextDiv/>
+         <BackEndDiv/>
+         <SomeMoreThings/>
 
          <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>
             <ProgressBar percentageScrolled={percentageScrolled}/>

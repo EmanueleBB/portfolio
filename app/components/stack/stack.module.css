@@ -86,14 +86,13 @@
 .stackDiv{
    width:75vw;
    flex-shrink:0;
-   
    display:flex;
    flex-direction:column;
    align-items: center;
    box-sizing: border-box;
    position: relative;
    padding:8vh 0px;
-    /* border:2px solid salmon;  */
+   border:2px solid salmon;
 }
 
 
@@ -410,9 +409,43 @@
 .generalIcon.nextIcon{
    opacity:1;
 }
+/* React and Next JS Section */
+/* ///////////////////////////// */
 
 
 
+
+
+/* ///////////////////// */
+/* Languages */
+
+/* Languages */
+/* ///////////////////// */
+
+
+
+
+
+
+/* ///////////////////// */
+/* Back end */
+
+
+/* Back end */
+/* ///////////////////// */
+
+
+
+
+/* ///////////////////// */
+/* Some more things */
+
+.stackDiv.someMoreThingsDiv{
+   min-width: 300vw;
+}
+
+/* Some more things */
+/* ///////////////////// */
 
 
 

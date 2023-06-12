@@ -50,7 +50,7 @@ const FakeTerminal = () => {
             <div className={styles.circle} onClick={()=>popupAction(secondButtonRef)} ref={secondButtonRef}>
             </div>
             <div className={styles.circle} onClick={()=>popupAction(thirdButtonRef)} ref={thirdButtonRef}>
-            </div>s
+            </div>
             
          </div>
 

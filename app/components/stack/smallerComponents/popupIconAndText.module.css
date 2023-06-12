@@ -1,0 +1,7 @@
+.generalContainer{
+   display:flex;
+   
+   border:2px solid red;
+   height:60vh;
+   width:20vw;
+}
