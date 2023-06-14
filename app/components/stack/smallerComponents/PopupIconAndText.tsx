@@ -16,6 +16,8 @@ interface PopupIconAndTextProps{
    barPosition:Positions;
    label:JSX.Element;
    direction:Directions;
+   primaryColor:string;
+
 
 }
 
@@ -26,6 +28,8 @@ const PopupIconAndText:React.FC<PopupIconAndTextProps> = ({
    barPosition,
    label,
    direction,
+   primaryColor,
+
 }) => {
 
    return (
@@ -39,15 +43,22 @@ const PopupIconAndText:React.FC<PopupIconAndTextProps> = ({
          }
       >
          {icon}
-         <h3>
+
+
+         <h3 style={{color:`${primaryColor}`}}>
             {title}
          </h3>
-         {label}
-         <div className={styles.popupBar}>
 
+
+         <div className={`${styles.barAndTextContainer} ${barPosition===Positions.right ? styles.rightPopup : ''}`}>
+            
+            {label}
+            <div className={styles.popupBar}></div>
+            
          </div>
+         
       </div>
    )
 }
 
-export default PopupIconAndText
+export default PopupIconAndText;

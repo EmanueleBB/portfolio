@@ -1,7 +1,204 @@
+.stackDiv{
+   width:75vw;
+   flex-shrink:0;
+   display:flex;
+   align-items: center;
+   box-sizing: border-box;
+   position: relative;
+   padding:8vh 0px;
+}
+
+
+
+.stackDiv .generalIcon{
+   /* border:2px solid white; */
+   margin:unset;
+   flex-shrink: 0;
+   height: 48px;
+   width: 48px;
+   opacity: 1;
+   left:0px;
+}
+
+
+
+
+
 .generalContainer{
    display:flex;
-   
-   border:2px solid red;
-   height:60vh;
-   width:20vw;
+   /* border:2px solid red; */
+   width:auto;
+   position:relative;
+   min-height: 190px;
+   margin:0px 10vw;
+}
+
+
+/* Direction */
+
+
+.generalContainer.bottomToTop{
+   flex-direction: column-reverse;
+   justify-content: flex-start;
+}
+.generalContainer.topToBottom{
+   flex-direction: column;
+}
+
+.generalContainer.topToBottom
+/* Left-right-alignment */
+
+
+.generalContainer.leftAlign{
+   align-items: left;
+}
+
+.generalContainer.rightAlign{
+   align-items: right;
+   text-align: right;
+}
+
+div.rightAlign .barAndTextContainer {
+   align-items:baseline;
+   border: 2px solid red;
+}
+
+.leftAlign .barAndTextContainer{
+   flex-direction: row-reverse;
+   justify-content: left;
+}
+
+.rightAlign .barAndTextContainer{
+   flex-direction: row;
+   justify-content: right;
+}
+
+
+.barAndTextContainer{
+   display:flex;
+   height:100%;
+   border:4px solid grey; 
+   position:relative;
+}
+
+
+.popupBar{
+   height:100%;
+   width:3px;
+   border-radius:3px;
+   box-sizing: border-box;
+   background-color: white;
+}
+
+
+.text {
+   flex-wrap: wrap;
+   top:0px;
+   width:100%;
+   height:100%;
+}
+
+
+
+p.text .textSpan{
+   font-weight:600;
+}
+
+.title{
+   font-weight:700;
+}
+
+
+
+
+
+
+
+
+.generalContainer:nth-of-type(1){
+   height:20vh;
+}
+.generalContainer:nth-of-type(2){
+   height:20vh;
+}
+
+
+
+
+
+.text.expressText{
+   color:rgba(255, 246, 225,0.5);;
+}
+
+.title.expressTitle{
+   color:#FFF6E1;
+}
+
+
+.textSpan.expressTextSpan{
+   color:#FFF6E1;
+}
+
+.text.reduxText{
+   color:white;
+}
+
+.title.reduxTitle{
+   color:#764ABC;
+}
+
+
+.textSpan.reduxTextSpan{
+   color:#764ABC;
+}
+
+
+
+
+
+
+/* Extra small devices (phones) */
+@media only screen and (max-width: 576px) {
+	
+}
+
+/* Small devices (tablets) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  
+}
+
+/* Medium devices (laptops, desktops) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  
+}
+
+/* Large devices (large laptops, desktops) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  
+}
+
+/* Extra large devices (larger laptops, desktops) */
+@media only screen and (min-width: 1201px) {
+
+   .rightAlign .text{
+      padding:0px 10px 0px 0px;
+   }
+
+   .rightAlign .generalIcon {
+      margin-left: auto; 
+   }
+
+   .leftAlign .text{
+      padding:0px 0px 0px 10px;
+   }
+
+   .text {
+      font-size:19px;
+      padding:0px 0px 0px 10px;
+   }
+
+   .title{
+      font-size:20px;
+      padding:12px 0px;
+   }
 }
