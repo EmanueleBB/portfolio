@@ -1,8 +1,9 @@
 import styles from '../heroSection.module.css'
+import { IconProps } from './FigmaIcon'
 
-const PostmanIcon = () => {
+const PostmanIcon:React.ForwardRefRenderFunction<SVGSVGElement,IconProps> = ({className},ref) => {
    return (
-      <svg className={styles.icon} width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className={`${styles.icon} ${className}`} width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
          <g clipPath="url(#clip0_304_165)">
             <path d="M53.5938 0H16.4062C7.34533 0 0 7.34533 0 16.4062V53.5938C0 62.6547 7.34533 70 16.4062 70H53.5938C62.6547 70 70 62.6547 70 53.5938V16.4062C70 7.34533 62.6547 0 53.5938 0Z" fill="#FF6C37"/>
             <path d="M46.2276 24.2299L32.408 38.0498L28.5107 34.1527C42.1014 20.5623 43.4443 21.7414 46.2276 24.2299Z" fill="#EEEEEE"/>

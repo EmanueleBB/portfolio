@@ -13,7 +13,6 @@
 }
 
 
-
 .stackDiv .generalIcon{
    /* border:2px solid white; */
    margin:unset;
@@ -23,9 +22,6 @@
    opacity: 1;
    left:0px;
 }
-
-
-
 
 
 .generalContainer{
@@ -220,6 +216,69 @@ p.text .textSpan{
    background-color: white;
 }
 
+.text.threeText{
+   color:rgb(166, 166, 166);
+}
+
+.title.threeTitle{
+   color:#ffffff;
+}
+
+
+.textSpan.threeTextSpan{
+   color:#ffffff;
+}
+
+/* Postman */
+
+.generalContainer:nth-of-type(5){
+   height:30vh;
+}
+
+.generalContainer:nth-of-type(5) .popupBar{
+   background-color: #FF6C37;
+}
+
+.text.postmanText{
+   color:rgb(255, 255, 255);
+}
+
+.title.postmanTitle{
+   color:#FF6C37;
+}
+
+
+.textSpan.postmanTextSpan{
+   color:#FF6C37;
+}
+
+
+/* Github */
+
+
+.generalContainer:nth-of-type(6){
+   height:30vh;
+}
+
+.generalContainer:nth-of-type(6) .popupBar{
+   background-color: #FF6C37;
+}
+
+.text.postmanText{
+   color:rgb(255, 255, 255);
+}
+
+.title.postmanTitle{
+   color:#FF6C37;
+}
+
+
+.textSpan.postmanTextSpan{
+   color:#FF6C37;
+}
+
+
+
 
 
 
@@ -253,9 +312,6 @@ p.text .textSpan{
    .rightAlign .generalIcon {
       margin-left: auto; 
    }
-
-   
-   
 
    .leftAlign .text{
       padding:0px 0px 0px 10px;

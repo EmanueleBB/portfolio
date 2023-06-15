@@ -1,7 +1,10 @@
+import Link from 'next/link'
 import ExpressIcon from '../hero/icons/ExpressIcon'
+import GithubIcon from '../hero/icons/GithubIcon'
 import GsapIcon from '../hero/icons/GsapIcon'
 import NodeIcon from '../hero/icons/NodeIcon'
 import PhotoshopIcon from '../hero/icons/PhotoshopIcon'
+import PostmanIcon from '../hero/icons/PostmanIcon'
 import ReduxIcon from '../hero/icons/ReduxIcon'
 import ThreeJsIcon from '../hero/icons/ThreeJsIcon'
 import PopupIconAndText, { Directions, Positions } from './smallerComponents/PopupIconAndText'
@@ -57,17 +60,39 @@ const SomeMoreThings = () => {
 
          <div className={`${styles.generalContainer} ${styles.bottomToTop} ${styles.rightAlign}`}>
             <ThreeJsIcon className={styles.generalIcon}/>
-            <h3 className={`${styles.title} ${styles.gsapTitle}`}>
+            <h3 className={`${styles.title} ${styles.threeTitle}`}>
                Three JS & React Three Fiber
             </h3>
 
             <div className={`${styles.barAndTextContainer}`}>
-               <p className={`${styles.text} ${styles.gsapText}`}>A <span className={`${styles.textSpan} ${styles.gsapTextSpan}`}>Javascript and React library</span> for creating <span className={`${styles.textSpan} ${styles.gsapTextSpan}`}>3D</span> objects and environments in a web page.</p>
+               <p className={`${styles.text} ${styles.threeText}`}>A <span className={`${styles.textSpan} ${styles.threeTextSpan}`}>Javascript and React library</span> for creating <span className={`${styles.textSpan} ${styles.threeTextSpan}`}>3D</span> objects and environments in a web page.</p>
                <div className={styles.popupBar}></div>             
             </div>    
          </div>
 
-         
+         <div className={`${styles.generalContainer} ${styles.topToBottom} ${styles.leftAlign}`}>
+            <PostmanIcon className={styles.generalIcon}/>
+            <h3 className={`${styles.title} ${styles.postmanTitle}`}>
+               Postman
+            </h3>
+            <div className={`${styles.barAndTextContainer}`}>
+               <p className={`${styles.text} ${styles.postmanText}`}>An API platform for <span className={`${styles.textSpan} ${styles.postmanTextSpan}`}>building</span> and <span className={`${styles.textSpan} ${styles.postmanTextSpan}`}>testing</span> APIs</p>
+               <div className={styles.popupBar}></div>             
+            </div>    
+         </div>
+
+         <div className={`${styles.generalContainer} ${styles.topToBottom} ${styles.leftAlign}`}>
+            <GithubIcon className={styles.generalIcon}/>
+            <h3 className={`${styles.title} ${styles.postmanTitle}`}>
+               Github
+            </h3>
+            <div className={`${styles.barAndTextContainer}`}>
+               <p className={`${styles.text} ${styles.postmanText}`}>An API platform for <span className={`${styles.textSpan} ${styles.postmanTextSpan}`}><a href='https://github.com/EmanueleBB' target='blank'>here</a></span></p>
+               <div className={styles.popupBar}></div>             
+            </div>    
+         </div>
+
+
 
       </div>
    )
