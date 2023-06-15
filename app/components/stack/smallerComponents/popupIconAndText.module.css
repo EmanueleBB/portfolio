@@ -1,11 +1,15 @@
 .stackDiv{
-   width:75vw;
+   
    flex-shrink:0;
    display:flex;
    align-items: center;
    box-sizing: border-box;
    position: relative;
    padding:8vh 0px;
+}
+
+.stackDiv.someMoreThingsDiv{
+   width:300vw;
 }
 
 
@@ -39,13 +43,17 @@
 
 .generalContainer.bottomToTop{
    flex-direction: column-reverse;
-   justify-content: flex-start;
+   
 }
 .generalContainer.topToBottom{
    flex-direction: column;
 }
 
-.generalContainer.topToBottom
+div.topToBottom .barAndTextContainer {
+   align-items:flex-end;
+}
+
+
 /* Left-right-alignment */
 
 
@@ -56,12 +64,10 @@
 .generalContainer.rightAlign{
    align-items: right;
    text-align: right;
+   
 }
 
-div.rightAlign .barAndTextContainer {
-   align-items:baseline;
-   border: 2px solid red;
-}
+
 
 .leftAlign .barAndTextContainer{
    flex-direction: row-reverse;
@@ -70,15 +76,26 @@ div.rightAlign .barAndTextContainer {
 
 .rightAlign .barAndTextContainer{
    flex-direction: row;
-   justify-content: right;
+   justify-content: flex-end;
+   margin-left:auto;
+   
+   
 }
+.rightAlign .generalIcon{
+   margin-left: auto;
+}
+
+
 
 
 .barAndTextContainer{
    display:flex;
    height:100%;
-   border:4px solid grey; 
+   /* border:3px solid grey;  */
    position:relative;
+   word-wrap: break-word;
+   width:300px;
+    
 }
 
 
@@ -87,15 +104,17 @@ div.rightAlign .barAndTextContainer {
    width:3px;
    border-radius:3px;
    box-sizing: border-box;
-   background-color: white;
+
 }
 
 
 .text {
+   white-space: normal;
    flex-wrap: wrap;
    top:0px;
    width:100%;
-   height:100%;
+   height:auto;
+   /* border:1px solid green; */
 }
 
 
@@ -115,16 +134,22 @@ p.text .textSpan{
 
 
 
+
+
+
+
+
+
+
+
+/* Handling of the colors and the dimensions*/
 .generalContainer:nth-of-type(1){
    height:20vh;
 }
-.generalContainer:nth-of-type(2){
-   height:20vh;
+
+.generalContainer:nth-of-type(1) .popupBar{
+   background-color: white;
 }
-
-
-
-
 
 .text.expressText{
    color:rgba(255, 246, 225,0.5);;
@@ -139,8 +164,18 @@ p.text .textSpan{
    color:#FFF6E1;
 }
 
+/* Redux */
+
+.generalContainer:nth-of-type(2){
+   height:30vh;
+}
+
+.generalContainer:nth-of-type(2) .popupBar{
+   background-color: #764ABC;
+}
+
 .text.reduxText{
-   color:white;
+   color:rgb(255, 255, 255);
 }
 
 .title.reduxTitle{
@@ -152,7 +187,38 @@ p.text .textSpan{
    color:#764ABC;
 }
 
+/* Gsap */
 
+.generalContainer:nth-of-type(3){
+   height:30vh;
+}
+
+.generalContainer:nth-of-type(3) .popupBar{
+   background-color: #8AC640;
+}
+
+.text.gsapText{
+   color:white;
+}
+
+.title.gsapTitle{
+   color:#8AC640;
+}
+
+
+.textSpan.gsapTextSpan{
+   color:#8AC640;
+}
+
+/* Three JS */
+
+.generalContainer:nth-of-type(4){
+   height:30vh;
+}
+
+.generalContainer:nth-of-type(4) .popupBar{
+   background-color: white;
+}
 
 
 
@@ -187,6 +253,9 @@ p.text .textSpan{
    .rightAlign .generalIcon {
       margin-left: auto; 
    }
+
+   
+   
 
    .leftAlign .text{
       padding:0px 0px 0px 10px;
