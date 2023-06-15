@@ -253,28 +253,56 @@ p.text .textSpan{
 }
 
 
-/* Github */
 
+/* Stripe */
+
+.stackDiv .generalIcon.stripeIcon{
+   width:unset;
+}
 
 .generalContainer:nth-of-type(6){
    height:30vh;
 }
 
 .generalContainer:nth-of-type(6) .popupBar{
-   background-color: #FF6C37;
+   background-color: #635BFF;
 }
 
-.text.postmanText{
+.text.githubText{
    color:rgb(255, 255, 255);
 }
 
-.title.postmanTitle{
-   color:#FF6C37;
+.title.githubTitle{
+   color:#635BFF;
 }
 
 
-.textSpan.postmanTextSpan{
-   color:#FF6C37;
+.textSpan.githubTextSpan{
+   color:#635BFF;
+}
+
+/* Github */
+
+
+.generalContainer:nth-of-type(7){
+   height:30vh;
+}
+
+.generalContainer:nth-of-type(7) .popupBar{
+   background-color: #CE2CFF;
+}
+
+.text.githubText{
+   color:rgb(255, 255, 255);
+}
+
+.title.githubTitle{
+   color:#CE2CFF;
+}
+
+
+.textSpan.githubTextSpan{
+   color:#CE2CFF;
 }
 
 

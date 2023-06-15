@@ -6,6 +6,7 @@ import NodeIcon from '../hero/icons/NodeIcon'
 import PhotoshopIcon from '../hero/icons/PhotoshopIcon'
 import PostmanIcon from '../hero/icons/PostmanIcon'
 import ReduxIcon from '../hero/icons/ReduxIcon'
+import StripeIcon from '../hero/icons/StripeIcon'
 import ThreeJsIcon from '../hero/icons/ThreeJsIcon'
 import PopupIconAndText, { Directions, Positions } from './smallerComponents/PopupIconAndText'
 import styles from './smallerComponents/popupIconAndText.module.css'
@@ -31,6 +32,8 @@ const SomeMoreThings = () => {
 
 
 
+
+
          <div className={`${styles.generalContainer} ${styles.topToBottom} ${styles.rightAlign}`}>
             <ReduxIcon className={styles.generalIcon}/>
             <h3 className={`${styles.title} ${styles.reduxTitle}`}>
@@ -40,9 +43,12 @@ const SomeMoreThings = () => {
             <div className={`${styles.barAndTextContainer}`}>
                <p className={`${styles.text} ${styles.reduxText}`}>The standard for <span className={`${styles.textSpan} ${styles.reduxTextSpan}`}>state management</span> in React. Even though I think in many cases <span className={`${styles.textSpan} ${styles.reduxTextSpan}`}>Zustand</span> is a much handier option</p>
                <div className={styles.popupBar}></div>             
-            </div>  
-                 
+            </div>        
          </div>    
+
+
+
+
 
 
          <div className={`${styles.generalContainer} ${styles.topToBottom} ${styles.leftAlign}`}>
@@ -58,6 +64,9 @@ const SomeMoreThings = () => {
          </div> 
 
 
+
+
+
          <div className={`${styles.generalContainer} ${styles.bottomToTop} ${styles.rightAlign}`}>
             <ThreeJsIcon className={styles.generalIcon}/>
             <h3 className={`${styles.title} ${styles.threeTitle}`}>
@@ -70,6 +79,10 @@ const SomeMoreThings = () => {
             </div>    
          </div>
 
+
+
+
+
          <div className={`${styles.generalContainer} ${styles.topToBottom} ${styles.leftAlign}`}>
             <PostmanIcon className={styles.generalIcon}/>
             <h3 className={`${styles.title} ${styles.postmanTitle}`}>
@@ -81,13 +94,31 @@ const SomeMoreThings = () => {
             </div>    
          </div>
 
-         <div className={`${styles.generalContainer} ${styles.topToBottom} ${styles.leftAlign}`}>
+
+
+
+
+         <div className={`${styles.generalContainer} ${styles.bottomToTop} ${styles.leftAlign}`}>
+            <StripeIcon className={`${styles.generalIcon} ${styles.stripeIcon}`}/>
+
+            <div className={`${styles.barAndTextContainer}`}>
+               <p className={`${styles.text} ${styles.stripeText}`}>Can you really say you know what a computer is if you don't have a stripe profile? <span className={`${styles.textSpan} ${styles.stripeTextSpan}`}><a className={styles.stripeLink} href='https://github.com/EmanueleBB' target='blank'>here</a></span> is mine</p>
+               <div className={styles.popupBar}></div>             
+            </div>    
+         </div>
+
+
+
+
+
+
+         <div className={`${styles.generalContainer} ${styles.bottomToTop} ${styles.leftAlign}`}>
             <GithubIcon className={styles.generalIcon}/>
-            <h3 className={`${styles.title} ${styles.postmanTitle}`}>
+            <h3 className={`${styles.title} ${styles.githubTitle}`}>
                Github
             </h3>
             <div className={`${styles.barAndTextContainer}`}>
-               <p className={`${styles.text} ${styles.postmanText}`}>An API platform for <span className={`${styles.textSpan} ${styles.postmanTextSpan}`}><a href='https://github.com/EmanueleBB' target='blank'>here</a></span></p>
+               <p className={`${styles.text} ${styles.githubText}`}>Can you really say you know what a computer is if you don't have a Github profile? <span className={`${styles.textSpan} ${styles.githubTextSpan}`}><a className={styles.githubLink} href='https://github.com/EmanueleBB' target='blank'>here</a></span> is mine</p>
                <div className={styles.popupBar}></div>             
             </div>    
          </div>
