@@ -12,7 +12,6 @@ import styles from './stack.module.css';
 import ProgressBar from "./ProgressBar";
 import FigmaDiv from "./FigmaDiv";
 import PhotoshopDiv from "./PhotoshopDiv";
-import { TLSSocket } from "tls";
 import Image from "next/image";
 import useWindowSizeInfos from "@/app/hooks/useWindowSize";
 import IllustratorDiv from "./IllustratorDiv";
@@ -30,9 +29,6 @@ const Stack = () => {
    const horizontalWrapperRef = useRef<HTMLDivElement>(null);
    const progressBarAndCloseDivRef = useRef<HTMLDivElement>(null);
    const paragraphRef=useRef<HTMLParagraphElement>(null);
-   const photoshopDivRef=useRef<HTMLDivElement>(null);
-   const spanRefs = useRef<(HTMLSpanElement | null)[]>([]);
-
    const {windowHeight,windowWidth,maxDimension,maxDimensionValue, minDimensionValue} = useWindowSizeInfos();
 
    const { toggleIsVisible } = useNavbarStore();
@@ -124,7 +120,6 @@ const Stack = () => {
          if (paragraphRef.current) {
             const spanElements = paragraphRef.current.querySelectorAll(`.${styles.word}`);
             tl.to(spanElements, {
-               onStart: () => { console.log('animation fired'); },
                delay:1,
                stagger: 0.05,
                top:0,

@@ -9,7 +9,7 @@
 }
 
 .stackDiv.someMoreThingsDiv{
-   width:300vw;
+   width:400vw;
 }
 
 
@@ -208,6 +208,19 @@ p.text .textSpan{
 
 /* Three JS */
 
+.generalIcon.threeJsIcon{
+   animation:rotateIcon 20s linear infinite;
+}
+
+@keyframes rotateIcon{
+   0% {
+      transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    100% {
+      transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    }
+}
+
 .generalContainer:nth-of-type(4){
    height:30vh;
 }
@@ -257,7 +270,7 @@ p.text .textSpan{
 /* Stripe */
 
 .stackDiv .generalIcon.stripeIcon{
-   width:unset;
+   width:69.38px;
 }
 
 .generalContainer:nth-of-type(6){
@@ -268,16 +281,16 @@ p.text .textSpan{
    background-color: #635BFF;
 }
 
-.text.githubText{
+.text.stripeText{
    color:rgb(255, 255, 255);
 }
 
-.title.githubTitle{
+.title.stripeTitle{
    color:#635BFF;
 }
 
 
-.textSpan.githubTextSpan{
+.textSpan.stripeTextSpan{
    color:#635BFF;
 }
 
@@ -304,6 +317,67 @@ p.text .textSpan{
 .textSpan.githubTextSpan{
    color:#CE2CFF;
 }
+
+.text.githubText .githubLink{
+   color:#CE2CFF;
+   text-decoration: none;
+}
+
+
+/* Vercel */
+
+
+.generalContainer:nth-of-type(8){
+   height:30vh;
+}
+
+.generalContainer:nth-of-type(8) .popupBar{
+   background-color: #8594C0;
+}
+
+.text.vercelText{
+   color:rgb(255, 255, 255);
+}
+
+.title.vercelTitle{
+   color:#8594C0;
+}
+
+
+.textSpan.vercelTextSpan{
+   color:#8594C0;
+}
+
+
+/* Seo */
+
+.generalContainer:nth-of-type(9){
+   height:30vh;
+}
+
+.generalContainer:nth-of-type(9) .popupBar{
+   background-color: #ffffff;
+}
+
+.text.seoText{
+   color:rgb(151, 151, 151);
+}
+
+.title.seoTitle{
+   color:#ffffff;
+}
+
+.text.seoText .seoLink{
+   text-decoration: none;
+   color:white;
+   font-weight: 600;
+}
+
+.textSpan.seoTextSpan{
+   color:#ffffff;
+}
+
+
 
 
 
