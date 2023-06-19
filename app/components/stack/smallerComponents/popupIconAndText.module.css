@@ -9,7 +9,7 @@
 }
 
 .stackDiv.someMoreThingsDiv{
-   width:400vw;
+   width:450vw;
 }
 
 
@@ -379,17 +379,38 @@ p.text .textSpan{
 
 /* Last DIV */
 
-svg.generalIcon.gear{
-   animation: rotateGear 2s infinite ease-in-out;
+svg.generalIcon.gear {
+   animation: rotateGear 1.5s infinite forwards;
    transform-origin: center center;
 }
 
-@keyframes rotateGear{
-   0%{
-      transform:rotate(0deg)
+div.lastDiv{
+   margin:0px 20vw;
+   
+   width:500px;
+   height: auto;
+   white-space: normal;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+}
+
+div.lastDiv .title:nth-of-type(1){
+   margin-bottom:48px;
+}
+
+.lastDivText{
+   font-weight: 600;
+   color:#808080;
+}
+
+@keyframes rotateGear {
+   0% {
+      transform: rotate(0deg);
    }
-   100%{
-      transform:rotate(360deg)
+   100% {
+      transform: rotate(45deg);
    }
 }
 

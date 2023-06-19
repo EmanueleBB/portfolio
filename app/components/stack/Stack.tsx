@@ -19,6 +19,7 @@ import MidjourneyDiv from "./MidjourneyDiv";
 import ReactAndNextDiv from "./ReactAndNextDiv";
 import BackEndDiv from "./BackEndDiv";
 import SomeMoreThings from "./SomeMoreThings";
+import LanguagesDiv from "./LanugagesDiv";
 
 
 
@@ -161,6 +162,7 @@ const Stack = () => {
          <IllustratorDiv/>  
          <MidjourneyDiv/>
          <ReactAndNextDiv/>
+         <LanguagesDiv/>
          <BackEndDiv/>
          <SomeMoreThings/>
 
