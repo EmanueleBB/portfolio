@@ -377,6 +377,21 @@ p.text .textSpan{
    color:#ffffff;
 }
 
+/* Last DIV */
+
+svg.generalIcon.gear{
+   animation: rotateGear 2s infinite ease-in-out;
+   transform-origin: center center;
+}
+
+@keyframes rotateGear{
+   0%{
+      transform:rotate(0deg)
+   }
+   100%{
+      transform:rotate(360deg)
+   }
+}
 
 
 
