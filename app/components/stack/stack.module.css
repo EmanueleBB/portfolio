@@ -98,12 +98,15 @@
 
 
 
-.stackDiv .generalIcon{
+.stackDiv svg.generalIcon{
    /* border:2px solid white; */
    margin:unset;
-   scale:0.6;
-   opacity: 0;
+   width:auto;
+   height:auto;
+   opacity: 0.5;
+   transform: scale(0.6);
 }
+
 
 .stackDiv .generalH2{
    position:relative;
@@ -418,6 +421,19 @@
 
 /* ///////////////////// */
 /* Languages */
+.languagesGrid {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-items: center;
+   gap:10vh;
+}
+
+.languagesGrid > * {
+   display: flex;
+   gap:20px;
+}
+ 
 
 /* Languages */
 /* ///////////////////// */

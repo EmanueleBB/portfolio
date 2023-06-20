@@ -1,8 +1,10 @@
+import { forwardRef } from 'react'
 import styles from '../heroSection.module.css'
+import { IconProps } from './FigmaIcon'
 
-const GraphQlIcon = () => {
+const GraphQlIcon:React.ForwardRefRenderFunction<SVGSVGElement,IconProps> = ({className},ref) => {
    return (
-      <svg className={styles.icon} width="63" height="70" viewBox="0 0 63 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className={`${styles.icon} ${className}`} ref={ref} width="63" height="70" viewBox="0 0 63 70" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M3.10181 51.8672L5.67151 53.3508L34.2991 3.76807L31.7294 2.28442L3.10181 51.8672Z" fill="#E535AB"/>
          <path d="M59.7679 47.9065H2.51318V50.8738H59.7679V47.9065Z" fill="#E535AB"/>
          <path d="M3.64659 49.5726L32.2846 66.1073L33.7683 63.5376L5.13024 47.0029L3.64659 49.5726ZM28.5246 6.47888L57.1626 23.0136L58.6463 20.4439L30.0082 3.90918L28.5246 6.47888Z" fill="#E535AB"/>
@@ -16,4 +18,4 @@ const GraphQlIcon = () => {
    )
 }
 
-export default GraphQlIcon
+export default forwardRef(GraphQlIcon);

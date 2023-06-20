@@ -17,7 +17,7 @@ import useWindowSizeInfos from "@/app/hooks/useWindowSize";
 import IllustratorDiv from "./IllustratorDiv";
 import MidjourneyDiv from "./MidjourneyDiv";
 import ReactAndNextDiv from "./ReactAndNextDiv";
-import BackEndDiv from "./BackEndDiv";
+
 import SomeMoreThings from "./SomeMoreThings";
 import LanguagesDiv from "./LanugagesDiv";
 
@@ -163,7 +163,7 @@ const Stack = () => {
          <MidjourneyDiv/>
          <ReactAndNextDiv/>
          <LanguagesDiv/>
-         <BackEndDiv/>
+         
          <SomeMoreThings/>
 
          <div className={styles.progressBarAndCloseDiv} ref={progressBarAndCloseDivRef}>
