@@ -25,11 +25,8 @@ const FigmaDiv = () => {
       };
 
       const handleAnimation = (entries: IntersectionObserverEntry[]) => {
-
          entries.forEach((entry) => {
          // Logica per l'animazione
-
-
          if (entry.isIntersecting) {
 
             const tl=gsap.timeline();

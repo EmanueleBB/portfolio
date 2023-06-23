@@ -14,12 +14,107 @@ import PopupIconAndText, { Directions, Positions } from './smallerComponents/Pop
 import styles from './smallerComponents/popupIconAndText.module.css'
 import {FaFolder} from 'react-icons/fa'
 import { IconContext } from 'react-icons'
+import { useEffect, useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 const SomeMoreThings = () => {
+
+   const observerOptions = {
+      root:null,
+      rootMargin:'-100px',
+      treshold:1,
+      
+      
+   }
+
+
+   useLayoutEffect(() => {
+
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach((entry) => {
+
+         const tl=gsap.timeline();
+
+         if (entry.isIntersecting && entry.target.classList.contains(styles.bottomToTop)) {
+            tl.from(entry.target,{
+               opacity:0,
+               duration:0.4,
+               ease:'power1.out'
+            }).from(entry.target.querySelector(`.${styles.generalIcon}`),{
+               opacity:0,
+               duration:0.4,
+               top:20,
+               ease:'power1.out'
+            }).from(entry.target.querySelector('h3'),{
+               opacity:0,
+               duration:0.4,
+               top:20,
+               ease:'power1.out'
+            }).from(entry.target.querySelector(`.${styles.popupBar}`),{
+               scaleY:0,
+               opacity:0,
+               duration:0.5,
+               ease:'power1.out'
+            }).from(entry.target.querySelector(`.${styles.text}`),{
+               top:25,
+               opacity:0,
+               duration:0.5,
+               ease:'power1.out',
+               onComplete:()=>observer.unobserve(entry.target)
+            })
+         } else if(entry.isIntersecting && entry.target.classList.contains(styles.topToBottom)){
+            tl.from(entry.target,{
+               opacity:0,
+               duration:0.4,
+               ease:'power1.out'
+            }).from(entry.target.querySelector(`.${styles.generalIcon}`),{
+               opacity:0,
+               duration:0.4,
+               top:-20,
+               ease:'power1.out'
+            }).from(entry.target.querySelector('h3'),{
+               opacity:0,
+               duration:0.4,
+               top:-20,
+               ease:'power1.out'
+            }).from(entry.target.querySelector(`.${styles.popupBar}`),{
+               scaleY:0,
+               
+               opacity:0,
+               duration:0.5,
+               ease:'power1.out'
+            }).from(entry.target.querySelector(`.${styles.text}`),{
+               top:-25,
+               opacity:0,
+               duration:0.5,
+               ease:'power1.out',
+               onComplete:()=>observer.unobserve(entry.target)
+            })
+
+
+         }
+         });
+      }, observerOptions);
+
+      // Osserva tutti gli elementi con classe "generalContainer"
+      const elements = document.querySelectorAll(`.${styles.generalContainer}`);
+      elements.forEach((element) => {
+         observer.observe(element);
+      });
+
+      // Cleanup dell'observer quando il componente viene smontato
+      return () => observer.disconnect();
+   }, []);
+
+   
+
+
    return (
       <div className={`${styles.stackDiv} ${styles.someMoreThingsDiv}`}>
 
-
+         <h2 className={styles.mainBackgroundHeading}>
+            
+         </h2> 
 
          <div className={`${styles.generalContainer} ${styles.bottomToTop} ${styles.leftAlign}`}>
             <ExpressIcon className={styles.generalIcon}/>
@@ -158,7 +253,7 @@ const SomeMoreThings = () => {
             </p>
           
             <p className={`${styles.lastDivText} ${styles.text}`}>
-               Coming soon:
+               Currently working on:
             </p>
             <p className={`${styles.title} ${styles.seoTitle}`}>SQL</p>
 

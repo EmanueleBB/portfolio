@@ -10,7 +10,7 @@ const IllustratorDiv = () => {
    const illustratorDivRef = useRef<HTMLDivElement>(null);
    const h2Ref=useRef<HTMLHeadingElement>(null);
    const pRef=useRef<HTMLParagraphElement>(null);
-   const imageDivRef=useRef<HTMLDivElement>(null);
+
    const illustratorIconRef=useRef<SVGSVGElement>(null);
    
 

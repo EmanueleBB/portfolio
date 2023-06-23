@@ -147,12 +147,12 @@ const Stack = () => {
    return (  
       <HorizontalWrapper ref={horizontalWrapperRef}>
          <div className={`${styles.introDiv} ${styles.stackDiv}`}>
-            <Image
+            {/* <Image
                src='/leonardoNotes.png'
                alt='a cool image'
                fill
                style={{objectFit: "cover",opacity: "0.1"}}
-            />
+            /> */}
             <p className={`${styles.generalP} ${styles.introP}`} ref={paragraphRef}>
                {divideInSpans("This is a somewhat detailed list of all the tech I've gained experience with in the last years. It covers the main tools I use from the design stage to the front-end / back-end development.")}
             </p>

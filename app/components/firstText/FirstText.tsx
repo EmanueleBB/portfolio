@@ -194,10 +194,10 @@ const FirstText = () => {
          width:'103.9411vh',
          ease:'power2.Out'
       }).to(ipadRef.current,{
-         top:'-5vh',
+         top:'-5vw',
          duration:2,
-         height:'110vh',
-         width:'142.919vh',
+         height:'84.63333333vw',
+         width:'110vw',
          ease:'power2.in'
       })
       

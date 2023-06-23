@@ -39,8 +39,10 @@
 
 .generalContainer.bottomToTop{
    flex-direction: column-reverse;
-   
 }
+
+
+
 .generalContainer.topToBottom{
    flex-direction: column;
 }
@@ -91,20 +93,32 @@ div.topToBottom .barAndTextContainer {
    position:relative;
    word-wrap: break-word;
    width:300px;
-    
+   
 }
 
 
 .popupBar{
+   
    height:100%;
    width:3px;
    border-radius:3px;
    box-sizing: border-box;
+   position:relative;
+   transform-origin: bottom;
+   bottom:0px;
+   transform:scaleY(1); 
+}
 
+.topToBottom .popupBar{
+   transform-origin: top;
+   bottom:unset;
+   top:0px;
+   transform:scaleY(1); 
 }
 
 
 .text {
+   
    white-space: normal;
    flex-wrap: wrap;
    top:0px;
@@ -140,11 +154,13 @@ p.text .textSpan{
 
 /* Handling of the colors and the dimensions*/
 .generalContainer:nth-of-type(1){
+   /* border:2px solid red; */
    height:20vh;
 }
 
 .generalContainer:nth-of-type(1) .popupBar{
    background-color: white;
+   
 }
 
 .text.expressText{
