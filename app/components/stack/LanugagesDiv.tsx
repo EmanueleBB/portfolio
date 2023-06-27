@@ -84,7 +84,7 @@ const LanguagesDiv = () => {
    },[]) 
 
    return (
-      <div className={styles.stackDiv} ref={currentDivRef}>
+      <div className={`${styles.stackDiv} ${styles.languagesDiv}`} ref={currentDivRef}>
          <h2 className={styles.mainBackgroundHeading}>
             Languages & BackEnd tools
          </h2>

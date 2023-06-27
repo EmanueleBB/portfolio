@@ -45,7 +45,7 @@ const PhotoshopDiv = () => {
             },{
                y:0,
                opacity:1,
-               duration:0.5,
+               duration:1,
                ease:'power2.out'
             }).fromTo(h2Ref.current,{
                backgroundImage: 'radial-gradient(ellipse at center top, #31A8FF 20%, #001E36 70% )',
@@ -57,30 +57,32 @@ const PhotoshopDiv = () => {
                opacity:1,
                duration:1,
                ease:'power2.out'
-            })
+            },'<+=0.2')
             .fromTo(pRef.current,{
                y:-15,
                opacity:0,
             },{
                y:0,
                opacity:1,
-               duration:0.5,
-               ease:'power2.out'
-            },'<-=0.3')
+               duration:1.7,
+               ease:'power3.out'
+            },'<+=0.2')
             .to(maskDivRef.current,{
-               delay:0,
+               delay:3,
                opacity:1,
-               duration:0.6,
+               duration:0,
                ease:'linear',
-               
-            })
+            },'<')
+            .from(maskDivRef.current,{
+               height:0,
+               duration:3,
+               ease:'linear',
+            },'<')
 
             if (photoshopDivRef.current) {
                observer.unobserve(photoshopDivRef.current);
             }
             
-         } else {
-            console.log('Element is not visible');
          }
          });
       };
@@ -109,7 +111,7 @@ const PhotoshopDiv = () => {
          </h2>
 
          <p className={`${styles.generalP} ${styles.photoshopP}`} ref={pRef}>
-         The standard for <span>image retouch</span>. It's one of the main <span>tools</span> I use to transition from <span>vision</span> to <span>reality.</span>
+         The standard for <span>image retouch</span>. It's one of the main <span>tools</span> I use to transition from <span>vision</span> to <span >reality.</span>
          </p>
          <div className={styles.ballerinaImageContainer} ref={imageDivRef}>
             <Image

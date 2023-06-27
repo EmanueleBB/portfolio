@@ -31,37 +31,37 @@ const FigmaDiv = () => {
 
             const tl=gsap.timeline();
             tl.fromTo(figmaIconRef.current,{
-               x:15,
+               top:-25,
                opacity:0,
             },{
-               x:0,
+               top:0,
                opacity:1,
-               duration:0.5,
-               ease:'power2.out'
+               duration:0.3,
+               ease:'power1.out'
             }).fromTo(h2Ref.current,{
-               x:15,
+               top:-20,
                opacity:0,
             },{
-               x:0,
+               top:0,
                opacity:1,
-               duration:0.5,
-               ease:'power2.out'
+               duration:0.3,
+               ease:'power1.out'
             }).fromTo(pRef.current,{
-               x:15,
+               top:-15,
                opacity:0,
             },{
-               x:0,
+               top:0,
                opacity:1,
-               duration:0.5,
-               ease:'power2.out'
+               duration:0.4,
+               ease:'power1.out'
             }).fromTo(imageDivRef.current,{
-               x:15,
+               top:-10,
                opacity:0,
             },{
-               x:0,
+               top:0,
                opacity:1,
-               duration:0.5,
-               ease:'power2.out'
+               duration:0.4,
+               ease:'power1.out'
             })
 
             if (figmaDivRef.current) {

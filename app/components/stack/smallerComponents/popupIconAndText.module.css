@@ -9,7 +9,7 @@
 }
 
 .stackDiv.someMoreThingsDiv{
-   width:450vw;
+   width:440vw;
 }
 
 
@@ -31,6 +31,7 @@
    position:relative;
    min-height: 190px;
    margin:0px 10vw;
+   opacity:0;
 }
 
 

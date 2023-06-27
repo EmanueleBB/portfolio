@@ -78,8 +78,11 @@
 }
 
 
-
-/* General styling */
+/*////////////////////////////////////////////////
+//////////////////////////////////////////////////
+////////////// General styling ///////////////////
+//////////////////////////////////////////////////
+////////////////////////////////////////////////*/
 
 
 
@@ -109,7 +112,7 @@
 .stackDiv .generalH2{
    position:relative;
    font-weight: 600;
-   font-size:38px;
+   
    
    /* border:2px solid green; */
    
@@ -121,9 +124,8 @@
    position:absolute;
    top:0px;
    left:0px;
-   font-size:200px;
    white-space: normal;
-   color:rgb(255, 255, 255,0.03);
+   color:rgb(14, 14, 14);
    text-align: center;
 }
 
@@ -137,7 +139,7 @@
    white-space: normal;
    text-align:center;
    font-weight: 500;
-   font-size:24px;
+   
    margin:0px 0px 5vh 0px;
    
 }
@@ -149,26 +151,37 @@
 }
 
 
-/* General styling */
-/* Intro section */
+/*////////////////////////////////////////////////
+//////////////////////////////////////////////////
+////////////// General styling ///////////////////
+//////////////////////////////////////////////////
+////////////////////////////////////////////////*/
+
+
+
+/*////////////////////////////////////////////////
+Intro section 
+////////////////////////////////////////////////*/
 
 .introDiv{
    width:100vw;
    min-width: 100vw;
 }
 
-.word{
-   opacity:0;
-   position:relative;
-   top:15px;
+
+
+span.word {
    color:white;
+   opacity: 0;
+   position: relative;
+   top: 15px;
 }
 
 /* Intro section */
 /* Figma Section */
 
 .figmaH2{
-   color:#FFC5B5;
+   color:#FF814A;
    margin:unset;
    padding:unset;
    margin:0px 0px 5vh 0px;
@@ -176,7 +189,7 @@
 }
 
 .figmaP{
-   color: #FFC5B5;
+   color: #FFCFC2;
    opacity: 0;
 }
 
@@ -343,8 +356,9 @@
 /* Midjourney Section */
 
 .midjourneyIconContainer{
-   width:48px;
-   height: 48px;
+   width:42px;
+   height: 42px;
+   
    
 }
 
@@ -352,7 +366,7 @@
    background-image: white;
    margin:unset;
    padding:unset;
-   margin:0px 0px 5vh 0px;
+   margin:12px 0px 5vh 0px;
    opacity:1;
 }
 
@@ -361,6 +375,7 @@
    top:35vh;
    height:65vh;
    aspect-ratio: 1;
+   opacity:0;
    
 }
 
@@ -389,13 +404,14 @@
 .stackDiv .generalP.midjourneySubP{
    position:absolute;
    color:transparent;
-   background-image: radial-gradient(circle at bottom right, rgb(58, 58, 58) 0%, white 100%);
+   background-image: radial-gradient(circle at bottom right, rgb(101, 101, 101) 0%, white 100%);
    font-size:16px;
    width:15vw;
    text-align: left;
    bottom:25vh;
    left:15%;
    background-clip: text;
+   opacity:0;
    
    
 
@@ -431,6 +447,11 @@
 
 /* ///////////////////// */
 /* Languages */
+
+div .stackDiv.languagesDiv{
+   margin-right:25vw;
+}
+
 .languagesGrid {
    display: flex;
    flex-direction: column;
@@ -450,11 +471,12 @@
    /* border:2px solid red; */
    align-items: center;
    justify-content: space-between;
-   font-weight: 600;
+   font-weight: 700;
 }
 
 .languageTitle{
    opacity:0;
+   
 }
 
 
@@ -493,20 +515,56 @@
 
 
 
-@media only screen and (max-width:734px){
 
+
+
+
+
+/* Extra small devices (phones) */
+@media only screen and (max-width: 576px) {
+	
 }
 
-@media only screen and (min-width:735px) and (max-width:1068px){
+/* Small devices (tablets) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  
+}
+
+/* Medium devices (laptops, desktops) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
    .stackDiv{
       width:90vw;
    }
-
 }
 
-@media only screen and (min-width:1069px){
+/* Large devices (large laptops, desktops) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+   .closeIcon{
+      width:48px;
+      height:48px;
+   }
+
+   .stackDiv{
+      width:80vw;
+   }
+
    .stackDiv h2{
       font-size:42px;
+   }
+   .stackDiv p{
+      font-size:12px;
+   }
+
+   .stackDiv p.languageTitle{
+      font-size:16px;
+   }
+}
+
+/* Extra large devices (larger laptops, desktops) */
+@media only screen and (min-width: 1201px) {
+
+   .stackDiv h2{
+      font-size:36px;
    }
    .stackDiv p{
       font-size:20px;
@@ -515,15 +573,8 @@
    .stackDiv p.languageTitle{
       font-size:16px;
    }
-}
 
-@media only screen and (max-width:1068px){
-   .closeIcon{
-      width:48px;
-      height:48px;
-   }
-
-   .stackDiv{
-      width:80vw;
+   .stackDiv .mainBackgroundHeading{
+      font-size:200px;
    }
 }

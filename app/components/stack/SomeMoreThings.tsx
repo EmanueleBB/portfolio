@@ -36,57 +36,61 @@ const SomeMoreThings = () => {
          const tl=gsap.timeline();
 
          if (entry.isIntersecting && entry.target.classList.contains(styles.bottomToTop)) {
-            tl.from(entry.target,{
+            tl.fromTo(entry.target,{
                opacity:0,
-               duration:0.4,
-               ease:'power1.out'
+            },{
+               opacity:1,
+               duration:0,
+               ease:'power1.out',
             }).from(entry.target.querySelector(`.${styles.generalIcon}`),{
                opacity:0,
-               duration:0.4,
+               duration:0.3,
                top:20,
                ease:'power1.out'
             }).from(entry.target.querySelector('h3'),{
                opacity:0,
-               duration:0.4,
+               duration:0.3,
                top:20,
                ease:'power1.out'
             }).from(entry.target.querySelector(`.${styles.popupBar}`),{
                scaleY:0,
                opacity:0,
-               duration:0.5,
+               duration:0.4,
                ease:'power1.out'
             }).from(entry.target.querySelector(`.${styles.text}`),{
                top:25,
                opacity:0,
-               duration:0.5,
+               duration:0.4,
                ease:'power1.out',
                onComplete:()=>observer.unobserve(entry.target)
             })
          } else if(entry.isIntersecting && entry.target.classList.contains(styles.topToBottom)){
-            tl.from(entry.target,{
+            tl.fromTo(entry.target,{
                opacity:0,
-               duration:0.4,
-               ease:'power1.out'
+            },{
+               opacity:1,
+               duration:0,
+               ease:'power1.out',
             }).from(entry.target.querySelector(`.${styles.generalIcon}`),{
                opacity:0,
-               duration:0.4,
+               duration:0.3,
                top:-20,
                ease:'power1.out'
             }).from(entry.target.querySelector('h3'),{
                opacity:0,
-               duration:0.4,
+               duration:0.3,
                top:-20,
                ease:'power1.out'
             }).from(entry.target.querySelector(`.${styles.popupBar}`),{
                scaleY:0,
                
                opacity:0,
-               duration:0.5,
+               duration:0.4,
                ease:'power1.out'
             }).from(entry.target.querySelector(`.${styles.text}`),{
                top:-25,
                opacity:0,
-               duration:0.5,
+               duration:0.4,
                ease:'power1.out',
                onComplete:()=>observer.unobserve(entry.target)
             })

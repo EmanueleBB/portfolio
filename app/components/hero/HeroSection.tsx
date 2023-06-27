@@ -93,7 +93,7 @@ const HeroSection = () => {
 				Hi there, I'm Emanuele 👋🏻
 			</h2>
 			<h1 className={styles.heroH1} ref={h1Ref}>
-				Full-stack web and mobile<br/>developer
+				Web developer &<br/>UX/UI designer
 			</h1>
 			<p className={styles.heroParagraph} ref={pRef}> 
 				I'm a full stack web developer based in Italy.
