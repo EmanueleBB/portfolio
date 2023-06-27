@@ -183,6 +183,20 @@ const FirstText = () => {
          height:'84.63333333vw',
          width:'110vw',
          ease:'power2.in'
+      }).to(ipadRef.current,{
+         top:'10vh',
+         duration:3,
+         height:'80vh',
+         width:'103.9411vh',
+         ease:'power2.Out',
+         onComplete:()=>{
+            if (ipadRef.current !== null) {
+               ipadRef.current.style.position = 'sticky';
+               ipadRef.current.style.bottom='10vh';
+               
+             }
+
+         }
       })
       
    },[])
