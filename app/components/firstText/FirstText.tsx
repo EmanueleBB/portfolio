@@ -4,12 +4,13 @@
 import styles from './firstText.module.css'
 import { ScrollTrigger } from 'gsap/all';
 import gsap from 'gsap'
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 
 
 const FirstText = () => {
+
 
    const blackToPinkDiv = useRef<HTMLDivElement>(null)
    const paragraphRef = useRef<HTMLParagraphElement>(null)
@@ -24,23 +25,7 @@ const FirstText = () => {
    const ipadRef=useRef<HTMLDivElement>(null);
    const secondDesignDescriptionSpanRef=useRef<HTMLSpanElement>(null);
 
-   useEffect(() => {
-      const handleScroll = () => {
-         const element = blackToPinkDiv.current;
-         const scrollPosition = element?.getBoundingClientRect().top;
-         const windowHeight = window.innerHeight;
-         const scrollPercentage = scrollPosition && Math.abs(scrollPosition / windowHeight) * 100;
 
-         console.log(`Percentuale di scroll: ${scrollPercentage?.toFixed(2)}%`);
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-         window.removeEventListener('scroll', handleScroll);
-      };
-   }, []);
-   
    useLayoutEffect(()=>{
 
       gsap.registerPlugin(ScrollTrigger);
@@ -56,7 +41,7 @@ const FirstText = () => {
          id:'div',
       })
       
-
+//Spans animation
       tl.fromTo(firstSpan.current,{
          opacity:0,
          y:'25px'
@@ -66,7 +51,7 @@ const FirstText = () => {
          duration:1,
          onStart:()=>{
             firstSpan.current&&(firstSpan.current.style.display='inline-block');
-         }
+         },
       }).to(firstSpan.current,{
          opacity:0,
          y:'-25px',
@@ -138,6 +123,7 @@ const FirstText = () => {
          ease:'power4.out'
       })
       
+//Design heading animation
       .fromTo(designHeading.current,{
          opacity:1,
       },{
@@ -147,8 +133,10 @@ const FirstText = () => {
          top:'0',
          opacity:1,
          duration:3,
-         ease:'power2.out'
-         
+         ease:'power2.out',
+         onReverseComplete:()=>{designHeading.current&&(designHeading.current.style.display='none')}
+
+//Ipad appears
       }).to(ipadRef.current,{
          onStart:()=>{
             ipadRef.current&&(ipadRef.current.style.display='flex')
@@ -168,9 +156,7 @@ const FirstText = () => {
          opacity:0,
          duration:1,
          ease:'power2.in',
-         onComplete:()=>{
-            designDescriptionSpanRef.current&&(designDescriptionSpanRef.current.style.display='none')
-         },
+      
       }).to(secondDesignDescriptionSpanRef.current,{
          onStart:()=>{
             secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.display='inline-block')
@@ -184,9 +170,7 @@ const FirstText = () => {
          opacity:0,
          duration:1,
          ease:'power2.in',
-         onComplete:()=>{
-            secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.display='none');
-         },
+         
       }).to(ipadRef.current,{
          top:'10vh',
          duration:3,
@@ -242,6 +226,8 @@ const FirstText = () => {
                src='/mockups/spaceGreyIpad.png' 
                fill={true}
                alt='image of an ipad'
+               priority
+               
             />
          </div>
       </div>   

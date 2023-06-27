@@ -98,7 +98,7 @@ const HeroSection = () => {
 			<p className={styles.heroParagraph} ref={pRef}> 
 				I'm a full stack web developer based in Italy.
 				React and Next JS are the main frameworks I use for my projects.
-				I might have a slight obsession for Apple's designs 
+				I might have a slight obsession for Apple's way of designing things 😁 
 			</p>
 
 			<IconsHeroGroup ref={iconsHeroGroupRef}/>

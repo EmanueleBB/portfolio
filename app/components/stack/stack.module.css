@@ -209,7 +209,7 @@ span.word {
 .mockupContainer::after {
    content: "";
    position: absolute;
-   width: 100%;
+   width: 150%;
    height: 50vh;
    z-index: 99;
    background: radial-gradient(ellipse at top, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 65%);
@@ -217,6 +217,10 @@ span.word {
    /* border: 2px solid blue; */
    box-sizing: border-box;  
    background-position: center;
+   left:50%;
+   transform: translateX(-50%);
+
+   
 }
 
 
@@ -419,25 +423,62 @@ span.word {
 /* Midjourney Section */
 /* React and Next JS Section */
 
+.stackDiv svg.generalIcon.reactIcon{
+   opacity:0;
+   position:absolute;
+   width:350px;
+   height: 350px;
+   top:50vh;
+   left:5vw;
+   
+}
+
+
+
+
+.stackDiv svg.generalIcon.nextIcon{
+   opacity:0;
+   position:absolute;
+   width:350px;
+   top:50vh;
+   right:5vw;
+   
+}
+
+.reactAndNextJsH2{
+   
+   background-image: white;
+   margin:unset;
+   padding:unset;
+   margin:12px 0px 5vh 0px;
+   opacity:1;
+   
+}
+
+.stackDiv .generalP.reactAndNextJsP{
+   width:50vw;
+   color:rgb(163, 163, 163);
+   margin-bottom:10vh;
+}
+
+
+
+
+
 .iconsContainer{
+   position:static;
    display:flex;
    gap:15px;
    padding:0px 0px 0px 10px;
    box-sizing: border-box;
-   
-   
 }
 
 
 /* React and Next JS Section */
 
-.generalIcon.reactIcon{
-   opacity:1;
-}
 
-.generalIcon.nextIcon{
-   opacity:1;
-}
+
+
 /* React and Next JS Section */
 /* ///////////////////////////// */
 
