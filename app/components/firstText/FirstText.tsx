@@ -136,14 +136,19 @@ const FirstText = () => {
          ease:'power2.out',
          onReverseComplete:()=>{designHeading.current&&(designHeading.current.style.display='none')}
 
-//Ipad appears
-      }).to(ipadRef.current,{
+//Ipad appears and we make the body color white
+      })
+      .to(document.body,{
+         backgroundColor:'white',
+         duration:0,
+      })
+      .to(ipadRef.current,{
          onStart:()=>{
             ipadRef.current&&(ipadRef.current.style.display='flex')
          },
          top:'70vh',
          duration:3
-      }).to(designDescriptionSpanRef.current,{
+      },'<').to(designDescriptionSpanRef.current,{
          onStart:()=>{
             designDescriptionSpanRef.current&&(designDescriptionSpanRef.current.style.display='inline-block')
          },
