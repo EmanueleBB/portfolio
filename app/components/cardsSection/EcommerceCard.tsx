@@ -1,4 +1,5 @@
 import React from 'react'
+import Button, { ButtonVariants } from '../Button'
 import styles from './cardSection.module.css'
 
 interface EcommerceCardProps{
@@ -34,16 +35,16 @@ const EcommerceCard:React.FC<EcommerceCardProps> = ({
             <p>
                {description}
             </p>
-            <span>
-               ${price}
-            </span>
+            <div className={styles.priceAndButtonContainer}>
+               <span>
+                  ${price}
+               </span>
+               <button className={styles.ecommerceCardButton}>
+                  Add to Cart
+               </button>
+            </div>
          </div>
-         
       </div>
-
-
-
-
    )
 }
 
