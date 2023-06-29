@@ -136,13 +136,8 @@ const FirstText = () => {
          ease:'power2.out',
          onReverseComplete:()=>{designHeading.current&&(designHeading.current.style.display='none')}
 
-//Ipad appears and we make the body color white
-      })
-      .to(document.body,{
-         backgroundColor:'white',
-         duration:0,
-      })
-      .to(ipadRef.current,{
+//Ipad appears
+      }).to(ipadRef.current,{
          onStart:()=>{
             ipadRef.current&&(ipadRef.current.style.display='flex')
          },

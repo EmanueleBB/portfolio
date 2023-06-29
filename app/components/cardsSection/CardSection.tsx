@@ -4,7 +4,7 @@
 
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react'
-import CardsCarousel from './cardsCarousel';
+import CardsCarousel from './CardsCarousel';
 import styles from './cardSection.module.css'
 
 const CardSection = () => {
@@ -81,20 +81,20 @@ const CardSection = () => {
             </p>
 
             <div className={styles.titlesContainer}>
-               <h3 ref={sushiH3Ref} onClick={()=>setIsActive(sushiH3Ref)}>
+               <h3 ref={sushiH3Ref} onClick={()=>setIsActive(sushiH3Ref)} id='sushi'>
                   A sushi restaurant
                </h3>
 
-               <h3 ref={travelAgencyH3Ref} onClick={()=>setIsActive(travelAgencyH3Ref)}>
+               <h3 ref={travelAgencyH3Ref} onClick={()=>setIsActive(travelAgencyH3Ref)} id='agency'>
                   A travel agency that offers unique experiences
                </h3>
 
-               <h3 ref={ecommerceH3Ref} onClick={()=>setIsActive(ecommerceH3Ref)}>
+               <h3 ref={ecommerceH3Ref} onClick={()=>setIsActive(ecommerceH3Ref)} id='ecommerce'>
                Dangerous items you want to get rid of via an e-commerce
                </h3>
                
             </div>
-            <CardsCarousel/>
+            <CardsCarousel active={isActive}/>
          </div>
       </div>
    )
