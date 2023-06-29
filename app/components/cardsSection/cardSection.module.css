@@ -1,3 +1,14 @@
+@property --gradient-angle{
+   syntax: "<angle>";
+   initial-value: 0deg;
+   inherits:false;
+}
+
+
+ 
+
+
+
 .cardSectionWrapper{
    width:100%;
    height:200vh;
@@ -63,15 +74,86 @@
 
 
 
-/* CAROUSEL SECTION */
+/* /////////////////////////////////////////
+///////////// CAROUSEL SECTION  ////////////
+///////////////////////////////////////// */
 
 .carouselWrapper{
    border:1px solid red;
    width:100%;
    height:40vh;
    margin-top:48px;
+   
 }
 
+
+/* ECOMMERCE */
+
+
+.ecommerceCard{
+   aspect-ratio: calc(360/500);
+   height:100%;
+   border-radius: 30px;
+   background: black;
+   display:flex;
+   flex-direction:column;
+   white-space:normal;
+   box-sizing: border-box;
+   position:relative;
+   z-index:1;
+   padding:3px;
+}
+
+.cardContent{
+   padding:20px;
+   height:100%;
+   width:100%;
+   position:relative;
+   z-index:100;
+   background-color: black;
+   border-radius:28px;
+   box-sizing: border-box;
+}
+
+.ecommerceCard:before,
+.ecommerceCard:after{
+   content:'';
+   position:absolute;
+   inset:0px;
+   
+   background-image:conic-gradient(from var(--gradient-angle), #68FFDB, #55C2FF,#55C2FF,#68FFDB);
+   border-radius: inherit;
+   animation: rotateGradient 4s linear infinite;
+   z-index:-1;
+}
+
+.ecommerceCard:after{
+   filter:blur(30px);
+   opacity:0.5;
+}
+
+@keyframes rotateGradient {
+   0% { --gradient-angle:0deg;}
+   100% { --gradient-angle:360deg;}
+}
+
+
+
+
+ 
+
+.ecommerceCard h2{
+   text-align: center;
+   width:100%;
+}
+.ecommerceCard h3{
+   text-align: center;
+   width:100%;
+}
+
+.ecommerceCard p{
+   width:100%;
+}
 
 
 
@@ -104,8 +186,11 @@
       font-weight: 500;
       
    }
-
-
-   
-   
 }
+
+
+
+
+ 
+
+

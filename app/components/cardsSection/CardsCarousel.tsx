@@ -18,10 +18,11 @@ const CardsCarousel:React.FC<CardsCarouselProps> = (
 
          setBodyContent(
             <EcommerceCard
-               className={styles.rareCard}
+               className={styles.legendaryCard}
                topLabel='Legendary weapon'
                imgSrc=''
                title='RAY GUN'
+               description='Great at killing dead beings that suddently decided to go for a run'
                stars={4.6}
                price={289.99}
 
