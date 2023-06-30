@@ -86,7 +86,7 @@
    margin-top:48px;
    display:flex;
    gap:10vw;
-   overflow: hidden;
+   overflow: show;
    
    
 }
@@ -95,6 +95,9 @@
 
 
 /* ECOMMERCE */
+
+
+
 
 
 .ecommerceCard{
@@ -110,10 +113,7 @@
    z-index:1;
    padding:3px;
    transition:transform 0.5s ease;
-}
-
-.ecommerceCard:hover{
-   transform: perspective(900px) translateY(-2%) rotateX(25deg) translateZ(0);
+   overflow: show;
 }
 
 .cardContent{
@@ -128,6 +128,147 @@
    display: flex;
    flex-direction:column;
 }
+
+.ecommerceCard h2{
+   text-align: center;
+   width:100%;
+   color:rgb(56, 56, 56);
+   margin-top:60%;
+   transition:all 0.5s ease;
+   
+}
+
+.ecommerceCard h3{
+   text-align: center;
+   width:100%;
+   color:transparent;
+   background-clip: text;
+   transition: opacity 0.5s ease;
+}
+
+.ecommerceCard.legendaryCard h3{
+   background-image: linear-gradient(to right,#68FFDB, #55C2FF );  
+}
+
+.ecommerceCard.rareCard h3{
+   background-image: linear-gradient(to right,#6B97FA, #87C5FF );  
+}
+
+
+
+.ecommerceCard img{
+   position:absolute;
+   top:15%;
+   width:100%;
+   padding:0px 5%;
+   box-sizing: border-box;
+   left:0px;
+   transition:all 0.6s ease;
+}
+
+
+.ecommerceCard p{
+   opacity:0;
+   width:100%;
+   color:rgb(87, 87, 87);
+   margin-top:12px;
+   position:absolute;
+   top:50%;
+   transition:all 0.5s ease;
+   left:0px;
+   padding:0px 20px;
+   box-sizing: border-box;
+
+}
+
+.ecommerceCard .ratingDiv{
+   display:flex;
+   width:100%;
+   gap:10px;
+   position:absolute;
+   bottom:18%;
+   transition:all 0.5s ease;
+}
+
+.ecommerceCard:hover .ratingDiv{
+   bottom:20%;
+
+}
+
+
+.ecommerceCard span{
+   font-weight:700;
+}
+
+
+.priceAndButtonContainer{
+   width:100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: auto;
+}
+
+.ecommerceCardButton{
+   width:auto;
+   background-color: black;
+   outline:unset;
+   border:unset;
+   color:#68FFDB;
+   position:relative;
+   border-radius: 20px;
+   padding:4px 8px;
+   font-weight: 700;
+}
+
+
+.ecommerceCardButton:hover{
+   cursor:pointer;
+   background-color:transparent;
+   color:rgb(35, 35, 38);
+}
+
+.ecommerceCardButton::before{
+   content:'';
+   position:absolute;
+   inset:-2px;
+   background-image:conic-gradient(from var(--gradient-angle), #68FFDB, #55C2FF,#55C2FF,#68FFDB);
+   border-radius: inherit;
+   animation: rotateGradient 10s linear infinite;
+   z-index:-1;
+}
+
+
+/* Ecommerce card effects  */
+
+
+
+.ecommerceCard:hover img{
+   transform: translateY(-70%);
+}
+
+.ecommerceCard:hover h2{
+   transform: translateY(-200%);
+   color:transparent;
+   background-clip: text; 
+   
+}
+
+.ecommerceCard.legendaryCard:hover h2{
+   background-image: linear-gradient(to right,#68FFDB, #55C2FF );
+}
+
+.ecommerceCard:hover h3{
+   opacity:0.3;
+}
+
+.ecommerceCard:hover p{
+   opacity:1;
+   top:45%;
+
+
+}
+
 
 .ecommerceCard:before,
 .ecommerceCard:after{
@@ -170,6 +311,20 @@
    opacity:1;
 }
 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
 @keyframes rotateGradient {
    0% { 
       --gradient-angle:0deg;
@@ -179,99 +334,6 @@
       --gradient-angle:360deg;
    }
 }
-
-
-.priceAndButtonContainer{
-   width:100%;
-   display: flex;
-   justify-content: space-between;
-   
-   align-items: center;
-   margin-top: auto;
-}
-
-.ecommerceCardButton{
-   width:auto;
-   background-color: black;
-   outline:unset;
-   border:unset;
-   color:#68FFDB;
-   position:relative;
-   border-radius: 20px;
-   padding:4px 8px;
-   font-weight: 700;
-}
-
-.ecommerceCardButton:hover{
-   cursor:pointer;
-   background-color:transparent;
-   color:black;
-   
-   
-}
-
-.ecommerceCardButton::before{
-   content:'';
-   position:absolute;
-   inset:-2px;
-   background-image:conic-gradient(from var(--gradient-angle), #68FFDB, #55C2FF,#55C2FF,#68FFDB);
-   border-radius: inherit;
-   animation: rotateGradient 10s linear infinite;
-   z-index:-1;
-}
-
- 
-
-.ecommerceCard h2{
-   text-align: center;
-   width:100%;
-   color:rgb(56, 56, 56);
-   margin-top:60%;
-}
-.ecommerceCard h3{
-   text-align: center;
-   width:100%;
-   color:transparent;
-   background-clip: text;
-}
-
-.ecommerceCard img{
-   position:absolute;
-   top:15%;
-   width:100%;
-   padding:0px 5%;
-   box-sizing: border-box;
-   
-   left:0px;
-   
-   
-}
-
-.ecommerceCard span{
-   font-weight:700;
-}
-
-.ecommerceCard.legendaryCard h3{
-   background-image: linear-gradient(to right,#68FFDB, #55C2FF );  
-}
-
-.ecommerceCard.rareCard h3{
-   background-image: linear-gradient(to right,#6B97FA, #87C5FF );  
-}
-
-
-
-.ecommerceCard p{
-   width:100%;
-   color:rgb(64, 64, 64);
-   margin-top:12px;
-}
-
-
-
-
-
-
 
 
 
