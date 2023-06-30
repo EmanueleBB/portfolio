@@ -84,8 +84,14 @@
    width:100%;
    height:40vh;
    margin-top:48px;
+   display:flex;
+   gap:10vw;
+   overflow: hidden;
+   
    
 }
+
+
 
 
 /* ECOMMERCE */
@@ -103,6 +109,11 @@
    position:relative;
    z-index:1;
    padding:3px;
+   transition:transform 0.5s ease;
+}
+
+.ecommerceCard:hover{
+   transform: perspective(900px) translateY(-2%) rotateX(25deg) translateZ(0);
 }
 
 .cardContent{
@@ -123,15 +134,40 @@
    content:'';
    position:absolute;
    inset:0px;
-   background-image:conic-gradient(from var(--gradient-angle), #68FFDB, #55C2FF,#55C2FF,#68FFDB);
    border-radius: inherit;
    animation: rotateGradient 4s linear infinite;
    z-index:-1;
 }
 
-.ecommerceCard:after{
+.ecommerceCard.legendaryCard:before,
+.ecommerceCard.legendaryCard:after{
+   background-image:conic-gradient(from var(--gradient-angle), #68FFDB, #55C2FF,#55C2FF,#68FFDB);
+}
+
+.ecommerceCard.rareCard:before,
+.ecommerceCard.rareCard:after{
+   background-image:conic-gradient(from var(--gradient-angle), #6B97FA, #87C5FF,#87C5FF,#6B97FA);
+}
+
+.ecommerceCard.mythicalCard:before,
+.ecommerceCard.mythicalCard:after{
+   background-image:conic-gradient(from var(--gradient-angle), #FFCF97, #98F9FF,#98F9FF,#FFCF97);
+}
+
+
+.ecommerceCard.legendaryCard:after{
    filter:blur(30px);
    opacity:0.5;
+}
+
+.ecommerceCard.rareCard:after{
+   filter:blur(30px);
+   opacity:0.3;
+}
+
+.ecommerceCard.mythicalCard:after{
+   filter:blur(30px);
+   opacity:1;
 }
 
 @keyframes rotateGradient {
@@ -190,11 +226,25 @@
    text-align: center;
    width:100%;
    color:rgb(56, 56, 56);
-   margin-top:45%;
+   margin-top:60%;
 }
 .ecommerceCard h3{
    text-align: center;
    width:100%;
+   color:transparent;
+   background-clip: text;
+}
+
+.ecommerceCard img{
+   position:absolute;
+   top:15%;
+   width:100%;
+   padding:0px 5%;
+   box-sizing: border-box;
+   
+   left:0px;
+   
+   
 }
 
 .ecommerceCard span{
@@ -202,10 +252,14 @@
 }
 
 .ecommerceCard.legendaryCard h3{
-   color:transparent;
-   background-image: linear-gradient(to right,#68FFDB, #55C2FF );
-   background-clip: text;
+   background-image: linear-gradient(to right,#68FFDB, #55C2FF );  
 }
+
+.ecommerceCard.rareCard h3{
+   background-image: linear-gradient(to right,#6B97FA, #87C5FF );  
+}
+
+
 
 .ecommerceCard p{
    width:100%;

@@ -32,9 +32,10 @@ const EcommerceCard:React.FC<EcommerceCardProps> = ({
             <h2>
                {title}
             </h2>
-            <p>
+            <img src={imgSrc} alt="ciao" />
+            {/* <p>
                {description}
-            </p>
+            </p> */}
             <div className={styles.priceAndButtonContainer}>
                <span>
                   ${price}
