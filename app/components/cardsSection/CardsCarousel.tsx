@@ -3,18 +3,19 @@ import styles from './cardSection.module.css'
 import EcommerceCard from './EcommerceCard';
 
 interface CardsCarouselProps {
-   active:RefObject<HTMLHeadingElement>;
+   activeSection:RefObject<HTMLHeadingElement>;
 }
 
 const CardsCarousel:React.FC<CardsCarouselProps> = (
-   {active}
+   {activeSection}
    ) => {
 
-
    const [bodyContent, setBodyContent] = useState<JSX.Element | null>(null);
+   const [cardIsActive,setCardIsActive] = useState(false);
 
    useEffect(() => {
-      if (active.current?.id === 'ecommerce') {
+
+      if (activeSection.current?.id === 'ecommerce') {
 
          setBodyContent(
             <>
@@ -33,7 +34,7 @@ const CardsCarousel:React.FC<CardsCarouselProps> = (
                   imgSrc='/blueShell.png'
                   title='BLUE SHELL'
                   description='If someone you despise is annoyingly good at karting, make sure to buy some of these ;)'
-                  stars={3.8}
+                  stars={2.4}
                   price={89.99}
                />
                <EcommerceCard
@@ -41,7 +42,7 @@ const CardsCarousel:React.FC<CardsCarouselProps> = (
                   topLabel='Mythical weapon'
                   imgSrc='/mestolo.png'
                   title='MESTOLO'
-                  description='Does it really need a caption? Weapon of mass destruction. Handle carefully.
+                  description='Weapon of mass destruction. Handle carefully.
                   PS: if you don’t know why this is here, let’s just say that you are a lucky person.'
                   stars={4.6}
                   price={899.99}
@@ -51,7 +52,7 @@ const CardsCarousel:React.FC<CardsCarouselProps> = (
       } else {
          setBodyContent(null);
       }
-   }, [active]);
+   }, [activeSection]);
 
    
 

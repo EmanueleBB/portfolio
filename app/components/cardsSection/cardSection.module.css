@@ -5,10 +5,6 @@
 }
 
 
- 
-
-
-
 .cardSectionWrapper{
    width:100%;
    height:200vh;
@@ -81,13 +77,15 @@
 
 .carouselWrapper{
    border:1px solid red;
-   width:100%;
+   width:100vw;
    height:40vh;
    margin-top:48px;
    display:flex;
    gap:10vw;
    overflow: show;
-   
+   box-sizing: border-box;
+   padding-left: 40vw;
+
    
 }
 
@@ -95,8 +93,6 @@
 
 
 /* ECOMMERCE */
-
-
 
 
 
@@ -155,6 +151,9 @@
    background-image: linear-gradient(to right,#6B97FA, #87C5FF );  
 }
 
+.ecommerceCard.mythicalCard h3{
+   background-image: linear-gradient(to right,#FFCF97, #98F9FF );  
+}
 
 
 .ecommerceCard img{
@@ -200,9 +199,7 @@
    color:white
 }
 
-.ecommerceCard:hover .ratingDiv{
-   bottom:20%;
-}
+
 
 .ecommerceCard span{
    font-weight:700;
@@ -266,6 +263,15 @@
 .ecommerceCard.legendaryCard:hover h2{
    background-image: linear-gradient(to right,#68FFDB, #55C2FF );
 }
+
+.ecommerceCard.rareCard:hover h2{
+   background-image: linear-gradient(to right,#6B97FA, #87C5FF );
+}
+
+.ecommerceCard.mythicalCard:hover h2{
+   background-image: linear-gradient(to right,#FFCF97, #98F9FF );
+}
+
 
 .ecommerceCard:hover h3{
    opacity:0.3;

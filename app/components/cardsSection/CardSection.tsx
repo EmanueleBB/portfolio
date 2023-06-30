@@ -94,7 +94,16 @@ const CardSection = () => {
                </h3>
                
             </div>
-            <CardsCarousel active={isActive}/>
+            
+         </div>
+         <CardsCarousel activeSection={isActive}/>
+         <div className={styles.leftAndRightButtonsDiv}>
+            <button>
+               left
+            </button>
+            <button>
+               right
+            </button>
          </div>
       </div>
    )
