@@ -30,7 +30,7 @@ const CardsCarousel:React.FC<CardsCarouselProps> = (
                <EcommerceCard
                   className={styles.rareCard}
                   topLabel='Rare item'
-                  imgSrc=''
+                  imgSrc='/blueShell.png'
                   title='BLUE SHELL'
                   description='If someone you despise is annoyingly good at karting, make sure to buy some of these ;)'
                   stars={3.8}
@@ -39,7 +39,7 @@ const CardsCarousel:React.FC<CardsCarouselProps> = (
                <EcommerceCard
                   className={styles.mythicalCard}
                   topLabel='Mythical weapon'
-                  imgSrc=''
+                  imgSrc='/mestolo.png'
                   title='MESTOLO'
                   description='Does it really need a caption? Weapon of mass destruction. Handle carefully.
                   PS: if you don’t know why this is here, let’s just say that you are a lucky person.'

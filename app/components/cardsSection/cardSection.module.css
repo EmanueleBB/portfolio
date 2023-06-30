@@ -133,8 +133,9 @@
    text-align: center;
    width:100%;
    color:rgb(56, 56, 56);
-   margin-top:60%;
+   margin-top:65%;
    transition:all 0.5s ease;
+   
    
 }
 
@@ -159,11 +160,13 @@
 .ecommerceCard img{
    position:absolute;
    top:15%;
-   width:100%;
+   left:50%;
+   transform:translateX(-50%);
+   height:38.7%;
    padding:0px 5%;
    box-sizing: border-box;
-   left:0px;
    transition:all 0.6s ease;
+   
 }
 
 
@@ -250,7 +253,7 @@
 
 
 .ecommerceCard:hover img{
-   transform: translateY(-70%);
+   transform: translateY(-70%) translateX(-50%);
 }
 
 .ecommerceCard:hover h2{
@@ -374,7 +377,7 @@
    }
 
    .ecommerceCard h2{
-      font-size:36px;
+      font-size:34px;
       font-weight: 800;
    }
 
