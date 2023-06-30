@@ -170,7 +170,7 @@
 .ecommerceCard p{
    opacity:0;
    width:100%;
-   color:rgb(87, 87, 87);
+   color:rgb(117, 117, 117);
    margin-top:12px;
    position:absolute;
    top:50%;
@@ -188,13 +188,18 @@
    position:absolute;
    bottom:18%;
    transition:all 0.5s ease;
+   font-weight:600;
+   cursor:pointer;
+}
+
+.ecommerceCard .ratingDiv span{
+   font-size:14px;
+   color:white
 }
 
 .ecommerceCard:hover .ratingDiv{
    bottom:20%;
-
 }
-
 
 .ecommerceCard span{
    font-weight:700;
@@ -219,6 +224,7 @@
    border-radius: 20px;
    padding:4px 8px;
    font-weight: 700;
+   transition:all 0.25s ease;
 }
 
 

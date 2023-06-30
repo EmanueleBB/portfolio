@@ -58,7 +58,9 @@ const EcommerceCard:React.FC<EcommerceCardProps> = ({
 
             <div className={styles.ratingDiv}>
                {ratingContent}
-               {stars}
+               <span>
+                  {stars}
+               </span>
             </div>
 
             <div className={styles.priceAndButtonContainer}>
