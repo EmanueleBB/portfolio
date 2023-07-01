@@ -87,6 +87,24 @@
    padding-left: 40vw;
 }
 
+.cardsContainer{
+   display:flex;
+   gap:var(--carousel-gap);
+   position:relative;
+  
+}
+
+.inactiveCard{
+   opacity:0.3;
+   transform:scale(0.9);
+   filter:blur(10px);
+   
+}
+
+
+
+
+
 /* ECOMMERCE */
 
 
@@ -103,7 +121,7 @@
    position:relative;
    z-index:1;
    padding:3px;
-   transition:transform 0.5s ease;
+   transition:transform 0.5s ease,opacity 0.5s ease;
    overflow: show;
 }
 

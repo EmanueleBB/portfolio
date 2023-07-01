@@ -68,15 +68,18 @@ const CardSection = () => {
             duration:0,
          })
       }
-
    },[activeSection])
 
 
    const handleRightButtonClick = () => {
-      if(carouselRef.current && activeCard < carouselRef.current?.childNodes.length-1){
-         setActiveCard(activeCard+1); 
-      }else if(carouselRef.current && activeCard === carouselRef.current?.childNodes.length-1) return; 
-   }
+      
+      if (carouselRef.current && activeCard < (carouselRef.current as any).querySelector(`.${styles.cardsContainer}`)?.childNodes.length - 1) {
+        setActiveCard(activeCard + 1);
+      } else if (carouselRef.current && activeCard === carouselRef.current.childNodes.length - 1) {
+        return;
+      }
+    };
+    
 
    const handleLeftButtonClick = () => {
       if(activeCard > 0){
