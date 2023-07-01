@@ -1,17 +1,27 @@
-import React, { RefObject, useEffect, useState } from 'react'
+import React, { forwardRef, RefObject, useEffect, useState } from 'react'
 import styles from './cardSection.module.css'
 import EcommerceCard from './EcommerceCard';
 
 interface CardsCarouselProps {
    activeSection:RefObject<HTMLHeadingElement>;
+   activeCard:number;
+   
 }
 
-const CardsCarousel:React.FC<CardsCarouselProps> = (
-   {activeSection}
+const CardsCarousel:React.ForwardRefRenderFunction<HTMLDivElement,CardsCarouselProps> = (
+      {
+         activeSection,
+         activeCard,
+      }
+      ,ref
    ) => {
 
    const [bodyContent, setBodyContent] = useState<JSX.Element | null>(null);
-   const [cardIsActive,setCardIsActive] = useState(false);
+   
+   useEffect(()=>{
+      console.log({activeSection});
+      console.log({activeCard});
+   },[activeSection,activeCard])
 
    useEffect(() => {
 
@@ -47,6 +57,17 @@ const CardsCarousel:React.FC<CardsCarouselProps> = (
                   stars={4.6}
                   price={899.99}
                />
+               <EcommerceCard
+                  className={styles.mythicalCard}
+                  topLabel='Mythical weapon'
+                  imgSrc='/mestolo.png'
+                  title='MESTOLO'
+                  description='Weapon of mass destruction. Handle carefully.
+                  PS: if you don’t know why this is here, let’s just say that you are a lucky person.'
+                  stars={4.6}
+                  price={899.99}
+               />
+               
             </>
          );
       } else {
@@ -57,10 +78,10 @@ const CardsCarousel:React.FC<CardsCarouselProps> = (
    
 
    return (
-      <div className={styles.carouselWrapper}>
+      <div className={styles.carouselWrapper} ref={ref}>
          {bodyContent}
       </div>
    )
 }
 
-export default CardsCarousel
+export default forwardRef(CardsCarousel)

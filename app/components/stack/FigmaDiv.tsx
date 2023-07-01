@@ -67,11 +67,7 @@ const FigmaDiv = () => {
             if (figmaDivRef.current) {
                observer.unobserve(figmaDivRef.current);
             }
-            
-         } else {
-            console.log('Element is not visible');
-         }
-         });
+         }});
       };
 
       const observer = new IntersectionObserver(handleAnimation, options);

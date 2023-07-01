@@ -59,10 +59,7 @@ const ReactAndNextDiv = () => {
                observer.unobserve(reactAndNextJsDivRef.current);
             }
             
-         } else {
-            console.log('Element is not visible');
-         }
-         });
+         }});
       };
 
       const observer = new IntersectionObserver(handleAnimation, options);

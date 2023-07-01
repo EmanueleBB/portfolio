@@ -26,6 +26,8 @@ const EcommerceCard:React.FC<EcommerceCardProps> = ({
 
    const [ratingContent, setRatingContent] = useState<JSX.Element | null>(null);
 
+   
+
    useEffect(()=>{
       if(stars <5 && stars>=4.3){
          setRatingContent(

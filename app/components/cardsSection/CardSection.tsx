@@ -3,23 +3,28 @@
 
 
 import gsap from 'gsap';
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import CardsCarousel from './CardsCarousel';
 import styles from './cardSection.module.css'
 
 const CardSection = () => {
 
-
-
    const sushiH3Ref=useRef<HTMLHeadingElement>(null);
    const travelAgencyH3Ref=useRef<HTMLHeadingElement>(null);
    const ecommerceH3Ref=useRef<HTMLHeadingElement>(null);
    const mainParagraphRef=useRef<HTMLParagraphElement>(null);
+   const carouselRef=useRef<HTMLDivElement>(null);
 
-   const [isActive,setIsActive] = useState(sushiH3Ref);
+   const [activeSection,setActiveSection] = useState(sushiH3Ref);
+   const [activeCard,setActiveCard] = useState(0);
+   
 
+
+   
+   //Handles the change of colors of the sections;
    useEffect(()=>{
-      if(isActive === sushiH3Ref){
+
+      if(activeSection === sushiH3Ref){
          const tl = gsap.timeline();
          tl.to(sushiH3Ref.current,{
             color:'#FFC895',
@@ -34,7 +39,7 @@ const CardSection = () => {
          })
       }
 
-      if(isActive === travelAgencyH3Ref){
+      if(activeSection === travelAgencyH3Ref){
          const tl = gsap.timeline();
          tl.to(travelAgencyH3Ref.current,{
             color:'#C6CDE0',
@@ -49,7 +54,7 @@ const CardSection = () => {
          })
       }
 
-      if(isActive === ecommerceH3Ref){
+      if(activeSection === ecommerceH3Ref){
          const tl = gsap.timeline();
          tl.to(ecommerceH3Ref.current,{
             color:'#67FADE',
@@ -63,7 +68,21 @@ const CardSection = () => {
             duration:0,
          })
       }
-   },[isActive])
+
+   },[activeSection])
+
+
+   const handleRightButtonClick = () => {
+      if(carouselRef.current && activeCard < carouselRef.current?.childNodes.length-1){
+         setActiveCard(activeCard+1); 
+      }else if(carouselRef.current && activeCard === carouselRef.current?.childNodes.length-1) return; 
+   }
+
+   const handleLeftButtonClick = () => {
+      if(activeCard > 0){
+         setActiveCard(activeCard-1); 
+      } 
+   }
 
    return (
       <div className={styles.cardSectionWrapper}>
@@ -81,27 +100,25 @@ const CardSection = () => {
             </p>
 
             <div className={styles.titlesContainer}>
-               <h3 ref={sushiH3Ref} onClick={()=>setIsActive(sushiH3Ref)} id='sushi'>
+               <h3 ref={sushiH3Ref} onClick={()=>setActiveSection(sushiH3Ref)} id='sushi'>
                   A sushi restaurant
                </h3>
 
-               <h3 ref={travelAgencyH3Ref} onClick={()=>setIsActive(travelAgencyH3Ref)} id='agency'>
+               <h3 ref={travelAgencyH3Ref} onClick={()=>setActiveSection(travelAgencyH3Ref)} id='agency'>
                   A travel agency that offers unique experiences
                </h3>
 
-               <h3 ref={ecommerceH3Ref} onClick={()=>setIsActive(ecommerceH3Ref)} id='ecommerce'>
+               <h3 ref={ecommerceH3Ref} onClick={()=>setActiveSection(ecommerceH3Ref)} id='ecommerce'>
                Dangerous items you want to get rid of via an e-commerce
                </h3>
-               
             </div>
-            
          </div>
-         <CardsCarousel activeSection={isActive}/>
+         <CardsCarousel activeSection={activeSection} activeCard={activeCard} ref={carouselRef}/>
          <div className={styles.leftAndRightButtonsDiv}>
-            <button>
+            <button onClick={handleLeftButtonClick}>
                left
             </button>
-            <button>
+            <button onClick={handleRightButtonClick}>
                right
             </button>
          </div>
