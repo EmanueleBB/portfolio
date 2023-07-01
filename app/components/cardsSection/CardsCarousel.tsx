@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import React, { forwardRef, RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import styles from './cardSection.module.css'
 import EcommerceCard from './EcommerceCard';
+import TravelAgencyCard from './TravelAgencyCard';
 
 interface CardsCarouselProps {
    activeSection: RefObject<HTMLHeadingElement>;
@@ -73,18 +74,49 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
                      description={card.description}
                      stars={card.stars}
                      price={card.price}
-                     style={{
-                        transform: `translateX(${(index - activeCard) * 100}%)`,
-                     }}
+                     
                   />
                ))}
             </>
          );
 
+      } else if(activeSection.current?.id === 'agency') {
 
+         const cards = [
 
-      } else {
-         setBodyContent(null);
+            {
+               className:'',
+               topLabel: 'Legendary weapon',
+               imgSrc: '/rayGun.png',
+               title: 'RAY GUN',
+               description: 'Great at killing dead beings that suddently decided to go for a run',
+               stars: 4.6,
+               price: 289.99
+            },
+            {
+               className:'',
+               topLabel: 'Rare item',
+               imgSrc: '/blueShell.png',
+               title: 'BLUE SHELL',
+               description: 'If someone you despise is annoyingly good at karting, make sure to buy some of these ;)',
+               stars: 2.4,
+               price: 89.99
+            },
+         ]
+         
+         setBodyContent(
+         <>
+            {cards.map((card, index) => (
+               <TravelAgencyCard
+                  key={index}
+                  className={`${index === activeCard ? styles.activeCard : styles.inactiveCard}`}
+                  imgSrc={card.imgSrc}
+                  title={card.title}
+                  description={card.description}
+                  price={card.price}
+               />
+            ))}
+         </>);
       }
    }, [activeSection, activeCard]);
 

@@ -10,7 +10,7 @@ interface EcommerceCardProps{
    description:string,
    stars:number,
    price:number,   
-   style:{},
+   style?:{},
 }
 
 //className is for the specific different color of every levels of rarity of a weapon.

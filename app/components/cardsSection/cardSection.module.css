@@ -91,6 +91,7 @@
    display:flex;
    gap:var(--carousel-gap);
    position:relative;
+   align-items: center;
   
 }
 
@@ -101,8 +102,21 @@
    
 }
 
+/* TRAVEL AGENCY */
 
+.travelAgencyCard{
+   height:30vh;
+   width:30vh;
+   background-color: white;
+   border-radius: 28px;
+   display:flex;
+   flex-direction: column;
+}
 
+.travelAgencyCard:hover{
+   cursor:pointer;
+   color:black
+}
 
 
 /* ECOMMERCE */
