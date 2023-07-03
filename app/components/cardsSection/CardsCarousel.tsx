@@ -4,6 +4,7 @@ import styles from './cardSection.module.css'
 import EcommerceCard from './EcommerceCard';
 import TravelAgencyCard from './TravelAgencyCard';
 
+
 interface CardsCarouselProps {
    activeSection: RefObject<HTMLHeadingElement>;
    activeCard: number;

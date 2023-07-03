@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import CardsCarousel from './CardsCarousel';
 import styles from './cardSection.module.css'
+import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
 
 const CardSection = () => {
 
@@ -122,11 +123,11 @@ const CardSection = () => {
          </div>
          <CardsCarousel activeSection={activeSection} activeCard={activeCard} ref={carouselRef}/>
          <div className={styles.leftAndRightButtonsDiv}>
-            <button onClick={handleLeftButtonClick}>
-               left
+            <button className={styles.cardsCarouselButton} onClick={handleLeftButtonClick}>
+               <BsChevronLeft  size={32}/>
             </button>
-            <button onClick={handleRightButtonClick}>
-               right
+            <button className={styles.cardsCarouselButton} onClick={handleRightButtonClick}>
+               <BsChevronRight  size={32}/>
             </button>
          </div>
       </div>

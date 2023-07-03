@@ -99,9 +99,35 @@
    opacity:0.3;
    transform:scale(0.9);
    filter:blur(10px);
-   
 }
 
+.leftAndRightButtonsDiv{
+   display:flex;
+   gap:20px;
+   margin-top:20px;
+}
+
+.cardsCarouselButton{
+   width:34px;
+   height:34px;
+   border-radius: 50%;
+   border:unset;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: transparent;
+   cursor:pointer;
+}
+
+
+.cardsCarouselButton > *{
+   fill:grey;
+}
+
+.cardsCarouselButton > *:hover{
+   fill:white;
+   
+}
 /* TRAVEL AGENCY */
 
 .travelAgencyCard{
