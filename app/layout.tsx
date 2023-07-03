@@ -7,6 +7,8 @@ import Stack from './components/stack/Stack'
 import FirstText from './components/firstText/FirstText'
 import MainContainer from './components/mainContainer/MainContainer'
 import CardSection from './components/cardsSection/CardSection'
+import CodeSection from './components/codeSection/CodeSection'
+import ContactsSection from './components/ContactsSection/ContactsSection'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -31,6 +33,8 @@ export default function RootLayout({
 					<FirstText/>
 					<CardSection/>
 				</MainContainer>
+				<CodeSection/>
+				<ContactsSection/>
 				{children}
 			</body>
 
