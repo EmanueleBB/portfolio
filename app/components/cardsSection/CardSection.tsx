@@ -24,6 +24,8 @@ const CardSection = () => {
    //Handles the change of colors of the sections;
    useEffect(()=>{
 
+      setActiveCard(0);
+
       if(activeSection === sushiH3Ref){
          const tl = gsap.timeline();
          tl.to(sushiH3Ref.current,{
@@ -68,6 +70,8 @@ const CardSection = () => {
             duration:0,
          })
       }
+
+      
    },[activeSection])
 
 

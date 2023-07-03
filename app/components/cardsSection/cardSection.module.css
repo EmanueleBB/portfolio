@@ -118,7 +118,7 @@
    justify-content:flex-end;
    padding:20px 20px;
    box-sizing: border-box;
-   
+   transition:opacity 0.5s ease,transform 0.5s ease;
 }
 
 .travelAgencyCard::before{

@@ -22,12 +22,15 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
    const [carouselPadding,setCarouselPadding]=useState(0);
    const [carouselGap,setCarouselGap]=useState(0);
    const [carouselTransform,setCarouselTransfrom]=useState(0);
+   
 
    useEffect(() => {
       console.log({ activeSection });
       console.log({ activeCard });
    }, [activeSection, activeCard])
 
+
+   //definitions of the various cards
    useEffect(() => {
 
       if (activeSection.current?.id === 'ecommerce') {
@@ -147,16 +150,31 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
 
 
    useLayoutEffect(()=>{
+      
+      let currentCardDisplayed;
 
-      const ecommerceCardElement = document.querySelector(`.${styles.ecommerceCard}`);
       const computedStyle = getComputedStyle(document.documentElement);
       const gapValue = parseFloat(computedStyle.getPropertyValue('--carousel-gap'));
-   
       setCarouselGap(gapValue);
 
-      if (ecommerceCardElement) {
-         const cardWidth = ecommerceCardElement.clientWidth;
+
+      if (activeSection.current && activeSection.current.id==='ecommerce'){
+
+         currentCardDisplayed = document.querySelector(`.${styles.ecommerceCard}`);
+
+      }else if(activeSection.current && activeSection.current.id==='agency'){
+         currentCardDisplayed = document.querySelector(`.${styles.travelAgencyCard}`);
+      }
+
+   
+      if (currentCardDisplayed) {
+
+         const cardWidth = currentCardDisplayed.clientWidth;
+         console.log({currentCardDisplayed})
+
+
          setCarouselPadding(window.innerWidth / 2 - cardWidth / 2);
+
          setCarouselTransfrom(cardWidth + carouselGap*0.01*window.innerWidth);
 
          gsap.to(cardsContainerRef.current,{
@@ -167,7 +185,7 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
          console.log(activeCard*carouselTransform);
       }
 
-   },[bodyContent,activeCard,carouselTransform])
+   },[bodyContent,activeCard,activeSection])
 
    return (
       <div className={styles.carouselWrapper}
