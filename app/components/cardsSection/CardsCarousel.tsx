@@ -86,36 +86,59 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
 
             {
                className:'',
-               topLabel: 'Legendary weapon',
-               imgSrc: '/rayGun.png',
-               title: 'RAY GUN',
+               location: 'Turkey, Europe',
+               imgSrc: '/cappadocia.jpg',
+               title: 'Cappadocia',
                description: 'Great at killing dead beings that suddently decided to go for a run',
-               stars: 4.6,
+               days: 5,
                price: 289.99
             },
             {
                className:'',
-               topLabel: 'Rare item',
-               imgSrc: '/blueShell.png',
-               title: 'BLUE SHELL',
+               location: 'Sweden, Europe',
+               imgSrc: '/lapland.jpg',
+               title: 'Lapland',
                description: 'If someone you despise is annoyingly good at karting, make sure to buy some of these ;)',
-               stars: 2.4,
+               days: 6,
                price: 89.99
             },
+            {
+               className:'',
+               location: 'Indiana, USA',
+               imgSrc: '/hawkins.jpg',
+               title: 'Hawkins',
+               description: 'If someone you despise is annoyingly good at karting, make sure to buy some of these ;)',
+               days: 7,
+               price: 89.99
+            },
+            {
+               className:'',
+               location: 'Indiana, USA',
+               imgSrc: '/namek.jpg',
+               title: 'Namek',
+               description: 'If someone you despise is annoyingly good at karting, make sure to buy some of these ;)',
+               days: 7,
+               price: 89.99
+            }
          ]
          
          setBodyContent(
          <>
-            {cards.map((card, index) => (
-               <TravelAgencyCard
-                  key={index}
-                  className={`${index === activeCard ? styles.activeCard : styles.inactiveCard}`}
-                  imgSrc={card.imgSrc}
-                  title={card.title}
-                  description={card.description}
-                  price={card.price}
-               />
-            ))}
+            {cards.map((card, index) => {
+               const { imgSrc, title, location, description, price, days } = card;
+               return(
+                  <TravelAgencyCard
+                     key={index}
+                     className={`${index === activeCard ? styles.activeCard : styles.inactiveCard}`}
+                     imgSrc={imgSrc}
+                     title={title}
+                     location={location}
+                     description={description}
+                     price={price}
+                     days={days}
+                  />
+               )
+            })}
          </>);
       }
    }, [activeSection, activeCard]);
