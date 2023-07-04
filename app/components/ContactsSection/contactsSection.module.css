@@ -1,11 +1,13 @@
 .mainContainer{
    width:100vw;
-   height:100vh;
+   height:auto;
    min-height:800px;
    background-color: white;
    display: flex;
    flex-direction: column;
    align-items: center;
+   padding:20vh 0px;
+   
 }
 
 .mainContainer h2{
@@ -21,77 +23,38 @@
 }
 
 
+
+
 .contactForm{
    display: flex;
    flex-direction: column;
    padding:48px;
-   border:1px solid black;
+   box-shadow: 0px 0px 28px 0px rgb(208, 208, 208);
    margin-top:42px;
    gap:12px;
    width:40vw;
+   border-radius:2rem;
 }
 
-.contactForm input{
+.contactForm .formGroup {
+   position: relative;
+   margin-bottom: 20px;
+   width:100%;
+   box-sizing: border-box;
+}
+
+
+.contactForm .formGroup input{
+   width:100%;
    border:unset;
    border-bottom:2px solid black;
    padding:12px;
    font-size: 18px;
+   box-sizing: border-box;
 }
 
-.contactForm input:active,
-.contactForm textarea:active,
-.contactForm input:focus,
-.contactForm textarea:focus{
-   border:unset;
-   border-bottom:2px solid black;
-   outline:none;
-   box-shadow:unset;
-}
-.contactForm button{
-   background-color:black;
-   color:white;
-   cursor:pointer;
-   border-radius: 30px;
-   position:relative;
-   z-index:1;
-   border:unset;
-   padding:20px;
-   overflow: hidden;
-   transition:color 0.2s ease;
 
-}
-
-.contactForm button:hover{
-   color:black;
-}
-
-.contactForm button::before{
-   content:'';
-   position:absolute;
-   left:0px;
-   top:0px;
-   width:0%;
-   height:100%;
-   border-radius: inherit;
-   background-image: linear-gradient(to right, #ff7c02,#ff0084);;
-   z-index:-1;
-   transition:width 0.2s ease,opacity 0.2s ease;
-   opacity:0;
-}
-
-.contactForm button:hover::before{
-   width:100%;
-   opacity:1
-}
-
-.formGroup {
-   position: relative;
-   margin-bottom: 20px;
-   width:100%;
-   
-}
-
-.formGroup label {
+.contactForm .formGroup label {
    position: absolute;
    top: 50%;
    left: 0;
@@ -104,7 +67,6 @@
    transform: translateY(-50%);
    color:#949494;
    font-weight:400;
-   
 }
 
 .formGroup input:focus + label,
@@ -113,3 +75,65 @@
    font-size: 12px;
    color: #777;
 }
+
+
+.contactForm input:active,
+.contactForm textarea:active,
+.contactForm input:focus,
+.contactForm textarea:focus{
+   border:unset;
+   border-bottom:2px solid black;
+   outline:none;
+   box-shadow:unset;
+}
+
+
+.contactForm button{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   align-items: center;
+   background-color:black;
+   width:auto;
+   color:white;
+   cursor:pointer;
+   border-radius: 30px;
+   position:relative;
+   z-index:1;
+   border:unset;
+   padding:12px 28px;
+   overflow: hidden;
+   transition:all 0.2s linear;
+   font-size:18px;
+   font-weight:600;
+   gap:20%;
+}
+
+.contactForm button svg{
+   transform: scale(1.1);
+   position:absolute;
+   opacity: 0;
+}
+
+
+
+
+/* .contactForm button::before{
+   content:'';
+   position:absolute;
+   left:0px;
+   top:0px;
+   width:0%;
+   height:100%;
+   border-radius: inherit;
+   background-image: linear-gradient(to right, #ff7c02,#ff0084);
+   z-index:-1;
+   transition:width 0.2s ease,opacity 0.2s ease;
+   
+} */
+
+.contactForm button:hover::before{
+   width:100%;
+   
+}
+
