@@ -51,11 +51,11 @@ const Navbar = () => {
    return (
       <div className={styles.navbar} ref={divRef}>
          <LogoIcon className={styles.logoIcon}/>
-         <a href="" className={styles.navLink}>My tech stack</a>
+         <a href='' className={styles.navLink}>My tech stack</a>
          <a href="" className={styles.navLink}>Design</a>
          <a href="" className={styles.navLink}>Code</a>
          <a href="" className={styles.navLink}>About me</a>
-         <a href="" className={styles.navLink}>resume</a>
+         <a href='/pdfs/resume.pdf' className={styles.navLink} target='_blank'>resume</a>
          <Button
             variant={ButtonVariants.pink}
             label='Contacts'

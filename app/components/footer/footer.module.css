@@ -1,7 +1,35 @@
 .footerContainer{
-   color:white;
+   color:rgb(115, 115, 115);
    width:100vw;
-   height:60vh;
-   min-height:800px;
-   background-color: #0F0F0F;
+   height:50vh;
+   background-image: url('/noise.png'),linear-gradient(black,black);
+   background-position: 0 0,0 0;
+   background-repeat: repeat;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-size:22px;
+   font-weight: 600;
+}
+
+.footerContainer div{
+   display: flex;
+   gap:48px;
+   margin-top:10vh;
+}
+.footerContainer span{
+   
+   position:absolute;
+   bottom:10vh;
+   
+}
+
+
+.footerContainer a{
+   color:white;
+}
+
+.footerNextIcon{
+   height:18px;
+   width:18px;
 }

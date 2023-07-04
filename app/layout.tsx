@@ -21,25 +21,14 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}:{
   children: React.ReactNode
 }) {
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<Stack/>
-				<Navbar/>
-				<MainContainer>
-					<HeroSection/>
-					<FirstText/>
-					<CardSection/>
-				</MainContainer>
-				<CodeSection/>
-				<ContactsSection/>
-				<Footer/>
 				{children}
 			</body>
-
 		</html>
 	)
 }
