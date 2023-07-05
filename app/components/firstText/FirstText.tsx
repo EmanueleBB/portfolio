@@ -121,22 +121,23 @@ const FirstText = () => {
          opacity:0,
          display:'none',
          duration:1,
-         ease:'power4.out'
+         ease:'power4.out',
+         onReverseComplete:()=>{designHeading.current&&(designHeading.current.style.display='none')}
       })
       
 //Design heading animation
       .fromTo(designHeading.current,{
-         opacity:1,
+         opacity:0,
       },{
          onStart:()=>{
             designHeading.current&&(designHeading.current.style.display='inline-block');
          },
-         top:'0',
+         y:'-30vh',
          opacity:1,
          duration:3,
          ease:'power2.out',
          
-         onReverseComplete:()=>{designHeading.current&&(designHeading.current.style.display='none')}
+         
 
 //Ipad appears
       }).to(designDesktopRef.current,{
@@ -146,21 +147,26 @@ const FirstText = () => {
          top:'70vh',
          duration:3
       },'<')
-      .to(designHeading.current,{
-         color:'white',
+      
+      .to(designDesktopRef.current,{
+         top:'45vh',
+         duration:3,
+         opacity:1,
+         ease:'power2.Out',
+         
       })
       .to(designDescriptionSpanRef.current,{
          onStart:()=>{
             designDescriptionSpanRef.current&&(designDescriptionSpanRef.current.style.display='inline-block')
          },
-         bottom:'40vh',
+         bottom:'65vh',
          opacity:1,
-         duration:1,
+         duration:2,
          ease:'power1.out',
       }).to(designDescriptionSpanRef.current,{
-         bottom:'44vh',
+         bottom:'70vh',
          opacity:0,
-         duration:1,
+         duration:2,
          ease:'power2.in',
          
       
@@ -168,30 +174,25 @@ const FirstText = () => {
          onStart:()=>{
             secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.display='inline-block')
          },
-         bottom:'40vh',
+         bottom:'65vh',
          opacity:1,
-         duration:1,
+         duration:2,
          ease:'power1.out'
       }).to(secondDesignDescriptionSpanRef.current,{
-         bottom:'44vh',
+         bottom:'70vh',
          opacity:0,
-         duration:1,
+         duration:2,
          ease:'power2.in',
-         
-      }).to(designDesktopRef.current,{
-         top:'50vh',
-         duration:3,
-         
-         ease:'power2.Out',
-         // onComplete:()=>{
-         //    if (designDesktopRef.current !== null) {
-         //       designDesktopRef.current.style.position = 'sticky';
-         //       designDesktopRef.current.style.bottom='10vh';
-               
-         //     }
 
-         // }
-      })
+      }).to(designDesktopRef.current,{
+         position:'sticky',
+         bottom:'10vh',
+         duration:0,
+      }).to(designHeading.current,{
+         position:'absolute',
+         bottom:'80',
+         duration:0,
+      },'<')
       
    },[])
 
@@ -220,14 +221,14 @@ const FirstText = () => {
             </span>
          </p>
             <span ref={designHeading} id={styles.design}>
-               DESIGN
+               The design process
             </span>
             <span className={styles.designDescriptionSpan} ref={designDescriptionSpanRef}>
                My design process usually starts with a sketch on an iPad. If I have an idea 
                I try to get it down as fast as possible.
             </span>
             <span className={styles.designDescriptionSpan} ref={secondDesignDescriptionSpanRef}>
-               Lalala usususususu
+            I use Figma for my prototypes, alongside with Photoshop, Illustrator, After Effects, Premiere Pro, After Effects, Midjourney for image and video editing
             </span>
          <div className={styles.desktopContainer} ref={designDesktopRef}>
             <Image
