@@ -144,12 +144,12 @@ const FirstText = () => {
          onStart:()=>{
             designDesktopRef.current&&(designDesktopRef.current.style.display='flex')
          },
-         top:'70vh',
+         top:'100vh',
          duration:3
       },'<')
       
       .to(designDesktopRef.current,{
-         top:'45vh',
+         top:'40vh',
          duration:3,
          opacity:1,
          ease:'power2.Out',
