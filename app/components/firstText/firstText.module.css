@@ -1,5 +1,5 @@
 .blackToPinkDiv{
-   background-image: radial-gradient(circle at top, black 44.77%, #2f1056 50.77%,rgb(240, 146, 255) 58.01%, white 64.20% );
+   background-image: radial-gradient(circle at top, black 44.77%, #2f1056 50.77%,rgb(169, 70, 184) 58.01%, #2f1056 64.20%,black 68.3% );
    /* background-image: radial-gradient(circle at top, black 80%,rgb(0, 0, 0) 100%); */
    height:1675vh;
    width:100vw;
@@ -42,7 +42,7 @@ span#design{
    text-align: center;
    font-weight: 700;
    font-family: 'Helvetica Neue';
-   font-size:400px;
+   font-size:80px;
    top:20vh;
    left:50vw;
    transform: translateX(-50%);
@@ -56,7 +56,7 @@ span#design{
 
 span.designDescriptionSpan{
    font-weight:600;
-   color:black;
+   color:white;
    width:40vw;
    position:fixed;
    opacity:0;
@@ -65,12 +65,13 @@ span.designDescriptionSpan{
    display: none;
 } 
 
-.ipadContainer{
+.desktopContainer{
    opacity:1;
-   width:70vw;
-   aspect-ratio: 3000/2309;
+   height:50vh;
+   aspect-ratio: calc(1380/835);
    position:fixed;
-   top:101vh;
+   top:70vh;
+   border:1px solid red;
    display:none;
    flex-shrink: 0;
 }

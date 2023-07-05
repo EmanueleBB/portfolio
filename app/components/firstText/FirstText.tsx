@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/all';
 import gsap from 'gsap'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { isWhiteSpaceLike } from 'typescript';
 
 
 
@@ -22,7 +23,7 @@ const FirstText = () => {
    const sixthSpan = useRef<HTMLSpanElement>(null);
    const designHeading = useRef<HTMLHeadElement>(null);
    const designDescriptionSpanRef=useRef<HTMLSpanElement>(null);
-   const ipadRef=useRef<HTMLDivElement>(null);
+   const designDesktopRef=useRef<HTMLDivElement>(null);
    const secondDesignDescriptionSpanRef=useRef<HTMLSpanElement>(null);
 
 
@@ -134,28 +135,34 @@ const FirstText = () => {
          opacity:1,
          duration:3,
          ease:'power2.out',
+         
          onReverseComplete:()=>{designHeading.current&&(designHeading.current.style.display='none')}
 
 //Ipad appears
-      }).to(ipadRef.current,{
+      }).to(designDesktopRef.current,{
          onStart:()=>{
-            ipadRef.current&&(ipadRef.current.style.display='flex')
+            designDesktopRef.current&&(designDesktopRef.current.style.display='flex')
          },
          top:'70vh',
          duration:3
-      },'<').to(designDescriptionSpanRef.current,{
+      },'<')
+      .to(designHeading.current,{
+         color:'white',
+      })
+      .to(designDescriptionSpanRef.current,{
          onStart:()=>{
             designDescriptionSpanRef.current&&(designDescriptionSpanRef.current.style.display='inline-block')
          },
          bottom:'40vh',
          opacity:1,
          duration:1,
-         ease:'power1.out'
+         ease:'power1.out',
       }).to(designDescriptionSpanRef.current,{
          bottom:'44vh',
          opacity:0,
          duration:1,
          ease:'power2.in',
+         
       
       }).to(secondDesignDescriptionSpanRef.current,{
          onStart:()=>{
@@ -171,32 +178,19 @@ const FirstText = () => {
          duration:1,
          ease:'power2.in',
          
-      }).to(ipadRef.current,{
-         top:'10vh',
+      }).to(designDesktopRef.current,{
+         top:'50vh',
          duration:3,
-         height:'80vh',
-         width:'103.9411vh',
-         ease:'power2.Out'
-      }).to(ipadRef.current,{
-         top:'-5vw',
-         duration:2,
-         height:'84.63333333vw',
-         width:'110vw',
-         ease:'power2.in'
-      }).to(ipadRef.current,{
-         top:'10vh',
-         duration:3,
-         height:'80vh',
-         width:'103.9411vh',
+         
          ease:'power2.Out',
-         onComplete:()=>{
-            if (ipadRef.current !== null) {
-               ipadRef.current.style.position = 'sticky';
-               ipadRef.current.style.bottom='10vh';
+         // onComplete:()=>{
+         //    if (designDesktopRef.current !== null) {
+         //       designDesktopRef.current.style.position = 'sticky';
+         //       designDesktopRef.current.style.bottom='10vh';
                
-             }
+         //     }
 
-         }
+         // }
       })
       
    },[])
@@ -235,9 +229,9 @@ const FirstText = () => {
             <span className={styles.designDescriptionSpan} ref={secondDesignDescriptionSpanRef}>
                Lalala usususususu
             </span>
-         <div className={styles.ipadContainer} ref={ipadRef}>
+         <div className={styles.desktopContainer} ref={designDesktopRef}>
             <Image
-               src='/mockups/spaceGreyIpad.png' 
+               src='/mockups/reactAndNextJs.png' 
                fill={true}
                alt='image of an ipad'
                priority

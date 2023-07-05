@@ -8,7 +8,7 @@ import FirstText from './components/firstText/FirstText'
 import MainContainer from './components/mainContainer/MainContainer'
 import CardSection from './components/cardsSection/CardSection'
 import CodeSection from './components/codeSection/CodeSection'
-import ContactsSection from './components/ContactsSection/ContactsSection'
+import ContactsSection from './components/contactsSection/ContactsSection'
 import Footer from './components/footer/Footer'
 
 
