@@ -11,6 +11,9 @@ const CodeSection = () => {
    const codeDesktopRef = useRef<HTMLDivElement>(null);
    const codeHeadingRef = useRef<HTMLHeadingElement>(null);
    const codeDivRef=useRef<HTMLDivElement>(null);
+   const codeDescriptionSpanRef=useRef<HTMLSpanElement>(null);
+   const secondCodeDescriptionSpanRef=useRef<HTMLSpanElement>(null);
+
    
    useLayoutEffect(() => {
 
@@ -33,16 +36,75 @@ const CodeSection = () => {
          duration:3,
          opacity:1,
          ease:'power1.Out',
-      }).to(codeDesktopRef.current,{
-         
-         duration:5,
+         onReverseComplete:()=>{
+            gsap.to(codeHeadingRef.current,{
+               display:'none'
+            })
+         },
+         onStart:()=>{
+            gsap.to(codeHeadingRef.current,{
+               display:'inline-block'
+            })
+         },
+      }).to(codeHeadingRef.current,{
+         top:'0vh',
+         duration:3,
          opacity:1,
-         ease:'power1.Out',
+         ease:'power2.Out',
+      },'<+=1.5')
+      .to(codeDescriptionSpanRef.current,{
+         onStart:()=>{
+            gsap.to(codeDescriptionSpanRef.current,{
+               display:'inline-block'
+            })
+         },
+         top:'27.5vh',
+         opacity:1,
+         duration:2,
+         ease:'power1.out',
+         onReverseComplete:()=>{
+            gsap.to(codeDescriptionSpanRef.current,{
+               display:'none'
+            });
+            gsap.to(secondCodeDescriptionSpanRef.current,{
+               display:'none'
+            })
+         },  
+      }).to(codeDescriptionSpanRef.current,{
+         top:'20vh',
+         opacity:0,
+         duration:2,
+         ease:'power1.in',
+      }).to(secondCodeDescriptionSpanRef.current,{
+         onStart:()=>{
+            gsap.to(secondCodeDescriptionSpanRef.current,{
+               display:'inline-block'
+            })
+         },
+         top:'27.5vh',
+         opacity:1,
+         duration:2,
+         ease:'power1.out',
+      }).to(secondCodeDescriptionSpanRef.current,{
+         top:'20vh',
+         opacity:0,
+         duration:2,
+         ease:'power1.in',
+         
       }).to(codeDesktopRef.current,{
          position:'sticky',
          bottom:'10vh',
          duration:0,
-      })
+         onComplete:()=>{
+               gsap.to(secondCodeDescriptionSpanRef.current,{
+                  display:'none'
+               })
+               gsap.to(codeDescriptionSpanRef.current,{
+                  display:'none'
+               })
+            },
+         })
+      
    
    }, [])
 
@@ -52,14 +114,18 @@ const CodeSection = () => {
          <h2 className={styles.codeHeading} ref={codeHeadingRef}>
             CODE
          </h2>
-      
+
+         <span className={styles.codeDescriptionSpan} ref={codeDescriptionSpanRef}>
+            React and Next JS are the two frameworks I worked the most for building fullstack projects
+         </span>
+         <span className={styles.codeDescriptionSpan} ref={secondCodeDescriptionSpanRef}>
+            On the backEnd side I worked with tools like MongoDB, Firebase, Prisma, GraphQL, REST, Node, Express. You can see more here
+         </span>
          <div className={styles.desktopContainer} ref={codeDesktopRef}>
             <Image
                src='/mockups/codeDesktop.png' 
                fill={true}
                alt='desktop with vs code opened'
-               
-               
             />
          </div>
       </div>

@@ -1,10 +1,14 @@
+
+
 .codeSectionContainer{
    background-color: black;
-   height:200vh;
+   height:400vh;
    display: flex;
    flex-direction: column;
    align-items: center;
+   position: relative;
 }
+
 
 h2.codeHeading{
    color:transparent;
@@ -13,7 +17,13 @@ h2.codeHeading{
    font-size:180px;
    background-size: 200%;
    animation:animategradient 5s linear infinite;
+   position:fixed;
+   top:50vh;
+   opacity: 0;
+   display:none;
 }
+
+
 
 @keyframes animategradient{
    0%{
@@ -24,15 +34,33 @@ h2.codeHeading{
    }
 }
 
+span.codeDescriptionSpan{
+   font-weight:600;
+   color:white;
+   width:40vw;
+   position:fixed;
+   opacity:0;
+   top:50vh;
+   font-size:20px;
+   display: none;
+}
+
+
+
+
 .desktopContainer{
    opacity: 0;
    height:50vh;
    aspect-ratio: calc(1380/835);
    position:fixed;
    top:100vh;
-   /* border:1px solid red; */
-   
    flex-shrink: 0;
-   
-   
-}
+} 
+
+
+
+
+
+
+
+

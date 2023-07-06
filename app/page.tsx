@@ -5,23 +5,24 @@ import FirstText from "./components/firstText/FirstText";
 import Footer from "./components/footer/Footer";
 import HeroSection from "./components/hero/HeroSection";
 import MainContainer from "./components/mainContainer/MainContainer";
+import MyProjects from "./components/myProjectsSection/MyProjects";
 import Navbar from "./components/navbar/Navbar";
 import Stack from "./components/stack/Stack";
 
 export default function Home(){
 	return (
 		<>
-		
-		<Stack/>
-		<Navbar/>
-		<MainContainer>
-			<HeroSection/>
-			<FirstText/>
-			<CardSection/>
-		</MainContainer>
-		<CodeSection/>
-		<ContactsSection/>
-		<Footer/>
+			<Stack/>
+			<Navbar/>
+			<MainContainer>
+				<HeroSection/>
+				<FirstText/>
+				<CardSection/>
+			</MainContainer>
+			<CodeSection/>
+			<MyProjects/>
+			<ContactsSection/>
+			<Footer/>
 		</>
 	)
 }
