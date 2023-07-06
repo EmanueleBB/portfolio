@@ -8,7 +8,7 @@
 .cardSectionWrapper{
    width:100%;
    height:130vh;
-   background-color: black;
+   background-color: #121111;
    color:white;
    display:flex;
    flex-direction: column;

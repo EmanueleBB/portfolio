@@ -42,7 +42,7 @@ const FirstText = () => {
          id:'div',
       })
       
-//Spans animation
+//Spans animations
       tl.fromTo(firstSpan.current,{
          opacity:0,
          y:'25px'
@@ -233,8 +233,7 @@ const FirstText = () => {
                src='/mockups/designDesktop.png' 
                fill={true}
                alt='image of an ipad'
-               priority
-               
+               priority   
             />
          </div>
       </div>   

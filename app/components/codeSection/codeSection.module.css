@@ -9,16 +9,27 @@
 h2.codeHeading{
    color:transparent;
    background-clip: text;
-   background-image: linear-gradient(to right,#68FFDB,#55C2FF );
+   background-image: linear-gradient(to right,#68FFDB,#55C2FF,#55C2FF,#68FFDB);
    font-size:180px;
+   background-size: 200%;
+   animation:animategradient 5s linear infinite;
+}
+
+@keyframes animategradient{
+   0%{
+      background-position: 0% center;
+   }
+   100%{
+      background-position: -200% center;
+   }
 }
 
 .desktopContainer{
-   opacity: 1;
+   opacity: 0;
    height:50vh;
    aspect-ratio: calc(1380/835);
-   position:relative;
-   
+   position:fixed;
+   top:100vh;
    /* border:1px solid red; */
    
    flex-shrink: 0;
