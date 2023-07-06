@@ -132,13 +132,11 @@ const FirstText = () => {
          onStart:()=>{
             designHeading.current&&(designHeading.current.style.display='inline-block');
          },
-         y:'-30vh',
+         y:'-40vh',
          opacity:1,
          duration:3,
          ease:'power2.out',
          
-         
-
 //Ipad appears
       }).to(designDesktopRef.current,{
          onStart:()=>{
@@ -152,7 +150,7 @@ const FirstText = () => {
          top:'40vh',
          duration:3,
          opacity:1,
-         ease:'power2.Out',
+         ease:'power1.Out',
          
       })
       .to(designDescriptionSpanRef.current,{
@@ -232,7 +230,7 @@ const FirstText = () => {
             </span>
          <div className={styles.desktopContainer} ref={designDesktopRef}>
             <Image
-               src='/mockups/reactAndNextJs.png' 
+               src='/mockups/designDesktop.png' 
                fill={true}
                alt='image of an ipad'
                priority

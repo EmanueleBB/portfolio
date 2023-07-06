@@ -1,5 +1,5 @@
 .blackToPinkDiv{
-   background-image: radial-gradient(circle at top, black 46.77%, #3b1056 49.77%,#b33acb 52.01%, #3b1056 55.20%,black 58.3% );
+   background-image: radial-gradient(circle at top, black 45.77%, #3b1056 49.33%,#8b1ca1 51.5%,#9811b3 52.5%,#8b1ca1 53.5%, #3b1056 55.90%,black 59.3% );
    /* background-image: radial-gradient(circle at top, black 44.77%, #2f1056 50.77%,rgb(169, 70, 184) 58.01%, white 64.20%); */
    /* background-image: radial-gradient(circle at top, black 80%,rgb(0, 0, 0) 100%); */
    height:1675vh;
