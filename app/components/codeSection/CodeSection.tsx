@@ -23,7 +23,7 @@ const CodeSection = () => {
       ScrollTrigger.create({
          trigger:codeDivRef.current,
          scrub:true,
-         markers:true,
+         markers:false,
          start:'top 25%',
          end:'bottom bottom',
          animation:tl,
@@ -39,7 +39,11 @@ const CodeSection = () => {
          onReverseComplete:()=>{
             gsap.to(codeHeadingRef.current,{
                display:'none'
-            })
+            });
+            
+            codeDescriptionSpanRef.current&&(codeDescriptionSpanRef.current.style.display='none');
+            secondCodeDescriptionSpanRef.current&&(secondCodeDescriptionSpanRef.current.style.display='none')
+            
          },
          onStart:()=>{
             gsap.to(codeHeadingRef.current,{
@@ -52,34 +56,28 @@ const CodeSection = () => {
          opacity:1,
          ease:'power2.Out',
       },'<+=1.5')
+
+
+
+
       .to(codeDescriptionSpanRef.current,{
          onStart:()=>{
-            gsap.to(codeDescriptionSpanRef.current,{
-               display:'inline-block'
-            })
+            codeDescriptionSpanRef.current&&(codeDescriptionSpanRef.current.style.display='inline-block')
          },
          top:'27.5vh',
          opacity:1,
          duration:2,
          ease:'power1.out',
-         onReverseComplete:()=>{
-            gsap.to(codeDescriptionSpanRef.current,{
-               display:'none'
-            });
-            gsap.to(secondCodeDescriptionSpanRef.current,{
-               display:'none'
-            })
-         },  
+      
       }).to(codeDescriptionSpanRef.current,{
          top:'20vh',
          opacity:0,
          duration:2,
          ease:'power1.in',
+         
       }).to(secondCodeDescriptionSpanRef.current,{
          onStart:()=>{
-            gsap.to(secondCodeDescriptionSpanRef.current,{
-               display:'inline-block'
-            })
+            secondCodeDescriptionSpanRef.current&&(secondCodeDescriptionSpanRef.current.style.display='inline-block')
          },
          top:'27.5vh',
          opacity:1,
@@ -95,17 +93,13 @@ const CodeSection = () => {
          position:'sticky',
          bottom:'10vh',
          duration:0,
-         onComplete:()=>{
-               gsap.to(secondCodeDescriptionSpanRef.current,{
-                  display:'none'
-               })
-               gsap.to(codeDescriptionSpanRef.current,{
-                  display:'none'
-               })
-            },
-         })
-      
-   
+      }).to(codeHeadingRef.current,{
+         
+         top:'-100px',
+         opacity:0,
+         duration:2,
+         ease:'power1.out'
+      },'<')
    }, [])
 
 
