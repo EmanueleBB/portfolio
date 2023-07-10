@@ -16,6 +16,16 @@
    
 }
 
+button.navLink{
+   background-color: transparent;
+   outline:none;
+   border:none;
+   background-image: none;
+   cursor:pointer;
+   font-weight: 500;
+   font-family: inherit;
+}
+
 .navLink{
    font-weight: 500;
    color:var(--dim-pink);

@@ -30,10 +30,114 @@ const HeroSection = () => {
 	useLayoutEffect(() => {
 
 		const iconsSongSyncAnimation = () => {
+			const tl = gsap.timeline();
+			const icons = Array.from(iconsHeroGroupRef.current?.childNodes || []);
+			tl.to(icons[9],{
+				duration:0.187,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			}).to(icons[10],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<0.57').to(icons[8],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.187').to(icons[11],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.57').to(icons[12],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.187').to(icons[7],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=1.5').to(icons[6],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<0.57').to(icons[13],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.187').to(icons[14],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.57').to(icons[15],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.187').to(icons[5],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=1.5').to(icons[3],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<0.57').to(icons[4],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.187').to(icons[17],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.57').to(icons[16],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.187').to(icons[2],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=1.5').to(icons[1],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<0.57').to(icons[0],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.187').to(icons[18],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.57').to(icons[19],{
+				duration:2,
+				opacity:1,
+				stagger:0.5,
+				ease:'elastic',
+			},'<+=0.187')
+
 		}
 
 		const tl = gsap.timeline({
-			onComplete:iconsSongSyncAnimation
+			
 		});
 		
 		
@@ -42,6 +146,7 @@ const HeroSection = () => {
 			backgroundImage:'radial-gradient(circle at center bottom, black 30%, #2B0A4F 60%, #AF4DC9 90%, #F9A2F0 120%)',
 			ease: 'power2.inOut',
 			backgroundPosition: 'center top',
+			onComplete:()=>{iconsSongSyncAnimation()}
 		}).from(h2Ref.current, {
 			
 			duration: 1,
@@ -81,8 +186,7 @@ const HeroSection = () => {
 		toggleIsVisible();
 		//Handling of the stack section.I need this to make the stack component know when to appear
 		toggleStackIsOnScreen();
-		toggleParagraphIsAnimated();
-		
+		toggleParagraphIsAnimated();	
    } 
 
 

@@ -4,15 +4,25 @@ import gsap from 'gsap'
 import Button, {ButtonVariants} from '../Button'
 import styles from './navbar.module.css'
 import useNavbarStore from '@/app/stores/NavbarStore'
-import useWindowSize from '@/app/hooks/useWindowSize'
+
 import LogoIcon from '@/app/LogoIcon'
+import useStackStore from '@/app/stores/StackStore'
 
 const Navbar = () => {
 
-   const {isVisible,isCompact,setIsCompact}=useNavbarStore();
+   const {isVisible,isCompact,setIsCompact,toggleIsVisible}=useNavbarStore();
+   const {toggleStackIsOnScreen,toggleParagraphIsAnimated}=useStackStore();
+   
    const divRef=useRef<HTMLDivElement>(null);
+   
 
-   const {windowWidth} = useWindowSize();
+   const handleStackButtonClick = () => {
+		//Make the navbar disappear
+		toggleIsVisible();
+		//Handling of the stack section.I need this to make the stack component know when to appear
+		toggleStackIsOnScreen();
+		toggleParagraphIsAnimated();	
+   }
    
   
 
@@ -51,7 +61,7 @@ const Navbar = () => {
    return (
       <div className={styles.navbar} ref={divRef}>
          <LogoIcon className={styles.logoIcon}/>
-         <a href='' className={styles.navLink}>My tech stack</a>
+         <button className={styles.navLink} onClick={handleStackButtonClick}>My tech stack</button>
          <a href="" className={styles.navLink}>Design</a>
          <a href="" className={styles.navLink}>Code</a>
          <a href="" className={styles.navLink}>About me</a>
