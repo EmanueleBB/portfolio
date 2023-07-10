@@ -2,4 +2,36 @@
    width:100vw;
    height:100vh;
    background-color: rgb(13, 13, 13);
+   box-sizing: border-box;
+   padding:10vh 20vw;
+}
+
+.projectsContainer {
+   max-width: 940px;
+   margin-top: 56px;
+   margin-left: auto;
+   margin-right: auto;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(11, auto);
+   grid-row-gap: 39px;
+   grid-column-gap: 22px;
+ }
+
+.mainContainer h3{
+   display:inline-block;
+   font-size:32px;
+   color:transparent;
+   background-clip: text;
+   background-image: linear-gradient(to right, rgb(29, 255, 199),rgb(42, 184, 255));
+   background-size:100% 100%;
+}
+
+.projectCardContainer{
+   
+   width:236px;
+   aspect-ratio: 1;
+
+   background-color: white;
+   border-radius:18px;
 }
