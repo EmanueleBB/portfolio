@@ -20,11 +20,15 @@ import GraphQlIcon from './icons/GraphQlIcon'
 import MongoIcon from './icons/MongoIcon'
 import PostmanIcon from './icons/PostmanIcon'
 import FirebaseIcon from './icons/FirebaseIcon'
-import { forwardRef, ForwardRefRenderFunction, Ref } from 'react'
+import { forwardRef, ForwardRefRenderFunction, Ref, useLayoutEffect } from 'react'
+import gsap from 'gsap'
 
 
 
 const IconsHeroGroup:ForwardRefRenderFunction<HTMLDivElement,{}> = (props,ref: Ref<HTMLDivElement>) => {
+   
+   
+
    return (
       <div className={styles.iconsBox} ref={ref}>
          <IllustratorIcon/>

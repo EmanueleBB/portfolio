@@ -55,116 +55,131 @@
 
 .icon{
 	position:relative;
+	opacity:0;
+	z-index:1;
 }
+
 
 .iconsBox .icon:nth-child(1){ /* Illustrator Icon */
 	top:-8vmax;
 	scale:1.4;
-	opacity:0.4;
+	/* opacity:0.4; */
 }
+
+.iconsBox .icon:nth-child(1)::before{ /* Illustrator Icon */
+	content:'';
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index: 2;
+	background-image: blue;
+}
+
 .iconsBox .icon:nth-child(2){ /* HTML Icon */
 	top:10vmax;
 	scale:1;
-	opacity:0.4;
+	/* opacity:0.4; */
 }
 
 .iconsBox .icon:nth-child(3){ /* Figma Icon */
 	top:-5vmax;
 	scale:0.9;
-	opacity:0.6;
+	/* opacity:0.6; */
 }
 .iconsBox .icon:nth-child(4){ /* Sass Icon */
 	top:6vmax;
 	scale:0.9;
-	opacity:0.6;
+	/* opacity:0.6; */
 }
 .iconsBox .icon:nth-child(5){ /* Ae Icon */
 	top:-3vmax;
 	scale:0.7;
-	opacity:0.75;
+	/* opacity:0.75; */
 }
 
 .iconsBox .icon:nth-child(6){ /* Gsap Icon */
 	top:7vmax;
 	scale:0.7;
-	opacity:0.75;
+	/* opacity:0.75; */
 }
 .iconsBox .icon:nth-child(7){ /* Photoshop Icon */
 	top:-2vmax;
 	scale:0.6;
-	opacity:0.6;
+	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(8){ /* CSS Icon */
 	top:3.5vmax;
 	scale:0.6;
-	opacity:0.6;
+	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(9){ /* Typescript Icon */
 	scale:0.55;
-	opacity:0.7;
+	/* opacity:0.7; */
 }
 
 .iconsBox .icon:nth-child(10){ /* React Icon */
-	scale:0.75;
+	scale:0.55;
 	margin-left: 5vw;
 }
 .iconsBox .icon:nth-child(11){ /* Next Icon */
-	scale:0.75;
+	scale:0.55;
 	margin-right:5vw;
 }
 
 .iconsBox .icon:nth-child(12){ /* Node Icon */
 	scale:0.55;
-	opacity:0.7;
+	/* opacity:0.7; */
 }
 
 .iconsBox .icon:nth-child(13){ /* Prisma Icon */
 	top:3.5vmax;
 	scale:0.6;
-	opacity:0.6;
+	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(14){ /* Express Icon */
 	top:-2vmax;
 	scale:0.6;
-	opacity:0.6;
+	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(15){ /* Seo Icon */
 	top:7vmax;
 	scale:0.7;
-	opacity:0.75;
+	/* opacity:0.75; */
 }
 
 .iconsBox .icon:nth-child(16){ /* Redux Icon */
 	top:-3vmax;
 	scale:0.7;
-	opacity:0.75;
+	/* opacity:0.75; */
 }
 
 .iconsBox .icon:nth-child(17){ /* GraphQl Icon */
 	top:6vmax;
 	scale:0.9;
-	opacity:0.6;
+	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(18){ /* Mongo Icon */
 	top:-5vmax;
 	scale:0.9;
-	opacity:0.6;
+	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(19){ /* Postman Icon */
 	top:10vmax;
 	scale:1;
-	opacity:0.4;
+	/* opacity:0.4; */
 }
 .iconsBox .icon:nth-child(20){ /* Firebase Icon */
 	top:-8vmax;
 	scale:1.4;
-	opacity:0.4;
+	/* opacity:0.4; */
 }
 
 
