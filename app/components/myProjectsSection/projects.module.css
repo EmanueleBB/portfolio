@@ -1,10 +1,22 @@
 .mainContainer{
    width:100vw;
-   height:150vh;
+   height:auto;
    background-color: rgb(13, 13, 13);
    box-sizing: border-box;
    padding:10vh 20vw;
 }
+
+.mainContainer h3{
+   display:inline-block;
+   font-size:56px;
+   font-weight: 700;
+   color:transparent;
+   background-clip: text;
+   background-image: linear-gradient(to right, rgb(29, 255, 199),rgb(42, 184, 255));
+   background-size:100% 100%;
+}
+
+/* Styling of the grid */
 
 .projectsContainer {
    max-width: 940px;
@@ -15,19 +27,19 @@
    grid-template-columns: repeat(auto-fit, minmax(236px,1fr));
    grid-row-gap: 22px;
    grid-column-gap: 22px;
+   position:relative;
 }
+
+
+/* Styling of the single cell */
 
 .projectCardContainer{
    width:100%;
    aspect-ratio: 1;
    border-radius:18px;
-   border:1px solid red;
-   color:white;
+   /* border:1px solid red; */
+   color:#02455A;
 }
-.frontSide:hover{
-   transform: perspective(1000px) rotateX(-15deg) scaleY(0.96);
-}
-
 
 .backSide{
    width:100%;
@@ -51,11 +63,13 @@
 .content{
    width:90%;
    height:88%;
-   border-radius:22px;
+   border-radius:12px;
    position:absolute;
    background-color: white;
    padding:20px;
    box-sizing: border-box;
+   
+   
 }
 
 svg.closeIcon{
@@ -88,10 +102,14 @@ svg.closeIcon{
    align-items: baseline;
 }
 
+.frontSide:hover{
+   transform: perspective(1000px) rotateX(-15deg) scaleY(0.96);
+}
+
 .frontSide h4{
-   font-size: 18px;
+   font-size: 22px;
    white-space: normal;
-   width:80%;
+   width:60%;
 
 }
 
@@ -102,13 +120,4 @@ svg.closeIcon{
    }
 }
 
-.mainContainer h3{
-   display:inline-block;
-   font-size:56px;
-   font-weight: 700;
-   color:transparent;
-   background-clip: text;
-   background-image: linear-gradient(to right, rgb(29, 255, 199),rgb(42, 184, 255));
-   background-size:100% 100%;
-}
 

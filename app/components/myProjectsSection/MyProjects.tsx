@@ -17,7 +17,7 @@ const MyProjects = () => {
             />
             <ProjectCard
                title='Audi RS6 Redesign'
-               imgSrc=''
+               imgSrc='/audiRedesign.jpg'
                stack={['Next JS 13.3','Photoshop', 'Sass', 'Gsap']}
                description='Because beautiful cars deserve beautiful landing pages'
             />
@@ -28,22 +28,22 @@ const MyProjects = () => {
                description='My first real project, made with plain HTML, CSS and Javascript'
             />
             <ProjectCard
-            title='Full stack Airbnb Clone'
-            imgSrc=''
-            stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
-            description=''
+               title='Full stack Airbnb Clone'
+               imgSrc=''
+               stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
+               description=''
             />
             <ProjectCard
-            title='Full stack Airbnb Clone'
-            imgSrc=''
-            stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
-            description=''
-            />
+               title='Full stack Airbnb Clone'
+               imgSrc=''
+               stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
+               description=''
+            /> 
             <ProjectCard
-            title='Full stack Airbnb Clone'
-            imgSrc=''
-            stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
-            description=''
+               title='Full stack Airbnb Clone'
+               imgSrc=''
+               stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
+               description=''
             />
          </div>
       </div>
