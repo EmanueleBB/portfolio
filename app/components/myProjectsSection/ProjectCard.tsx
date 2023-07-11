@@ -28,27 +28,28 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
 
    const animateContent = () => {
       if (!animationNeedsToPlayInReverse) {
-         
-        tl.current = gsap.timeline(); // Definisci la timeline qui
+
+        tl.current = gsap.timeline(); 
         tl.current.to(contentRef.current,{
-            y:-200,
-            duration:0.5,
+            yPercent:-100,
+            duration:0.4,
             ease:'power2.out',
-            transform:'perspective(1000px) rotateX(-30deg) scaleY(1.6)',
+            transform:'perspective(1000px) ',
             transformOrigin: 'bottom',
             zIndex:1
          }).to(contentRef.current,{
-            duration:0.5,
-            ease:'power2.inOut',
-            y:0,
-            transform:'scaleY(1)',
-            transformOrigin: 'top',
-            zIndex:10,
+            yPercent:-100,
+            duration:0,
+            transform:'perspective(1000px) ',
+            transformOrigin: 'bottom',
+            zIndex:10
          }).to(contentRef.current,{
-            y:0,
-            duration:0.2,
-            transform:'scale(2)',
+            zIndex:10,
+            duration:0.4,
             ease:'power2.in',
+            yPercent:0,
+            transform:'perspective(1000px) scale(2)',
+            transformOrigin: 'top',
          })
 
          setAnimationNeedsToPlayInReverse(true);
@@ -60,17 +61,10 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
       }
    }
 
-   const animateContentReverse = () => {
-      const tl = gsap.timeline();
-      tl.reverse(); // Utilizza il metodo "reverse()" per far scorrere la timeline all'indietro
-   }
-
    return (
       <div className={styles.projectCardContainer}>
          
-         <h4>
-            {title}
-         </h4>
+         
          
 
          <div className={styles.backSide}>
@@ -95,6 +89,9 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
 
 
             <div className={styles.frontSide} onClick={animateContent}>
+               <h4>
+                  {title}
+               </h4>
             </div>
          </div>
          

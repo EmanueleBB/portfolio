@@ -1,6 +1,6 @@
 .mainContainer{
    width:100vw;
-   height:100vh;
+   height:150vh;
    background-color: rgb(13, 13, 13);
    box-sizing: border-box;
    padding:10vh 20vw;
@@ -17,9 +17,19 @@
    grid-column-gap: 22px;
 }
 
+.projectCardContainer{
+   width:100%;
+   aspect-ratio: 1;
+   border-radius:18px;
+   border:1px solid red;
+   color:white;
+}
+.frontSide:hover{
+   transform: perspective(1000px) rotateX(-15deg) scaleY(0.96);
+}
+
 
 .backSide{
-   
    width:100%;
    display: flex;
    flex-direction: column;
@@ -70,6 +80,19 @@ svg.closeIcon{
    transform-style: preserve-3d;
    cursor:pointer;
    z-index: 2;
+   box-sizing: border-box;
+   padding:18px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: baseline;
+}
+
+.frontSide h4{
+   font-size: 18px;
+   white-space: normal;
+   width:80%;
+
 }
 
 @media only screen and (max-width:823px){
@@ -81,20 +104,11 @@ svg.closeIcon{
 
 .mainContainer h3{
    display:inline-block;
-   font-size:32px;
+   font-size:56px;
+   font-weight: 700;
    color:transparent;
    background-clip: text;
    background-image: linear-gradient(to right, rgb(29, 255, 199),rgb(42, 184, 255));
    background-size:100% 100%;
 }
 
-.projectCardContainer{
-   width:100%;
-   aspect-ratio: 1;
-   border-radius:18px;
-}
-.projectCardContainer:hover .frontSide{
-   
-   transform: perspective(1000px) rotateX(-15deg) scaleY(0.96);
-
-}

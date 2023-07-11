@@ -6,7 +6,7 @@ const MyProjects = () => {
    return (
       <div className={styles.mainContainer}>
          <h3>
-            Here are some of my projectssssss
+            Here are some of my latest projects
          </h3>
          <div className={styles.projectsContainer}>
             <ProjectCard
