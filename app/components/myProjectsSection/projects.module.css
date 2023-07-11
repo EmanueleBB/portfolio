@@ -28,6 +28,7 @@
    grid-row-gap: 22px;
    grid-column-gap: 22px;
    position:relative;
+   z-index: 1;
 }
 
 

@@ -20,14 +20,18 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
 }) => {
 
    const contentRef=useRef<HTMLDivElement>(null);
+   const cardContainerRef=useRef<HTMLDivElement>(null);
    const [animationNeedsToPlayInReverse,setAnimationNeedsToPlayInReverse]=useState(false);
 
    const tl = useRef<gsap.core.Timeline | null>(null);
-   let windowCenter:number;
-   let translateContent:number;
+   let windowCenterX:number;
+   let windowCenterY:number;
+   let translateContentX:number;
+   let translateContentY:number;
 
    useEffect(() => {
-      windowCenter=window?.innerWidth/2;
+      windowCenterX=window?.innerWidth/2;
+      windowCenterY=window?.innerHeight/2;
    })
    
 
@@ -37,53 +41,58 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
          tl.current = gsap.timeline(); 
 
          const contentX = contentRef.current?.getBoundingClientRect().left;
+         const contentY = contentRef.current?.getBoundingClientRect().y;
          const contentWidth=contentRef.current?.getBoundingClientRect().width;
+         const contentHeight=contentRef.current?.getBoundingClientRect().height;
 
-         if(contentWidth&&contentX){
-            translateContent=windowCenter-contentWidth/2-contentX;
-         }
+         if(contentWidth&&contentX&&contentHeight&&contentY){
+            translateContentX=windowCenterX-contentWidth/2-contentX;
+            translateContentY=windowCenterY+contentHeight/2-contentY;
 
-         console.log(translateContent);
-
-         tl.current.to(contentRef.current,{
-            yPercent:-100,
-            duration:0.25,
-            ease:'power2.out',
-            transform:'',
-            transformOrigin: 'bottom',
-            zIndex:1
-         }).to(contentRef.current,{
-            yPercent:-100,
-            duration:0,
-            transformOrigin: 'bottom',
-            zIndex:10,
+            tl.current.to(contentRef.current,{
+               onStart:()=>{
+                  gsap.to(cardContainerRef.current,{
+                     zIndex:10
+                  })
+               },
+               onReverseComplete:()=>{
+                  gsap.to(cardContainerRef.current,{
+                     zIndex:1
+                  })
+               },
+               transform:`translateY(-${contentHeight}px) `,
+               duration:0.25,
+               ease:'powe3.out',
+               transformOrigin: 'center',
+               zIndex:1
+            }).to(contentRef.current,{
+         
+               zIndex:10,
+               duration:0,
+               
+               
+            }).to(contentRef.current,{
+               borderRadius:22,
+               
+               zIndex:10,
+               duration:0.4,
+               ease:'power3.in',
+               transformOrigin: 'center',
+               transform:`translateX(${translateContentX}px) translateY(${translateContentY}px) `,
+               height:'50vh',
+               width:'160%',
             
-            
-         }).to(contentRef.current,{
-            borderRadius:22,
-            
-            zIndex:10,
-            duration:0.4,
-            ease:'power2.in',
-            transformOrigin: 'left',
-            transform:`translateX(${translateContent}px) translateY(200px) `,
-            height:'50vh',
-            width:'160%',
-            
-            onComplete:()=>{
-               console.log(translateContent)
-            }
-            
-         })
-         if(contentRef.current){
-
-            console.log(contentRef.current.style.top)
+            })
          }
 
          setAnimationNeedsToPlayInReverse(true);
       }else {
          if (tl.current) {
-           tl.current.reverse();
+
+           tl.current.reverse()
+           
+            
+         
          }
          setAnimationNeedsToPlayInReverse(false);
       }
@@ -92,7 +101,7 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    return (
 
 
-      <div className={styles.projectCardContainer}>
+      <div className={styles.projectCardContainer} ref={cardContainerRef}>
          
          <div className={styles.backSide}>
             <svg width="383" height="297" viewBox="0 0 383 297" fill="none" xmlns="http://www.w3.org/2000/svg">
