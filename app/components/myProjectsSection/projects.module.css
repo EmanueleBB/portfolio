@@ -66,21 +66,39 @@
    height:88%;
    border-radius:12px;
    position:absolute;
-   background-color: white;
-   padding:20px;
+   background-color: black;
+   overflow: hidden;
    box-sizing: border-box;
+   display:flex;
    
+}
+
+.content .contentLeftDiv{
+   height:100%;
+   width:30%;
+   background-color: black;
+   box-sizing: border-box;
+   transform-origin: right;
+}
+
+.content .contentRightDiv{
+   box-sizing: border-box;
+   height:100%;
+   width:70%;
+   transform-origin: left;
+   opacity:0.4;
    
 }
 
 svg.closeIcon{
-   width:10px;
-   height: 10px;
+   width:16px;
+   height: 16px;
+   scale: 0.7;
    position:absolute;
-   top:15px;
-   left:15px;
+   top:16px;
+   left:16px;
    cursor:pointer;
-   
+   opacity: 0;
 }
 
 .frontSide{

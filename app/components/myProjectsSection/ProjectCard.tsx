@@ -62,27 +62,34 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                },
                transform:`translateY(-${contentHeight}px) `,
                duration:0.25,
-               ease:'powe3.out',
+               ease:'power2.out',
                transformOrigin: 'center',
                zIndex:1
             }).to(contentRef.current,{
-         
                zIndex:10,
                duration:0,
-               
-               
             }).to(contentRef.current,{
                borderRadius:22,
-               
                zIndex:10,
-               duration:0.4,
+               duration:0.5,
                ease:'power3.in',
                transformOrigin: 'center',
                transform:`translateX(${translateContentX}px) translateY(${translateContentY}px) `,
-               height:'50vh',
-               width:'160%',
-            
-            })
+               height:'60vh',
+               width:'70vw',
+               border:'1px solid grey'
+            },'<').to(contentRef.current.querySelector(`.${styles.contentLeftDiv}`),{
+               width:'30%',
+               duration:0.5,
+            },'<').to(contentRef.current.querySelector(`.${styles.closeIcon}`),{
+               opacity:1,
+               scale:1,
+               duraiton:0.2
+            },'<')
+            .to(contentRef.current.querySelector(`.${styles.contentRightDiv}`),{
+               opacity:1,
+               duration:0.5,
+            },'<')
          }
 
          setAnimationNeedsToPlayInReverse(true);
@@ -115,16 +122,19 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
             </svg>
 
             <div className={styles.content} ref={contentRef}>
-               <div  className={styles.contentRightDiv}>
+               
+               <div  className={styles.contentLeftDiv}>
                   <svg className={styles.closeIcon} onClick={animateContent} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M1 17L17 0.999999" stroke="black" stroke-width="2" stroke-linecap="round"/>
-                     <path d="M1 1L17 17" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                     <path d="M1 17L17 0.999999" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                     <path d="M1 1L17 17" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                </div>
 
                <div className={styles.contentRightDiv}>
                   <Image style={{objectFit: "cover"}} alt='mockup' src={imgSrc} fill/>
                </div>
+
+               
             </div>
 
 
