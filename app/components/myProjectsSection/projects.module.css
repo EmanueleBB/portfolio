@@ -19,35 +19,57 @@
 
 
 .backSide{
-   border-radius: inherit;
-   background-color: #0089A7;
+   
    width:100%;
-   aspect-ratio: 1/0.8;
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
    align-items: center;
+   aspect-ratio: 382.5/297;
+   border-radius:18px;
+   
+}
+
+.backSide svg{
+   position:absolute;
+   top:0px;
+   left:0px;
+   height:100%;
+   width:100%;
 }
 
 .content{
-   width:70%;
-   height:90%;
+   width:90%;
+   height:88%;
    border-radius:22px;
    position:absolute;
    background-color: white;
+   padding:20px;
+   box-sizing: border-box;
+}
+
+svg.closeIcon{
+   width:10px;
+   height: 10px;
+   position:absolute;
+   top:15px;
+   left:15px;
+   cursor:pointer;
+   
 }
 
 .frontSide{
-   height:85%;
+   aspect-ratio: 383/249;
    width:inherit;
    background-color:#00D1FF;
    position:relative;
    bottom:0px;
    border-radius: inherit;
-   transition:all 0.3s ease;
+   transition:all 0.2s ease-out;
    transform-origin: bottom;
    transform-style: preserve-3d;
    cursor:pointer;
+   z-index: 2;
 }
 
 @media only screen and (max-width:823px){
@@ -72,7 +94,7 @@
    border-radius:18px;
 }
 .projectCardContainer:hover .frontSide{
-   height:80%;
-   transform: perspective(1000px) rotateX(-15deg);
+   
+   transform: perspective(1000px) rotateX(-15deg) scaleY(0.96);
 
 }
