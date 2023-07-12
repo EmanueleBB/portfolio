@@ -9,7 +9,7 @@ export interface IconProps{
 
 const FigmaIcon:React.ForwardRefRenderFunction<SVGSVGElement,IconProps> = ({className},ref) => {
    return (
-      <svg className={`${styles.icon} ${className}`} ref={ref}  width="48" height="74"  fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className={`${styles.icon} ${className}`} ref={ref} viewBox="0 0 48 74"  width="48" height="74"  fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M11.6667 70.0001C18.1067 70.0001 23.3333 64.7734 23.3333 58.3334V46.6667H11.6667C5.22667 46.6667 0 51.8934 0 58.3334C0 64.7734 5.22667 70.0001 11.6667 70.0001Z" fill="#0ACF83"/>
          <path d="M0 34.9999C0 28.5599 5.22667 23.3333 11.6667 23.3333H23.3333V46.6666H11.6667C5.22667 46.6666 0 41.4399 0 34.9999Z" fill="#A259FF"/>
          <path d="M0 11.6667C0 5.22667 5.22667 0 11.6667 0H23.3333V23.3333H11.6667C5.22667 23.3333 0 18.1067 0 11.6667Z" fill="#F24E1E"/>

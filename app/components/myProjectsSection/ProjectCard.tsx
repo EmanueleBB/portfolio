@@ -2,21 +2,25 @@
 
 import gsap from 'gsap';
 import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import styles from './projects.module.css';
 import {IoIosCloseCircleOutline} from 'react-icons/io'
 
 interface ProjectCardProps{
    title:string;
    imgSrc:string;
-   stack:string[];
+   stack:ReactElement[];
    description:string;
+   url:string;
+   githubRepoLink?:string;
 }
 
 const ProjectCard:React.FC<ProjectCardProps> = ({
    title,
    imgSrc,
-   stack
+   stack,
+   description,
+   url
 }) => {
 
    const contentRef=useRef<HTMLDivElement>(null);
@@ -61,7 +65,7 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                   })
                },
                transform:`translateY(-${contentHeight}px) `,
-               duration:0.25,
+               duration:0.4,
                ease:'power2.out',
                transformOrigin: 'center',
                zIndex:1
@@ -78,17 +82,23 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                height:'60vh',
                width:'70vw',
                border:'1px solid grey'
-            },'<').to(contentRef.current.querySelector(`.${styles.contentLeftDiv}`),{
-               width:'30%',
-               duration:0.5,
             },'<').to(contentRef.current.querySelector(`.${styles.closeIcon}`),{
                opacity:1,
-               scale:1,
+               width:34,
+               height:34,
                duraiton:0.2
             },'<')
             .to(contentRef.current.querySelector(`.${styles.contentRightDiv}`),{
                opacity:1,
                duration:0.5,
+            },'<').to(contentRef.current.querySelector(`h2`),{
+               opacity:1,
+               top:0,
+               duration:0.3,
+            }).to(contentRef.current.querySelector(`p`),{
+               opacity:1,
+               top:0,
+               duration:0.3,
             },'<')
          }
 
@@ -122,12 +132,26 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
             </svg>
 
             <div className={styles.content} ref={contentRef}>
-               
-               <div  className={styles.contentLeftDiv}>
-                  <svg className={styles.closeIcon} onClick={animateContent} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M1 17L17 0.999999" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                     <path d="M1 1L17 17" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  <svg className={styles.closeIcon} onClick={animateContent} width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fillRule="evenodd" clipRule="evenodd" d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16ZM7.29289 24.7071C6.90237 24.3166 6.90237 23.6834 7.29289 23.2929L14.5858 16L7.29289 8.70713C6.90237 8.3166 6.90237 7.68344 7.29289 7.29291C7.68342 6.90239 8.31658 6.90239 8.70711 7.29291L16 14.5858L23.2929 7.29289C23.6834 6.90237 24.3166 6.90237 24.7071 7.29289C25.0976 7.68342 25.0976 8.31658 24.7071 8.70711L17.4142 16L24.7071 23.2929C25.0976 23.6834 25.0976 24.3166 24.7071 24.7071C24.3166 25.0977 23.6834 25.0977 23.2929 24.7071L16 17.4142L8.70711 24.7071C8.31658 25.0976 7.68342 25.0976 7.29289 24.7071Z"/>
                   </svg>
+
+               <div  className={styles.contentLeftDiv}>
+                  <h2>
+                     {title}
+                  </h2>
+                  <p>
+                     {description}
+                  </p>
+                  <div className={styles.stackIconsContainer}>
+                     {
+                        stack.map((icon,idx)=>(
+                           <div key={idx} className={styles.iconBox}>
+                              {icon}
+                           </div>
+                        ))
+                     }
+                  </div>
                </div>
 
                <div className={styles.contentRightDiv}>

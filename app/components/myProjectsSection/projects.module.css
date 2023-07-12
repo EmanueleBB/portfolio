@@ -70,6 +70,7 @@
    overflow: hidden;
    box-sizing: border-box;
    display:flex;
+   color:white;
    
 }
 
@@ -79,26 +80,76 @@
    background-color: black;
    box-sizing: border-box;
    transform-origin: right;
+   display:flex;
+   padding:3% 3%;
+   flex-direction: column;
 }
+
+.content .contentLeftDiv h2{
+   opacity:0;
+   top:20px;
+   margin-top: 12%;
+}
+.content .contentLeftDiv p{
+   opacity:0;
+   top:20px;
+   margin-top: 3%;
+   font-size:16px;
+   font-weight: 500;
+   color:rgb(153, 153, 153);
+}
+
 
 .content .contentRightDiv{
    box-sizing: border-box;
    height:100%;
    width:70%;
    transform-origin: left;
-   opacity:0.4;
+   opacity:0.3;
    
 }
 
+.stackIconsContainer{
+   width:100%;
+   height:auto;
+   margin-top:20%;
+   display:flex;
+   gap:12px;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.stackIconsContainer .iconBox{
+   width:24px;
+   height:24px;
+   
+   box-sizing: border-box;
+}
+   
+
+.stackIconsContainer .iconBox > *{
+   opacity: 1;
+   height:100%;
+   
+}
+
+
 svg.closeIcon{
+   z-index: 10;
    width:16px;
    height: 16px;
-   scale: 0.7;
+   transform:scale(0.7);
    position:absolute;
    top:16px;
    left:16px;
    cursor:pointer;
-   opacity: 0;
+   opacity: 0; 
+   fill:rgb(153, 153, 153);
+   transition:fill 0.2s ease;
+}
+
+svg.closeIcon:hover{
+   fill:white;
 }
 
 .frontSide{

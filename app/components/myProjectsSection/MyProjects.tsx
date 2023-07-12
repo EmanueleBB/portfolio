@@ -1,4 +1,10 @@
 import React from 'react'
+import FigmaIcon from '../hero/icons/FigmaIcon'
+import NextIcon from '../hero/icons/NextIcon'
+import PhotoshopIcon from '../hero/icons/PhotoshopIcon'
+import SassIcon from '../hero/icons/SassIcon'
+import TypescriptIcon from '../hero/icons/TypescriptIcon'
+import MidjourneyDiv from '../stack/MidjourneyDiv'
 import ProjectCard from './ProjectCard'
 import styles from './projects.module.css'
 
@@ -12,38 +18,47 @@ const MyProjects = () => {
             <ProjectCard
                title='Full stack Airbnb Clone'
                imgSrc=''
-               stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
+               stack={[<NextIcon/>]}
                description='An Airbnb clone made with NextJS 13.3'
+               url=''
+               githubRepoLink=''
             />
             <ProjectCard
-               title='Audi RS6 Redesign'
+               title='Audi RS6 landing page redesign'
                imgSrc='/audiRedesign.jpg'
-               stack={['Next JS 13.3','Photoshop', 'Sass', 'Gsap']}
-               description='Because beautiful cars deserve beautiful landing pages'
+               stack={[<FigmaIcon/>,<PhotoshopIcon/>,<NextIcon/>,<TypescriptIcon/>,<SassIcon/>]}
+               description='Because beautiful cars deserve beautiful websites. Actually, every landing page in the world should be beautiful, but yeah, this one in particular.'
+               url=''
+               githubRepoLink=''
             />
             <ProjectCard
                title='Full stack Airbnb Clone'
                imgSrc=''
-               stack={['HTML','CSS','Javascript']}
+               stack={[<NextIcon/>]}
                description='My first real project, made with plain HTML, CSS and Javascript'
+               url=''
+               githubRepoLink=''
             />
             <ProjectCard
                title='Full stack Airbnb Clone'
                imgSrc=''
-               stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
+               stack={[<NextIcon/>]}
                description=''
+               url=''
             />
             <ProjectCard
                title='Full stack Airbnb Clone'
                imgSrc=''
-               stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
+               stack={[<NextIcon/>]}
                description=''
+               url=''
             /> 
             <ProjectCard
                title='Full stack Airbnb Clone'
                imgSrc=''
-               stack={['Next JS 13.3','Mongo DB', 'Prisma', 'Next Auth', 'Cloudinary CDN', 'Tailwind CSS']}
+               stack={[<NextIcon/>]}
                description=''
+               url=''
             />
          </div>
       </div>
