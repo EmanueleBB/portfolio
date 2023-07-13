@@ -21,7 +21,7 @@ h2.codeHeading{
    background-size: 200%;
    animation:animategradient 5s linear infinite;
    position:fixed;
-   top:50vh;
+   top:40vh;
    opacity: 0;
    display:none;
 }

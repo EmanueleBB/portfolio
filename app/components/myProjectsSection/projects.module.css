@@ -34,7 +34,7 @@
 
 /* Styling of the single cell */
 
-.projectCardContainer{
+.foldersContainer{
    width:100%;
    aspect-ratio: 1;
    border-radius:18px;
@@ -71,6 +71,18 @@
    box-sizing: border-box;
    display:flex;
    color:white;
+   align-items: center;
+}
+
+.overlay{
+   width:100vw;
+   height:100vh;
+   position:fixed;
+   display:none;
+   backdrop-filter: blur(25px);
+   background-color: rgba(21, 21, 21, 0.6);
+   opacity:0;
+   inset:0;
    
 }
 
@@ -81,22 +93,23 @@
    box-sizing: border-box;
    transform-origin: right;
    display:flex;
-   padding:3% 3%;
+   padding:16px 16px;
    flex-direction: column;
+   
 }
 
 .content .contentLeftDiv h2{
    opacity:0;
-   top:20px;
-   margin-top: 12%;
+   top:32px;
+   margin-top: 18%;
 }
 .content .contentLeftDiv p{
    opacity:0;
-   top:20px;
-   margin-top: 3%;
+   top:50px;
+   margin-top: 5%;
    font-size:16px;
-   font-weight: 500;
-   color:rgb(153, 153, 153);
+   font-weight: 400;
+   color:rgb(100, 100, 100);
 }
 
 
@@ -105,8 +118,18 @@
    height:100%;
    width:70%;
    transform-origin: left;
-   opacity:0.3;
-   
+   opacity:0.6;
+   overflow: hidden;
+}
+
+.contentRightDiv img{
+   transform-origin: center;
+   transition:transform 0.4s ease;
+   cursor:pointer;
+}
+
+.content .contentRightDiv:hover img{
+   transform: scale(1.02);
 }
 
 .stackIconsContainer{
@@ -133,6 +156,7 @@
    
 }
 
+/* Close Icon */
 
 svg.closeIcon{
    z-index: 10;
@@ -146,11 +170,16 @@ svg.closeIcon{
    opacity: 0; 
    fill:rgb(153, 153, 153);
    transition:fill 0.2s ease;
+   transform-origin: top left;
 }
 
 svg.closeIcon:hover{
    fill:white;
 }
+
+
+
+
 
 .frontSide{
    aspect-ratio: 383/249;
@@ -170,6 +199,7 @@ svg.closeIcon:hover{
    flex-direction: column;
    justify-content: flex-end;
    align-items: baseline;
+   font-weight: 600;
 }
 
 .frontSide:hover{

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import styles from './projects.module.css';
 import {IoIosCloseCircleOutline} from 'react-icons/io'
+import { BsFileX } from 'react-icons/bs';
 
 interface ProjectCardProps{
    title:string;
@@ -13,6 +14,7 @@ interface ProjectCardProps{
    description:string;
    url:string;
    githubRepoLink?:string;
+   leftAlign?:boolean
 }
 
 const ProjectCard:React.FC<ProjectCardProps> = ({
@@ -20,11 +22,12 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    imgSrc,
    stack,
    description,
-   url
+   url,
+   leftAlign
 }) => {
 
    const contentRef=useRef<HTMLDivElement>(null);
-   const cardContainerRef=useRef<HTMLDivElement>(null);
+   const folderContainerRef=useRef<HTMLDivElement>(null);
    const [animationNeedsToPlayInReverse,setAnimationNeedsToPlayInReverse]=useState(false);
 
    const tl = useRef<gsap.core.Timeline | null>(null);
@@ -49,18 +52,18 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
          const contentWidth=contentRef.current?.getBoundingClientRect().width;
          const contentHeight=contentRef.current?.getBoundingClientRect().height;
 
-         if(contentWidth&&contentX&&contentHeight&&contentY){
+         if(contentWidth&&contentX&&contentHeight&&contentY&&folderContainerRef.current){
             translateContentX=windowCenterX-contentWidth/2-contentX;
             translateContentY=windowCenterY+contentHeight/2-contentY;
 
             tl.current.to(contentRef.current,{
                onStart:()=>{
-                  gsap.to(cardContainerRef.current,{
+                  gsap.to(folderContainerRef.current,{
                      zIndex:10
                   })
                },
                onReverseComplete:()=>{
-                  gsap.to(cardContainerRef.current,{
+                  gsap.to(folderContainerRef.current,{
                      zIndex:1
                   })
                },
@@ -81,7 +84,11 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                transform:`translateX(${translateContentX}px) translateY(${translateContentY}px) `,
                height:'60vh',
                width:'70vw',
-               border:'1px solid grey'
+               
+            },'<').to(folderContainerRef.current.querySelector(`.${styles.overlay}`),{
+               opacity:1,
+               display:'flex',
+               duration:0.3,
             },'<').to(contentRef.current.querySelector(`.${styles.closeIcon}`),{
                opacity:1,
                width:34,
@@ -105,11 +112,7 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
          setAnimationNeedsToPlayInReverse(true);
       }else {
          if (tl.current) {
-
-           tl.current.reverse()
-           
-            
-         
+           tl.current.reverse();
          }
          setAnimationNeedsToPlayInReverse(false);
       }
@@ -118,7 +121,7 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    return (
 
 
-      <div className={styles.projectCardContainer} ref={cardContainerRef}>
+      <div className={styles.foldersContainer} ref={folderContainerRef}>
          
          <div className={styles.backSide}>
             <svg width="383" height="297" viewBox="0 0 383 297" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,12 +134,15 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                </defs>
             </svg>
 
+            <div className={styles.overlay}>
+            </div>
+
             <div className={styles.content} ref={contentRef}>
+                  
+               <div  className={styles.contentLeftDiv}>
                   <svg className={styles.closeIcon} onClick={animateContent} width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path fillRule="evenodd" clipRule="evenodd" d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16ZM7.29289 24.7071C6.90237 24.3166 6.90237 23.6834 7.29289 23.2929L14.5858 16L7.29289 8.70713C6.90237 8.3166 6.90237 7.68344 7.29289 7.29291C7.68342 6.90239 8.31658 6.90239 8.70711 7.29291L16 14.5858L23.2929 7.29289C23.6834 6.90237 24.3166 6.90237 24.7071 7.29289C25.0976 7.68342 25.0976 8.31658 24.7071 8.70711L17.4142 16L24.7071 23.2929C25.0976 23.6834 25.0976 24.3166 24.7071 24.7071C24.3166 25.0977 23.6834 25.0977 23.2929 24.7071L16 17.4142L8.70711 24.7071C8.31658 25.0976 7.68342 25.0976 7.29289 24.7071Z"/>
                   </svg>
-
-               <div  className={styles.contentLeftDiv}>
                   <h2>
                      {title}
                   </h2>
@@ -155,7 +161,7 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                </div>
 
                <div className={styles.contentRightDiv}>
-                  <Image style={{objectFit: "cover"}} alt='mockup' src={imgSrc} fill/>
+                  <Image style={{backgroundPositionX:leftAlign?'100%':'center',objectFit:"cover"}} alt='mockup' src={imgSrc} fill/>
                </div>
 
                
