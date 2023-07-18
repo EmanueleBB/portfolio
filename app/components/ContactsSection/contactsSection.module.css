@@ -2,7 +2,7 @@
    width:100vw;
    height:auto;
    min-height:800px;
-   background-image: url('/noise.png'),linear-gradient(white,antiquewhite);
+   background-image: url('/noise.png'),linear-gradient(white,white);
    background-position: 0 0,0 0;
    background-repeat: repeat;
    display: flex;
@@ -17,7 +17,7 @@
    font-weight:800;
    color:transparent;
    background-clip: text;
-   background-image: linear-gradient(to right, #FF7A00,#FA00FF);
+   background-image: linear-gradient(to right, #7036A4,#FA00FF);
    margin-top:84px;
    mix-blend-mode:multiply;
 }

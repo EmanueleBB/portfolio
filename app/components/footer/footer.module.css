@@ -1,32 +1,74 @@
 .footerContainer{
-   color:rgb(115, 115, 115);
-   width:100vw;
+   color:white;
    height:50vh;
-   background-image: url('/noise.png'),linear-gradient(black,black);
-   background-position: 0 0,0 0;
-   background-repeat: repeat;
+   margin:24px;
+   border-radius: 30px;
+   background: radial-gradient(100% 120% at 50% 100%, #000 0%, #2B0A4F 54.54%, #AF4DC9 100%);
+   display: flex;
+   justify-content: center;
+   box-sizing: border-box;
+   padding-top:7vh;
+   font-size:15px;
+   font-weight: 500;
+   gap:10vw;
+}
+
+.spanAndBarContainer{
+   position:absolute;
+   bottom:0px;
+   width:500px;
+   text-align: center;
+   border:1px solid red;
    display: flex;
    flex-direction: column;
    align-items: center;
-   font-size:22px;
-   font-weight: 600;
+   padding-bottom: 12px;
+   
+   
+   
 }
 
-.footerContainer div{
-   display: flex;
-   gap:48px;
-   margin-top:10vh;
-}
 .footerContainer span{
-   
-   position:absolute;
-   bottom:10vh;
-   
+
+   font-size:18px;
+   opacity:0.5;
+}
+
+.iphoneBar{
+   width: 15vw;
+   height: 5px;
+   flex-shrink: 0;
+   background-color:#fff;
+   border-radius: 12px;
+   opacity:0.5;
+}
+
+
+
+.iconAndLinkDiv{
+   display: flex;
+   align-items: center;
+   gap:12px;
+   margin-bottom:12px;
+}
+
+
+
+.footerContainer h3{
+   font-size:19px;
+   margin-bottom:36px;
+   font-weight: 800;
 }
 
 
 .footerContainer a{
    color:white;
+   text-decoration: none;
+}
+
+.footerContainer svg{
+   width:22px;
+   height:22px;
 }
 
 .footerNextIcon{
