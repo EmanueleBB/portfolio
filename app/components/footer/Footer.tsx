@@ -1,10 +1,68 @@
+'use client'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import Link from 'next/link'
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import NextIcon from '../hero/icons/NextIcon'
 import NextWhiteIcon from '../hero/icons/NextWhiteIcon'
 import styles from './footer.module.css'
 
 const Footer = () => {
+
+   const textRef=useRef<HTMLSpanElement>(null);
+   const barRef=useRef<HTMLDivElement>(null);
+
+   useLayoutEffect(()=>{
+
+      const tl = gsap.timeline();
+      gsap.registerPlugin(ScrollTrigger);
+
+      ScrollTrigger.create({
+         trigger:barRef.current,
+         scrub:false,
+         markers:false,
+         start:'bottom bottom',
+         animation:tl,
+         id:'barAnimation',
+      })
+
+      tl.to(barRef.current,{
+         y:5,
+         duration:1.5,
+         opacity:1,
+         ease:'power2.out',
+         
+      }).to(barRef.current,{
+         y:-10,
+         duration:1,
+         opacity:1,
+         
+      }).fromTo(textRef.current,{
+         y:-15,
+         
+         opacity:0
+      },{
+         y:-40,
+         opacity:1,
+         duration:1.5,
+         ease:'power2.out'
+      },'<+=0.5').to(textRef.current,{
+         
+         y:-15,
+         duration:2.5,
+         opacity:1,
+         ease:'power2.inOut'
+      }).to(barRef.current,{
+         delay:0,
+         y:-5,
+         duration:2.5,
+         opacity:1,
+         ease:'power2.inOut'
+      },'<+=0.5')
+      
+   },[])
+
+
    return (
       <div className={styles.footerContainer}>
          
@@ -124,11 +182,10 @@ const Footer = () => {
 
 
          <div className={styles.spanAndBarContainer}>
-            <span>
+            <span ref={textRef}>
                Made with a lot of ☕ by <Link href=''>@me</Link>
             </span>
-            <div className={styles.iphoneBar}>
-
+            <div className={styles.iphoneBar} ref={barRef}>
             </div>
          </div>
          
