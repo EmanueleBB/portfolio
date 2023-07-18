@@ -93,8 +93,9 @@
    box-sizing: border-box;
    transform-origin: right;
    display:flex;
-   padding:16px 16px;
+   padding:32px 32px;
    flex-direction: column;
+   align-items: center;
    
 }
 
@@ -102,15 +103,49 @@
    opacity:0;
    top:32px;
    margin-top: 18%;
+   
 }
 .content .contentLeftDiv p{
    opacity:0;
    top:50px;
-   margin-top: 5%;
+   margin-top: 15%;
    font-size:16px;
-   font-weight: 400;
-   color:rgb(100, 100, 100);
+   font-weight: 600;
+   color:rgb(255, 255, 255,0.7 );
+   
 }
+
+.content .contentLeftDiv .linkIconsContainer{
+   
+   position:relative;
+   margin-top: 60%;
+   display: flex;
+   align-items: center;
+   gap:12px;
+
+}
+
+.linkIcon{
+   display: flex;
+   align-items: center;
+   transform-origin: top left;
+   opacity:0.7;
+   cursor:pointer;
+   position:static;
+   fill:white;
+   position:relative;
+   transition:opacity 0.2s ease;
+   width:32px;
+   height:32px;
+   color:unset;
+}
+
+
+.linkIcon:hover{
+   opacity:1;
+}
+
+
 
 
 .content .contentRightDiv{
@@ -122,20 +157,14 @@
    overflow: hidden;
 }
 
-.contentRightDiv img{
-   transform-origin: center;
-   transition:transform 0.4s ease;
-   cursor:pointer;
-}
 
-.content .contentRightDiv:hover img{
-   transform: scale(1.02);
-}
+
+
 
 .stackIconsContainer{
    width:100%;
    height:auto;
-   margin-top:20%;
+   margin-top: 15%;
    display:flex;
    gap:12px;
    align-items: center;
@@ -145,7 +174,6 @@
 .stackIconsContainer .iconBox{
    width:24px;
    height:24px;
-   
    box-sizing: border-box;
 }
    

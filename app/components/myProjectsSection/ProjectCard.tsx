@@ -4,8 +4,11 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import styles from './projects.module.css';
-import {IoIosCloseCircleOutline} from 'react-icons/io'
-import { BsFileX } from 'react-icons/bs';
+import {FiGithub} from 'react-icons/fi'
+import { BsArrowUpRightSquare} from 'react-icons/bs';
+import GithubIcon from '../hero/icons/GithubIcon';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface ProjectCardProps{
    title:string;
@@ -23,12 +26,14 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    stack,
    description,
    url,
-   leftAlign
+   leftAlign,
+   githubRepoLink
 }) => {
 
    const contentRef=useRef<HTMLDivElement>(null);
    const folderContainerRef=useRef<HTMLDivElement>(null);
    const [animationNeedsToPlayInReverse,setAnimationNeedsToPlayInReverse]=useState(false);
+   const router = useRouter();
 
    const tl = useRef<gsap.core.Timeline | null>(null);
    let windowCenterX:number;
@@ -158,11 +163,24 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                         ))
                      }
                   </div>
-               </div>
+                  <div className={styles.linkIconsContainer}>
+                     {githubRepoLink && (<Link href={githubRepoLink} className={styles.linkIcon} target='_blank'>
+                        <FiGithub />
+                     </Link>)}
+                     <Link href={url} className={styles.linkIcon} target='_blank'>
+                     <BsArrowUpRightSquare/>
 
-               <div className={styles.contentRightDiv}>
-                  <Image style={{backgroundPositionX:leftAlign?'100%':'center',objectFit:"cover"}} alt='mockup' src={imgSrc} fill/>
+                     </Link>
+                  </div>
                </div>
+               
+                  <div className={styles.contentRightDiv}>
+                  
+                     <Image style={{backgroundPositionX:leftAlign?'100%':'center',objectFit:"cover"}} alt='mockup' src={imgSrc} fill/>
+                  
+                  </div>
+               
+
 
                
             </div>

@@ -3,9 +3,12 @@ import CssIcon from '../hero/icons/CssIcon'
 import FigmaIcon from '../hero/icons/FigmaIcon'
 import HtmlIcon from '../hero/icons/HtmlIcon'
 import JavascriptIcon from '../hero/icons/JavascriptIcon'
+import MongoIcon from '../hero/icons/MongoIcon'
 import NextIcon from '../hero/icons/NextIcon'
 import NextRoundedIcon from '../hero/icons/NextRoundedIcon'
 import PhotoshopIcon from '../hero/icons/PhotoshopIcon'
+import PrismaIcon from '../hero/icons/PrismaIcon'
+import ReactIcon from '../hero/icons/ReactIcon'
 import SassIcon from '../hero/icons/SassIcon'
 import TypescriptIcon from '../hero/icons/TypescriptIcon'
 import MidjourneyDiv from '../stack/MidjourneyDiv'
@@ -22,7 +25,7 @@ const MyProjects = () => {
             <ProjectCard
                title='Full stack Airbnb Clone'
                imgSrc='/airbnbNew.png'
-               stack={[<NextIcon/>]}
+               stack={[<NextRoundedIcon/>,<MongoIcon/>,<TypescriptIcon/>,<ReactIcon/>,<PrismaIcon/>]}
                leftAlign
                description='An Airbnb clone made with NextJS 13.3'
                url='https://rent-app-clone-gray.vercel.app/'
@@ -33,8 +36,8 @@ const MyProjects = () => {
                imgSrc='/audiRedesign.jpg'
                stack={[<FigmaIcon/>,<PhotoshopIcon/>,<TypescriptIcon/>,<SassIcon/>,<NextRoundedIcon/>]}
                description='Because beautiful cars deserve beautiful websites. Actually, every landing page in the world should be beautiful, but yeah, this one in particular.'
-               url=''
-               githubRepoLink=''
+               url='https://www.apple.com/it/mac/'
+               githubRepoLink='https://github.com/EmanueleBB/portfolio'
             />
             <ProjectCard
                title='Gruppo Storico Spadaccini'
