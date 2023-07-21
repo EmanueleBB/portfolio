@@ -7,10 +7,10 @@
    display: flex;
    justify-content: center;
    box-sizing: border-box;
-   padding-top:7vh;
+   padding-top:10vh;
    font-size:15px;
    font-weight: 500;
-   gap:10vw;
+   gap:15vw;
 }
 
 .spanAndBarContainer{
@@ -35,7 +35,7 @@
 .iphoneBar{
    min-width:200px;
    width: 15vw;
-   height: 5px;
+   height: 4px;
    flex-shrink: 0;
    background-color:#fff;
    border-radius: 12px;
@@ -61,16 +61,22 @@
 
 
 .footerContainer a{
-   color:white;
+   color:rgb(255, 255, 255);
    text-decoration: none;
+   transition:all 0.3s ease;
 }
+
+.footerContainer a:hover{
+   text-decoration: underline;
+}
+
+
+
+
+
 
 .footerContainer svg{
    width:22px;
    height:22px;
 }
 
-.footerNextIcon{
-   height:18px;
-   width:18px;
-}
