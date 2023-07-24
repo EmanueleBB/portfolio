@@ -1,46 +1,100 @@
-'use client'
-
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import styles from './contactsSection.module.css';
 import { useForm } from 'react-hook-form';
 
-
 const ContactForm = () => {
-
-
+   const { register, setError, watch, formState, clearErrors } = useForm();
    const [nameHasValue, setNameHasValue] = useState(false);
    const [emailHasValue, setEmailHasValue] = useState(false);
-   const { register, handleSubmit, watch } = useForm();
+   const [textAreaHasValue, setTextAreaHasValue] = useState(false);
+   const [isButtonDisabled,setIsButtonDisabled]=useState(true);
+   const [isValidEmail, setIsValidEmail] = useState(false); 
 
-   const data = watch('name');
 
-   const handleFieldChange = (event:ChangeEvent<HTMLInputElement>) => {
-      const name=event.target.name;
-      const string = event.target.value;
-      console.log(string);
+   const isEmailValid = (email: string) => {
+      // Regex per verificare l'indirizzo email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+   };
+   
+
+   const handleFieldChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const nameOfTheInput = event.target.name;
+      const value = event.target.value.trim();
       
-      if(name==='name'){
-         setNameHasValue(string.length!==0);
-      }else if(name==='email'){
-         setEmailHasValue(string.length!==0);
+
+      if (nameOfTheInput === 'name') {
+         setNameHasValue(value !== '');
+         if (value !== '') {
+            clearErrors('name');
+         }  
+      } else if (nameOfTheInput === 'email') {
+         setEmailHasValue(value !== '');
+         setIsValidEmail(isEmailValid(value)); 
+         if (emailHasValue && isValidEmail) {
+            clearErrors('email');
+         }  
       }
    };
 
+   
 
+   const handleBlur = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const nameOfTheInput = event.target.name;
+      const value = event.target.value.trim();
+
+      if(nameOfTheInput==='name' && !nameHasValue){
+         setError('name', {
+            type: 'required',
+            message: 'This is a required field',
+         });
+      }
+      if(nameOfTheInput==='email'){
+         if(!emailHasValue){
+            setError('email', {
+               type: 'required',
+               message: 'This is a required field',
+            });
+         }
+         if(!isEmailValid(value)){
+            setError('email', {
+               type: 'invalidEmail',
+               message: 'Invalid email address',
+            });
+         }
+      }
+   };
+
+   useEffect(() => {
+      setIsButtonDisabled(!(formState.isValid && nameHasValue && emailHasValue && isValidEmail ));
+   }, [formState.isValid, nameHasValue, emailHasValue,isValidEmail]);
+
+   
+   
 
 
    return (
       <form className={styles.contactForm}>
-         <div className={`${styles.formGroup} ${nameHasValue ? styles.hasValue : ''}`}>
-            <input {...register('name')} onChange={(event)=>handleFieldChange(event)}/>
-            <label htmlFor='name'>Your name here</label>
+         <div className={`${styles.formGroup} ${nameHasValue ? styles.hasValue : ''} ${formState.errors?.name ? styles.hasError : ''}`}>
+            <input {...register('name')} onChange={handleFieldChange} onBlur={handleBlur}/>
+            <label htmlFor='name'>Your name</label>
+            {formState.errors.name && (
+               <span className={styles.errorMessage}>{String(formState.errors.name?.message)}</span>
+            )}
          </div>
-            <div className={`${styles.formGroup} ${emailHasValue ? styles.hasValue : ''}`}>
-            <input {...register('email')} onChange={(event)=>handleFieldChange(event)}/>
+         <div className={`${styles.formGroup} ${emailHasValue ? styles.hasValue : ''} ${formState.errors?.email ? styles.hasError : ''}`}>
+            <input {...register('email')} onChange={handleFieldChange} onBlur={handleBlur}/>
             <label htmlFor='email'>Your email</label>
+            {formState.errors.email && (
+               <span className={styles.errorMessage}>{String(formState.errors.email.message)}</span>
+            )}
+         </div>
+         <div className={`${styles.formGroup} ${textAreaHasValue ? styles.hasValue : ''}`}>
+            <textarea {...register('textArea')} onChange={handleFieldChange}/>
+            <label htmlFor='textArea'>Message</label>
          </div>
 
-         <button type='submit'>
+         <button type='submit' disabled={isButtonDisabled}>
             Send
          <svg
             width='16'
@@ -54,6 +108,6 @@ const ContactForm = () => {
          </button>
       </form>
    );
-};
+}
 
 export default ContactForm;
