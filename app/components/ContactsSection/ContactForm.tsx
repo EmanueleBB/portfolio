@@ -2,13 +2,16 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import styles from './contactsSection.module.css';
 import { useForm } from 'react-hook-form';
 
+
 const ContactForm = () => {
-   const { register, setError, watch, formState, clearErrors } = useForm();
+   const { register, setError, formState, clearErrors} = useForm();
    const [nameHasValue, setNameHasValue] = useState(false);
    const [emailHasValue, setEmailHasValue] = useState(false);
    const [textAreaHasValue, setTextAreaHasValue] = useState(false);
+   const [textAreaIsValid, setTextAreaIsValid] = useState(false);
    const [isButtonDisabled,setIsButtonDisabled]=useState(true);
    const [isValidEmail, setIsValidEmail] = useState(false); 
+
 
 
    const isEmailValid = (email: string) => {
@@ -34,6 +37,12 @@ const ContactForm = () => {
          if (emailHasValue && isValidEmail) {
             clearErrors('email');
          }  
+      }else if (nameOfTheInput === 'message') {
+         setTextAreaHasValue(value !== '');
+         setTextAreaIsValid(value.length>=20);
+         if (textAreaHasValue && textAreaIsValid) {
+            clearErrors('message');
+         }  
       }
    };
 
@@ -46,7 +55,7 @@ const ContactForm = () => {
       if(nameOfTheInput==='name' && !nameHasValue){
          setError('name', {
             type: 'required',
-            message: 'This is a required field',
+            message: 'I need your name to contact you back :)',
          });
       }
       if(nameOfTheInput==='email'){
@@ -59,40 +68,64 @@ const ContactForm = () => {
          if(!isEmailValid(value)){
             setError('email', {
                type: 'invalidEmail',
-               message: 'Invalid email address',
+               message: 'Make sure to insert a valid email',
             });
          }
+         if (emailHasValue && isValidEmail) {
+            clearErrors('email');
+         }  
+      }
+      if(nameOfTheInput==='message'){
+         if(!textAreaHasValue){
+            setError('message', {
+               type: 'required',
+               message: 'This is also a required field',
+            });
+         }
+         if(value.length<20){
+            setError('message', {
+               type: 'tooShortMessage',
+               message: 'The message needs to be at least 20 characters long',
+            });
+         }
+         if (textAreaHasValue && value.length>=20) {
+            clearErrors('message');
+         }  
       }
    };
 
    useEffect(() => {
-      setIsButtonDisabled(!(formState.isValid && nameHasValue && emailHasValue && isValidEmail ));
-   }, [formState.isValid, nameHasValue, emailHasValue,isValidEmail]);
+      // console.log(nameHasValue,emailHasValue,isValidEmail)
+      setIsButtonDisabled(!(nameHasValue && emailHasValue && isValidEmail && textAreaIsValid));
+      
+   }, [nameHasValue, emailHasValue,isValidEmail, textAreaIsValid]);
 
    
-   
-
 
    return (
-      <form className={styles.contactForm}>
+      <form className={styles.contactForm} action="https://formsubmit.co/11b841bfb61d4d7e5270a6084630e6b2" method="POST">
          <div className={`${styles.formGroup} ${nameHasValue ? styles.hasValue : ''} ${formState.errors?.name ? styles.hasError : ''}`}>
-            <input {...register('name')} onChange={handleFieldChange} onBlur={handleBlur}/>
+            <input {...register('name')} onChange={handleFieldChange} onBlur={handleBlur} autoComplete='off'/>
             <label htmlFor='name'>Your name</label>
             {formState.errors.name && (
                <span className={styles.errorMessage}>{String(formState.errors.name?.message)}</span>
             )}
          </div>
          <div className={`${styles.formGroup} ${emailHasValue ? styles.hasValue : ''} ${formState.errors?.email ? styles.hasError : ''}`}>
-            <input {...register('email')} onChange={handleFieldChange} onBlur={handleBlur}/>
+            <input {...register('email')} onChange={handleFieldChange} onBlur={handleBlur} autoComplete='off'/>
             <label htmlFor='email'>Your email</label>
             {formState.errors.email && (
                <span className={styles.errorMessage}>{String(formState.errors.email.message)}</span>
             )}
          </div>
-         <div className={`${styles.formGroup} ${textAreaHasValue ? styles.hasValue : ''}`}>
-            <textarea {...register('textArea')} onChange={handleFieldChange}/>
-            <label htmlFor='textArea'>Message</label>
+         <div className={`${styles.formGroup} ${textAreaHasValue ? styles.hasValue : ''} ${formState.errors?.message ? styles.hasError : ''}`}>
+            <textarea {...register('message')} onChange={handleFieldChange} onBlur={handleBlur}/>
+            <label htmlFor='message'>Message</label>
+            {formState.errors.message && (
+               <span className={`${styles.errorMessage} ${styles.textAreaSpan}`} >{String(formState.errors.message.message)}</span>
+            )}
          </div>
+         <input type="hidden" name="_next" value="http://localhost:3000/thanks"></input>
 
          <button type='submit' disabled={isButtonDisabled}>
             Send

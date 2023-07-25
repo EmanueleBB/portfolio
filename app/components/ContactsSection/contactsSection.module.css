@@ -8,7 +8,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding:20vh 0px;
+   padding:5vh 0px;
    
 }
 
@@ -94,9 +94,21 @@
    transform: translateY(-100%);
    font-size: 12px;
    font-weight: 500;
+   
 }
 
+.formGroup textarea:focus + label,
+.formGroup textarea:active + label,
+.formGroup.hasValue textarea + label{
+   transform: translateY(calc(-100% + 20px));
+   font-size: 12px;
+   font-weight: 500;
+   margin-left:0px;
 
+}
+.formGroup textarea+ label{
+   margin-left:12px;
+}
 
 .contactForm textarea{
    font-family: inherit;
@@ -107,11 +119,14 @@
    padding: 12px 18px;
    align-items: flex-start;
    gap: 10px;
-   border-radius: 17px;
+   border-radius: 25px;
    transition: all 0.25s ease;
    box-sizing: border-box;
    margin:36px 0px 24px 0px;
-
+   font-size:inherit;
+   font-weight: inherit;
+   color:rgb(117, 75, 177);
+   resize: none;
 }
 
 .errorMessage{
@@ -120,27 +135,35 @@
    top:100%;
    width:100%;
    font-size:11px;
-   color:red;
+   color:#dc0b0b;
+   opacity:1;
+   transition:opacity 1s ease;
 }
+
+.errorMessage.textAreaSpan{
+   top:calc(100% - 12px);
+}
+
 
 .contactForm .formGroup.hasError input:focus + label,
 .contactForm .formGroup.hasError input{
-   color:rgb(234, 49, 39);
+   color:#dc0b0b;
 }
 
 .contactForm .formGroup.hasError input {
-   border-bottom:2px solid rgb(234, 49, 39);
+   border-bottom:2px solid rgb(206, 0, 0);
 }
 
 
 .contactForm input:active,
 .contactForm textarea:active,
-.contactForm input:focus
-{
+.contactForm input:focus{
    border:unset;
    border-bottom:2px solid rgb(117, 75, 177);
    outline:none;
    box-shadow:unset;
+   
+   
 }
 .contactForm textarea:focus{
    border:unset;
@@ -193,7 +216,7 @@
    width:0%;
    height:100%;
    border-radius: inherit;
-   background-image: linear-gradient(to right, #3f1267,#89188b,#e360cd);
+   background-image: linear-gradient(to right, #582883,#d02ed3,#ffbcf4);
    z-index:-1;
    transition:width 0.2s ease,opacity 0.2s ease;
    opacity: 0;
