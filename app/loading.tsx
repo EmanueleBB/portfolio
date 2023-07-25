@@ -1,9 +1,13 @@
 import React from 'react'
 
-const loading = () => {
-   return (
-      <div>loading...</div>
-   )
-}
 
-export default loading
+
+export default async function Loading() {
+  
+  return (
+    <div className='loaderContainer'>
+
+      <span className="loader"></span>
+    </div>
+  );
+}

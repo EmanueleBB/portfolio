@@ -1,19 +1,46 @@
+'use client'
+
 import Link from 'next/link'
-import React from 'react'
+import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/navbar/Navbar'
 
 
-const page = () => {
+ 
+
+
+const page = async() => {
+   const router = useRouter();
+
+   const getData=():Promise<string>=>{
+      return new Promise ((res,rej)=>{
+         setTimeout(()=>{
+            return res('DATA')
+         },3000)
+      })
+    }
+
+   const data:string=await getData();
+   
+
+   const handleClick = () => {
+      setInterval(() => {
+         router.push('/')
+      }, 6000);
+   };
+
    return (
-      <div style={{color:'white'}}>
-         <Navbar/>
-
-         This is the about page
-
-         <Footer/>
-      </div>
+      <>
+         <h1>
+            This is the about page
+         </h1>
+         <h2 onClick={handleClick}>
+            Go home
+         </h2>
+         
+      </>
    )
 }
 
-export default page
+export default page;

@@ -25,11 +25,7 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
    const [carouselTransform,setCarouselTransfrom]=useState(0);
    
 
-   useEffect(() => {
-      console.log({ activeSection });
-      console.log({ activeCard });
-   }, [activeSection, activeCard])
-
+   
 
    //definitions of the various cards
    useEffect(() => {
@@ -171,7 +167,7 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
       if (currentCardDisplayed) {
 
          const cardWidth = currentCardDisplayed.clientWidth;
-         console.log({currentCardDisplayed})
+         
 
 
          setCarouselPadding(window.innerWidth / 2 - cardWidth / 2);
@@ -182,8 +178,6 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
             translateX:-activeCard*carouselTransform,
             ease:'power1.out'
          })
-         
-         console.log(activeCard*carouselTransform);
       }
 
    },[bodyContent,activeCard,activeSection])
