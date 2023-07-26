@@ -17,7 +17,8 @@ interface ProjectCardProps{
    description:string;
    url:string;
    githubRepoLink?:string;
-   leftAlign?:boolean
+   leftAlign?:boolean;
+   frontIcon?:ReactElement|string;
 }
 
 const ProjectCard:React.FC<ProjectCardProps> = ({
@@ -27,7 +28,8 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    description,
    url,
    leftAlign,
-   githubRepoLink
+   githubRepoLink,
+   frontIcon
 }) => {
 
    const contentRef=useRef<HTMLDivElement>(null);
@@ -178,16 +180,16 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                   <div className={styles.contentRightDiv}>
                   
                      <Image style={{backgroundPositionX:leftAlign?'100%':'center',objectFit:"cover"}} alt='mockup' src={imgSrc} fill/>
-                  
                   </div>
-               
-
-
-               
             </div>
 
 
             <div className={styles.frontSide} onClick={animateContent}>
+            {typeof frontIcon === "string" ? (
+               <img src={frontIcon} alt="Icon"/>
+            ) : (
+               frontIcon
+            )}
                <h4>
                   {title}
                </h4>

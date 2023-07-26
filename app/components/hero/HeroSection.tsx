@@ -27,157 +27,157 @@ const HeroSection = () => {
 	// if(1===2){
 
 
-	useLayoutEffect(() => {
+	// useLayoutEffect(() => {
 
-		const iconsSongSyncAnimation = () => {
-			const tl = gsap.timeline();
-			const icons = Array.from(iconsHeroGroupRef.current?.childNodes || []);
-			tl.to(icons[9],{
-				duration:0.187,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			}).to(icons[10],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<0.57').to(icons[8],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.187').to(icons[11],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.57').to(icons[12],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.187').to(icons[7],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=1.5').to(icons[6],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<0.57').to(icons[13],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.187').to(icons[14],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.57').to(icons[15],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.187').to(icons[5],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=1.5').to(icons[3],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<0.57').to(icons[4],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.187').to(icons[17],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.57').to(icons[16],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.187').to(icons[2],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=1.5').to(icons[1],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<0.57').to(icons[0],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.187').to(icons[18],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.57').to(icons[19],{
-				duration:2,
-				opacity:1,
-				stagger:0.5,
-				ease:'elastic',
-			},'<+=0.187')
+	// 	const iconsSongSyncAnimation = () => {
+	// 		const tl = gsap.timeline();
+	// 		const icons = Array.from(iconsHeroGroupRef.current?.childNodes || []);
+	// 		tl.to(icons[9],{
+	// 			duration:0.187,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		}).to(icons[10],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<0.57').to(icons[8],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.187').to(icons[11],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.57').to(icons[12],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.187').to(icons[7],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=1.5').to(icons[6],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<0.57').to(icons[13],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.187').to(icons[14],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.57').to(icons[15],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.187').to(icons[5],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=1.5').to(icons[3],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<0.57').to(icons[4],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.187').to(icons[17],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.57').to(icons[16],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.187').to(icons[2],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=1.5').to(icons[1],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<0.57').to(icons[0],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.187').to(icons[18],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.57').to(icons[19],{
+	// 			duration:2,
+	// 			opacity:1,
+	// 			stagger:0.5,
+	// 			ease:'elastic',
+	// 		},'<+=0.187')
 
-		}
+	// 	}
 
-		const tl = gsap.timeline({
+	// 	const tl = gsap.timeline({
 			
-		});
+	// 	});
 		
 		
-		tl.from(heroMainDivRef.current, {
-			duration: 2,
-			backgroundImage:'radial-gradient(circle at center bottom, black 30%, #2B0A4F 60%, #AF4DC9 90%, #F9A2F0 120%)',
-			ease: 'power2.inOut',
-			backgroundPosition: 'center top',
-			onComplete:()=>{iconsSongSyncAnimation()}
-		}).from(h2Ref.current, {
+	// 	tl.from(heroMainDivRef.current, {
+	// 		duration: 2,
+	// 		backgroundImage:'radial-gradient(circle at center bottom, black 30%, #2B0A4F 60%, #AF4DC9 90%, #F9A2F0 120%)',
+	// 		ease: 'power2.inOut',
+	// 		backgroundPosition: 'center top',
+	// 		onComplete:()=>{iconsSongSyncAnimation()}
+	// 	}).from(h2Ref.current, {
 			
-			duration: 1,
-			top:35,
-			opacity:0,
-			ease: 'power3.out',
-		},'<+=1.5').from(h1Ref.current, {
-			duration: 1.5,
-			top:65,
-			opacity:0,
-			ease: 'power4.out',
-		},'<+=1').from(pRef.current, {
-			duration: 2,
-			top:25,
-			opacity:0,
-			ease: 'power4.out',
-		},'<+=1').fromTo(ButtonRef.current, {
-			top:15,
-			opacity:0,
-		},{
-			duration:0.15,
-			top:0,
-			opacity:1,
-			ease: 'power4.out',
-		},'<+=1.25').from('.stagger', {
-			duration: 0.15,
-			top:15,
-			opacity:0,
-			ease: 'power4.out',
-		},'<+=0.25');
-	}, []);
+	// 		duration: 1,
+	// 		top:35,
+	// 		opacity:0,
+	// 		ease: 'power3.out',
+	// 	},'<+=1.5').from(h1Ref.current, {
+	// 		duration: 1.5,
+	// 		top:65,
+	// 		opacity:0,
+	// 		ease: 'power4.out',
+	// 	},'<+=1').from(pRef.current, {
+	// 		duration: 2,
+	// 		top:25,
+	// 		opacity:0,
+	// 		ease: 'power4.out',
+	// 	},'<+=1').fromTo(ButtonRef.current, {
+	// 		top:15,
+	// 		opacity:0,
+	// 	},{
+	// 		duration:0.15,
+	// 		top:0,
+	// 		opacity:1,
+	// 		ease: 'power4.out',
+	// 	},'<+=1.25').from('.stagger', {
+	// 		duration: 0.15,
+	// 		top:15,
+	// 		opacity:0,
+	// 		ease: 'power4.out',
+	// 	},'<+=0.25');
+	// }, []);
 	// }
 
 

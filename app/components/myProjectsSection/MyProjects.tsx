@@ -1,4 +1,6 @@
 import React from 'react'
+import AirbnbIcon from '../hero/icons/AirbnbIcon'
+import AudiIcon from '../hero/icons/audiIcon'
 import CssIcon from '../hero/icons/CssIcon'
 import FigmaIcon from '../hero/icons/FigmaIcon'
 import HtmlIcon from '../hero/icons/HtmlIcon'
@@ -31,6 +33,7 @@ const MyProjects = () => {
                description='An Airbnb clone made with NextJS 13.3'
                url='https://rent-app-clone-gray.vercel.app/'
                githubRepoLink='https://github.com/EmanueleBB/Airbnb-Clone'
+               frontIcon={<AirbnbIcon/>}
             />
             <ProjectCard
                title='Audi RS6 landing page redesign'
@@ -39,6 +42,7 @@ const MyProjects = () => {
                description='Because beautiful cars deserve beautiful websites. Actually, every landing page in the world should be beautiful, but yeah, this one in particular.'
                url='https://www.apple.com/it/mac/'
                githubRepoLink='https://github.com/EmanueleBB/portfolio'
+               frontIcon={<AudiIcon/>}
             />
             <ProjectCard
                title='Gruppo Storico Spadaccini'
@@ -47,6 +51,7 @@ const MyProjects = () => {
                description='My first real project, made with plain HTML, CSS and Javascript'
                url='https://www.gruppostoricospadaccini.it/'
                githubRepoLink=''
+               frontIcon='/logoGssNero.png'
             />
             <ProjectCard
                title='Full stack Airbnb Clone'

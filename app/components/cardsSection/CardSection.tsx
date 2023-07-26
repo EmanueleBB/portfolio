@@ -109,7 +109,7 @@ const CardSection = () => {
 
             <div className={styles.titlesContainer}>
                <h3 ref={sushiH3Ref} onClick={()=>setActiveSection(sushiH3Ref)} id='sushi'>
-                  A sushi restaurant
+                  The 2028 version of StockX
                </h3>
 
                <h3 ref={travelAgencyH3Ref} onClick={()=>setActiveSection(travelAgencyH3Ref)} id='agency'>
