@@ -18,6 +18,8 @@ const MidjourneyDiv = () => {
 
    useLayoutEffect(() => {
 
+      const midjourneyDivRefValue=midjourneyDivRef.current;
+
       const options = {
          root: null,
          rootMargin: `150px`,
@@ -84,8 +86,8 @@ const MidjourneyDiv = () => {
       }
 
       return () => {
-         if (midjourneyDivRef.current) {
-            observer.unobserve(midjourneyDivRef.current);
+         if (midjourneyDivRefValue) {
+            observer.unobserve(midjourneyDivRefValue);
          }
       };
    }, []);

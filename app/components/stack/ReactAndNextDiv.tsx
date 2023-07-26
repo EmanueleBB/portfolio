@@ -21,6 +21,9 @@ const ReactAndNextDiv = () => {
 
    useLayoutEffect(() => {
 
+      const reactAndNextJsDivRefValue=reactAndNextJsDivRef.current;
+
+
       const options = {
          root: null,
          rootMargin: `150px`,
@@ -69,8 +72,8 @@ const ReactAndNextDiv = () => {
       }
 
       return () => {
-         if (reactAndNextJsDivRef.current) {
-            observer.unobserve(reactAndNextJsDivRef.current);
+         if (reactAndNextJsDivRefValue) {
+            observer.unobserve(reactAndNextJsDivRefValue);
          }
       };
    }, []);

@@ -36,15 +36,16 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    const router = useRouter();
 
    const tl = useRef<gsap.core.Timeline | null>(null);
-   let windowCenterX:number;
-   let windowCenterY:number;
+   
    let translateContentX:number;
    let translateContentY:number;
+   let windowCenterX:number;
+   let windowCenterY:number;
 
    useEffect(() => {
       windowCenterX=window?.innerWidth/2;
       windowCenterY=window?.innerHeight/2;
-   })
+   },[])
    
 
    const animateContent = () => {

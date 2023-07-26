@@ -23,9 +23,10 @@ const MyProjects = () => {
          </h3>
          <div className={styles.projectsContainer}>
             <ProjectCard
+               
                title='Full stack Airbnb Clone'
                imgSrc='/airbnbNew.png'
-               stack={[<NextRoundedIcon/>,<MongoIcon/>,<TypescriptIcon/>,<ReactIcon/>,<PrismaIcon/>]}
+               stack={[<NextRoundedIcon key='airbnbNext'/>,<MongoIcon key='airbnbMongo'/>,<TypescriptIcon key='airbnbTypescript'/>,<ReactIcon key='airbnbReact'/>,<PrismaIcon key='airbnbPrisma'/>]}
                leftAlign
                description='An Airbnb clone made with NextJS 13.3'
                url='https://rent-app-clone-gray.vercel.app/'
@@ -34,7 +35,7 @@ const MyProjects = () => {
             <ProjectCard
                title='Audi RS6 landing page redesign'
                imgSrc='/audiRedesign.jpg'
-               stack={[<FigmaIcon/>,<PhotoshopIcon/>,<TypescriptIcon/>,<SassIcon/>,<NextRoundedIcon/>]}
+               stack={[<FigmaIcon key='rs6Figma'/>,<PhotoshopIcon key='rs6Ps'/>,<TypescriptIcon key='rs6Ts'/>,<SassIcon key='rs6Sass'/>,<NextRoundedIcon key='rs6Next'/>]}
                description='Because beautiful cars deserve beautiful websites. Actually, every landing page in the world should be beautiful, but yeah, this one in particular.'
                url='https://www.apple.com/it/mac/'
                githubRepoLink='https://github.com/EmanueleBB/portfolio'
@@ -42,7 +43,7 @@ const MyProjects = () => {
             <ProjectCard
                title='Gruppo Storico Spadaccini'
                imgSrc='/gss1.png'
-               stack={[<HtmlIcon/>,<CssIcon/>,<JavascriptIcon/>]}
+               stack={[<HtmlIcon key='gssHtml'/>,<CssIcon key='gssCss'/>,<JavascriptIcon key='gssJs'/>]}
                description='My first real project, made with plain HTML, CSS and Javascript'
                url='https://www.gruppostoricospadaccini.it/'
                githubRepoLink=''
@@ -50,21 +51,21 @@ const MyProjects = () => {
             <ProjectCard
                title='Full stack Airbnb Clone'
                imgSrc=''
-               stack={[<NextIcon/>]}
+               stack={[<NextIcon key='4next'/>]}
                description=''
                url=''
             />
             <ProjectCard
                title='Full stack Airbnb Clone'
                imgSrc=''
-               stack={[<NextIcon/>]}
+               stack={[<NextIcon key='5next'/>]}
                description=''
                url=''
             /> 
             <ProjectCard
                title='Full stack Airbnb Clone'
                imgSrc=''
-               stack={[<NextIcon/>]}
+               stack={[<NextIcon key='6next'/>]}
                description=''
                url=''
             />

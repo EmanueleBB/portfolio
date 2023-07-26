@@ -108,7 +108,7 @@ const SomeMoreThings = () => {
 
       // Cleanup dell'observer quando il componente viene smontato
       return () => observer.disconnect();
-   }, []);
+   }, [observerOptions]);
 
    
 
@@ -217,7 +217,7 @@ const SomeMoreThings = () => {
                Github
             </h3>
             <div className={`${styles.barAndTextContainer}`}>
-               <p className={`${styles.text} ${styles.githubText}`}>Can you really say you know what a computer is if you don't have a Github profile? <span className={`${styles.textSpan} ${styles.githubTextSpan}`}><a className={styles.githubLink} href='https://github.com/EmanueleBB' target='blank'>here</a></span> is mine.</p>
+               <p className={`${styles.text} ${styles.githubText}`}>Can you really say you know what a computer is if you don&apos;t have a Github profile? <span className={`${styles.textSpan} ${styles.githubTextSpan}`}><a className={styles.githubLink} href='https://github.com/EmanueleBB' target='blank'>here</a></span> is mine.</p>
                <div className={styles.popupBar}></div>             
             </div>    
          </div>

@@ -180,7 +180,7 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
          })
       }
 
-   },[bodyContent,activeCard,activeSection])
+   },[bodyContent,activeCard,activeSection,carouselGap,carouselTransform])
 
    return (
       <div className={styles.carouselWrapper}

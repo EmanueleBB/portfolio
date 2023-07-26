@@ -200,7 +200,7 @@ const FirstText = () => {
       <div className={styles.blackToPinkDiv} ref={blackToPinkDiv}>
          <p className={styles.wonderText} ref={paragraphRef}>
             <span ref={firstSpan}>
-               Just take a moment to recall the last time you thought <i>"Wow, that was wonderful"</i>
+               Just take a moment to recall the last time you thought <i>&quot;Wow, that was wonderful&quot;</i>
             </span>
             <span ref={secondSpan}>
                Maybe it happened while admiring a painting, or while listening to a song.

@@ -18,6 +18,8 @@ const FigmaDiv = () => {
 
    useLayoutEffect(() => {
 
+      const figmaDivRefValue = figmaDivRef.current;
+
       const options = {
          root: null,
          rootMargin: `150px`,
@@ -77,8 +79,8 @@ const FigmaDiv = () => {
       }
 
       return () => {
-         if (figmaDivRef.current) {
-            observer.unobserve(figmaDivRef.current);
+         if (figmaDivRefValue) {
+            observer.unobserve(figmaDivRefValue);
          }
       };
    }, []);

@@ -24,6 +24,8 @@ const PhotoshopDiv = () => {
 
    useLayoutEffect(() => {
 
+      const photoshopDivRefValue=photoshopDivRef.current;
+
       const options = {
          root: null,
          rootMargin: `150px`,
@@ -94,8 +96,8 @@ const PhotoshopDiv = () => {
       }
 
       return () => {
-         if (photoshopDivRef.current) {
-            observer.unobserve(photoshopDivRef.current);
+         if (photoshopDivRefValue) {
+            observer.unobserve(photoshopDivRefValue);
          }
       };
    }, []);
@@ -111,7 +113,7 @@ const PhotoshopDiv = () => {
          </h2>
 
          <p className={`${styles.generalP} ${styles.photoshopP}`} ref={pRef}>
-         The standard for <span>image retouch</span>. It's one of the main <span>tools</span> I use to transition from <span>vision</span> to <span >reality.</span>
+         The standard for <span>image retouch</span>. It&apos;s one of the main <span>tools</span> I use to transition from <span>vision</span> to <span >reality.</span>
          </p>
          <div className={styles.ballerinaImageContainer} ref={imageDivRef}>
             <Image

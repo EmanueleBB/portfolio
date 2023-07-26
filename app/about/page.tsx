@@ -10,7 +10,7 @@ import Navbar from '../components/navbar/Navbar'
  
 
 
-const page = async() => {
+const Page = async() => {
    const router = useRouter();
 
    const getData=():Promise<string>=>{
@@ -43,4 +43,4 @@ const page = async() => {
    )
 }
 
-export default page;
+export default Page;

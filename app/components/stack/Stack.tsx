@@ -48,6 +48,9 @@ const Stack = () => {
 
    //For the progressBar we need to know how much of the content has been scrolled
    useEffect(() => {
+
+      const horizontalWrapperRefValue=horizontalWrapperRef.current;
+
       const updatePercentageScrolled = () => {
          if (horizontalWrapperRef.current) {
             const scrollLeft = horizontalWrapperRef.current.scrollLeft;
@@ -62,8 +65,8 @@ const Stack = () => {
       }
 
       return () => {
-         if (horizontalWrapperRef.current) {
-            horizontalWrapperRef.current.removeEventListener('scroll', updatePercentageScrolled);
+         if (horizontalWrapperRefValue) {
+            horizontalWrapperRefValue.removeEventListener('scroll', updatePercentageScrolled);
          }
       };
    }, []);

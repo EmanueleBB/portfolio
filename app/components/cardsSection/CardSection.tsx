@@ -100,11 +100,11 @@ const CardSection = () => {
             </p>
 
             <p className={styles.cardsMainParagraph}>
-               Here's a small showing of the endless ways you can design a web card.
+               Here&apos;s a little showing of the many ways you can design a web card.
             </p>
 
             <p className={styles.cardsMainParagraph}>
-               Let's say you own...
+               Let&apos;s say you own...
             </p>
 
             <div className={styles.titlesContainer}>

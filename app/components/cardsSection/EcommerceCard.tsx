@@ -56,7 +56,7 @@ const EcommerceCard:React.FC<EcommerceCardProps> = ({
             </div>
          )
       }
-   },[])
+   },[stars])
 
    return (
       <div className={`${styles.ecommerceCard} ${className}`}>

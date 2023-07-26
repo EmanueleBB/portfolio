@@ -194,15 +194,15 @@ const HeroSection = () => {
       <div className={styles.heroMainDiv} ref={heroMainDivRef}>
 
 			<h2 className={styles.heroH2} ref={h2Ref}>	
-				Hi there, I'm Emanuele 👋🏻
+				Hi there, I&apos;m Emanuele 👋🏻
 			</h2>
 			<h1 className={styles.heroH1} ref={h1Ref}>
 				Web developer &<br/>UX/UI designer
 			</h1>
 			<p className={styles.heroParagraph} ref={pRef}> 
-				I'm a full stack web developer based in Italy.
+				I&apos;m a full stack web developer based in Italy.
 				React and Next JS are the main frameworks I use for my projects.
-				I might have a slight obsession for Apple's way of designing things :)
+				I might have a slight obsession for Apple&apos;s way of designing things :)
 			</p>
 
 			<IconsHeroGroup ref={iconsHeroGroupRef}/>

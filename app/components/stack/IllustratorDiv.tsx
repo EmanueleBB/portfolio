@@ -83,7 +83,7 @@ const IllustratorDiv = () => {
          </h2>
 
          <p className={`${styles.generalP} ${styles.illustratorP}`} ref={pRef}>
-         The industry standard for manipulating <span>vector images </span>. It's not been a main component of my workflow until quite recently, when I started to love experimenting with it. 
+         The industry standard for manipulating <span>vector images </span>. It&apos;s not been a main component of my workflow until quite recently, when I started to love experimenting with it. 
          </p>
       </div>
    )
