@@ -16,6 +16,7 @@ const Navbar = () => {
    const divRef=useRef<HTMLDivElement>(null);
    const firstStrokeRef=useRef<HTMLDivElement>(null);
    const secondStrokeRef=useRef<HTMLDivElement>(null);
+   const dropDownRef=useRef<HTMLDivElement>(null);
 
    const hamburgerTl = useRef<gsap.core.Timeline | null>(null);
    
@@ -69,28 +70,40 @@ const Navbar = () => {
 
       if(!showDropdown){
 
-         hamburgerTl.current=gsap.timeline();
-
-         hamburgerTl.current.to(firstStrokeRef.current,{
+         const dropDown=document.querySelector(`.${styles.navbarDropdownWrapper}`)
+      
+         hamburgerTl.current=gsap.timeline({
+            onStart:()=>{gsap.to(dropDown,{
+               visibility:'visible',
+            })},
+            onReverseComplete:()=>{gsap.to(dropDown,{
+               visibility:'hidden',
+            })}
+         });
+         
+         hamburgerTl.current.to(dropDown,{
+            opacity:1,
+            duration:0.3      
+         },0).to(firstStrokeRef.current,{
             top:'calc(50% - 1px)',
             duration:0.15,
-            ease:'power1.in'       
-         }).to(secondStrokeRef.current,{
+            ease:'power2.in'       
+         },0).to(secondStrokeRef.current,{
             top:'calc(-50% + 1px)',
             duration:0.15,
-            ease:'power1.in'       
-         },'<').to(firstStrokeRef.current,{
+            ease:'power2.in'       
+         },0).to(firstStrokeRef.current,{
             transform:'rotate(45deg)',
             duration:0.15,
-            ease:'power1.out'       
-         }).to(secondStrokeRef.current,{
+            ease:'power2.out'       
+         },0.15).to(secondStrokeRef.current,{
             transform:'rotate(-45deg)',
             duration:0.15,
-            ease:'power1.out'       
-         },'<')
+            ease:'power2.out'       
+         },0.15)
       }
       if(showDropdown && hamburgerTl.current){
-         hamburgerTl.current.reverse();
+         hamburgerTl.current.reverse()
       }
    };
 
@@ -106,7 +119,7 @@ const Navbar = () => {
    return (
       <div className={styles.navbar} ref={divRef}>
          <LogoIcon className={styles.logoIcon}/>
-         <div className={styles.navbarNavlinksWrapper}>
+         <div className={styles.navbarNavlinksWrapper} >
             <button className={styles.navLink} onClick={handleStackButtonClick}>My tech stack</button>
             <a href="" className={styles.navLink}>Design</a>
             <a href="" className={styles.navLink}>Code</a>
@@ -121,22 +134,22 @@ const Navbar = () => {
             <div className={styles.hamburgerStroke} ref={firstStrokeRef}></div>
             <div className={styles.hamburgerStroke} ref={secondStrokeRef}></div>
          </div> 
-         {
-            showDropdown && (
-               <div className={styles.navbarDropdownWrapper}>
-                  <button className={styles.navLink} onClick={()=>{handleStackButtonClick();handleHamburgerClick()}}>My tech stack</button>
-                  <a href="" className={styles.navLink} onClick={handleHamburgerClick}>Design</a>
-                  <a href="" className={styles.navLink} onClick={handleHamburgerClick}>Code</a>
-                  <a href="" className={styles.navLink} onClick={handleHamburgerClick}>About me</a>
-                  <a href='/pdfs/resume.pdf' className={styles.navLink} target='_blank' onClick={handleHamburgerClick}>resume</a>
-                  <Button
-                     variant={ButtonVariants.pink}
-                     label='Contacts'
-                     onClick={handleHamburgerClick}
-                  />   
-               </div>
-            )
-         }
+         
+            
+         <div className={`${styles.navbarDropdownWrapper} `} >
+            <button className={styles.navLink} onClick={()=>{handleStackButtonClick();handleHamburgerClick()}}>My tech stack</button>
+            <a href="" className={styles.navLink} onClick={handleHamburgerClick}>Design</a>
+            <a href="" className={styles.navLink} onClick={handleHamburgerClick}>Code</a>
+            <a href="" className={styles.navLink} onClick={handleHamburgerClick}>About me</a>
+            <a href='/pdfs/resume.pdf' className={styles.navLink} target='_blank' onClick={handleHamburgerClick}>resume</a>
+            <Button
+               variant={ButtonVariants.pink}
+               label='Contacts'
+               onClick={handleHamburgerClick}
+            />   
+         </div>
+            
+         
          
       </div>
    )
