@@ -17,6 +17,11 @@ body{
 	overflow-x:hidden;
 }
 
+body.no-scroll {
+	overflow: hidden;
+	position:fixed;
+ }
+
 .notFoundContainer{
 	color:white;
 	width:100vw;

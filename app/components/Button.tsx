@@ -12,6 +12,7 @@ interface ButtonProps{
    
    variant:ButtonVariants;
    label:string;
+   onClick?:()=>void;
 }
 const Button:ForwardRefRenderFunction<HTMLElement,ButtonProps> = ({variant,label},ref
 ) => {
