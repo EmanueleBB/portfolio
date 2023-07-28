@@ -18,14 +18,15 @@ import ProjectCard from './ProjectCard'
 import styles from './projects.module.css'
 
 const MyProjects = () => {
+
+
    return (
       <div className={styles.mainContainer}>
          <h3>
             Here are some of my latest projects
          </h3>
          <div className={styles.projectsContainer}>
-            <ProjectCard
-               
+            <ProjectCard   
                title='Full stack Airbnb Clone'
                imgSrc='/airbnbNew.png'
                stack={[<NextRoundedIcon key='airbnbNext'/>,<MongoIcon key='airbnbMongo'/>,<TypescriptIcon key='airbnbTypescript'/>,<ReactIcon key='airbnbReact'/>,<PrismaIcon key='airbnbPrisma'/>]}
