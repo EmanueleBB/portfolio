@@ -218,10 +218,10 @@ const FirstText = () => {
                With the hope to be, one day,  one of them.
             </span>
          </p>
-            <span ref={designHeading} id={styles.design}>
+            <span ref={designHeading}  className={styles.uniqueDesignClass} >
                The design process
             </span>
-            <span className={styles.designDescriptionSpan} ref={designDescriptionSpanRef}>
+            <span className={styles.designDescriptionSpan} ref={designDescriptionSpanRef} id='designSection'>
                My design process usually starts with a sketch on an iPad. If I have an idea 
                I try to get it down as fast as possible.
             </span>
@@ -230,6 +230,7 @@ const FirstText = () => {
             </span>
          <div className={styles.desktopContainer} ref={designDesktopRef}>
             <Image
+               id='design'
                src='/mockups/designDesktop.png' 
                fill={true}
                alt='image of an ipad'

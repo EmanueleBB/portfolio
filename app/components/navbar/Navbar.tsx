@@ -7,6 +7,8 @@ import useNavbarStore from '@/app/stores/NavbarStore'
 
 import LogoIcon from '@/app/LogoIcon'
 import useStackStore from '@/app/stores/StackStore'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
 
@@ -17,6 +19,7 @@ const Navbar = () => {
    const firstStrokeRef=useRef<HTMLDivElement>(null);
    const secondStrokeRef=useRef<HTMLDivElement>(null);
    const dropDownRef=useRef<HTMLDivElement>(null);
+   const router = useRouter();
 
    const hamburgerTl = useRef<gsap.core.Timeline | null>(null);
    
@@ -80,6 +83,8 @@ const Navbar = () => {
                visibility:'hidden',
             })}
          });
+
+         const childrenArray = Array.from(dropDown?.children || []);
          
          hamburgerTl.current.to(dropDown,{
             opacity:1,
@@ -100,7 +105,12 @@ const Navbar = () => {
             transform:'rotate(-45deg)',
             duration:0.15,
             ease:'power2.out'       
-         },0.15)
+         },0.15).to(childrenArray,{
+            top:0,
+            duration:0.3,
+            stagger:0.05,
+            opacity:1,
+         },0)
       }
       if(showDropdown && hamburgerTl.current){
          hamburgerTl.current.reverse()
@@ -128,6 +138,7 @@ const Navbar = () => {
             <Button
                variant={ButtonVariants.pink}
                label='Contacts'
+               onClick={()=>router.push('/#contactsSection')}
             />   
          </div>
          <div className={styles.hamburgerIcon} onClick={handleHamburgerClick}>
@@ -138,15 +149,11 @@ const Navbar = () => {
             
          <div className={`${styles.navbarDropdownWrapper} `} >
             <button className={styles.navLink} onClick={()=>{handleStackButtonClick();handleHamburgerClick()}}>My tech stack</button>
-            <a href="" className={styles.navLink} onClick={handleHamburgerClick}>Design</a>
+            <Link href="/#design"  className={styles.navLink} onClick={handleHamburgerClick}>Design</Link>
             <a href="" className={styles.navLink} onClick={handleHamburgerClick}>Code</a>
             <a href="" className={styles.navLink} onClick={handleHamburgerClick}>About me</a>
             <a href='/pdfs/resume.pdf' className={styles.navLink} target='_blank' onClick={handleHamburgerClick}>resume</a>
-            <Button
-               variant={ButtonVariants.pink}
-               label='Contacts'
-               onClick={handleHamburgerClick}
-            />   
+            <Link href="/#contactsSection" className={styles.navLink} onClick={handleHamburgerClick}>Contacts</Link> 
          </div>
             
          

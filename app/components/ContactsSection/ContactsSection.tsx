@@ -15,7 +15,7 @@ const ContactsSection = () => {
 
 
    return (
-      <div className={styles.mainContainer}>
+      <div className={styles.mainContainer} id="contactsSection">
          <h2>
             Let&apos;s get in touch!<span>😎</span>
          </h2>

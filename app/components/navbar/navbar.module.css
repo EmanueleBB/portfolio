@@ -97,9 +97,21 @@ button.navLink{
 
  
 .navbarDropdownWrapper .navLink{
-   color:white;
+   color:rgb(219, 219, 219);
    font-weight: 500;
+   top:-20;
+   opacity:0;      
+   transition:font-weight 0.2s ease, color 0.2s ease;
+            
+            
 }
+
+.navbarDropdownWrapper .navLink:hover{
+   color:white;
+   font-weight: 600;
+}
+
+
 
 
 
