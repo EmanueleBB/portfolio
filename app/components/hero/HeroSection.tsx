@@ -17,7 +17,7 @@ const HeroSection = () => {
 	const h2Ref=useRef<HTMLHeadingElement>(null);
 	const h1Ref=useRef<HTMLHeadingElement>(null);
 	const pRef=useRef<HTMLParagraphElement>(null);
-	const ButtonRef=useRef<HTMLButtonElement>(null);
+	const ButtonRef=useRef<HTMLAnchorElement>(null);
 	const iconsHeroGroupRef = useRef<HTMLDivElement>(null);
 
 	const {toggleIsVisible}=useNavbarStore();
@@ -209,6 +209,7 @@ const HeroSection = () => {
 
 			<div className={styles.bottomCtasDiv}>
             <Button
+					href='/#contactsSection'
 					ref={ButtonRef}
                variant={ButtonVariants.pink}
                label='Contacts'

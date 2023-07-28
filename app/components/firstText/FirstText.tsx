@@ -197,7 +197,7 @@ const FirstText = () => {
 
 
    return (
-      <div className={styles.blackToPinkDiv} ref={blackToPinkDiv}>
+      <div className={styles.blackToPinkDiv} ref={blackToPinkDiv} id='designSection'>
          <p className={styles.wonderText} ref={paragraphRef}>
             <span ref={firstSpan}>
                Just take a moment to recall the last time you thought <i>&quot;Wow, that was wonderful&quot;</i>
@@ -221,7 +221,7 @@ const FirstText = () => {
             <span ref={designHeading}  className={styles.uniqueDesignClass} >
                The design process
             </span>
-            <span className={styles.designDescriptionSpan} ref={designDescriptionSpanRef} id='designSection'>
+            <span className={styles.designDescriptionSpan} ref={designDescriptionSpanRef} >
                My design process usually starts with a sketch on an iPad. If I have an idea 
                I try to get it down as fast as possible.
             </span>

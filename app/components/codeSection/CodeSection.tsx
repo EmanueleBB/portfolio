@@ -104,7 +104,7 @@ const CodeSection = () => {
 
 
    return (
-      <div className={styles.codeSectionContainer} ref={codeDivRef}>
+      <div className={styles.codeSectionContainer} ref={codeDivRef} id='codeSection'>
          <h2 className={styles.codeHeading} ref={codeHeadingRef}>
             CODE
          </h2>

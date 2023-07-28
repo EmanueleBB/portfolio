@@ -18,7 +18,7 @@ const Navbar = () => {
    const divRef=useRef<HTMLDivElement>(null);
    const firstStrokeRef=useRef<HTMLDivElement>(null);
    const secondStrokeRef=useRef<HTMLDivElement>(null);
-   const dropDownRef=useRef<HTMLDivElement>(null);
+   
    const router = useRouter();
 
    const hamburgerTl = useRef<gsap.core.Timeline | null>(null);
@@ -128,17 +128,17 @@ const Navbar = () => {
 
    return (
       <div className={styles.navbar} ref={divRef}>
-         <LogoIcon className={styles.logoIcon}/>
+         <LogoIcon className={styles.logoIcon} onClick={()=>router.push('/')}/>
          <div className={styles.navbarNavlinksWrapper} >
             <button className={styles.navLink} onClick={handleStackButtonClick}>My tech stack</button>
-            <a href="" className={styles.navLink}>Design</a>
-            <a href="" className={styles.navLink}>Code</a>
-            <a href="" className={styles.navLink}>About me</a>
+            <Link href="/#designSection"  className={styles.navLink}>Design</Link>
+            <Link href="/#codeSection" className={styles.navLink}>Code</Link>
+            <Link href="/about" className={styles.navLink}>About me</Link>
             <a href='/pdfs/resume.pdf' className={styles.navLink} target='_blank'>resume</a>
             <Button
+               href='/#contactsSection'
                variant={ButtonVariants.pink}
                label='Contacts'
-               onClick={()=>router.push('/#contactsSection')}
             />   
          </div>
          <div className={styles.hamburgerIcon} onClick={handleHamburgerClick}>
@@ -149,10 +149,10 @@ const Navbar = () => {
             
          <div className={`${styles.navbarDropdownWrapper} `} >
             <button className={styles.navLink} onClick={()=>{handleStackButtonClick();handleHamburgerClick()}}>My tech stack</button>
-            <Link href="/#design"  className={styles.navLink} onClick={handleHamburgerClick}>Design</Link>
-            <a href="" className={styles.navLink} onClick={handleHamburgerClick}>Code</a>
-            <a href="" className={styles.navLink} onClick={handleHamburgerClick}>About me</a>
-            <a href='/pdfs/resume.pdf' className={styles.navLink} target='_blank' onClick={handleHamburgerClick}>resume</a>
+            <Link href="/#designSection"  className={styles.navLink} onClick={handleHamburgerClick}>Design</Link>
+            <Link href="/#codeSection" className={styles.navLink} onClick={handleHamburgerClick}>Code</Link>
+            <Link href="/about" className={styles.navLink} onClick={handleHamburgerClick}>About me</Link>
+            <Link href='/pdfs/resume.pdf' className={styles.navLink} target='_blank' onClick={handleHamburgerClick}>resume</Link>
             <Link href="/#contactsSection" className={styles.navLink} onClick={handleHamburgerClick}>Contacts</Link> 
          </div>
             

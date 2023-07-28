@@ -1,5 +1,6 @@
 
 import { forwardRef, ForwardRefRenderFunction, LegacyRef, MutableRefObject } from 'react';
+import Link from 'next/link'
 import styles from './button.module.css';
 
 
@@ -13,14 +14,16 @@ interface ButtonProps{
    variant:ButtonVariants;
    label:string;
    onClick?:()=>void;
+   href:string;
 }
-const Button:ForwardRefRenderFunction<HTMLElement,ButtonProps> = ({variant,label},ref
+const Button:ForwardRefRenderFunction<HTMLAnchorElement,ButtonProps> = ({variant,label,href},ref
 ) => {
 
    
    return (
-      <button 
-         ref={ref as LegacyRef<HTMLButtonElement>}
+      <Link
+         href={href}
+         ref={ref}
          className={` 
             
             ${styles.button} 
@@ -28,7 +31,7 @@ const Button:ForwardRefRenderFunction<HTMLElement,ButtonProps> = ({variant,label
             ${variant==='black'?styles.blackButton: null}
       `}>
          {label}
-      </button>
+      </Link>
    )
 }
 

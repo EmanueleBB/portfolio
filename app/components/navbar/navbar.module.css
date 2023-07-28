@@ -63,7 +63,7 @@ button.navLink{
 
 .hamburgerStroke{
    width:28px;
-   height:2px;
+   height:2.5px;
    border-radius:4px;
    background-color: white;
    flex-shrink: 0;
