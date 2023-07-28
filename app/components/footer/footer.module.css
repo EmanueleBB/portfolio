@@ -1,7 +1,15 @@
+.mainContainer{
+   width:100vw;
+   padding:24px;
+   height:auto;
+   background-color: white;
+   box-sizing: border-box;
+}
+
 .footerContainer{
    color:white;
    height:50vh;
-   margin:24px;
+   
    border-radius: 30px;
    background: radial-gradient(100% 120% at 50% 100%, #000 0%, #2B0A4F 54.54%, #AF4DC9 100%);
    display: flex;

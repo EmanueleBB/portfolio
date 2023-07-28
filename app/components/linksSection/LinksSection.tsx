@@ -8,8 +8,8 @@ const LinksSection = () => {
          <h2>
             And from here you can give a look to...
          </h2>
-         <Link href='/about'>Who am I?</Link>
-         <Link href='/about'>My resume</Link>
+            <Link href='/about'>Who am I?</Link>
+            <Link href='/about'>My resume</Link>
          <h2>
             Or...
          </h2>
