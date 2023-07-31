@@ -144,7 +144,10 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
       }else if(activeSection.current?.id === 'stockx') {
 
          const cards = [
-
+            {
+               isPoster:true,
+               imgSrc:'/stussyCropped.png',
+            },
             {
                title:'Bearbrick X KAWS 1000%',
                subtitle:'Midjourney X Photoshop generative fill version',
@@ -163,10 +166,7 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
                isPoster:false,
                imgSrc:'/gucciFridgeCropped.png',
             },
-            {
-               isPoster:true,
-               imgSrc:'/stussyCropped.png',
-            },
+            
             
             
          ]
@@ -211,7 +211,11 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
 
       }else if(activeSection.current && activeSection.current.id==='agency'){
          currentCardDisplayed = document.querySelector(`.${styles.travelAgencyCard}`);
+      }else if(activeSection.current && activeSection.current.id==='stockx'){
+         currentCardDisplayed = document.querySelector(`.${styles.stockXCard}`);
       }
+
+
 
    
       if (currentCardDisplayed) {

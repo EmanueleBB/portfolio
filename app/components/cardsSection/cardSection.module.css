@@ -128,6 +128,74 @@
    fill:white;
    
 }
+/* STOCKX */
+
+.stockXCard{
+   height:40vh;
+   aspect-ratio: 1277/1660;
+   transition:all 0.25s;
+}
+
+.stockXCard:hover{
+   cursor:pointer;
+}
+
+.stockXCard .bottomContent{
+   display: flex;
+   flex-direction: column;
+   margin-top:auto;
+}
+
+.stockXCard h2{
+   font-size:18px;
+}
+
+.stockXCard h3{
+   font-size:18px;
+   margin-bottom:8px;
+   margin-top:4px;
+   font-size:22px;
+}
+
+.stockXCard h5{
+   color:rgb(176, 176, 176);
+   font-size:12px;
+   font-weight: 500;
+}
+
+.stockXCard p{
+   color:rgb(176, 176, 176);
+   font-size:12px;
+   font-weight: 500;
+}
+
+.stockXCard button{
+   position:absolute;
+   top:75%;
+   left:50%;
+   transform: translate(-50%, -50%);
+   cursor:pointer;
+   padding:4px;
+   border:2px solid black;
+   background-color: rgba(255, 255, 255, 0.1);
+   font-weight: 600;
+   transition:all 0.2s;
+   
+}
+
+.stockXCard button:hover{
+   position:absolute;
+   top:75%;
+   left:50%;
+   transform: translate(-50%, -50%);
+   cursor:pointer;
+   padding:4px;
+   border:2px solid black;
+   background-color: black;
+   font-weight: 600;
+   color:white;
+}
+
 /* TRAVEL AGENCY */
 
 .travelAgencyCard{

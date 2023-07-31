@@ -10,13 +10,13 @@ import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
 
 const CardSection = () => {
 
-   const sushiH3Ref=useRef<HTMLHeadingElement>(null);
+   const stockXH3Ref=useRef<HTMLHeadingElement>(null);
    const travelAgencyH3Ref=useRef<HTMLHeadingElement>(null);
    const ecommerceH3Ref=useRef<HTMLHeadingElement>(null);
    const mainParagraphRef=useRef<HTMLParagraphElement>(null);
    const carouselRef=useRef<HTMLDivElement>(null);
 
-   const [activeSection,setActiveSection] = useState(sushiH3Ref);
+   const [activeSection,setActiveSection] = useState(stockXH3Ref);
    const [activeCard,setActiveCard] = useState(0);
    
 
@@ -27,16 +27,16 @@ const CardSection = () => {
 
       setActiveCard(0);
 
-      if(activeSection === sushiH3Ref){
+      if(activeSection === stockXH3Ref){
          const tl = gsap.timeline();
-         tl.to(sushiH3Ref.current,{
-            color:'#FFC895',
+         tl.to(stockXH3Ref.current,{
+            color:'#B7F8FF',
             duration:0.25,
          }).to(mainParagraphRef.current,{
-            backgroundImage:'linear-gradient(to bottom, white 0%,#FFC895 100% )'
+            backgroundImage:'linear-gradient(to bottom, white -30%, #B7F8FF 70% )'
          },'<')
       }else{
-         gsap.to(sushiH3Ref.current,{
+         gsap.to(stockXH3Ref.current,{
             clearProps:'color',
             duration:0,
          })
@@ -48,7 +48,7 @@ const CardSection = () => {
             color:'#C6CDE0',
             duration:0.25,
          }).to(mainParagraphRef.current,{
-            backgroundImage:'linear-gradient(to bottom, white 0%,#C6CDE0 100% )'
+            backgroundImage:'linear-gradient(to bottom, white -30%,#C6CDE0 70% )'
          },'<')
       }else{
          gsap.to(travelAgencyH3Ref.current,{
@@ -63,7 +63,7 @@ const CardSection = () => {
             color:'#67FADE',
             duration:0.25,
          }).to(mainParagraphRef.current,{
-            backgroundImage:'linear-gradient(to bottom, white 0%,#67FADE 100% )'
+            backgroundImage:'linear-gradient(to bottom, white -30%,#67FADE 70% )'
          },'<')
       }else{
          gsap.to(ecommerceH3Ref.current,{
@@ -108,7 +108,7 @@ const CardSection = () => {
             </p>
 
             <div className={styles.titlesContainer}>
-               <h3 ref={sushiH3Ref} onClick={()=>setActiveSection(sushiH3Ref)} id='stockx'>
+               <h3 ref={stockXH3Ref} onClick={()=>setActiveSection(stockXH3Ref)} id='stockx'>
                   The 2028 version of StockX
                </h3>
 

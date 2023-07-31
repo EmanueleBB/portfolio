@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import Button, { ButtonVariants } from '../Button'
 import styles from './cardSection.module.css'
@@ -14,7 +15,7 @@ interface StockXCardProps{
    className:string,
 }
 
-//className is for the specific different color of every levels of rarity of a weapon.
+
 
 const StockXCard:React.FC<StockXCardProps> = ({
    title,
@@ -33,28 +34,30 @@ const StockXCard:React.FC<StockXCardProps> = ({
    
          !isPoster ? (
             <div className={`${styles.stockXCard} ${className}`}>
-         <div className={styles.cardContent}> 
-            <h2>
-               {title}
-            </h2>
-            <h4>
-               {subtitle}
-            </h4>
-            <img src={imgSrc} alt="ciao" />
-            
-
-   
-            <div className={styles.priceAndButtonContainer}>
-               <span>
-                  ${price}
-               </span>
-               <button className={styles.stockXCardButton}>
-                  Add to Cart
-               </button>
+               <div className={styles.cardContent}> 
+                  <Image src={imgSrc} alt='Item image' fill/>
+                  <h2>
+                     {title}
+                  </h2>
+                  <div className={styles.bottomContent}>
+                     <h5>
+                        Lowest ask
+                     </h5>
+                     <h3>
+                        ${price}
+                     </h3>
+                     <p>
+                        {soldIn24hrs} sold in the last 24 hours
+                     </p>
+                  </div>
+                </div>
             </div>
-         </div>
-      </div>
-         ):(<></>)
+         ):(<div className={`${styles.stockXCard} ${className}`}>
+            <Image src={imgSrc} alt='Poster image' fill/>
+            <button>
+               SHOP COLLECTION
+            </button>
+         </div>)
       
       
    )
