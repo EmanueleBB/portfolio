@@ -9,6 +9,7 @@ import LogoIcon from '@/app/LogoIcon'
 import useStackStore from '@/app/stores/StackStore'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 const Navbar = () => {
 
@@ -128,7 +129,9 @@ const Navbar = () => {
 
    return (
       <div className={styles.navbar} ref={divRef}>
-         <LogoIcon className={styles.logoIcon} onClick={()=>router.push('/')}/>
+         <div className={styles.logoIcon} onClick={()=>router.push('/')}>
+            <Image src='/logos/logoBig.png' fill alt='logo'/>
+         </div>
          <div className={styles.navbarNavlinksWrapper} >
             <button className={styles.navLink} onClick={handleStackButtonClick}>My tech stack</button>
             <Link href="/#designSection"  className={styles.navLink}>Design</Link>
