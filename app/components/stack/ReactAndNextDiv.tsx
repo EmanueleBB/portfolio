@@ -21,7 +21,7 @@ const ReactAndNextDiv = () => {
 
    useLayoutEffect(() => {
 
-      const reactAndNextJsDivRefValue=reactAndNextJsDivRef.current;
+      
 
 
       const options = {
@@ -72,8 +72,8 @@ const ReactAndNextDiv = () => {
       }
 
       return () => {
-         if (reactAndNextJsDivRefValue) {
-            observer.unobserve(reactAndNextJsDivRefValue);
+         if (reactAndNextJsDivRef.current) {
+            observer.unobserve(reactAndNextJsDivRef.current);
          }
       };
    }, []);

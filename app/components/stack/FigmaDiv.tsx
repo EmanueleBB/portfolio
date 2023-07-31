@@ -18,7 +18,7 @@ const FigmaDiv = () => {
 
    useLayoutEffect(() => {
 
-      const figmaDivRefValue = figmaDivRef.current;
+      // const figmaDivRefValue = figmaDivRef.current;
 
       const options = {
          root: null,
@@ -79,8 +79,8 @@ const FigmaDiv = () => {
       }
 
       return () => {
-         if (figmaDivRefValue) {
-            observer.unobserve(figmaDivRefValue);
+         if (figmaDivRef.current) {
+            observer.unobserve(figmaDivRef.current);
          }
       };
    }, []);

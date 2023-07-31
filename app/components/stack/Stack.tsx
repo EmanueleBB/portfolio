@@ -65,8 +65,8 @@ const Stack = () => {
       }
 
       return () => {
-         if (horizontalWrapperRefValue) {
-            horizontalWrapperRefValue.removeEventListener('scroll', updatePercentageScrolled);
+         if (horizontalWrapperRef.current) {
+            horizontalWrapperRef.current.removeEventListener('scroll', updatePercentageScrolled);
          }
       };
    }, []);

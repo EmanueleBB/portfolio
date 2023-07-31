@@ -24,7 +24,7 @@ const PhotoshopDiv = () => {
 
    useLayoutEffect(() => {
 
-      const photoshopDivRefValue=photoshopDivRef.current;
+      // const photoshopDivRefValue=photoshopDivRef.current;
 
       const options = {
          root: null,
@@ -96,8 +96,8 @@ const PhotoshopDiv = () => {
       }
 
       return () => {
-         if (photoshopDivRefValue) {
-            observer.unobserve(photoshopDivRefValue);
+         if (photoshopDivRef.current) {
+            observer.unobserve(photoshopDivRef.current);
          }
       };
    }, []);

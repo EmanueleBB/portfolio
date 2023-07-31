@@ -56,21 +56,21 @@ const MyProjects = () => {
             />
             <ProjectCard
                title='Full stack Airbnb Clone'
-               imgSrc=''
+               imgSrc='/gss1.png'
                stack={[<NextIcon key='4next'/>]}
                description=''
                url=''
             />
             <ProjectCard
                title='Full stack Airbnb Clone'
-               imgSrc=''
+               imgSrc='/gss1.png'
                stack={[<NextIcon key='5next'/>]}
                description=''
                url=''
             /> 
             <ProjectCard
                title='Full stack Airbnb Clone'
-               imgSrc=''
+               imgSrc='/gss1.png'
                stack={[<NextIcon key='6next'/>]}
                description=''
                url=''

@@ -108,7 +108,7 @@ const SomeMoreThings = () => {
 
       // Cleanup dell'observer quando il componente viene smontato
       return () => observer.disconnect();
-   }, [observerOptions]);
+   }, []);
 
    
 
