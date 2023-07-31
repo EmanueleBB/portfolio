@@ -108,7 +108,7 @@ const CardSection = () => {
             </p>
 
             <div className={styles.titlesContainer}>
-               <h3 ref={sushiH3Ref} onClick={()=>setActiveSection(sushiH3Ref)} id='sushi'>
+               <h3 ref={sushiH3Ref} onClick={()=>setActiveSection(sushiH3Ref)} id='stockx'>
                   The 2028 version of StockX
                </h3>
 

@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import React, { forwardRef, RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import styles from './cardSection.module.css'
 import EcommerceCard from './EcommerceCard';
+import StockXCard from './StockXCard';
 import TravelAgencyCard from './TravelAgencyCard';
 
 
@@ -136,6 +137,55 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
                      description={description}
                      price={price}
                      days={days}
+                  />
+               )
+            })}
+         </>);
+      }else if(activeSection.current?.id === 'stockx') {
+
+         const cards = [
+
+            {
+               title:'Bearbrick X KAWS 1000%',
+               subtitle:'Midjourney X Photoshop generative fill version',
+               price:872,   
+               soldIn24hrs:16,
+               lastSale:856,
+               isPoster:false,
+               imgSrc:'/kawsCropped.png',
+            },
+            {
+               title:'Gucci MDJRN minibar',
+               subtitle:'Black-green',
+               price:2989,   
+               soldIn24hrs:11,
+               lastSale:3019,
+               isPoster:false,
+               imgSrc:'/gucciFridgeCropped.png',
+            },
+            {
+               isPoster:true,
+               imgSrc:'/stussyCropped.png',
+            },
+            
+            
+         ]
+         
+         setBodyContent(
+         <>
+            {cards.map((card, index) => {
+               const { title, subtitle, price, soldIn24hrs, lastSale, isPoster, imgSrc } = card;
+               return(
+                  <StockXCard
+                     key={index}
+                     className={`${index === activeCard ? styles.activeCard : styles.inactiveCard}`}
+                     title={title}
+                     subtitle={subtitle}
+                     price={price}
+                     soldIn24hrs={soldIn24hrs}
+                     lastSale={lastSale}
+                     isPoster={isPoster}
+                     imgSrc={imgSrc} 
                   />
                )
             })}
