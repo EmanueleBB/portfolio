@@ -215,14 +215,9 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
          currentCardDisplayed = document.querySelector(`.${styles.stockXCard}`);
       }
 
-
-
-   
       if (currentCardDisplayed) {
 
          const cardWidth = currentCardDisplayed.clientWidth;
-         
-
 
          setCarouselPadding(window.innerWidth / 2 - cardWidth / 2);
 
@@ -234,7 +229,7 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
          })
       }
 
-   },[bodyContent,activeCard,activeSection,carouselGap,carouselTransform])
+   },[bodyContent,activeSection,carouselGap,carouselTransform])
 
    return (
       <div className={styles.carouselWrapper}

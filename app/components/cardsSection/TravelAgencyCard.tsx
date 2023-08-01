@@ -33,8 +33,8 @@ const TravelAgencyCard:React.FC<TravelAgencyCardProps> = ({
    useEffect(()=>{
       if (travelAgencyDivRef.current) {
          travelAgencyDivRef.current.style.backgroundImage = `url(${imgSrc})`;
-       }
-   },[imgSrc])
+      }
+   },[])
 
    return (
       <div className={`${styles.travelAgencyCard} ${className} ${nunito.className}`} ref={travelAgencyDivRef}>
