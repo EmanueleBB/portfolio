@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import CardsCarousel from './CardsCarousel';
 import styles from './cardSection.module.css'
-import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
+import {IoIosArrowDropleftCircle,IoIosArrowDroprightCircle} from 'react-icons/io'
 
 const CardSection = () => {
 
@@ -121,14 +121,17 @@ const CardSection = () => {
                </h3>
             </div>
          </div>
-         <CardsCarousel activeSection={activeSection} activeCard={activeCard} ref={carouselRef} setActiveCard={setActiveCard}/>
-         <div className={styles.leftAndRightButtonsDiv}>
-            <button className={styles.cardsCarouselButton} onClick={handleLeftButtonClick}>
-               <BsChevronLeft  size={32}/>
-            </button>
-            <button className={styles.cardsCarouselButton} onClick={handleRightButtonClick}>
-               <BsChevronRight  size={32}/>
-            </button>
+         <div style={{position:'relative'}}>
+
+            <CardsCarousel activeSection={activeSection} activeCard={activeCard} ref={carouselRef} setActiveCard={setActiveCard}/>
+            <div className={styles.leftAndRightButtonsDiv}>
+               <button className={styles.cardsCarouselButton} onClick={handleLeftButtonClick}>
+                  <IoIosArrowDropleftCircle/>
+               </button>
+               <button className={styles.cardsCarouselButton} onClick={handleRightButtonClick}>
+                  <IoIosArrowDroprightCircle/>
+               </button>
+            </div>
          </div>
       </div>
    )

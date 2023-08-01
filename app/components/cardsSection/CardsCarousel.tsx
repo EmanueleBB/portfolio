@@ -27,6 +27,7 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
    const [carouselPadding,setCarouselPadding]=useState(0);
    const [carouselGap,setCarouselGap]=useState(0);
    const [carouselTransform,setCarouselTransfrom]=useState(0);
+
    
    const handleSwipeRight = () => {
       if (activeCard > 0) {
@@ -48,6 +49,9 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
       
    });
    
+   
+
+ 
 
    //definitions of the various cards
    useEffect(() => {
