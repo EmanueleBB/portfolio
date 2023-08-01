@@ -121,7 +121,7 @@ const CardSection = () => {
                </h3>
             </div>
          </div>
-         <CardsCarousel activeSection={activeSection} activeCard={activeCard} ref={carouselRef}/>
+         <CardsCarousel activeSection={activeSection} activeCard={activeCard} ref={carouselRef} setActiveCard={setActiveCard}/>
          <div className={styles.leftAndRightButtonsDiv}>
             <button className={styles.cardsCarouselButton} onClick={handleLeftButtonClick}>
                <BsChevronLeft  size={32}/>

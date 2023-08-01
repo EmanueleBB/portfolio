@@ -4,17 +4,20 @@ import styles from './cardSection.module.css'
 import EcommerceCard from './EcommerceCard';
 import StockXCard from './StockXCard';
 import TravelAgencyCard from './TravelAgencyCard';
+import { useSwipeable } from 'react-swipeable';
 
 
 interface CardsCarouselProps {
    activeSection: RefObject<HTMLHeadingElement>;
    activeCard: number;
+   setActiveCard: (activeCard: number) => void;
 }
 
 const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouselProps> = (
    {
       activeSection,
       activeCard,
+      setActiveCard
    },
    ref
 ) => {
@@ -25,7 +28,25 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
    const [carouselGap,setCarouselGap]=useState(0);
    const [carouselTransform,setCarouselTransfrom]=useState(0);
    
+   const handleSwipeRight = () => {
+      if (activeCard > 0) {
+        setActiveCard(activeCard - 1);
+      }
+    };
+  
+    const handleSwipeLeft = () => {
+      if (activeCard < bodyContent?.props.children.length - 1) {
+        setActiveCard(activeCard + 1);
+      }
+    };
 
+   const handlers = useSwipeable({
+      onSwiped: (eventData) => console.log("User Swiped!", eventData),
+      onSwipedLeft:()=>{handleSwipeLeft()},
+      onSwipedRight:()=>handleSwipeRight(),
+      trackMouse: true,
+      
+   });
    
 
    //definitions of the various cards
@@ -195,10 +216,10 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
 
    
 
+   let currentCardDisplayed:HTMLDivElement|null;
 
    useLayoutEffect(()=>{
       
-      let currentCardDisplayed;
 
       const computedStyle = getComputedStyle(document.documentElement);
       const gapValue = parseFloat(computedStyle.getPropertyValue('--carousel-gap'));
@@ -232,14 +253,16 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
    },[bodyContent,activeSection,carouselGap,carouselTransform])
 
    return (
-      <div className={styles.carouselWrapper}
-         ref={ref} 
-         style={{paddingLeft:`${carouselPadding}px`}}
-         >
-         <div className={styles.cardsContainer} ref={cardsContainerRef}>
-            {bodyContent}
-         </div>
+      
+         <div {...handlers} className={styles.carouselWrapper}
+            ref={ref} 
+            style={{paddingLeft:`${carouselPadding}px`}}
+            >
+            <div className={styles.cardsContainer} ref={cardsContainerRef}>
+               {bodyContent}
+            </div>
       </div>
+
    )
 }
 
