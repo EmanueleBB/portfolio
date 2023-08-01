@@ -22,7 +22,7 @@ export default function Home(){
 			</MainContainer>
 			<CodeSection/>
 			<MyProjects/>
-			<LinksSection/>
+			<LinksSection/> 
 			<ContactsSection/>
 			<Footer/>
 		</>

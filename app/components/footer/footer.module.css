@@ -1,24 +1,27 @@
 .mainContainer{
    width:100vw;
-   padding:24px;
+   padding:48px 24px;
    height:auto;
-   background-color: white;
+   background-color: black;
    box-sizing: border-box;
+   
 }
 
 .footerContainer{
    color:white;
    height:50vh;
-   
    border-radius: 30px;
-   background: radial-gradient(100% 120% at 50% 100%, #000 0%, #2B0A4F 54.54%, #AF4DC9 100%);
+   background: radial-gradient(100% 120% at 50% 0%, rgb(0, 0, 0) 0%, #2B0A4F 50.54%, #AF4DC9 110%);
    display: flex;
+   background-size: 150% 100%;
+   background-position: center;
    justify-content: center;
    box-sizing: border-box;
    padding-top:10vh;
    font-size:15px;
    font-weight: 500;
    gap:15vw;
+   box-shadow: inset 0px 0px 55px 0px rgba(234, 150, 255, 0.1);
 }
 
 .spanAndBarContainer{
