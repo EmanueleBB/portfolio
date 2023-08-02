@@ -4,7 +4,7 @@
    margin-top:24px;
    width:calc(100vw - 48px);
    min-height:800px;
-   background-image: radial-gradient(100% 120% at 50% 0%, rgb(252, 210, 255) -20%, #741e97  35%,   rgb(42, 9, 75) 80%,rgb(0, 0, 0) 100%); 
+   background-image: radial-gradient(100% 120% at 50% 0%, rgb(251, 190, 240) -10%, #8b1e97  7%,   rgb(42, 9, 75) 70%,rgb(0, 0, 0) 100%); 
    /* background-image:radial-gradient(100% 120% at 50% 0%, rgb(13,13,13) 0%, #2B0A4F 54.54%, #AF4DC9 100%); */
    background-position: 0 0,0 0;
    background-size:200% 100%;
@@ -17,6 +17,8 @@
    border-radius: 30px;
    box-shadow: inset 0px 0px 70px 10px rgba(255, 255, 255, 0.052);
 }
+
+
 
 .mainContainer h2{
    font-size:58px;

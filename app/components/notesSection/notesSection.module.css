@@ -1,0 +1,23 @@
+.notesSectionContainer{
+   height:150vh;
+   width:100%;
+   color:white;
+   background-image:radial-gradient(ellipse at center top, rgb(13, 13, 13) 10%, black);
+	background-size:600% 100%;
+  	background-position: center center; 
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top:15vh;
+}
+
+.noteParagraph{
+   color:white;
+   width:50%;
+   font-weight:500;
+   font-size:18px;
+   margin:36px;
+
+}
+

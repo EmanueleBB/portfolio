@@ -4,7 +4,7 @@ import ContactsSection from "./components/contactsSection/ContactsSection";
 import FirstText from "./components/firstText/FirstText";
 import Footer from "./components/footer/Footer";
 import HeroSection from "./components/hero/HeroSection";
-import LinksSection from "./components/linksSection/LinksSection";
+import LinksSection from "./components/notesSection/NotesSection";
 import MainContainer from "./components/mainContainer/MainContainer";
 import MyProjects from "./components/myProjectsSection/MyProjects";
 import Navbar from "./components/navbar/Navbar";

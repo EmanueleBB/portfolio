@@ -11,7 +11,7 @@
    color:white;
    height:50vh;
    border-radius: 30px;
-   background: radial-gradient(100% 120% at 50% 0%, rgb(0, 0, 0) 0%, #2B0A4F 50.54%, #AF4DC9 110%);
+   background: radial-gradient(100% 120% at 50% 0%, rgb(0, 0, 0) -20%, #2B0A4F 60.54%, #AF4DC9 130%);
    display: flex;
    background-size: 150% 100%;
    background-position: center;
