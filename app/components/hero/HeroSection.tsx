@@ -12,7 +12,6 @@ import IconsHeroGroup from './IconsHeroGroup';
 
 const HeroSection = () => {
 
-
    const heroMainDivRef=useRef<HTMLDivElement>(null);
 	const h2Ref=useRef<HTMLHeadingElement>(null);
 	const h1Ref=useRef<HTMLHeadingElement>(null);
@@ -24,39 +23,66 @@ const HeroSection = () => {
 	const {toggleStackIsOnScreen,toggleParagraphIsAnimated}=useStackStore();
 
 	
-
+	const iconsAnimation = () => {
+		const tlIcons = gsap.timeline();
+		const icons = Array.from(iconsHeroGroupRef.current?.childNodes || []);
+		tlIcons.to(icons[10],{
+			transform:'scale(0.6)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:1.5,
+		}).to(icons[9],{
+			transform:'scale(0.6)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:1.5,
+		},'<+=0.05').to(icons[8],{
+			transform:'scale(0.6)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:1.5,
+		},'<+=0.05').to(icons[11],{
+			transform:'scale(0.6)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:1.5,
+		},'<+=0.05')
+	}
 
 
 	useLayoutEffect(() => {
 
-	 	
-
 		const tl = gsap.timeline({
-			
 		});
-		tl.from(heroMainDivRef.current, {
+
+		tl.to(heroMainDivRef.current, {
 			duration: 2,
-			backgroundImage:'radial-gradient(circle at center bottom, black 30%, #2B0A4F 60%, #AF4DC9 90%, #F9A2F0 120%)',
+			backgroundImage:'radial-gradient(circle at center bottom, black 80%, #2B0A4F 100%, #AF4DC9 160%, #F9A2F0 220%)',
 			ease: 'power2.inOut',
 			backgroundPosition: 'center top',
 			
-		}).from(h2Ref.current, {
+		}).to(h2Ref.current, {
 			
-			duration: 1,
-			top:35,
-			opacity:0,
+			duration: 1.2,
+			transform:'scale(1)',
+			filter:'blur(0px)',
+			opacity:1,
 			ease: 'power3.out',
-		},'<+=1.5').from(h1Ref.current, {
-			duration: 1.5,
-			top:65,
-			opacity:0,
-			ease: 'power4.out',
-		},'<+=1').from(pRef.current, {
+		},'<+=1.5').to(h1Ref.current, {
+			transform:'scale(1)',
+			filter:'blur(0px)',
+			opacity:1,
 			duration: 2,
-			top:25,
-			opacity:0,
-			ease: 'power4.out',
-		},'<+=1').fromTo(ButtonRef.current, {
+			backgroundImage:'radial-gradient(circle at center, #FD95FF 0%, #fc3dff 70%, black 110%)',
+			ease: 'power3.out',
+		},'<0.5').to(pRef.current, {
+			onComplete:()=>iconsAnimation(),
+			duration: 0.8,
+			transform:'scale(1)',
+			filter:'blur(0px)',
+			opacity:1,
+			ease: 'power2.out',
+		},'<+=0.7').fromTo(ButtonRef.current, {
 			top:15,
 			opacity:0,
 		},{

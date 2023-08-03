@@ -33,24 +33,25 @@ const Navbar = () => {
 		toggleParagraphIsAnimated();	
    }
    
-   // useLayoutEffect(()=>{
-   //    const tl = gsap.timeline();
+   useLayoutEffect(()=>{
+      const tl = gsap.timeline();
 
-   //    if(divRef.current){
-   //       const childrenArray = Array.from(divRef.current?.children)
+      if(divRef.current){
+         const childrenArray = Array.from(divRef.current?.children)
 
-   //       tl.fromTo(childrenArray,{
-   //          opacity:0,
-   //          top:15,
-   //       },{
-   //          delay:5.10,
-   //          opacity:1,
-   //          top:0,
-   //          stagger:-0.1,
-   //          ease:'power4.out'
-   //       })
-   //    }
-   // },[]);
+         tl.fromTo(childrenArray,{
+            opacity:0,
+            top:15,
+         },{
+            delay:5.10,
+            opacity:1,
+            top:0,
+            stagger:-0.1,
+            ease:'power4.out',
+            duration:0.5,
+         })
+      }
+   },[]);
 
    useEffect(()=>{
       if(isVisible){
