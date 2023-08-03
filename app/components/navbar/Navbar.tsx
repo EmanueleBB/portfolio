@@ -19,7 +19,6 @@ const Navbar = () => {
    const divRef=useRef<HTMLDivElement>(null);
    const firstStrokeRef=useRef<HTMLDivElement>(null);
    const secondStrokeRef=useRef<HTMLDivElement>(null);
-   
    const router = useRouter();
 
    const hamburgerTl = useRef<gsap.core.Timeline | null>(null);
@@ -32,35 +31,60 @@ const Navbar = () => {
 		toggleStackIsOnScreen();
 		toggleParagraphIsAnimated();	
    }
-   
-   useLayoutEffect(()=>{
+
+   useEffect(() => {
       const tl = gsap.timeline();
-
-      if(divRef.current){
-         const childrenArray = Array.from(divRef.current?.children)
-
-         tl.fromTo(childrenArray,{
-            opacity:0,
-            top:15,
-         },{
-            delay:5.10,
-            opacity:1,
-            top:0,
-            stagger:-0.1,
-            ease:'power4.out',
-            duration:0.5,
-         })
+  
+      if (divRef.current) {
+         const childrenArray = Array.from(divRef.current.children);
+   
+         // Nascondi inizialmente gli elementi con GSAP e imposta l'opacità a 0
+         
+   
+         // Mostra e anima gli elementi con GSAP
+         tl.to(childrenArray, {
+            visibility: 'visible',
+            opacity: 1,
+            top: 0,
+            ease: 'power1.out',
+            stagger: -0.1,
+            duration: 4,
+         });
       }
-   },[]);
+    }, []);
+   
+   //  useLayoutEffect(()=>{
+   //    const tl = gsap.timeline();
+
+   //    if(divRef.current){
+   //       const childrenArray = Array.from(divRef.current?.children)
+
+   //       tl.fromTo(childrenArray,{
+   //          opacity:0,
+   //          top:15,
+   //       },{
+   //          delay:5.10,
+   //          opacity:1,
+   //          top:0,
+   //          stagger:-0.1,
+   //          ease:'power4.out',
+   //          duration:0.5,
+   //       })
+   //    }
+   // },[]);
 
    useEffect(()=>{
       if(isVisible){
          gsap.to(divRef.current,{
             opacity:1,
+            duration:1.3,
+            ease:'power4.in'
          })
       }else{
          gsap.to(divRef.current,{
             opacity:0,
+            duration:0.2,
+            ease:'power1.out'
          })
       }
    },[isVisible]);
@@ -125,7 +149,7 @@ const Navbar = () => {
       } else {
         document.body.classList.remove('no-scroll');
       }
-    }, [showDropdown]);
+   }, [showDropdown]);
 
 
    return (
@@ -143,6 +167,7 @@ const Navbar = () => {
                href='/#contactsSection'
                variant={ButtonVariants.pink}
                label='Contacts'
+          
             />   
          </div>
          <div className={styles.hamburgerIcon} onClick={handleHamburgerClick}>
@@ -159,9 +184,7 @@ const Navbar = () => {
             <Link href='/pdfs/resume.pdf' className={styles.navLink} target='_blank' onClick={handleHamburgerClick}>resume</Link>
             <Link href="/#contactsSection" className={styles.navLink} onClick={handleHamburgerClick}>Contacts</Link> 
          </div>
-            
-         
-         
+
       </div>
    )
 }

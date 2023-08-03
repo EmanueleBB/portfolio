@@ -5,7 +5,7 @@
 	min-height:800px;
 
 	background-image:radial-gradient(circle at center bottom, black 30%, #2B0A4F 60%, #AF4DC9 90%, #F9A2F0 120%);
-	background-size:100% 250%;
+	background-size:120% 250%;
   	background-position: center top; 
 	display:flex;
 	flex-direction:column;
@@ -21,34 +21,41 @@
 	transform:scale(1.7);
 	filter:blur(8px);
 	opacity:0;
+	z-index: 2;
 }
 
 .heroH1{
-	filter:blur(10px);
+	filter:blur(3px);
 	position:relative;
 	letter-spacing: -1.5%;
 	transform:scale(1.7);
-	background-image:radial-gradient(circle at center, #FD95FF 0%, #fc3dff 1%, black 2%);
+	background-image:radial-gradient(circle at center, #FD95FF 0%, #fc3dff 1%, transparent 2%);
 	opacity: 0;
 	color:transparent;
 	background-clip: text;
 	text-align: center;
 	margin-bottom:36px;
+	z-index: 2;
 }
 
 
 
 .heroParagraph{
 
-
+	z-index: 2;
 	transform:scale(1.4);
 	filter:blur(8px);
 	position:relative;
 	color:var(--dim-pink);
-	width:560px;
+	/* background-clip: text;
+	background-size: 100% 300%;
+	background-position: center center;
+	background-image: radial-gradient(circle at center top, var(--dim-pink) 50%, #fc3dff 100%,black 110%); */
+	width:500px;
 	text-align:center;
 	letter-spacing: -4%;
 	opacity:0;
+
 }
 
 .iconsBox{
@@ -63,6 +70,25 @@
 	justify-content: center;
 	overflow: show;
 	gap:0.5vmin;
+	
+	box-sizing: border-box;
+	z-index: 1;
+}
+
+.shadow{
+	
+	width:100vw;
+	height:55vh;
+	position:absolute;
+	top:45%;
+	left:0px;
+	opacity: 0;
+	
+	z-index:1;
+	background-size: 100% 200%;
+	background-position: center center;
+	background-image: radial-gradient(ellipse at center 40%, transparent 55%,black 75%) 
+	
 }
 
 .iconsBox > * {
@@ -80,41 +106,42 @@
 
 
 .iconsBox .icon:nth-child(1){ /* Illustrator Icon */
-	top:-8vmax;
-	scale:1.4;
+	top:-90px;
+	transform:scale(0.8);
 	/* opacity:0.4; */
 }
 
 .iconsBox .icon:nth-child(2){ /* HTML Icon */
 	top:10vmax;
-	scale:1;
+	transform:scale(0.7);
 	/* opacity:0.4; */	
 }
 
 .iconsBox .icon:nth-child(3){ /* Figma Icon */
-	top:-5vmax;
-	scale:0.9;
+	top:-60px;
+	transform:scale(0.6);
 	/* opacity:0.6; */
 }
 .iconsBox .icon:nth-child(4){ /* Sass Icon */
 	top:6vmax;
-	scale:0.9;
+	transform:scale(0.55);
 	/* opacity:0.6; */
 }
 .iconsBox .icon:nth-child(5){ /* Ae Icon */
-	top:-3vmax;
-	scale:0.7;
+	top:-30px;
+	transform:scale(0.55);
+
 	/* opacity:0.75; */
 }
 
 .iconsBox .icon:nth-child(6){ /* Gsap Icon */
 	top:7vmax;
-	scale:0.7;
+	transform:scale(0.5);
 	/* opacity:0.75; */
 }
 .iconsBox .icon:nth-child(7){ /* Photoshop Icon */
 	top:-2vmax;
-	scale:0.65;
+	transform:scale(0.45);
 	/* opacity:0.6; */
 }
 
@@ -126,6 +153,8 @@
 
 .iconsBox .icon:nth-child(9){ /* Typescript Icon */
 	transform:scale(0.35);
+	top:-10px;
+
 	/* opacity:0.7; */
 }
 
@@ -147,56 +176,62 @@
 .iconsBox .icon:nth-child(13){ /* Prisma Icon */
 	transform:scale(0.4);
 	top:3.5vmax;
-	scale:0.65;
+	
 	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(14){ /* Express Icon */
 	top:-2vmax;
-	scale:0.6;
+	transform:scale(0.45);
 	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(15){ /* Seo Icon */
 	top:7vmax;
-	scale:0.7;
+	transform:scale(0.5);
 	/* opacity:0.75; */
 }
 
 .iconsBox .icon:nth-child(16){ /* Redux Icon */
 	top:-3vmax;
-	scale:0.7;
+	transform:scale(0.55);
 	/* opacity:0.75; */
+
 }
+
 
 .iconsBox .icon:nth-child(17){ /* GraphQl Icon */
 	top:6vmax;
-	scale:0.9;
+	transform:scale(0.55);
 	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(18){ /* Mongo Icon */
 	top:-5vmax;
-	scale:0.9;
+	transform:scale(0.6);
 	/* opacity:0.6; */
 }
 
 .iconsBox .icon:nth-child(19){ /* Postman Icon */
 	top:10vmax;
-	scale:1;
+	transform:scale(0.7);
 	/* opacity:0.4; */
 }
 .iconsBox .icon:nth-child(20){ /* Firebase Icon */
-	top:-8vmax;
+	top:-80px;
+	transform:scale(0.8);
 	scale:1.4;
+	position: relative;
+	z-index:1;
 	/* opacity:0.4; */
 }
+
 
 
 
 .bottomCtasDiv{
 	position:absolute;
-	top:80%;
+	top:85%;
 	left:50%;
 	transform:translate(-50%,-50%);
 	display: flex;
@@ -204,12 +239,21 @@
 	align-items: center;
 	justify-content: center;
 	gap:20px;
+	z-index: 2;
+}
+
+.bottomCtasDiv button{
+	opacity:0;
 }
 
 .navLink{
    color:var(--dim-pink);
    text-decoration: none;
    transition:color 0.25s ease;
+}
+
+.navLink .stagger{
+	opacity:0;
 }
 
 .navLink:hover{
@@ -272,13 +316,13 @@
 	}
 
 	.heroH2{
-		font-size:24px;
+		font-size:19px;
 		font-weight:600;
 	}
 
 	.heroParagraph{
-		font-size:19px;
-		font-weight:600;
+		font-size:18px;
+		font-weight:500;
 	}
 
 	.navLink{

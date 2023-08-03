@@ -31,7 +31,9 @@ const IconsHeroGroup:ForwardRefRenderFunction<HTMLDivElement,{}> = (props,ref: R
 
    return (
       <div className={styles.iconsBox} ref={ref}>
+         
          <IllustratorIcon/>
+         
          <HtmlIcon/>
          <FigmaIcon/>
          <SassIcon/>
@@ -48,7 +50,10 @@ const IconsHeroGroup:ForwardRefRenderFunction<HTMLDivElement,{}> = (props,ref: R
          <PrismaIcon/>
          <ExpressIcon/>
          <SeoIcon/>
+         
+
          <ReduxIcon/>
+         
          <GraphQlIcon/>
          <MongoIcon/>
          <PostmanIcon/>

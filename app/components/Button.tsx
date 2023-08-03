@@ -15,6 +15,7 @@ interface ButtonProps{
    label:string;
    onClick?:()=>void;
    href:string;
+   ref?:React.Ref<HTMLAnchorElement>;
 }
 const Button:ForwardRefRenderFunction<HTMLAnchorElement,ButtonProps> = ({variant,label,href},ref
 ) => {

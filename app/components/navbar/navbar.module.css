@@ -15,6 +15,10 @@
    
 }
 
+.navbar * {
+   opacity:1;
+}
+
 .navbarNavlinksWrapper{
    display:flex;
    align-items: center;
@@ -37,6 +41,7 @@ button.navLink{
    color:var(--dim-pink);
    text-decoration: none;
    transition:color 0.25s ease;
+  
 
 }
 

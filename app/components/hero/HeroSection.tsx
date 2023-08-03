@@ -18,6 +18,7 @@ const HeroSection = () => {
 	const pRef=useRef<HTMLParagraphElement>(null);
 	const ButtonRef=useRef<HTMLAnchorElement>(null);
 	const iconsHeroGroupRef = useRef<HTMLDivElement>(null);
+	const seeStackRef=useRef<HTMLAnchorElement>(null);
 
 	const {toggleIsVisible}=useNavbarStore();
 	const {toggleStackIsOnScreen,toggleParagraphIsAnimated}=useStackStore();
@@ -27,26 +28,112 @@ const HeroSection = () => {
 		const tlIcons = gsap.timeline();
 		const icons = Array.from(iconsHeroGroupRef.current?.childNodes || []);
 		tlIcons.to(icons[10],{
+			onStart:()=>{gsap.to(`.${styles.shadow}`,{
+				opacity:1,
+				duration:0,
+			})},
 			transform:'scale(0.6)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:1.5,
+			duration:0.7,
 		}).to(icons[9],{
 			transform:'scale(0.6)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:1.5,
-		},'<+=0.05').to(icons[8],{
+			duration:0.7,
+		},'<+=0.1').to(icons[11],{
+
 			transform:'scale(0.6)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:1.5,
-		},'<+=0.05').to(icons[11],{
+			duration:0.7,
+		},'<+=0.1').to(icons[8],{
 			transform:'scale(0.6)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:1.5,
-		},'<+=0.05')
+			duration:0.7,
+		},'<+=0.1').to(icons[12],{
+			transform:'scale(0.65)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[7],{
+			transform:'scale(0.65)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[13],{
+			transform:'scale(0.7)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[6],{
+			transform:'scale(0.7)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[14],{
+			transform:'scale(0.75)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[5],{
+			transform:'scale(0.75)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[15],{
+			transform:'scale(0.9)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[4],{
+
+			transform:'scale(0.9)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[16],{
+			transform:'scale(1)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[3],{
+			transform:'scale(1)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[17],{
+			transform:'scale(1)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[2],{
+			transform:'scale(1)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[18],{
+			transform:'scale(1.2)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[1],{
+			transform:'scale(1.2)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[19],{
+			transform:'scale(1.4)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1').to(icons[0],{
+			transform:'scale(1.4)',
+			opacity:1,
+			filter:'blur(0px)',
+			duration:0.7,
+		},'<+=0.1')
 	}
 
 
@@ -72,8 +159,8 @@ const HeroSection = () => {
 			transform:'scale(1)',
 			filter:'blur(0px)',
 			opacity:1,
-			duration: 2,
-			backgroundImage:'radial-gradient(circle at center, #FD95FF 0%, #fc3dff 70%, black 110%)',
+			duration: 3,
+			backgroundImage:'radial-gradient(circle at center, #FD95FF 0%, #fc3dff 70%, transparent 110%)',
 			ease: 'power3.out',
 		},'<0.5').to(pRef.current, {
 			onComplete:()=>iconsAnimation(),
@@ -82,15 +169,10 @@ const HeroSection = () => {
 			filter:'blur(0px)',
 			opacity:1,
 			ease: 'power2.out',
-		},'<+=0.7').fromTo(ButtonRef.current, {
-			top:15,
-			opacity:0,
-		},{
-			duration:0.15,
-			top:0,
+		},'<+=0.7').to(ButtonRef.current, {
 			opacity:1,
-			ease: 'power4.out',
-		},'<+=1.25').from('.stagger', {
+			ease: 'power2.out',
+		},'<+=1.25').from(`.${styles.stagger}`, {
 			duration: 0.15,
 			top:15,
 			opacity:0,
@@ -125,6 +207,7 @@ const HeroSection = () => {
 			</p>
 
 			<IconsHeroGroup ref={iconsHeroGroupRef}/>
+			<div className={styles.shadow}/>
 
 			<div className={styles.bottomCtasDiv}>
             <Button
@@ -133,9 +216,9 @@ const HeroSection = () => {
                variant={ButtonVariants.pink}
                label='Contacts'
             />
-            <a
+            <a ref={seeStackRef}
                onClick={handleStackButtonClick} 
-               className={`${styles.navLink} stagger`} 
+               className={`${styles.navLink} ${styles.stagger}`} 
             >See full stack</a>
          </div>
 		</div>
