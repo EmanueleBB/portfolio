@@ -13,20 +13,24 @@
 }
 
 .noteParagraph{
-   background-color: rgb(40, 40, 40);
+   background-color: rgb(32, 32, 32);
    box-sizing: border-box;
    padding:12px 14px;
    border-radius: 22px;
    color:rgb(255, 255, 255);
-   width:50%;
+   width:50vw;
    font-weight:300;
    font-size:18px;
    margin:4px;
 }
 
+.messageDiv{
+   opacity: 0;
+}
+
 
 .messageDiv svg{
-   fill:rgb(40, 40, 40);
+   fill:rgb(32, 32, 32);
    top:-25px;
    left:0.65px;
 }
