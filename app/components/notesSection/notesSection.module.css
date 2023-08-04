@@ -21,3 +21,27 @@
 
 }
 
+.typewriterWrapper{
+   font-family: inherit;
+   text-align: left;
+   left:0px;
+   border:1px solid red;
+   transform-origin:left;
+   width:60%;
+   
+   height:50vh;
+
+}
+
+.typewriterWrapper * {
+   width:100%;
+   font-family: 'Courier New', Courier, monospace;
+   text-align: left;
+   left:0px;
+   border:1px solid green;
+   transform-origin:left;
+   position:absolute;
+   font-size: 22px;
+   font-weight: 600;
+}
+

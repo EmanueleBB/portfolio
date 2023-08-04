@@ -32,46 +32,25 @@ const Navbar = () => {
 		toggleParagraphIsAnimated();	
    }
 
-   useEffect(() => {
+   useLayoutEffect(() => {
       const tl = gsap.timeline();
-  
-      if (divRef.current) {
-         const childrenArray = Array.from(divRef.current.children);
-   
-         // Nascondi inizialmente gli elementi con GSAP e imposta l'opacità a 0
-         
-   
-         // Mostra e anima gli elementi con GSAP
-         tl.to(childrenArray, {
-            visibility: 'visible',
-            opacity: 1,
-            top: 0,
-            ease: 'power1.out',
-            stagger: -0.1,
-            duration: 4,
-         });
-      }
-    }, []);
-   
-   //  useLayoutEffect(()=>{
-   //    const tl = gsap.timeline();
 
-   //    if(divRef.current){
-   //       const childrenArray = Array.from(divRef.current?.children)
-
-   //       tl.fromTo(childrenArray,{
-   //          opacity:0,
-   //          top:15,
-   //       },{
-   //          delay:5.10,
-   //          opacity:1,
-   //          top:0,
-   //          stagger:-0.1,
-   //          ease:'power4.out',
-   //          duration:0.5,
-   //       })
-   //    }
-   // },[]);
+      tl.to(`.${styles.navbarNavlinksWrapper} *`, {
+         delay:3,
+         opacity: 1,
+         top: 0,
+         ease: 'power1.out',
+         stagger: -0.15,
+         duration: 0.3,
+         onComplete:()=>{gsap.to(`.${styles.logoIcon}`,{
+            opacity:1,
+            duration:0.3
+         })}
+      });
+      
+   }, []);
+   
+   
 
    useEffect(()=>{
       if(isVisible){
@@ -134,7 +113,7 @@ const Navbar = () => {
          },0.15).to(childrenArray,{
             top:0,
             duration:0.3,
-            stagger:0.05,
+            stagger:0.07,
             opacity:1,
          },0)
       }

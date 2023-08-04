@@ -19,7 +19,6 @@ const HeroSection = () => {
 	const ButtonRef=useRef<HTMLAnchorElement>(null);
 	const iconsHeroGroupRef = useRef<HTMLDivElement>(null);
 	const seeStackRef=useRef<HTMLAnchorElement>(null);
-
 	const {toggleIsVisible}=useNavbarStore();
 	const {toggleStackIsOnScreen,toggleParagraphIsAnimated}=useStackStore();
 
@@ -147,9 +146,7 @@ const HeroSection = () => {
 			backgroundImage:'radial-gradient(circle at center bottom, black 80%, #2B0A4F 100%, #AF4DC9 160%, #F9A2F0 220%)',
 			ease: 'power2.inOut',
 			backgroundPosition: 'center top',
-			
 		}).to(h2Ref.current, {
-			
 			duration: 1.2,
 			transform:'scale(1)',
 			filter:'blur(0px)',
@@ -172,10 +169,9 @@ const HeroSection = () => {
 		},'<+=0.7').to(ButtonRef.current, {
 			opacity:1,
 			ease: 'power2.out',
-		},'<+=1.25').from(`.${styles.stagger}`, {
+		},'<+=1.25').to(`.${styles.stagger}`, {
 			duration: 0.15,
-			top:15,
-			opacity:0,
+			opacity:1,
 			ease: 'power4.out',
 		},'<+=0.25');
 	}, []);

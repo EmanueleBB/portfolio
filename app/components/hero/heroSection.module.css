@@ -252,7 +252,7 @@
    transition:color 0.25s ease;
 }
 
-.navLink .stagger{
+.navLink.stagger{
 	opacity:0;
 }
 
