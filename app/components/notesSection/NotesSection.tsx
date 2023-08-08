@@ -26,6 +26,8 @@ const NotesSection = () => {
    const fourthMessageRef = useRef<HTMLDivElement>(null);
    const fifthMessageRef = useRef<HTMLDivElement>(null);
    const sixthMessageRef =useRef<HTMLDivElement>(null);
+   const seventhMessageRef =useRef<HTMLDivElement>(null);
+   const eightMessageRef =useRef<HTMLDivElement>(null);
 
 
 
@@ -52,6 +54,8 @@ const NotesSection = () => {
             fourthMessageRef,
             fifthMessageRef,
             sixthMessageRef,
+            seventhMessageRef,
+            eightMessageRef
          ];
 
          messageRefs.forEach((messageRef, index) => {
@@ -62,8 +66,8 @@ const NotesSection = () => {
                      gsap.to(messageRef.current, {
                         opacity: 1,
                         top: 0,
-                        duration: 0.5,
-                        ease:'power1.out'
+                        duration: 0.7,
+                        ease:'power2.out'
                      });
                      if (index > 0) {
                         gsap.to(
@@ -81,18 +85,7 @@ const NotesSection = () => {
       }
    }, []);
 
-   useEffect(() => {
-      const interval = setInterval(() => {
-         const now = new Date();
-         const hours = String(now.getHours()).padStart(2, '0');
-         const minutes = String(now.getMinutes()).padStart(2, '0');
-         
-         setCurrentTime(`${hours}:${minutes}`);
-      }, 1000);
-  
-      return () => clearInterval(interval);
-   }, []);
-
+   
       
    return (
       <div className={styles.notesSectionContainer} ref={noteSectionContainerRef}>
@@ -101,12 +94,12 @@ const NotesSection = () => {
          <div className={styles.messagesContainer}>
             <div className={styles.messageDiv} ref={firstMessageRef}>
                <p className={styles.noteParagraph}>
-                  Hey            
+                  Hey!            
                </p>
                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
                </svg>
-               {/* <span className={styles.timeSpan}>{currentTime}</span> */}
+               
             
             </div>
 
@@ -118,7 +111,7 @@ const NotesSection = () => {
                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
                </svg>
-               {/* <span className={styles.timeSpan}>{currentTime}</span> */}
+               
                
             </div>
 
@@ -129,7 +122,7 @@ const NotesSection = () => {
                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
                </svg>
-               <span className={styles.timeSpan}>{currentTime}</span>
+               
             </div>
 
 
@@ -140,7 +133,7 @@ const NotesSection = () => {
                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
                </svg>
-               <span className={styles.timeSpan}>{currentTime}</span>
+               
             </div>
 
             <div className={styles.messageDiv} ref={fifthMessageRef}>
@@ -150,17 +143,35 @@ const NotesSection = () => {
                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
                </svg>
-               <span className={styles.timeSpan}>{currentTime}</span>
+               
             </div>
 
             <div className={styles.messageDiv} ref={sixthMessageRef}>
                <p className={styles.noteParagraph}>
-                  Thank you for passing by, I really appreciate that.
+                  If you want to contact me, below are all the infos you need.  
                </p>
                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
                </svg>
-               <span className={styles.timeSpan}>{currentTime}</span>
+               
+            </div>
+            <div className={styles.messageDiv} ref={seventhMessageRef}>
+               <p className={styles.noteParagraph}>
+                  Thank you for passing by, I really appreciate that. 🥹 
+               </p>
+               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
+               </svg>
+               
+            </div>
+            <div className={styles.messageDiv} ref={eightMessageRef}>
+               <p className={styles.noteParagraph}>
+                  Have a great day! 💪
+               </p>
+               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
+               </svg>
+               
             </div>
 
 
