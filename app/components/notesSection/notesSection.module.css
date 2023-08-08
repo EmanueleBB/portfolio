@@ -1,5 +1,5 @@
 .notesSectionContainer{
-   height:100vh;
+   height:150vh;
    width:100%;
    color:white;
    background-image:radial-gradient(ellipse at center top, rgb(13, 13, 13) 10%, black);
@@ -10,6 +10,7 @@
    flex-direction: column;
    align-items: center;
    padding-top:15vh;
+   
 }
 
 .noteParagraph{
@@ -18,21 +19,46 @@
    padding:12px 14px;
    border-radius: 22px;
    color:rgb(255, 255, 255);
-   width:50vw;
+   max-width: 490px;
    font-weight:300;
    font-size:18px;
-   margin:4px;
+   display: inline-block;
+   width:auto;
+   
+}
+
+.messagesContainer{
+   display:flex;
+   flex-direction: column;
 }
 
 .messageDiv{
    opacity: 0;
+   top:34px;
+   display: inline-block; 
+   height: auto;
+   margin-bottom:8px;
+   
+  
+}
+
+.timeSpan {
+   top:-8px;
+   left:93%;
+   font-size: 12px;
+   margin-left: auto;
+   color: rgb(114, 114, 114);
 }
 
 
 .messageDiv svg{
    fill:rgb(32, 32, 32);
-   top:-25px;
-   left:0.65px;
+   /* fill:#1b0134; */
+   bottom:0px;
+   left:-3.6px;
+   display: inline-block;
+   height:22px;
+   position: absolute;
 }
 .notesSectionContainer img{
    opacity:0;

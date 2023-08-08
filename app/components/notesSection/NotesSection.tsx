@@ -23,6 +23,9 @@ const NotesSection = () => {
    const firstMessageRef = useRef<HTMLDivElement>(null);
    const secondMessageRef = useRef<HTMLDivElement>(null);
    const thirdMessageRef = useRef<HTMLDivElement>(null);
+   const fourthMessageRef = useRef<HTMLDivElement>(null);
+   const fifthMessageRef = useRef<HTMLDivElement>(null);
+   const sixthMessageRef =useRef<HTMLDivElement>(null);
 
 
 
@@ -30,29 +33,51 @@ const NotesSection = () => {
 
    useLayoutEffect(() => {
 
- 
-      if(noteSectionContainerRef.current){
-
-      const tl = gsap.timeline({
-         scrollTrigger: {
-            trigger: noteSectionContainerRef.current,
-            start: 'top 50%',
-            end: 'top 0%',
-            markers: true,
-            scrub:true,
-            
-         }
+      if (noteSectionContainerRef.current) {
+         const tl = gsap.timeline({
+            scrollTrigger: {
+               trigger: noteSectionContainerRef.current,
+               start: 'top 25%',
+               end: 'bottom bottom',
+               markers: true,
+               scrub: true,
+            },
          });
 
-         tl.to(imageRef.current,{
-            opacity:1
-         }).to(firstMessageRef.current,{
-            opacity:1,
-         }).to(secondMessageRef.current,{
-            opacity:1,
-         }).to(thirdMessageRef.current,{
-            opacity:1,
-         })
+         const messageRefs = [
+            imageRef,
+            firstMessageRef,
+            secondMessageRef,
+            thirdMessageRef,
+            fourthMessageRef,
+            fifthMessageRef,
+            sixthMessageRef,
+         ];
+
+         messageRefs.forEach((messageRef, index) => {
+            if (messageRef.current) {
+               tl.to(messageRef.current, {
+                  duration: 1,
+                  onComplete: () => {
+                     gsap.to(messageRef.current, {
+                        opacity: 1,
+                        top: 0,
+                        duration: 0.5,
+                        ease:'power1.out'
+                     });
+                     if (index > 0) {
+                        gsap.to(
+                           messageRefs[index - 1]?.current?.querySelector('svg') as SVGElement,
+                           {
+                              opacity: 0,
+                              duration: 0.1,
+                           }
+                        );
+                     }
+                  },
+               });
+            }
+         });
       }
    }, []);
 
@@ -73,41 +98,73 @@ const NotesSection = () => {
       <div className={styles.notesSectionContainer} ref={noteSectionContainerRef}>
          <Image className={styles.astronautImage} src='/astronaut1.png' alt='an astronaut' height= {300} width={300} ref={imageRef}/>
 
-         
-         <div className={styles.messageDiv} ref={firstMessageRef}>
-            <p className={styles.noteParagraph}>
-               My goal for the near future is to add some more stuff to this portfolio. I want to build a blog section, an 'About me' page and maybe an 'How built this' page. 
-            </p>
-            <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
-            </svg>
-            <span>{currentTime}</span>
-         </div>
-
-         <div className={styles.messageDiv} ref={secondMessageRef}>
-            <p className={styles.noteParagraph}>
-               I really want to get them right though, and that requires time. I want to focus on something else at the moment, since this project, from the design stage to the developement took all my soul and efforts of the last few months. I'll do my best to get them out as fast as possible, so make sure to stick around to see what's new. 
-            </p>
-            <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
-            </svg>
-            <span>{currentTime}</span>
-         </div>
-
-         <div className={styles.messageDiv} ref={thirdMessageRef}>
-            <p className={styles.noteParagraph}>
-               I really want to get them right though, and that requires time. I want to focus on something else at the moment, since this project, from the design stage to the developement took all my soul and efforts of the last few months. I'll do my best to get them out as fast as possible, so make sure to stick around to see what's new. 
-
-            </p>
-            <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
-            </svg>
-            <span>{currentTime}</span>
+         <div className={styles.messagesContainer}>
+            <div className={styles.messageDiv} ref={firstMessageRef}>
+               <p className={styles.noteParagraph}>
+                  Hey            
+               </p>
+               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
+               </svg>
+               {/* <span className={styles.timeSpan}>{currentTime}</span> */}
             
+            </div>
+
+            <div className={styles.messageDiv} ref={secondMessageRef}>
+               <p className={styles.noteParagraph}>
+                  
+                  Hi, Just one quick last thing! 😄 
+               </p>
+               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
+               </svg>
+               {/* <span className={styles.timeSpan}>{currentTime}</span> */}
+               
+            </div>
+
+            <div className={styles.messageDiv} ref={thirdMessageRef}>
+               <p className={styles.noteParagraph}>
+                  My goal for the near future is to expand this portfolio with some more sections and a blog. I really want to get them right though and the whole process, from design, to revision, to developement - <i>to redesign and revision an unnecessary amount of times </i> - takes a lot time.
+               </p>
+               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
+               </svg>
+               <span className={styles.timeSpan}>{currentTime}</span>
+            </div>
+
+
+            <div className={styles.messageDiv} ref={fourthMessageRef}>
+               <p className={styles.noteParagraph}>
+                  This portfolio alone took all my time and soul of the last few months, and right now I want to focus on something else - like doing leetcode problems 🫠. Also get outside to remember what the sun looks like may be an idea.
+               </p>
+               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
+               </svg>
+               <span className={styles.timeSpan}>{currentTime}</span>
+            </div>
+
+            <div className={styles.messageDiv} ref={fifthMessageRef}>
+               <p className={styles.noteParagraph}>
+                  I'll try to implement the new features in the shortest time possible, so make sure to stick around to see what's new.
+               </p>
+               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
+               </svg>
+               <span className={styles.timeSpan}>{currentTime}</span>
+            </div>
+
+            <div className={styles.messageDiv} ref={sixthMessageRef}>
+               <p className={styles.noteParagraph}>
+                  Thank you for passing by, I really appreciate that.
+               </p>
+               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />
+               </svg>
+               <span className={styles.timeSpan}>{currentTime}</span>
+            </div>
+
+
          </div>
-         
-         
-         
       </div>
    )
 }
