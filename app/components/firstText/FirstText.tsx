@@ -69,6 +69,9 @@ const FirstText = () => {
          duration:1,
          onStart:()=>{
             secondSpan.current&&(secondSpan.current.style.display='inline-block');
+         },
+         onReverseComplete:()=>{
+            firstSpan.current&&(firstSpan.current.style.display='inline-block');
          }
       }).to(secondSpan.current,{
          opacity:0,
@@ -84,6 +87,9 @@ const FirstText = () => {
          display:'inline-block',
          opacity:1,
          duration:1,
+         onReverseComplete:()=>{
+            secondSpan.current&&(secondSpan.current.style.display='inline-block');
+         }
       }).to(thirdSpan.current,{
          opacity:0,
          display:'none',
@@ -137,7 +143,7 @@ const FirstText = () => {
          duration:3,
          ease:'power2.out',
          
-//Ipad appears
+//Desktop appears
       }).to(designDesktopRef.current,{
          onStart:()=>{
             designDesktopRef.current&&(designDesktopRef.current.style.display='flex')

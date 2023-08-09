@@ -1,6 +1,8 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styles from './contactsSection.module.css';
 import { useForm } from 'react-hook-form';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 
 const ContactForm = () => {
@@ -11,6 +13,33 @@ const ContactForm = () => {
    const [textAreaIsValid, setTextAreaIsValid] = useState(false);
    const [isButtonDisabled,setIsButtonDisabled]=useState(true);
    const [isValidEmail, setIsValidEmail] = useState(false); 
+   
+
+
+
+   const formRef = useRef<HTMLFormElement>(null);
+   gsap.registerPlugin(ScrollTrigger);
+
+   useLayoutEffect(()=>{
+
+      const tl = gsap.timeline({
+         scrollTrigger:{
+            trigger:formRef.current,
+            markers:true,
+            start:'top 50%',
+            end:'bottom bottom'
+         }
+      });
+   
+      tl.to(formRef.current,{
+         opacity:1,
+         top:0,
+         duration:1.5,
+         ease:'power2.out'
+      })
+   },[])
+
+
 
 
 
@@ -20,7 +49,6 @@ const ContactForm = () => {
       return emailRegex.test(email);
    };
    
-
    const handleFieldChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const nameOfTheInput = event.target.name;
       const value = event.target.value.trim();
@@ -45,8 +73,6 @@ const ContactForm = () => {
          }  
       }
    };
-
-   
 
    const handleBlur = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const nameOfTheInput = event.target.name;
@@ -103,7 +129,7 @@ const ContactForm = () => {
    
 
    return (
-      <form className={styles.contactForm} action="https://formsubmit.co/11b841bfb61d4d7e5270a6084630e6b2" method="POST">
+      <form ref={formRef} className={styles.contactForm} action="https://formsubmit.co/11b841bfb61d4d7e5270a6084630e6b2" method="POST">
          <div className={`${styles.formGroup} ${nameHasValue ? styles.hasValue : ''} ${formState.errors?.name ? styles.hasError : ''}`}>
             <input {...register('name')} onChange={handleFieldChange} onBlur={handleBlur} autoComplete='off'/>
             <label htmlFor='name'>Your name</label>

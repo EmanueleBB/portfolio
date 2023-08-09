@@ -1,10 +1,11 @@
 .mainContainer{
+   height:100vh;
    left:24px;
    padding-top:24px;
    margin-top:24px;
    width:calc(100vw - 48px);
    min-height:800px;
-   background-image: radial-gradient(100% 120% at 50% 0%, rgb(251, 190, 240) -10%, #8b1e97  7%,   rgb(42, 9, 75) 70%,rgb(0, 0, 0) 100%); 
+   background-image: radial-gradient(100% 120% at 50% 0%, rgb(251, 190, 240) -30%, #8b1e97  -10%,   rgb(42, 9, 75) -5%,rgb(0, 0, 0) 50%); 
    /* background-image:radial-gradient(100% 120% at 50% 0%, rgb(13,13,13) 0%, #2B0A4F 54.54%, #AF4DC9 100%); */
    background-position: 0 0,0 0;
    background-size:200% 100%;
@@ -16,6 +17,7 @@
    padding:5vh 0px;
    border-radius: 30px;
    box-shadow: inset 0px 0px 70px 10px rgba(255, 255, 255, 0.052);
+
 }
 
 
@@ -26,10 +28,12 @@
    color:transparent;
    background-clip: text;
    background-image: linear-gradient(to right, #ffffff,white);
-   margin-top:84px;
+   margin-top:48px;
    
    background-size: 200% 100%;
    animation: backgroundPan 5s linear infinite forwards; 
+
+   opacity: 0;
 }
 
 @keyframes backgroundPan{
@@ -53,12 +57,14 @@
    flex-direction: column;
    padding:48px;
    
-   margin-top:42px;
+   margin-top:32px;
    gap:12px;
    width:40vw;
    border-radius:2rem;
    background-color: rgba(255, 255, 255, 0.1);
    margin-bottom:100px;
+   opacity: 0;
+   top:10vh;
 }
 
 .contactForm .formGroup {

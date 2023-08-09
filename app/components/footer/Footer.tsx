@@ -11,6 +11,7 @@ const Footer = () => {
 
    const textRef=useRef<HTMLSpanElement>(null);
    const barRef=useRef<HTMLDivElement>(null);
+   const footerContainerRef = useRef<HTMLDivElement>(null);
 
    useLayoutEffect(()=>{
 
@@ -65,7 +66,7 @@ const Footer = () => {
 
    return (
       <div className={styles.mainContainer}>
-         <div className={styles.footerContainer}>
+         <div className={styles.footerContainer} ref={footerContainerRef}>
             
             <div className={styles.linksContainer}>
                <h3>

@@ -53,7 +53,7 @@
 	background-image: radial-gradient(circle at center top, var(--dim-pink) 50%, #fc3dff 100%,black 110%); */
 	width:500px;
 	text-align:center;
-	letter-spacing: -4%;
+
 	opacity:0;
 
 }

@@ -41,7 +41,7 @@ const NotesSection = () => {
                trigger: noteSectionContainerRef.current,
                start: 'top 25%',
                end: 'bottom bottom',
-               markers: true,
+               markers: false,
                scrub: true,
             },
          });
