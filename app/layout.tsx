@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
 	title: 'Emanuele | Web Developer',
-	description: 'I am a full stack web and mobile developer who loves to explore with design and functionalities',
+	description: 'I am a full stack web and mobile developer that tries to design pretty things',
 }
 
 export default function RootLayout({
@@ -28,6 +28,12 @@ export default function RootLayout({
 		<html lang="en">
 			<head>
 				<link rel="icon" href="/logos/logoOnlyERounded.png" sizes="any" />
+				<link
+					rel="apple-touch-icon"
+					href="/logos/logoOnlyERounded.png"
+					type="image/<generated>"
+					sizes="<generated>"
+					/>	
 			</head>
 			<body className={inter.className}>
 				{children}

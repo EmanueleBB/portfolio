@@ -34,6 +34,8 @@
    transform:translateY(-50%);
    position:fixed;
    color:white;
+   font-weight: 500;
+   font-size: 24px;
    
 }
 
@@ -52,6 +54,8 @@ span.uniqueDesignClass{
    display:none;
    padding:0px;
    line-height:0.78;
+   user-select: none;
+   -webkit-user-drag: none;
 }
 
 span.designDescriptionSpan{

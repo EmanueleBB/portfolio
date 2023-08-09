@@ -34,105 +34,125 @@ const HeroSection = () => {
 			transform:'scale(0.6)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
+			duration:1,
+			ease:'power2.out'
 		}).to(icons[9],{
 			transform:'scale(0.6)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[11],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[11],{
 
 			transform:'scale(0.6)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[8],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[8],{
 			transform:'scale(0.6)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[12],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[12],{
 			transform:'scale(0.65)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[7],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[7],{
 			transform:'scale(0.65)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[13],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[13],{
 			transform:'scale(0.7)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[6],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[6],{
 			transform:'scale(0.7)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[14],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[14],{
 			transform:'scale(0.75)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[5],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[5],{
 			transform:'scale(0.75)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[15],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[15],{
 			transform:'scale(0.9)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[4],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[4],{
 
 			transform:'scale(0.9)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[16],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[16],{
 			transform:'scale(1)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[3],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[3],{
 			transform:'scale(1)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[17],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[17],{
 			transform:'scale(1)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[2],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[2],{
 			transform:'scale(1)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[18],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[18],{
 			transform:'scale(1.2)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[1],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[1],{
 			transform:'scale(1.2)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[19],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[19],{
 			transform:'scale(1.4)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1').to(icons[0],{
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05').to(icons[0],{
 			transform:'scale(1.4)',
 			opacity:1,
 			filter:'blur(0px)',
-			duration:0.7,
-		},'<+=0.1')
+			duration:1,
+			ease:'power2.out'
+		},'<+=0.05')
 	}
 
 

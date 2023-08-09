@@ -81,9 +81,11 @@ const FirstText = () => {
             secondSpan.current&&(secondSpan.current.style.display='none');
          }
       }).fromTo(thirdSpan.current,{
+         y:'25px',
          display:'none',
          opacity:0,
       },{
+         y:'0px',
          display:'inline-block',
          opacity:1,
          duration:1,
@@ -91,6 +93,7 @@ const FirstText = () => {
             secondSpan.current&&(secondSpan.current.style.display='inline-block');
          }
       }).to(thirdSpan.current,{
+         y:'-25px',
          opacity:0,
          display:'none',
          duration:1,
@@ -117,17 +120,20 @@ const FirstText = () => {
          display:'none',
          duration:1,
       }).fromTo(sixthSpan.current,{
+         y:'25px',
          display:'none',
          opacity:0,
       },{
+         y:'0px',
          display:'inline-block',
          opacity:1,
          duration:1,
       }).to(sixthSpan.current,{
+         y:'-25px',
          opacity:0,
          display:'none',
          duration:1,
-         ease:'power4.out',
+         
          onReverseComplete:()=>{designHeading.current&&(designHeading.current.style.display='none')}
       })
       
@@ -206,22 +212,22 @@ const FirstText = () => {
       <div className={styles.blackToPinkDiv} ref={blackToPinkDiv} id='designSection'>
          <p className={styles.wonderText} ref={paragraphRef}>
             <span ref={firstSpan}>
-               Just take a moment to recall the last time you thought <i>&quot;Wow, that was wonderful&quot;</i>
+            Just take a moment to recall the last time you thought <i>&quot;Wow, that was wonderful&quot;</i>
             </span>
             <span ref={secondSpan}>
                Maybe it happened while admiring a painting, or while listening to a song.
             </span>
             <span ref={thirdSpan}>
-               Maybe you were reading the best crafted poem you ever read, or maybe you breath was taken away by the sunset.
+               Maybe you breath was taken away by the sunset, or maybe you were watching "Bear and goose at the end of everything" by Exurb1a <strong style={{color:'white',opacity:0.4, fontSize:'14px', fontWeight:300}}> Seriously, I mean, that video is actually brilliant, go watch it! </strong>
             </span>
             <span ref={fourthSpan}>
                I’ve always admired those who, with their craft, are able to cause that reaction in the people.
             </span>
             <span ref={fifthSpan}>
-               Those are the individuals I look up to and praise, those who I get inspiration from. 
+               These are my favourite kind of people, those who I try to get inspiration from. 
             </span>
             <span ref={sixthSpan}>
-               With the hope to be, one day,  one of them.
+               With the hope to be, one day, one of them.
             </span>
          </p>
             <span ref={designHeading}  className={styles.uniqueDesignClass} >
