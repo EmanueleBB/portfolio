@@ -139,7 +139,7 @@ const Stack = () => {
             },'<').to(arrowRef.current,{
                top:0,
                rotate:'-720',
-               ease:'power3.out',
+               ease:'power2.out',
                opacity:0.6,
                duration:1.3,
                onComplete:()=>{
@@ -147,7 +147,7 @@ const Stack = () => {
                      opacity:1,
                   })
                }
-            });
+            },'<+=1.5');
          }
       }
    }, [paragraphIsAnimated]);
@@ -178,7 +178,7 @@ const Stack = () => {
                <path fill="url(#myGradient)" d="M3 20C1.34315 20 1.44847e-07 21.3431 0 23C-1.44846e-07 24.6569 1.34315 26 3 26L3 20ZM50.1213 25.1213C51.2929 23.9498 51.2929 22.0503 50.1213 20.8787L31.0294 1.7868C29.8579 0.615226 27.9584 0.615226 26.7868 1.7868C25.6152 2.95837 25.6152 4.85787 26.7868 6.02944L43.7574 23L26.7868 39.9706C25.6152 41.1421 25.6152 43.0416 26.7868 44.2132C27.9584 45.3848 29.8579 45.3848 31.0294 44.2132L50.1213 25.1213ZM3 26L48 26L48 20L3 20L3 26Z" />
                
             </svg>
-            <span className={styles.scrollRightSpan} >Please proceed sideway</span>
+            <span className={styles.scrollRightSpan} >Please proceed sideways</span>
 
          </div>
          <FigmaDiv/>  

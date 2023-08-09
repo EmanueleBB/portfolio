@@ -25,7 +25,7 @@ const ContactForm = () => {
       const tl = gsap.timeline({
          scrollTrigger:{
             trigger:formRef.current,
-            markers:true,
+            markers:false,
             start:'top 50%',
             end:'bottom bottom'
          }

@@ -95,7 +95,7 @@ const Footer = () => {
                   </svg>
                   <Link href='/about'>
                      
-                     Blog (in progress)
+                     Blog
                   </Link>
                </div>
             </div>
@@ -182,6 +182,11 @@ const Footer = () => {
                   </Link>
                </div>
             </div>
+            <div className={styles.notesParagraphContainer}>
+               <p>
+                  All the content you find in this portfolio was made by me, from the UI components to the image assets. I used midjourney (for the Stussy poster and many more), unsplash (for the original black and white ballerina image), Adobe Photoshop and Adobe Illustrator to create and edit the images and gsap for animations.
+               </p>
+            </div>
 
 
             <div className={styles.spanAndBarContainer}>
@@ -194,6 +199,7 @@ const Footer = () => {
             
             
          </div>
+         
       </div>
    )
 }

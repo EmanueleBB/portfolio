@@ -27,7 +27,7 @@ const ContactsSection = () => {
       const tl = gsap.timeline({
          scrollTrigger:{
             trigger:mainContainerRef.current,
-            markers:true,
+            markers:false,
             start:'top 45%',
             end:'bottom bottom'
          }
