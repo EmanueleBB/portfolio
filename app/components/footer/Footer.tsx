@@ -184,7 +184,7 @@ const Footer = () => {
             </div>
             <div className={styles.notesParagraphContainer}>
                <p>
-                  All the content you find in this portfolio was made by me, from the UI components to the image assets. I used midjourney (for the Stussy poster and many more), unsplash (for the original black and white ballerina image), Adobe Photoshop and Adobe Illustrator to create and edit the images and gsap for animations.
+                  All the content you find in this portfolio was made by me, from the UI components to the image assets. I used midjourney (for the Stussy poster and many more), unsplash (for the original black and white ballerina image - thank you <a style={{textDecoration:'underline'}} href='https://unsplash.com/it/foto/zCZzSK5yX5A'>Gang Hao</a> for the photo), Adobe Photoshop and Adobe Illustrator to create and edit the images and gsap for animations.
                </p>
             </div>
 

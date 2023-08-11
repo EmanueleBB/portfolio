@@ -368,7 +368,7 @@ span.word {
 /* Illustrator Section */
 
 .stackDiv .illustratorP{
-   color:rgb(30, 30, 30);
+   color:rgb(255, 220, 180);
    text-align: left;
    width:35vw;
 }
@@ -378,7 +378,10 @@ span.word {
 }
 
 .illustratorH2{
-   background-image: radial-gradient(ellipse at center top, #FF9A00 20%, #330000 100% );
+   
+   background-image: radial-gradient(ellipse at center top, transparent 20%, #330000 100% );
+   
+
    background-size: 300% 100%;
    background-position:center ;
    color:transparent;
@@ -391,6 +394,23 @@ span.word {
 
 .generalIcon.illustratorIcon{
    opacity:1;
+}
+
+.illustratorImagesContainer{
+   height:30vh;
+   aspect-ratio: 0.85599687;
+   display:flex;
+}
+
+.illustratorImagesContainer img{
+   opacity: 0;
+}
+
+
+.illustratorImagesContainer video{
+   height:30vh;
+   aspect-ratio: 0.85599687;
+   opacity: 1;
 }
 
 .illustratorSmokeCloud{

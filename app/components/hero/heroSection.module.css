@@ -27,7 +27,7 @@
 .heroH1{
 	filter:blur(3px);
 	position:relative;
-	letter-spacing: -1.5%;
+	
 	transform:scale(1.7);
 	background-image:radial-gradient(circle at center, #FD95FF 0%, #fc3dff 1%, transparent 2%);
 	opacity: 0;
@@ -36,6 +36,7 @@
 	text-align: center;
 	margin-bottom:36px;
 	z-index: 2;
+	
 }
 
 

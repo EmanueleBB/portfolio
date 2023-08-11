@@ -177,6 +177,7 @@ const HeroSection = () => {
 			filter:'blur(0px)',
 			opacity:1,
 			duration: 3,
+			
 			backgroundImage:'radial-gradient(circle at center, #FD95FF 0%, #fc3dff 70%, transparent 110%)',
 			ease: 'power3.out',
 		},'<0.5').to(pRef.current, {
