@@ -371,6 +371,7 @@ span.word {
    color:rgb(255, 220, 180);
    text-align: left;
    width:35vw;
+   opacity: 0;
 }
 
 .illustratorP span{
@@ -413,15 +414,7 @@ span.word {
    opacity: 1;
 }
 
-.illustratorSmokeCloud{
-   height:120vh;
-   position:absolute;
-   aspect-ratio: calc(998/870);
-   left:50%;
-   top:-2.5vh;
-   transform:translateX(-48%);
-   
-}
+
 
 /* Illustrator Section */
 /* Midjourney Section */
@@ -429,16 +422,20 @@ span.word {
 .midjourneyIconContainer{
    width:42px;
    height: 42px;
+   opacity: 0;
    
    
 }
 
 .midjourneyH2{
+   top:-15px;
+     
+           
    background-image: white;
    margin:unset;
    padding:unset;
    margin:12px 0px 5vh 0px;
-   opacity:1;
+   opacity:0;
 }
 
 .queenOfHeartsDiv{
@@ -466,6 +463,8 @@ span.word {
 .stackDiv .generalP.midjourneyP{
    width:50vw;
    color:rgb(163, 163, 163);
+   opacity: 0;
+   top:-15px;
 }
 
 .stackDiv .generalP.midjourneyP span{

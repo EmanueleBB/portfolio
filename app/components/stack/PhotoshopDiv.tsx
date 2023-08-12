@@ -49,28 +49,8 @@ const PhotoshopDiv = () => {
                opacity:1,
                duration:1,
                ease:'power2.out'
-            }).fromTo(h2Ref.current,{
-               backgroundImage: 'radial-gradient(ellipse at center top, #31A8FF 20%, #001E36 70% )',
-               y:-15,
-               opacity:0,
-            },{
-               backgroundImage: 'radial-gradient(ellipse at center top, #31A8FF 20%, #001E36 100% )',
-               y:0,
-               opacity:1,
-               duration:1,
-               ease:'power2.out'
-            },'<+=0.2')
-            .fromTo(pRef.current,{
-               y:-15,
-               opacity:0,
-            },{
-               y:0,
-               opacity:1,
-               duration:1.7,
-               ease:'power3.out'
-            },'<+=0.2')
-            .to(maskDivRef.current,{
-               delay:3,
+            }).to(maskDivRef.current,{
+               delay:0.5,
                opacity:1,
                duration:0,
                ease:'linear',
@@ -80,6 +60,28 @@ const PhotoshopDiv = () => {
                duration:3,
                ease:'linear',
             },'<')
+            .fromTo(h2Ref.current,{
+               backgroundImage: 'radial-gradient(ellipse at center top, #31A8FF 20%, #001E36 70% )',
+               y:-15,
+               opacity:0,
+            },{
+               backgroundImage: 'radial-gradient(ellipse at center top, #31A8FF 20%, #001E36 100% )',
+               y:0,
+               opacity:1,
+               duration:1,
+               ease:'power2.out'
+            },'<+=2.5')
+            .fromTo(pRef.current,{
+               y:-15,
+               opacity:0,
+            },{
+               
+               y:0,
+               opacity:1,
+               duration:1.7,
+               ease:'power3.out'
+            },'<+=0.5')
+            
 
             if (photoshopDivRef.current) {
                observer.unobserve(photoshopDivRef.current);

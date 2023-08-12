@@ -13,7 +13,7 @@ const MidjourneyDiv = () => {
    const pRef=useRef<HTMLParagraphElement>(null);
    const subPRef=useRef<HTMLParagraphElement>(null);
    const imageDivRef=useRef<HTMLDivElement>(null);
-   const midjourneyIconRef=useRef<SVGSVGElement>(null);
+   const midjourneyIconRef=useRef<HTMLDivElement>(null);
 
 
    useLayoutEffect(() => {
@@ -35,29 +35,23 @@ const MidjourneyDiv = () => {
          if (entry.isIntersecting) {
 
             const tl=gsap.timeline();
-            tl.fromTo(midjourneyIconRef.current,{
-               y:-15,
-               opacity:0,
-            },{
-               y:0,
+            tl.to(midjourneyIconRef.current,{
+              
+               top:0,
                opacity:1,
                duration:1,
                ease:'power2.out'
-            }).fromTo(h2Ref.current,{
+            }).to(h2Ref.current,{
                
-               y:-15,
-               opacity:0,
-            },{
-               y:0,
+               
+               top:0,
                opacity:1,
                duration:1,
                ease:'power2.out'
             },'<+=0.2')
-            .fromTo(pRef.current,{
-               y:-15,
-               opacity:0,
-            },{
-               y:0,
+            .to(pRef.current,{
+               
+               top:0,
                opacity:1,
                duration:1.7,
                ease:'power3.out'
@@ -95,7 +89,7 @@ const MidjourneyDiv = () => {
 
    return (
       <div className={styles.stackDiv} ref={midjourneyDivRef}>
-         <div className={styles.midjourneyIconContainer}>
+         <div className={styles.midjourneyIconContainer} ref={midjourneyIconRef}>
             <Image
                src='/midjourney.png'
                fill

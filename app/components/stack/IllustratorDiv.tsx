@@ -37,7 +37,9 @@ const IllustratorDiv = () => {
 
          if (entry.isIntersecting) {
 
-            tl.to(h2Ref.current,{
+            tl.to(illustratorIconRef.current,{
+               opacity:1,
+            }).to(h2Ref.current,{
                onStart:()=>{
                   if(videoRef.current){
                      
@@ -51,19 +53,25 @@ const IllustratorDiv = () => {
                opacity:1,
                duration:1.5,
                ease:'power2.out'
-            },'<+=0.2').to(videoRef.current,{
+            }).to(videoRef.current,{
                opacity:0,
                duration:0.3
+               
             },'3').to(outlineImageRef.current,{
                opacity:1,
-               duration:1,
+               duration:0.3,
             },'2.7').to(outlineImageRef.current,{
+               delay:0.7,
                opacity:0,
-               duration:0.7
+               duration:0.3
             }).to(coloredImageRef.current,{
                opacity:1,
-               duration:1.2,
+               duration:0.3,
                ease:'power2.in'
+            }).to(pRef.current,{
+               delay:0.3,
+               opacity:1,
+               duration:1
             })
 
             if (illustratorDivRef.current) {
