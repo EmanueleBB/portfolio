@@ -48,13 +48,8 @@
 	filter:blur(8px);
 	position:relative;
 	color:var(--dim-pink);
-	/* background-clip: text;
-	background-size: 100% 300%;
-	background-position: center center;
-	background-image: radial-gradient(circle at center top, var(--dim-pink) 50%, #fc3dff 100%,black 110%); */
-	width:500px;
+	max-width:500px;
 	text-align:center;
-
 	opacity:0;
 
 }
@@ -264,11 +259,40 @@
 }
 
 
-@media only screen and (max-width:734px){
+
+
+
+@media only screen and (max-width:320px){
 
 	.heroH1{
-		font-size:40px;
+		font-size:34px;
+		font-weight:800;
+	}
+
+	.heroH2{
+		font-size:18px;
 		font-weight:600;
+	}
+
+	.heroParagraph{
+		font-size:16px;
+		font-weight:600;
+		max-width:90vw;
+	}
+
+	.navLink{
+		font-weight: 600;
+		font-size:17px;
+	}
+}
+
+
+
+@media only screen and (min-width:321px) and (max-width:470px){
+
+	.heroH1{
+		font-size:42px;
+		font-weight:800;
 	}
 
 	.heroH2{
@@ -287,10 +311,35 @@
 	}
 }
 
-@media only screen and (max-width:1068px){
+
+
+@media only screen and (min-width:471px) and (max-width:734px){
+
 	.heroH1{
-		font-size:66px;
+		font-size:44px;
+		font-weight:800;
+	}
+
+	.heroH2{
+		font-size:28px;
 		font-weight:600;
+	}
+
+	.heroParagraph{
+		font-size:24px;
+		font-weight:600;
+	}
+
+	.navLink{
+		font-weight: 600;
+		font-size:24px;
+	}
+}
+
+@media only screen and (min-width:735px) and (max-width:1068px){
+	.heroH1{
+		font-size:54px;
+		font-weight:800;
 		
 	}
 

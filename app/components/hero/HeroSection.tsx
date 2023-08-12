@@ -219,7 +219,7 @@ const HeroSection = () => {
 			</h1>
 			<p className={styles.heroParagraph} ref={pRef}> 
 				I&apos;m a full stack web developer based in Italy.
-				React and Next JS are the main frameworks I use for my projects.
+				
 				I might have a slight obsession for Apple&apos;s way of designing things :)
 			</p>
 
