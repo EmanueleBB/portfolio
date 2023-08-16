@@ -45,17 +45,17 @@ const FirstText = () => {
 //Spans animations
       tl.fromTo(firstSpan.current,{
          opacity:0,
-         y:'25px'
+         y:'-25%'
       },{
          opacity:1,
-         y:'0',
+         y:'-50%',
          duration:1,
          onStart:()=>{
             firstSpan.current&&(firstSpan.current.style.display='inline-block');
          },
       }).to(firstSpan.current,{
          opacity:0,
-         y:'-25px',
+         y:'-75%',
          duration:1,
          onComplete:()=>{
             firstSpan.current&&(firstSpan.current.style.display='none');
@@ -98,13 +98,16 @@ const FirstText = () => {
          display:'none',
          duration:1,
       }).fromTo(fourthSpan.current,{
+         y:'25px',
          display:'none',
          opacity:0,
       },{
+         y:'0px',
          display:'inline-block',
          opacity:1,
          duration:1,
       }).to(fourthSpan.current,{
+         y:'25px',
          opacity:0,
          display:'none',
          duration:1,

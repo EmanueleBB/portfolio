@@ -55,7 +55,7 @@ const MyProjects = () => {
                frontIcon='/logoGssNero.png'
             />
             <ProjectCard
-               title='Full stack Airbnb Clone'
+               title='The forbidden ecommerce'
                imgSrc='/gss1.png'
                stack={[<NextIcon key='4next'/>]}
                description=''

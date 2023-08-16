@@ -2,8 +2,8 @@
 	position:relative;
 	height:100vh;
 	width:100vw;
-	min-height:800px;
-
+	min-height:844px;
+	
 	background-image:radial-gradient(circle at center bottom, black 30%, #2B0A4F 60%, #AF4DC9 90%, #F9A2F0 120%);
 	background-size:120% 250%;
   	background-position: center top; 
@@ -79,7 +79,6 @@
 	top:45%;
 	left:0px;
 	opacity: 0;
-	
 	z-index:1;
 	background-size: 100% 200%;
 	background-position: center center;
@@ -89,7 +88,6 @@
 
 .iconsBox > * {
 	flex-shrink: 0;
-	
 }
 
 .icon{
@@ -284,11 +282,15 @@
 		font-weight: 600;
 		font-size:17px;
 	}
+
+	.iconsBox{
+		transform:scale(0.5);
+	}
 }
 
 
 
-@media only screen and (min-width:321px) and (max-width:470px){
+@media only screen and (min-width:320px) and (max-width:470px){
 
 	.heroH1{
 		font-size:42px;
@@ -296,18 +298,27 @@
 	}
 
 	.heroH2{
-		font-size:28px;
+		font-size:18px;
 		font-weight:600;
 	}
 
 	.heroParagraph{
-		font-size:24px;
+		font-size:16px;
 		font-weight:600;
+		max-width:80vw;
 	}
 
 	.navLink{
 		font-weight: 600;
-		font-size:24px;
+		font-size:18px;
+	}
+
+	.iconsBox{
+		top:60%;
+		transform:scale(0.5);
+	}
+	.bottomCtasDiv{
+		top:80%;
 	}
 }
 

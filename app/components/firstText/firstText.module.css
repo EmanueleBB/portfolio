@@ -29,11 +29,11 @@
 .wonderText span{
    max-width:60vw;
    display:none;
-   top:50vh;
+   
    z-index:100;
-   transform:translateY(-50%);
+   top:50vh;
    position:fixed;
-   color:white;
+   color:blue;
    font-weight: 500;
    font-size: 24px;
    
@@ -81,9 +81,10 @@ span.designDescriptionSpan{
 }
 
 
-
-@media only screen and (max-width:734px){
-
+@media only screen and (min-width:1069px){
+   .wonderText{
+      margin-top:250px;
+   }
 }
 
 @media only screen and (max-width:1068px){
@@ -94,8 +95,12 @@ span.designDescriptionSpan{
 }
 
 
-@media only screen and (min-width:1069px){
-   .wonderText{
-      margin-top:250px;
+@media only screen and (max-width:734px){
+   .wonderText span{
+      font-size:18px;
    }
 }
+
+
+
+
