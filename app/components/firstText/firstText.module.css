@@ -1,5 +1,5 @@
 .blackToPinkDiv{
-   background-image: radial-gradient(circle at top, black 45.77%, #3b1056 49.33%,#8b1ca1 51.5%,#9811b3 52.5%,#8b1ca1 53.5%, #3b1056 55.90%,black 59.3% );
+   background-image: radial-gradient(circle at top, black 45.77%, #3b1056 49.33%,#8b1ca1 51.5%,#a31dbe 52.5%,#8b1ca1 53.5%, #3b1056 55.90%,black 59.3% );
    /* background-image: radial-gradient(circle at top, black 44.77%, #2f1056 50.77%,rgb(169, 70, 184) 58.01%, white 64.20%); */
    /* background-image: radial-gradient(circle at top, black 80%,rgb(0, 0, 0) 100%); */
    height:1675vh;
@@ -12,6 +12,7 @@
    /* border:2px solid white;  */
    box-sizing: border-box;
    overflow: hidden;
+
 }
 
 .wonderText{
@@ -33,7 +34,7 @@
    z-index:100;
    top:50vh;
    position:fixed;
-   color:blue;
+   color:white;
    font-weight: 500;
    font-size: 24px;
    
@@ -45,10 +46,10 @@ span.uniqueDesignClass{
    text-align: center;
    font-weight: 700;
    font-family: 'Helvetica Neue';
-   font-size:120px;
+   
    top:60vh;
-   left:50vw;
-   transform: translateX(-50%);
+   
+   
    color:var(--main-pink);
    color:black;
    display:none;
@@ -85,6 +86,18 @@ span.designDescriptionSpan{
    .wonderText{
       margin-top:250px;
    }
+   span.uniqueDesignClass{
+      font-size:160px;
+   }
+
+   .desktopContainer{
+      height:50vh;
+   }
+
+   div.stickyDesktop{
+      position:sticky;
+      
+   }
 }
 
 @media only screen and (max-width:1068px){
@@ -92,13 +105,83 @@ span.designDescriptionSpan{
       margin-top:150px;
    }
 
+   div.stickyDesktop{
+      position:sticky;
+      bottom:10vh;
+   }
+
+   .wonderText span,span.designDescriptionSpan{
+      font-size:22px;
+   }
+
+   
+
+   span.uniqueDesignClass{
+      font-size:130px;
+   }
+
+   .desktopContainer{
+      height:50vh;
+   }
+
+   div.stickyDesktop{
+      position:sticky;
+      bottom:10vh;
+   }
+     
+
 }
 
 
 @media only screen and (max-width:734px){
-   .wonderText span{
+   .wonderText span,span.designDescriptionSpan{
+      font-size:20px;
+   }
+
+   span.uniqueDesignClass{
+      font-size:80px;
+      
+      font-weight: 800;
+   }
+
+   span.designDescriptionSpan{
+      width:70vw;
+   }
+
+   .desktopContainer{
+      height:40vh;
+   }
+
+   div.stickyDesktop{
+      position:sticky;
+      bottom:20vh;
+   }
+
+   
+      
+}
+
+@media only screen and (max-width:471px){
+   .wonderText span,span.designDescriptionSpan{
       font-size:18px;
    }
+
+   span.uniqueDesignClass{
+      font-size:80px;
+     
+   }
+
+   .desktopContainer{
+      
+      height:27.5vh;
+   }
+
+   div.stickyDesktop{
+      position:sticky;
+      bottom:32.5vh;
+   }
+
+   
 }
 
 

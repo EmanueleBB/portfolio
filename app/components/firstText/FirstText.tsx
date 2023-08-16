@@ -25,6 +25,31 @@ const FirstText = () => {
    const designDescriptionSpanRef=useRef<HTMLSpanElement>(null);
    const designDesktopRef=useRef<HTMLDivElement>(null);
    const secondDesignDescriptionSpanRef=useRef<HTMLSpanElement>(null);
+   const [desktopHeight, setDesktopHeight] = useState<number>(0);
+
+   
+
+   
+
+   // useEffect(() => {
+
+   //    if(designDesktopRef.current && window){
+   //       setDesktopHeight(designDesktopRef.current.clientHeight);
+   //    }
+
+   //    const handleResize = () => {
+   //       if(designDesktopRef.current && window){
+   //          setDesktopHeight(designDesktopRef.current.clientHeight);
+   //       }
+   //    };
+   //    // Aggiungi un listener all'evento resize quando il componente viene montato
+   //    window.addEventListener('resize', handleResize);
+  
+   //    // Rimuovi il listener quando il componente viene smontato
+   //    return () => {
+   //      window.removeEventListener('resize', handleResize);
+   //    };
+   // }, []);
 
 
    useLayoutEffect(()=>{
@@ -41,7 +66,8 @@ const FirstText = () => {
          animation:tl,
          id:'div',
       })
-      
+
+   
 //Spans animations
       tl.fromTo(firstSpan.current,{
          opacity:0,
@@ -61,11 +87,11 @@ const FirstText = () => {
             firstSpan.current&&(firstSpan.current.style.display='none');
          }
       }).fromTo(secondSpan.current,{
-         y:'25px',
+         y:'-25%',
          opacity:0,
       },{
          opacity:1,
-         y:'0',
+         y:'-50%',
          duration:1,
          onStart:()=>{
             secondSpan.current&&(secondSpan.current.style.display='inline-block');
@@ -75,17 +101,17 @@ const FirstText = () => {
          }
       }).to(secondSpan.current,{
          opacity:0,
-         y:'-25px',
+         y:'-75%',
          duration:1,
          onComplete:()=>{
             secondSpan.current&&(secondSpan.current.style.display='none');
          }
       }).fromTo(thirdSpan.current,{
-         y:'25px',
+         y:'-25%',
          display:'none',
          opacity:0,
       },{
-         y:'0px',
+         y:'-50%',
          display:'inline-block',
          opacity:1,
          duration:1,
@@ -93,27 +119,28 @@ const FirstText = () => {
             secondSpan.current&&(secondSpan.current.style.display='inline-block');
          }
       }).to(thirdSpan.current,{
-         y:'-25px',
+         y:'-75%',
          opacity:0,
          display:'none',
          duration:1,
       }).fromTo(fourthSpan.current,{
-         y:'25px',
+         y:'-25%',
          display:'none',
          opacity:0,
       },{
-         y:'0px',
+         y:'-50%',
          display:'inline-block',
          opacity:1,
          duration:1,
       }).to(fourthSpan.current,{
-         y:'25px',
+         y:'-75%',
          opacity:0,
          display:'none',
          duration:1,
       }).fromTo(fifthSpan.current,{
          display:'none',
          opacity:0,
+         y:'-50%',
       },{
          display:'inline-block',
          opacity:1,
@@ -123,16 +150,16 @@ const FirstText = () => {
          display:'none',
          duration:1,
       }).fromTo(sixthSpan.current,{
-         y:'25px',
+         y:'50%',
          display:'none',
          opacity:0,
       },{
-         y:'0px',
+         y:'-50%',
          display:'inline-block',
          opacity:1,
          duration:1,
       }).to(sixthSpan.current,{
-         y:'-25px',
+         y:'-150%',
          opacity:0,
          display:'none',
          duration:1,
@@ -197,14 +224,23 @@ const FirstText = () => {
          duration:2,
          ease:'power2.in',
 
+
       }).to(designDesktopRef.current,{
-         position:'sticky',
-         bottom:'10vh',
-         duration:0,
+        
+         duration:0.01,
+         onStart:()=>{
+            console.log('triggereds')
+            designDesktopRef.current?.classList.add(styles.stickyDesktop)
+         }
       }).to(designHeading.current,{
+         onReverseComplete:()=>{
+            console.log('triggereds')
+            designDesktopRef.current?.classList.remove(styles.stickyDesktop)
+         },
          position:'absolute',
          bottom:'80',
-         duration:0,
+         duration:0.01,
+         
       },'<')
       
    },[])
