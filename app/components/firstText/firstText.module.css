@@ -65,17 +65,17 @@ span.designDescriptionSpan{
    width:40vw;
    position:fixed;
    opacity:0;
-   bottom:30vh;
-   font-size:20px;
+
+   
    display: none;
 } 
 
 .desktopContainer{
    opacity:0;
-   height:50vh;
+   
    aspect-ratio: calc(1380/835);
    position:fixed;
-   top:100vh;
+   /* bottom:-50vh; */
    /* border:1px solid red; */
    display:none;
    flex-shrink: 0;
@@ -90,14 +90,25 @@ span.designDescriptionSpan{
       font-size:160px;
    }
 
+   span.designDescriptionSpan{
+      font-size:20px;
+      width:70vw;
+      max-width:600px;
+   }
+
    .desktopContainer{
-      height:50vh;
+      width:90vw;
+      max-width:730px;
+
    }
 
    div.stickyDesktop{
       position:sticky;
+      bottom:10vh;
       
    }
+
+   
 }
 
 @media only screen and (max-width:1068px){
@@ -105,15 +116,16 @@ span.designDescriptionSpan{
       margin-top:150px;
    }
 
-   div.stickyDesktop{
-      position:sticky;
-      bottom:10vh;
-   }
 
-   .wonderText span,span.designDescriptionSpan{
+   .wonderText span{
       font-size:22px;
    }
 
+   span.designDescriptionSpan{
+      font-size:20px;
+      width:70vw;
+      max-width:600px;
+   }
    
 
    span.uniqueDesignClass{
@@ -121,7 +133,8 @@ span.designDescriptionSpan{
    }
 
    .desktopContainer{
-      height:50vh;
+      max-width:730px;
+      width:90vw;
    }
 
    div.stickyDesktop{
@@ -134,27 +147,31 @@ span.designDescriptionSpan{
 
 
 @media only screen and (max-width:734px){
-   .wonderText span,span.designDescriptionSpan{
+   .wonderText span{
       font-size:20px;
+      width:85vw;
    }
 
    span.uniqueDesignClass{
       font-size:80px;
-      
       font-weight: 800;
    }
 
    span.designDescriptionSpan{
-      width:70vw;
+      font-size:18px;
+      width:73vw;
+      max-width:430px;
    }
 
    .desktopContainer{
-      height:40vh;
+      width:90vw;
+      max-height:321.449px;
+      max-width:531.25px;
    }
 
    div.stickyDesktop{
       position:sticky;
-      bottom:20vh;
+      bottom:25vh;
    }
 
    
@@ -162,8 +179,15 @@ span.designDescriptionSpan{
 }
 
 @media only screen and (max-width:471px){
-   .wonderText span,span.designDescriptionSpan{
+   .wonderText span{
+      font-size:17px;
+      width:90vw;
+   }
+
+   span.designDescriptionSpan{
       font-size:18px;
+      width:55vw;
+      
    }
 
    span.uniqueDesignClass{
@@ -173,12 +197,12 @@ span.designDescriptionSpan{
 
    .desktopContainer{
       
-      height:27.5vh;
+      width:90vw;
    }
 
    div.stickyDesktop{
       position:sticky;
-      bottom:32.5vh;
+      bottom:37.5vh;
    }
 
    

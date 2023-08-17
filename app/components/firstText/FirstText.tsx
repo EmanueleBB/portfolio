@@ -7,6 +7,7 @@ import gsap from 'gsap'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { isWhiteSpaceLike } from 'typescript';
+import { Positions } from '../stack/smallerComponents/PopupIconAndText';
 
 
 
@@ -25,33 +26,27 @@ const FirstText = () => {
    const designDescriptionSpanRef=useRef<HTMLSpanElement>(null);
    const designDesktopRef=useRef<HTMLDivElement>(null);
    const secondDesignDescriptionSpanRef=useRef<HTMLSpanElement>(null);
-   const [desktopHeight, setDesktopHeight] = useState<number>(0);
+   const [bottomDesktop, setBottomDesktop] = useState(0);
+   const [bottomSpan, setBottomSpan] = useState(0);
 
+   const handlePadding = () => {
+      if (window.innerWidth <= 320) {
+         setBottomDesktop(200);
+         setBottomSpan(420);
+      } else if (window.innerWidth > 320 && window.innerWidth <= 471) {
+         setBottomDesktop(160);
+         setBottomSpan(400);
+      } else if (window.innerWidth > 472) {
+         setBottomDesktop(120);
+         setBottomSpan(450);
+      }
+   };
+
+   useLayoutEffect(() => {
+      handlePadding();
+   }, []);
    
-
    
-
-   // useEffect(() => {
-
-   //    if(designDesktopRef.current && window){
-   //       setDesktopHeight(designDesktopRef.current.clientHeight);
-   //    }
-
-   //    const handleResize = () => {
-   //       if(designDesktopRef.current && window){
-   //          setDesktopHeight(designDesktopRef.current.clientHeight);
-   //       }
-   //    };
-   //    // Aggiungi un listener all'evento resize quando il componente viene montato
-   //    window.addEventListener('resize', handleResize);
-  
-   //    // Rimuovi il listener quando il componente viene smontato
-   //    return () => {
-   //      window.removeEventListener('resize', handleResize);
-   //    };
-   // }, []);
-
-
    useLayoutEffect(()=>{
 
       gsap.registerPlugin(ScrollTrigger);
@@ -67,8 +62,8 @@ const FirstText = () => {
          id:'div',
       })
 
-   
-//Spans animations
+
+      //Spans animations
       tl.fromTo(firstSpan.current,{
          opacity:0,
          y:'-25%'
@@ -184,12 +179,12 @@ const FirstText = () => {
          onStart:()=>{
             designDesktopRef.current&&(designDesktopRef.current.style.display='flex')
          },
-         top:'100vh',
+         bottom:'-50vh',
          duration:3
       },'<')
       
       .to(designDesktopRef.current,{
-         top:'40vh',
+         bottom:`${bottomDesktop}px`,
          duration:3,
          opacity:1,
          ease:'power1.Out',
@@ -197,14 +192,18 @@ const FirstText = () => {
       })
       .to(designDescriptionSpanRef.current,{
          onStart:()=>{
+            gsap.set(designDescriptionSpanRef.current,{
+               bottom:`${bottomSpan}px`,
+            })
             designDescriptionSpanRef.current&&(designDescriptionSpanRef.current.style.display='inline-block')
+
          },
-         bottom:'65vh',
+         bottom:`${bottomSpan+50}px`,
          opacity:1,
          duration:2,
          ease:'power1.out',
       }).to(designDescriptionSpanRef.current,{
-         bottom:'70vh',
+         bottom:`${bottomSpan+100}px`,
          opacity:0,
          duration:2,
          ease:'power2.in',
@@ -214,38 +213,47 @@ const FirstText = () => {
          onStart:()=>{
             secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.display='inline-block')
          },
-         bottom:'65vh',
+         bottom:'70vh',
          opacity:1,
          duration:2,
          ease:'power1.out'
       }).to(secondDesignDescriptionSpanRef.current,{
-         bottom:'70vh',
+         bottom:'75vh',
          opacity:0,
          duration:2,
          ease:'power2.in',
 
+         onComplete:()=>{
 
-      }).to(designDesktopRef.current,{
-        
-         duration:0.01,
-         onStart:()=>{
-            console.log('triggereds')
-            designDesktopRef.current?.classList.add(styles.stickyDesktop)
          }
-      }).to(designHeading.current,{
-         onReverseComplete:()=>{
-            console.log('triggereds')
-            designDesktopRef.current?.classList.remove(styles.stickyDesktop)
-         },
+      })
+      .to(designDesktopRef.current,{
+         position:'sticky',
+         bottom:`${bottomDesktop}px`,
+         duration:0
+         
+         // onStart:()=>{
+         //    console.log('triggereds');
+         //    if(blackToPinkDiv.current) {blackToPinkDiv.current.style.paddingBottom=`${
+         //       blackToPinkDiv.current.getBoundingClientRect().top+blackToPinkDiv.current.getBoundingClientRect().height-window.innerHeight         
+         //    }px`
+         //    console.log(blackToPinkDiv.current.getBoundingClientRect().y+blackToPinkDiv.current.getBoundingClientRect().height-window.innerHeight);
+         // }
+           
+       //  },
+
+         
+         
+      })
+      .to(designHeading.current,{
+   
          position:'absolute',
          bottom:'80',
-         duration:0.01,
+         duration:0.0001,
          
       },'<')
       
-   },[])
-
-
+   },[bottomDesktop,bottomSpan])
 
    return (
       <div className={styles.blackToPinkDiv} ref={blackToPinkDiv} id='designSection'>
