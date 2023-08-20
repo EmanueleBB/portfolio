@@ -12,6 +12,7 @@
    /* border:2px solid white;  */
    box-sizing: border-box;
    overflow: hidden;
+   
 
 }
 
@@ -65,9 +66,9 @@ span.designDescriptionSpan{
    width:40vw;
    position:fixed;
    opacity:0;
-
-   
-   display: none;
+   bottom:40vh;
+   visibility: hidden;
+   display: inline-block;
 } 
 
 .desktopContainer{
@@ -75,7 +76,7 @@ span.designDescriptionSpan{
    
    aspect-ratio: calc(1380/835);
    position:fixed;
-   /* bottom:-50vh; */
+   
    /* border:1px solid red; */
    display:none;
    flex-shrink: 0;

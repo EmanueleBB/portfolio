@@ -29,26 +29,34 @@ const FirstText = () => {
    const [bottomDesktop, setBottomDesktop] = useState(0);
    const [bottomSpan, setBottomSpan] = useState(0);
 
-   const handlePadding = () => {
+   const handleDesktopResize = () => {
+
+      
+
       if (window.innerWidth <= 320) {
          setBottomDesktop(200);
+         document.documentElement.style.setProperty('--bottom-span', `420px`);
          setBottomSpan(420);
+         
+        
       } else if (window.innerWidth > 320 && window.innerWidth <= 471) {
          setBottomDesktop(160);
+         document.documentElement.style.setProperty('--bottom-span', `400px`);
          setBottomSpan(400);
-      } else if (window.innerWidth > 472) {
+         
+      } else if (window.innerWidth > 471) {
          setBottomDesktop(120);
-         setBottomSpan(450);
+         document.documentElement.style.setProperty('--bottom-span', `560px`);
+         setBottomSpan(560);
+         
       }
    };
 
-
-
    useLayoutEffect(() => {
-      handlePadding();
-      window.addEventListener('resize',handlePadding);
+      handleDesktopResize();
+      window.addEventListener('resize',handleDesktopResize);
       return () => {
-         window.removeEventListener('resize',handlePadding);
+         window.removeEventListener('resize',handleDesktopResize);
       }
    }, []);
    
@@ -182,31 +190,27 @@ const FirstText = () => {
          onStart:()=>{
             designDesktopRef.current&&(designDesktopRef.current.style.display='flex')
          },
-         bottom:'-50vh',
+         top:'101vh',
          duration:3
       },'<')
       
       .to(designDesktopRef.current,{
-         bottom:`${bottomDesktop}px`,
+         top:`45vh`,
          duration:3,
          opacity:1,
          ease:'power1.Out',
-         
+      
       })
       .to(designDescriptionSpanRef.current,{
          onStart:()=>{
-            gsap.set(designDescriptionSpanRef.current,{
-               bottom:`${bottomSpan}px`,
-            })
-            designDescriptionSpanRef.current&&(designDescriptionSpanRef.current.style.display='inline-block')
-
+            designDescriptionSpanRef.current&&(designDescriptionSpanRef.current.style.visibility='visible')
          },
-         bottom:`${bottomSpan+50}px`,
+         bottom:`65vh`,
          opacity:1,
          duration:2,
          ease:'power1.out',
       }).to(designDescriptionSpanRef.current,{
-         bottom:`${bottomSpan+100}px`,
+         bottom:`70vh`,
          opacity:0,
          duration:2,
          ease:'power2.in',
@@ -214,40 +218,31 @@ const FirstText = () => {
       
       }).to(secondDesignDescriptionSpanRef.current,{
          onStart:()=>{
-            secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.display='inline-block')
+            
+            secondDesignDescriptionSpanRef.current&&(secondDesignDescriptionSpanRef.current.style.visibility='visible')
          },
-         bottom:'70vh',
+         bottom:`65vh`,
          opacity:1,
          duration:2,
          ease:'power1.out'
       }).to(secondDesignDescriptionSpanRef.current,{
-         bottom:'75vh',
+         bottom:`70vh`,
          opacity:0,
          duration:2,
          ease:'power2.in',
-
          onComplete:()=>{
+            if(blackToPinkDiv.current && designDesktopRef.current){
 
+               blackToPinkDiv.current.style.paddingBottom=`${window.innerHeight*0.55 - designDesktopRef.current.getBoundingClientRect().height}px`;
+            }
          }
       })
       .to(designDesktopRef.current,{
          position:'sticky',
-         bottom:`${bottomDesktop}px`,
-         duration:0
-         
-         // onStart:()=>{
-         //    console.log('triggereds');
-         //    if(blackToPinkDiv.current) {blackToPinkDiv.current.style.paddingBottom=`${
-         //       blackToPinkDiv.current.getBoundingClientRect().top+blackToPinkDiv.current.getBoundingClientRect().height-window.innerHeight         
-         //    }px`
-         //    console.log(blackToPinkDiv.current.getBoundingClientRect().y+blackToPinkDiv.current.getBoundingClientRect().height-window.innerHeight);
-         // }
+         bottom:0,
+         duration:0,
+         })
            
-       //  },
-
-         
-         
-      })
       .to(designHeading.current,{
    
          position:'absolute',

@@ -3,6 +3,8 @@
 	--main-pink-hover:#fd7eff;
 	--dim-pink:#9a7ca0;
 	--carousel-gap:5vw;
+	--bottom-span:400px;
+	/* document.documentElement.style.setProperty('--bottom-span', `${newBottomSpanValue}px`); */
 }
 
 *{
