@@ -8,11 +8,6 @@ import Image from 'next/image'
 import { ScrollTrigger } from 'gsap/all'
 import gsap from 'gsap'
 
-type Inputs = {
-  example: string
-  exampleRequired: string
-}
-
 
 const ContactsSection = () => {
 
@@ -59,4 +54,4 @@ const ContactsSection = () => {
    )
 }
 
-export default ContactsSection
+export default ContactsSection;

@@ -9,7 +9,7 @@ import MainContainer from "./components/mainContainer/MainContainer";
 import MyProjects from "./components/myProjectsSection/MyProjects";
 import Navbar from "./components/navbar/Navbar";
 import Stack from "./components/stack/Stack";
-import ContactsSection from "./components/contactsSection/ContactsSection";
+import ContactsSection from "./components/contactSection/ContactsSection";
 
 export default function Home(){
 	return (

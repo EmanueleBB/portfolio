@@ -7,8 +7,8 @@ import Image from 'next/image'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 
-import ContactForm from '../contactsSection/ContactForm'
-import ContactsSection from '../contactsSection/ContactsSection'
+import ContactForm from '../contactSection/ContactForm'
+import ContactsSection from '../contactSection/ContactsSection'
 import styles from './notesSection.module.css'
 
 
