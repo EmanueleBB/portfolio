@@ -138,7 +138,7 @@ const NotesSection = () => {
 
             <div className={styles.messageDiv} ref={fifthMessageRef}>
                <p className={styles.noteParagraph}>
-                  I'll try to implement the new features in the shortest time possible, so make sure to stick around to see what's new.
+                  I&apos;ll try to implement the new features in the shortest time possible, so make sure to stick around to see what&apos;s new.
                </p>
                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M0 22.0002C10.582 21.4801 19.002 12.7357 19.002 2.02464V0H3.56986V6.08498C3.56986 12.2108 3.56986 15.2737 2.62783 17.7101C2.01148 19.3042 1.11614 20.7537 0 22.0002Z" />

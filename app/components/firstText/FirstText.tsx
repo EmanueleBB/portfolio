@@ -42,16 +42,20 @@ const FirstText = () => {
       }
    };
 
+
+
    useLayoutEffect(() => {
       handlePadding();
+      window.addEventListener('resize',handlePadding);
+      return () => {
+         window.removeEventListener('resize',handlePadding);
+      }
    }, []);
    
    
    useLayoutEffect(()=>{
-
       gsap.registerPlugin(ScrollTrigger);
       const tl = gsap.timeline();
-      
       ScrollTrigger.create({
          trigger:blackToPinkDiv.current,
          scrub:true,
@@ -61,7 +65,6 @@ const FirstText = () => {
          animation:tl,
          id:'div',
       })
-
 
       //Spans animations
       tl.fromTo(firstSpan.current,{
@@ -265,7 +268,7 @@ const FirstText = () => {
                Maybe it happened while admiring a painting, or while listening to a song.
             </span>
             <span ref={thirdSpan}>
-               Maybe you breath was taken away by the sunset, or maybe you were watching "Bear and goose at the end of everything" by Exurb1a <strong style={{color:'white',opacity:0.4, fontSize:'14px', fontWeight:300}}> Seriously, I mean, that video is actually brilliant, go watch it! </strong>
+               Maybe you breath was taken away by the sunset, or maybe you were watching &quot;Bear and goose at the end of everything&quot; by Exurb1a <strong style={{color:'white',opacity:0.4, fontSize:'14px', fontWeight:300}}> Seriously, I mean, that video is brilliant, go watch it! </strong>
             </span>
             <span ref={fourthSpan}>
                I’ve always admired those who, with their craft, are able to cause that reaction in the people.

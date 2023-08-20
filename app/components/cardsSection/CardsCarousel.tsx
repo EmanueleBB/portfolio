@@ -221,7 +221,7 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
    
 
    let currentCardDisplayed:HTMLDivElement|null;
-
+   
    useLayoutEffect(()=>{
       
 
