@@ -239,7 +239,6 @@ const FirstText = () => {
       })
       .to(designDesktopRef.current,{
          position:'sticky',
-         bottom:0,
          duration:0,
          })
            

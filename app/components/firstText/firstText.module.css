@@ -197,7 +197,6 @@ span.designDescriptionSpan{
    }
 
    .desktopContainer{
-      
       width:90vw;
    }
 
@@ -205,10 +204,12 @@ span.designDescriptionSpan{
       position:sticky;
       bottom:37.5vh;
    }
-
-   
 }
 
-
+@media only screen and (max-width:340px){
+   .desktopContainer{
+      width:100vw;
+   }
+}
 
 
