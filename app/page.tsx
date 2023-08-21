@@ -20,12 +20,12 @@ export default function Home(){
 				<HeroSection/>
 				<FirstText/>
 				<CardSection/>
-			</MainContainer>
 			<CodeSection/>
 			<MyProjects/>
 			<LinksSection/> 
 			<ContactsSection/>
 			<Footer/>
+			</MainContainer>
 		</>
 	)
 }

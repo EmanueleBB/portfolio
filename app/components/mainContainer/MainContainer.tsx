@@ -44,7 +44,7 @@ const MainContainer:React.FC<MainContainerProps> = ({children}) => {
    }, [stackIsOnScreen]);
 
    return (
-      <div ref={mainContainerRef} /*style={{border:'5px solid blue', boxSizing:'border-box'}}*/>
+      <div ref={mainContainerRef} /*style={{ boxSizing:'border-box' , overflowX:'hidden'}}*/>
          {children}
       </div>
    )

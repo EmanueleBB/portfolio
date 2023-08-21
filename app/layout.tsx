@@ -17,6 +17,8 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
 	title: 'Emanuele | Web Developer',
 	description: 'I am a full stack web and mobile developer that tries to design pretty things',
+	name:"viewport",
+	content:"width=device-width, initial-scale=1.0",
 }
 
 export default function RootLayout({
