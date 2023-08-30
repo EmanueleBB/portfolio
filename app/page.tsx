@@ -20,11 +20,11 @@ export default function Home(){
 				<HeroSection/>
 				<FirstText/>
 				<CardSection/>
-			<CodeSection/>
-			<MyProjects/>
-			<LinksSection/> 
-			<ContactsSection/>
-			<Footer/>
+				<CodeSection/>
+				<MyProjects/>
+				<LinksSection/> 
+				<ContactsSection/>
+				<Footer/>
 			</MainContainer>
 		</>
 	)

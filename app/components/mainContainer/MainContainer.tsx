@@ -44,7 +44,7 @@ const MainContainer:React.FC<MainContainerProps> = ({children}) => {
    }, [stackIsOnScreen]);
 
    return (
-      <div ref={mainContainerRef} /*style={{ boxSizing:'border-box' , overflowX:'hidden'}}*/>
+      <div ref={mainContainerRef} style={{ width:'100vw' ,msOverflowX:'-moz-hidden-unscrollable', overflowX:'hidden',height:'auto'}}>
          {children}
       </div>
    )

@@ -80,6 +80,8 @@ const Stack = () => {
       bodyYPosition = document?.body.getBoundingClientRect().y*(-1);
       if (stackIsOnScreen) {
          const tl = gsap.timeline();
+
+         
    
          //This piece of code handles the left swipe of the stack section
          tl.to(horizontalWrapperRef.current,{
@@ -87,6 +89,7 @@ const Stack = () => {
             duration:0,
          }).to(horizontalWrapperRef.current, {
             onStart:()=>{
+               document.documentElement.style.overflowY='hidden';
                document.body.style.overflowY='hidden';
                horizontalWrapperRef.current && (horizontalWrapperRef.current.style.overflow = 'hidden');
             },
@@ -111,6 +114,7 @@ const Stack = () => {
             duration: 1,
             ease: 'power2.inOut',
             onComplete:()=>{
+               document.documentElement.style.overflowY='auto';
                document.body.style.overflowY='auto';
                horizontalWrapperRef.current && (horizontalWrapperRef.current.style.overflowX = 'scroll');}
          });
