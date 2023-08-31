@@ -37,6 +37,11 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    const backSideRef=useRef<HTMLDivElement>(null);
    const folderContainerRef=useRef<HTMLDivElement>(null);
    const [animationNeedsToPlayInReverse,setAnimationNeedsToPlayInReverse]=useState(false);
+   const [windowCenter, setWindowCenter] = useState<{ X: number; Y: number }>({
+      X: 0,
+      Y: 0
+   });
+
    const windowSize = useWindowResize();
 
    const tl = useRef<gsap.core.Timeline | null>(null);
@@ -45,45 +50,54 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    let translateContentY:number;
    let windowCenterX:number;
    let windowCenterY:number;
-   let finalSizes:{height:number,width:number};
+   let finalSizes={
+      height: windowSize.width <= 1068 ? windowSize.height * 0.85 : windowSize.height * 0.65,
+      width: windowSize.width <= 1068 ? windowSize.width * 0.8 : windowSize.width * 0.8
+   }
+
+   
+   
+   windowCenterX=windowSize.width/2;
+   windowCenterY=windowSize.height/2;
 
    useEffect(()=>{
       windowCenterX=windowSize.width/2;
       windowCenterY=windowSize.height/2;
       finalSizes={
-         height:windowSize.width<=1068?windowSize.height*0.85:windowSize.height*0.65,
-         width:windowSize.width<=1068?windowSize.width*0.8:windowSize.width*0.8
+         height: windowSize.width <= 1068 ? windowSize.height * 0.85 : windowSize.height * 0.65,
+         width: windowSize.width <= 1068 ? windowSize.width * 0.8 : windowSize.width * 0.8
       }
    },[windowSize])
 
    const animateContent = () => {
 
-      
-
       if (!animationNeedsToPlayInReverse) {
-
-         tl.current = gsap.timeline(); 
 
          const contentX = contentRef.current?.getBoundingClientRect().left;
          const contentY = contentRef.current?.getBoundingClientRect().top;
          const contentWidth=contentRef.current?.getBoundingClientRect().width;
          const contentHeight=contentRef.current?.getBoundingClientRect().height;
-         
+
+         tl.current = gsap.timeline(); 
+
          //changed a bit for contentY since the vertical position relative to the folder was giving me problems in the animation
          if(contentWidth&&contentX&&contentHeight&&contentY&&folderContainerRef.current&&backSideRef.current){
+            
             translateContentX = windowCenterX - contentWidth / 2 - contentX;
             translateContentY = windowCenterY + finalSizes.height / 2 - contentY;
-
+         
             tl.current.to(contentRef.current,{
                onStart:()=>{
                   gsap.to(folderContainerRef.current,{
                      zIndex:10
                   })
+                  
                },
                onReverseComplete:()=>{
                   gsap.to(folderContainerRef.current,{
                      zIndex:1
                   })
+                  
                },
                transform:`translateY(-${contentHeight}px) `,
                duration:0.4,
@@ -133,9 +147,10 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
       }
    }
 
+
+
+
    return (
-
-
       <div className={styles.foldersContainer} ref={folderContainerRef}>
          
          <div className={styles.backSide} ref={backSideRef}>
