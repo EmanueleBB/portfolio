@@ -21,6 +21,7 @@
 .projectsContainer {
    max-width: 940px;
    margin-top: 56px;
+   
    margin-left: auto;
    margin-right: auto;
    display: grid;
@@ -72,6 +73,7 @@
    display:flex;
    color:white;
    align-items: center;
+   transform-origin: center;
 }
 
 .overlay{
@@ -267,4 +269,67 @@ svg.closeIcon:hover{
    }
 }
 
+
+@media only screen and (max-width:320px){
+   .content{
+      flex-direction: column-reverse;
+   }
+
+   .content .contentLeftDiv{
+      max-height:50%;
+      width:100%;
+      transform-origin: top;
+      display:flex;
+      padding:32px 32px;
+      flex-direction: column;
+      align-items: center;
+      
+   }
+	
+}
+
+
+
+@media only screen and (min-width:320px) and (max-width:470px){
+
+	.content{
+      flex-direction: column-reverse;
+   }
+
+   .content .contentLeftDiv{
+      max-height:50%;
+      width:100%;
+      transform-origin: top;
+      display:flex;
+      padding:32px 32px;
+      flex-direction: column;
+      align-items: center; 
+   }
+
+   .content .contentRightDiv{
+      box-sizing: border-box;
+      height:50%;
+      width:100%;
+      transform-origin: bottom;
+      opacity:0.6;
+      overflow: hidden;
+   }
+}
+
+
+
+@media only screen and (min-width:471px) and (max-width:734px){
+
+	.content{
+      flex-direction: column-reverse;
+   }
+}
+
+@media only screen and (min-width:735px) and (max-width:1068px){
+	
+}
+
+@media only screen and (min-width:1069px){
+	
+}
 

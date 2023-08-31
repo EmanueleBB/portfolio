@@ -34,6 +34,7 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
 }) => {
 
    const contentRef=useRef<HTMLDivElement>(null);
+   const backSideRef=useRef<HTMLDivElement>(null);
    const folderContainerRef=useRef<HTMLDivElement>(null);
    const [animationNeedsToPlayInReverse,setAnimationNeedsToPlayInReverse]=useState(false);
    const windowSize = useWindowResize();
@@ -44,25 +45,34 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    let translateContentY:number;
    let windowCenterX:number;
    let windowCenterY:number;
+   let finalSizes:{height:number,width:number};
 
    useEffect(()=>{
       windowCenterX=windowSize.width/2;
       windowCenterY=windowSize.height/2;
+      finalSizes={
+         height:windowSize.width<=1068?windowSize.height*0.85:windowSize.height*0.65,
+         width:windowSize.width<=1068?windowSize.width*0.8:windowSize.width*0.8
+      }
    },[windowSize])
 
    const animateContent = () => {
+
+      
+
       if (!animationNeedsToPlayInReverse) {
 
          tl.current = gsap.timeline(); 
 
          const contentX = contentRef.current?.getBoundingClientRect().left;
-         const contentY = contentRef.current?.getBoundingClientRect().y;
+         const contentY = contentRef.current?.getBoundingClientRect().top;
          const contentWidth=contentRef.current?.getBoundingClientRect().width;
          const contentHeight=contentRef.current?.getBoundingClientRect().height;
-
-         if(contentWidth&&contentX&&contentHeight&&contentY&&folderContainerRef.current){
-            translateContentX=windowCenterX-contentWidth/2-contentX;
-            translateContentY=windowCenterY+contentHeight/2-contentY;
+         
+         //changed a bit for contentY since the vertical position relative to the folder was giving me problems in the animation
+         if(contentWidth&&contentX&&contentHeight&&contentY&&folderContainerRef.current&&backSideRef.current){
+            translateContentX = windowCenterX - contentWidth / 2 - contentX;
+            translateContentY = windowCenterY + finalSizes.height / 2 - contentY;
 
             tl.current.to(contentRef.current,{
                onStart:()=>{
@@ -78,7 +88,6 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                transform:`translateY(-${contentHeight}px) `,
                duration:0.4,
                ease:'power2.out',
-               transformOrigin: 'center',
                zIndex:1
             }).to(contentRef.current,{
                zIndex:10,
@@ -88,10 +97,9 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                zIndex:10,
                duration:0.5,
                ease:'power3.in',
-               transformOrigin: 'center',
-               transform:`translateX(${translateContentX}px) translateY(${translateContentY}px) `,
-               height:'60vh',
-               width:'70vw',
+               transform: `translateX(${translateContentX}px) translateY(${translateContentY-backSideRef.current?.getBoundingClientRect().height*0.88}px)`, // Changed here
+               height: `${finalSizes.height}px`, 
+               width: `${finalSizes.width}px` 
                
             },'<').to(folderContainerRef.current.querySelector(`.${styles.overlay}`),{
                opacity:1,
@@ -130,7 +138,7 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
 
       <div className={styles.foldersContainer} ref={folderContainerRef}>
          
-         <div className={styles.backSide}>
+         <div className={styles.backSide} ref={backSideRef}>
             <svg width="383" height="297" viewBox="0 0 383 297" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path fillRule="evenodd" clipRule="evenodd" d="M127.331 0C132.754 0 138.002 1.91618 142.149 5.41017L150.078 12.0898C154.226 15.5838 159.474 17.5 164.897 17.5H359.5C372.203 17.5 382.5 27.7975 382.5 40.5V274C382.5 286.703 372.203 297 359.5 297H23C10.2974 297 0 286.703 0 274V23C0 10.2975 10.2975 0 23 0H127.331Z" fill="url(#paint0_linear_645_371)"/>
                <defs>
