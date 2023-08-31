@@ -296,7 +296,7 @@ svg.closeIcon:hover{
 
 	.content{
       flex-direction: column-reverse;
-      padding: inherit 34px
+      
    }
 
    .content .contentLeftDiv{
