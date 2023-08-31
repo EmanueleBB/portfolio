@@ -13,7 +13,7 @@ import ProgressBar from "./ProgressBar";
 import FigmaDiv from "./FigmaDiv";
 import PhotoshopDiv from "./PhotoshopDiv";
 import Image from "next/image";
-import useWindowSizeInfos from "@/app/hooks/useWindowSize";
+import useWindowSizeInfos from "@/app/hooks/useWindowResize";
 import IllustratorDiv from "./IllustratorDiv";
 import MidjourneyDiv from "./MidjourneyDiv";
 import ReactAndNextDiv from "./ReactAndNextDiv";
@@ -31,28 +31,21 @@ const Stack = () => {
    const progressBarAndCloseDivRef = useRef<HTMLDivElement>(null);
    const paragraphRef=useRef<HTMLParagraphElement>(null);
    const arrowRef=useRef<SVGSVGElement>(null);
-   
-
-   const {windowHeight,windowWidth,maxDimension,maxDimensionValue, minDimensionValue} = useWindowSizeInfos();
-
    const { toggleIsVisible } = useNavbarStore();
    const { stackIsOnScreen, paragraphIsAnimated, toggleStackIsOnScreen } = useStackStore();
-   
    const [percentageScrolled,setPercentageScrolled] = useState(0);
     
 
    const divideInSpans = (text: string) => {
       const words = text.split(' ');
       return words.map((word: string, index: number) => (
-        <span key={index} className={`${styles.word}`}>{word} </span>
+         <span key={index} className={`${styles.word}`}>{word} </span>
       ));
     };
 
 
    //For the progressBar we need to know how much of the content has been scrolled
    useEffect(() => {
-
-
       const updatePercentageScrolled = () => {
          if (horizontalWrapperRef.current) {
             const scrollLeft = horizontalWrapperRef.current.scrollLeft;
@@ -61,11 +54,9 @@ const Stack = () => {
             setPercentageScrolled(currentPercentageScrolled);
          };
       }
-
       if (horizontalWrapperRef.current) {
          horizontalWrapperRef.current.addEventListener('scroll', updatePercentageScrolled);
       }
-
       return () => {
          if (horizontalWrapperRef.current) {
             horizontalWrapperRef.current.removeEventListener('scroll', updatePercentageScrolled);
@@ -81,8 +72,6 @@ const Stack = () => {
       if (stackIsOnScreen) {
          const tl = gsap.timeline();
 
-         
-   
          //This piece of code handles the left swipe of the stack section
          tl.to(horizontalWrapperRef.current,{
             top:bodyYPosition,
@@ -101,6 +90,7 @@ const Stack = () => {
                horizontalWrapperRef.current && (horizontalWrapperRef.current.style.overflowX = 'scroll');
             }
          })
+
       //This piece of code handles the right swipe of the stack section
       } else {
          gsap.to(horizontalWrapperRef.current, {
@@ -157,11 +147,9 @@ const Stack = () => {
    }, [paragraphIsAnimated]);
 
   
-
- 
    const handleClick = () => {
-     toggleStackIsOnScreen();
-     toggleIsVisible();
+      toggleStackIsOnScreen();
+      toggleIsVisible();
    };
 
    return (  

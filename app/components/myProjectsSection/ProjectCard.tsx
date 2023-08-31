@@ -9,6 +9,7 @@ import { BsArrowUpRightSquare} from 'react-icons/bs';
 import GithubIcon from '../hero/icons/GithubIcon';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import useWindowResize from '@/app/hooks/useWindowResize';
 
 interface ProjectCardProps{
    title:string;
@@ -35,7 +36,7 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    const contentRef=useRef<HTMLDivElement>(null);
    const folderContainerRef=useRef<HTMLDivElement>(null);
    const [animationNeedsToPlayInReverse,setAnimationNeedsToPlayInReverse]=useState(false);
-   const router = useRouter();
+   const windowSize = useWindowResize();
 
    const tl = useRef<gsap.core.Timeline | null>(null);
    
@@ -44,11 +45,10 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    let windowCenterX:number;
    let windowCenterY:number;
 
-   useEffect(() => {
-      windowCenterX=window?.innerWidth/2;
-      windowCenterY=window?.innerHeight/2;
-   },[])
-   
+   useEffect(()=>{
+      windowCenterX=windowSize.width/2;
+      windowCenterY=windowSize.height/2;
+   },[windowSize])
 
    const animateContent = () => {
       if (!animationNeedsToPlayInReverse) {
@@ -116,7 +116,6 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
                duration:0.3,
             },'<')
          }
-
          setAnimationNeedsToPlayInReverse(true);
       }else {
          if (tl.current) {
