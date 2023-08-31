@@ -31,7 +31,7 @@ const MyProjects = () => {
                imgSrc='/airbnbNew.png'
                stack={[<NextRoundedIcon key='airbnbNext'/>,<MongoIcon key='airbnbMongo'/>,<TypescriptIcon key='airbnbTypescript'/>,<ReactIcon key='airbnbReact'/>,<PrismaIcon key='airbnbPrisma'/>]}
                leftAlign
-               description='An Airbnb clone made with NextJS 13.3'
+               description='An Airbnb clone made with NextJS 13.3, MongoDB, Typescript, Prisma and Cloudinary CDN'
                url='https://rent-app-clone-gray.vercel.app/'
                githubRepoLink='https://github.com/EmanueleBB/Airbnb-Clone'
                frontIcon={<AirbnbIcon/>}

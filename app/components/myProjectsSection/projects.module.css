@@ -95,9 +95,9 @@
    box-sizing: border-box;
    transform-origin: right;
    display:flex;
-   padding:32px 32px;
+   padding:24px 24px;
    flex-direction: column;
-   align-items: center;
+   align-items: baseline;
    
 }
 
@@ -105,14 +105,15 @@
    opacity:0;
    top:32px;
    margin-top: 18%;
+   /* border:1px solid red; */
    
 }
 .content .contentLeftDiv p{
    opacity:0;
    top:50px;
    margin-top: 15%;
-   font-size:16px;
-   font-weight: 600;
+   font-size:14px;
+   font-weight: 400;
    color:rgb(255, 255, 255,0.7 );
    
 }
@@ -120,10 +121,13 @@
 .content .contentLeftDiv .linkIconsContainer{
    
    position:relative;
-   margin-top: 60%;
+   margin-top: auto;
+   margin-bottom:48px;
    display: flex;
    align-items: center;
    gap:12px;
+   /* border:1px solid red; */
+   align-self: center;
 
 }
 
@@ -131,17 +135,16 @@
    display: flex;
    align-items: center;
    transform-origin: top left;
-   opacity:0.7;
+   opacity:0.5;
    cursor:pointer;
    position:static;
    fill:white;
    position:relative;
-   transition:opacity 0.2s ease;
-   width:32px;
-   height:32px;
+   transition:opacity 0.1s;
+   width:28px;
+   height:28px;
    color:unset;
 }
-
 
 .linkIcon:hover{
    opacity:1;
@@ -177,6 +180,7 @@
    width:24px;
    height:24px;
    box-sizing: border-box;
+   
 }
    
 
@@ -194,8 +198,8 @@ svg.closeIcon{
    height: 16px;
    transform:scale(0.7);
    position:absolute;
-   top:16px;
-   left:16px;
+   top:24px;
+   left:24px;
    cursor:pointer;
    opacity: 0; 
    fill:rgb(153, 153, 153);
@@ -288,7 +292,49 @@ svg.closeIcon:hover{
 	
 }
 
+@media only screen and (max-width:1068px){
 
+	.content{
+      flex-direction: column-reverse;
+      padding: inherit 34px
+   }
+
+   .content .contentLeftDiv{
+      width:100%;
+      height:50%;
+      transform-origin: top;
+      align-items: baseline;
+   }
+
+   .content .contentLeftDiv h2{
+      margin-top: 9%;
+   }
+
+   .content .contentLeftDiv p{
+      margin-top: 22px;
+   }
+
+   .content .contentRightDiv{
+      width:100%;
+      height:50%;
+      transform-origin: bottom;
+   }
+
+   .stackIconsContainer{
+      width:100%;
+      height:auto;
+      margin-top: 34px;
+      gap:12px;
+      
+   }
+   
+   .stackIconsContainer .iconBox{
+      width:22px;
+      height:22px;
+      box-sizing: border-box;
+      
+   }
+}
 
 @media only screen and (min-width:320px) and (max-width:470px){
 
@@ -297,37 +343,38 @@ svg.closeIcon:hover{
    }
 
    .content .contentLeftDiv{
-      max-height:50%;
-      width:100%;
-      transform-origin: top;
+      max-height:60%;
+      height:60%;
       display:flex;
-      padding:32px 32px;
+      padding:22px 22px;
       flex-direction: column;
       align-items: center; 
    }
 
    .content .contentRightDiv{
       box-sizing: border-box;
-      height:50%;
+      height:40%;
       width:100%;
-      transform-origin: bottom;
       opacity:0.6;
       overflow: hidden;
    }
-}
 
+   .content .contentLeftDiv h2{
+      margin-top: 44px;
+   }
 
-
-@media only screen and (min-width:471px) and (max-width:734px){
-
-	.content{
-      flex-direction: column-reverse;
+   svg.closeIcon{
+      
+      top:22px;
+      left:22px;
+      
    }
 }
 
-@media only screen and (min-width:735px) and (max-width:1068px){
-	
-}
+
+
+
+
 
 @media only screen and (min-width:1069px){
 	

@@ -51,8 +51,8 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
    let windowCenterX:number;
    let windowCenterY:number;
    let finalSizes={
-      height: windowSize.width <= 1068 ? windowSize.height * 0.85 : windowSize.height * 0.65,
-      width: windowSize.width <= 1068 ? windowSize.width * 0.8 : windowSize.width * 0.8
+      height: windowSize.width <= 1068 ? windowSize.height * 0.8 : windowSize.height * 0.65,
+      width: windowSize.width <= 1068 ? windowSize.width * 0.8 : windowSize.width * 0.9
    }
 
    
