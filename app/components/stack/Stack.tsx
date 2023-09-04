@@ -96,6 +96,7 @@ const Stack = () => {
          gsap.to(horizontalWrapperRef.current, {
             onStart:()=>{
                document.body.style.overflowY='hidden';
+               document.documentElement.style.overflowY='hidden';
                horizontalWrapperRef.current && (horizontalWrapperRef.current.style.overflow = 'hidden');
                progressBarAndCloseDivRef.current && (progressBarAndCloseDivRef.current.style.position='absolute');
             },
