@@ -153,6 +153,10 @@ span.designDescriptionSpan{
       width:85vw;
    }
 
+   .blackToPinkDiv{
+      height:1000vh;
+   }
+
    span.uniqueDesignClass{
       font-size:80px;
       font-weight: 800;
@@ -184,6 +188,11 @@ span.designDescriptionSpan{
       font-size:17px;
       width:90vw;
    }
+
+   .blackToPinkDiv{
+      height:900vh;
+   }
+   
 
    span.designDescriptionSpan{
       font-size:18px;
