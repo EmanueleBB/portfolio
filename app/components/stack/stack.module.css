@@ -87,6 +87,7 @@
 
 
 .stackDiv{
+   border: 1px solid red;
    /* border:1px solid white; */
    width:75vw;
    flex-shrink:0;
@@ -279,12 +280,12 @@ span.word {
 .stackDiv:nth-of-type(3){ /*Photoshop Div*/
    padding:8vh 0px 0px 0px;
    /* border: 2px solid red; */
-   margin-right: 25vw;
+   
 }
 .stackDiv:nth-of-type(4){ /*Illustrator Div*/
    padding:8vh 0px 0px 0px;
    /* border: 2px solid red; */
-   margin-right: 25vw;
+   
 }
 
 
@@ -652,7 +653,8 @@ div .stackDiv.languagesDiv{
    }
 
    .stackDiv{
-      width:80vw;
+      width:75vw;
+      
    }
 
    .stackDiv h2{
