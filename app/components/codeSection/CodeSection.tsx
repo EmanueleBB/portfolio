@@ -25,14 +25,20 @@ const CodeSection = () => {
          scrub:true,
          markers:false,
          start:'top 25%',
-         end:'bottom bottom',
+         end:'bottom top',
          animation:tl,
          id:'code',
       })
+      
 
       tl.to(codeDesktopRef.current,{
-         
-         top:'40vh',
+         onStart:()=>{
+            codeDesktopRef.current&&(codeDesktopRef.current.style.display='flex');
+            gsap.to(codeHeadingRef.current,{
+               display:'inline-block'
+            })
+         },
+         top:'45vh',
          duration:3,
          opacity:1,
          ease:'power1.Out',
@@ -44,12 +50,7 @@ const CodeSection = () => {
             codeDescriptionSpanRef.current&&(codeDescriptionSpanRef.current.style.display='none');
             secondCodeDescriptionSpanRef.current&&(secondCodeDescriptionSpanRef.current.style.display='none')
             
-         },
-         onStart:()=>{
-            gsap.to(codeHeadingRef.current,{
-               display:'inline-block'
-            })
-         },
+         }
       }).to(codeHeadingRef.current,{
          top:'0vh',
          duration:3,
@@ -88,17 +89,26 @@ const CodeSection = () => {
          opacity:0,
          duration:2,
          ease:'power1.in',
+         onComplete:()=>{
+            if(codeDivRef.current && codeDesktopRef.current){
+
+               codeDivRef.current.style.paddingBottom=`${window.innerHeight*0.55 - codeDesktopRef.current.getBoundingClientRect().height}px`;
+            }
+         }
          
       }).to(codeDesktopRef.current,{
-         position:'sticky',
-         bottom:'10vh',
-         duration:0,
+         top:'unset',
+         bottom:'100vh',
+         opacity:1,
+         duration:4,
+         ease:'linear'
+         
       }).to(codeHeadingRef.current,{
          
          top:'-100px',
          opacity:0,
          duration:2,
-         ease:'power1.out'
+         ease:'power2.out'
       },'<')
    }, [])
 
