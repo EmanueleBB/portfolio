@@ -97,8 +97,8 @@ const CodeSection = () => {
          }
          
       }).to(codeDesktopRef.current,{
-         top:'unset',
-         bottom:'100vh',
+         
+         top:'-50vh',
          opacity:1,
          duration:4,
          ease:'linear'
