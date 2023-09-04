@@ -86,6 +86,12 @@
    .notesSectionContainer{
       margin-bottom:30vh;
    }
+
+   .messageDiv svg{
+      
+      left:14.6px;
+    
+   }
       
 }
 
@@ -100,6 +106,13 @@
    .notesSectionContainer{
       margin-bottom:30vh;
    }
+
+
+   .messageDiv svg{
+      
+      left:12.8px;
+    
+   }
 }
 
 @media only screen and (max-width:340px){
@@ -113,6 +126,12 @@
    }
    .notesSectionContainer{
       margin-bottom:30vh;
+   }
+
+   .messageDiv svg{
+      
+      left:12.6px;
+      
    }
 }
 

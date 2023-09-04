@@ -40,7 +40,7 @@ const NotesSection = () => {
             scrollTrigger: {
                trigger: noteSectionContainerRef.current,
                start: 'top 25%',
-               end: 'bottom bottom',
+               end: 'bottom 60%',
                markers: false,
                scrub: true,
             },
