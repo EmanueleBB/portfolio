@@ -41,7 +41,7 @@ const MyProjects = () => {
                imgSrc='/audiRedesign.jpg'
                stack={[<FigmaIcon key='rs6Figma'/>,<PhotoshopIcon key='rs6Ps'/>,<TypescriptIcon key='rs6Ts'/>,<SassIcon key='rs6Sass'/>,<NextRoundedIcon key='rs6Next'/>]}
                description='Because beautiful cars deserve beautiful websites. Actually, every landing page in the world should be beautiful, but yeah, this one in particular.'
-               url='https://www.apple.com/it/mac/'
+               url='https://audi-rs-6-redesign.vercel.app/'
                githubRepoLink='https://github.com/EmanueleBB/portfolio'
                frontIcon={<AudiIcon/>}
             />
