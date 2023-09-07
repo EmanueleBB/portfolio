@@ -87,7 +87,7 @@
 
 
 .stackDiv{
-   border: 1px solid red;
+   /* border: 1px solid red; */
    /* border:1px solid white; */
    width:75vw;
    flex-shrink:0;
@@ -630,18 +630,22 @@ div .stackDiv.languagesDiv{
 
 /* Extra small devices (phones) */
 @media only screen and (max-width: 576px) {
-	
+	.stackDiv{
+      width:100vw;
+   }
 }
 
 /* Small devices (tablets) */
 @media only screen and (min-width: 577px) and (max-width: 768px) {
-  
+   .stackDiv{
+      width:100vw;
+   }
 }
 
 /* Medium devices (laptops, desktops) */
 @media only screen and (min-width: 769px) and (max-width: 992px) {
    .stackDiv{
-      width:90vw;
+      width:100vw;
    }
 }
 

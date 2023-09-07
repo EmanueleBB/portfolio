@@ -49,7 +49,7 @@ const MyProjects = () => {
                title='Gruppo Storico Spadaccini'
                imgSrc='/gss1.png'
                stack={[<HtmlIcon key='gssHtml'/>,<CssIcon key='gssCss'/>,<JavascriptIcon key='gssJs'/>]}
-               description='My first real project, made with plain HTML, CSS and Javascript'
+               description='My first real project, made with plain HTML, CSS and vanilla Javascript. I started working on this after about 2 months from the beginning of my web development journey'
                url='https://www.gruppostoricospadaccini.it/'
                githubRepoLink=''
                frontIcon='/logoGssNero.png'
