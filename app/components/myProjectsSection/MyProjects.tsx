@@ -54,7 +54,7 @@ const MyProjects = () => {
                githubRepoLink=''
                frontIcon='/logoGssNero.png'
             />
-            <ProjectCard
+            {/* <ProjectCard
                title='The forbidden ecommerce'
                imgSrc='/gss1.png'
                stack={[<NextIcon key='4next'/>]}
@@ -74,7 +74,7 @@ const MyProjects = () => {
                stack={[<NextIcon key='6next'/>]}
                description=''
                url=''
-            />
+            /> */}
          </div>
       </div>
    )
