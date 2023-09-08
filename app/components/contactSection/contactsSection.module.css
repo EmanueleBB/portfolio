@@ -259,6 +259,12 @@
       font-size:48px;
       font-weight:800;
       margin-top:48px;
+      
+   }
+
+   .contactForm{
+      width:90%;
+      max-width:600px;
    }
 }
 
@@ -269,6 +275,10 @@
       font-size:38px;
       font-weight:800;
       margin-top:48px;
+   }
+
+   .contactForm{
+      width:90%;
    }
 }
 
@@ -292,11 +302,35 @@
       padding:48px;
       margin-top:32px;
       gap:12px;
-      
       width:90vw;
       border-radius:22px;
       margin-bottom:100px;
       top:10vh;
+   }
+
+   .contactForm .formGroup input{
+      border-bottom:1.5px solid rgb(206, 206, 206);
+   }
+
+   .contactForm .formGroup textarea{
+      border:1.5px solid rgb(206, 206, 206);
+   }
+
+   .contactForm .formGroup input,
+   .contactForm .formGroup label,
+   .contactForm .formGroup textarea{
+
+      font-size: 15px;
+      font-weight:500;
+   }
+
+   .contactForm button{
+   
+      width:auto;
+      border-radius: 32px;
+      padding:8px 20px;
+      font-size:16px;
+      font-weight:600;
    }
 }
 
@@ -323,5 +357,31 @@
       border-radius:22px;
       margin-bottom:100px;
       top:10vh;
+   }
+
+
+   .contactForm .formGroup input{
+      border-bottom:1.3px solid rgb(206, 206, 206);
+   }
+
+   .contactForm .formGroup textarea{
+      border:1.3px solid rgb(206, 206, 206);
+   }
+
+   .contactForm .formGroup input,
+   .contactForm .formGroup label,
+   .contactForm .formGroup textarea{
+
+      font-size: 15px;
+      font-weight:500;
+   }
+
+   .contactForm button{
+   
+      width:auto;
+      border-radius: 32px;
+      padding:8px 20px;
+      font-size:16px;
+      font-weight:600;
    }
 }
