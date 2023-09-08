@@ -115,36 +115,34 @@ const CardsCarousel: React.ForwardRefRenderFunction<HTMLDivElement, CardsCarouse
                location: 'Turkey, Europe',
                imgSrc: '/cappadocia.jpg',
                title: 'Cappadocia',
-               description: 'Great at killing dead beings that suddently decided to go for a run',
+               
                days: 5,
-               price: 289.99
+               price: 799
             },
             {
                className:'',
                location: 'Sweden, Europe',
                imgSrc: '/lapland.jpg',
                title: 'Lapland',
-               description: 'If someone you despise is annoyingly good at karting, make sure to buy some of these ;)',
                days: 6,
-               price: 89.99
+               price: 899
             },
             {
                className:'',
                location: 'Indiana, USA',
                imgSrc: '/hawkins.jpg',
                title: 'Hawkins',
-               description: 'If someone you despise is annoyingly good at karting, make sure to buy some of these ;)',
                days: 7,
-               price: 89.99
+               price: 799.00
             },
             {
                className:'',
-               location: 'Indiana, USA',
+               location: 'Andromeda Galaxy',
                imgSrc: '/namek.jpg',
                title: 'Namek',
                description: 'If someone you despise is annoyingly good at karting, make sure to buy some of these ;)',
-               days: 7,
-               price: 89.99
+               days: 8,
+               price: 40990
             }
          ]
          

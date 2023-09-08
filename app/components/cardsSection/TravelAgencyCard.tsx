@@ -9,7 +9,7 @@ interface TravelAgencyCardProps{
    imgSrc:string, 
    title:string,
    location:string,
-   description:string,
+   description?:string,
    price:number
    days:number;
    

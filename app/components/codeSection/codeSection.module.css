@@ -68,7 +68,7 @@ span.codeDescriptionSpan{
    opacity:0;
    aspect-ratio: calc(1380/835);
    position:fixed;
-   top:60vh;
+   top:100vh;
    /* border:1px solid red; */
    display:none;
    flex-shrink: 0;
