@@ -97,6 +97,7 @@
    box-sizing: border-box;
    position: relative;
    padding:8vh 0px;
+   overflow-y: hidden;
 }
 
 
@@ -210,6 +211,7 @@ Intro section
 
 .introP{
    display: flex;
+   min-width:320px;
    
 }
 
@@ -628,29 +630,30 @@ div .stackDiv.languagesDiv{
 
 
 
-/* Extra small devices (phones) */
-@media only screen and (max-width: 576px) {
-	.stackDiv{
-      width:100vw;
+
+
+
+
+
+
+@media only screen and (min-width:1069px){
+   .stackDiv h2{
+      font-size:36px;
+   }
+   .stackDiv p{
+      font-size:20px;
+   }
+
+   .stackDiv p.languageTitle{
+      font-size:16px;
+   }
+
+   .stackDiv .mainBackgroundHeading{
+      font-size:200px;
    }
 }
 
-/* Small devices (tablets) */
-@media only screen and (min-width: 577px) and (max-width: 768px) {
-   .stackDiv{
-      width:100vw;
-   }
-}
-
-/* Medium devices (laptops, desktops) */
-@media only screen and (min-width: 769px) and (max-width: 992px) {
-   .stackDiv{
-      width:100vw;
-   }
-}
-
-/* Large devices (large laptops, desktops) */
-@media only screen and (min-width: 993px) and (max-width: 1200px) {
+@media only screen and (max-width:1068px){
    .closeIcon{
       width:48px;
       height:48px;
@@ -673,21 +676,32 @@ div .stackDiv.languagesDiv{
    }
 }
 
-/* Extra large devices (larger laptops, desktops) */
-@media only screen and (min-width: 1201px) {
 
-   .stackDiv h2{
-      font-size:36px;
+@media only screen and (max-width:734px){
+   
+
+   .stackDiv .introDiv{
+      width:100vw;
    }
-   .stackDiv p{
-      font-size:20px;
+}
+
+@media only screen and (max-width:471px){
+   
+
+   .stackDiv .introDiv{
+      width:100vw;
    }
 
-   .stackDiv p.languageTitle{
-      font-size:16px;
+   .introDiv .introP{
+      width:80vw;
+
    }
 
-   .stackDiv .mainBackgroundHeading{
-      font-size:200px;
+   .introDiv .introP span{
+      font-size:18px;
    }
+}
+
+@media only screen and (max-width:320px){
+   
 }
