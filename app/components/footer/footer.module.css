@@ -9,7 +9,7 @@
 
 .footerContainer{
    color:white;
-   height:50vh;
+   height:460px;
    border-radius: 30px;
    background: radial-gradient(100% 120% at 50% 0%, rgb(0, 0, 0) -20%, #2B0A4F 60.54%, #AF4DC9 130%);
    display: flex;
@@ -20,7 +20,6 @@
    padding-top:10vh;
    font-size:15px;
    font-weight: 500;
-   
    box-shadow: inset 0px 0px 55px 0px rgba(234, 150, 255, 0.1);
 }
 
@@ -66,11 +65,16 @@
 
 .iconAndLinkDiv{
    display: flex;
-   
    align-items: center;
    gap:12px;
    margin-bottom:12px;
    width:110px;
+   opacity: 0.8;
+   transition:opacity 0.15s;
+}
+
+.iconAndLinkDiv:hover{
+   opacity: 1;
 }
 
 
@@ -93,12 +97,95 @@
 }
 
 
-
-
-
-
 .footerContainer svg{
    width:22px;
    height:22px;
 }
 
+
+
+@media only screen and (min-width:1069px){
+   .footerContainer{
+      
+      height:500px; 
+    
+   }
+}
+
+@media only screen and (max-width:1068px){
+
+}
+
+
+@media only screen and (max-width:734px){
+   .footerContainer{
+      
+      height:520px; 
+    
+   }
+
+   .iconAndLinkDiv{
+      font-size: 15px;
+      margin-bottom: 6px;
+   }
+}
+
+@media only screen and (max-width:471px){
+   
+   .footerContainer{
+      flex-direction:column;
+      align-items: baseline;
+      padding: 24px 36px 0px 36px;
+      height:760px; 
+      justify-content: flex-start;
+      
+   }
+
+   .iconAndLinkDiv{
+      font-size: 14px;
+      margin-bottom: 6px;
+   }
+
+   .footerContainer h3{
+      margin:22px 0px;
+   }
+
+   .notesParagraphContainer{
+      position:absolute;
+      bottom:87px;
+      width:calc(100% - 2*36px);
+      font-weight:400;
+      font-size: 12px;
+      opacity: 0.5;
+   }
+
+   .notesParagraphContainer p{
+      width:100%;
+   }
+
+   
+   .spanAndBarContainer{
+      left:50%;
+      transform: translateX(-50%);
+      width:400px;
+      text-align: center;
+      font-size: 14px;
+      padding-bottom: 12px;
+      
+   }
+
+   .spanAndBarContainer span{
+      font-size:15px;
+   }
+
+   
+}
+
+@media only screen and (max-width:320px){
+   .footerContainer{
+      flex-direction:column;
+      
+      height:760px;
+      padding-top: 24px;
+   }
+}
