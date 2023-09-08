@@ -1,5 +1,5 @@
 .mainContainer{
-   height:100vh;
+   height:auto;
    left:24px;
    padding-top:24px;
    margin-top:24px;
@@ -279,6 +279,7 @@
 
    .contactForm{
       width:90%;
+      margin-bottom:42px;
    }
 }
 
@@ -304,7 +305,7 @@
       gap:12px;
       width:90vw;
       border-radius:22px;
-      margin-bottom:100px;
+      margin-bottom:22px;
       top:10vh;
    }
 
