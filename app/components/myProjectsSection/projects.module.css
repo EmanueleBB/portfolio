@@ -257,6 +257,7 @@ svg.closeIcon:hover{
 
 .frontSide:hover{
    transform: perspective(1000px) rotateX(-15deg) scaleY(0.96);
+   z-index: 2;
 }
 
 .frontSide h4{

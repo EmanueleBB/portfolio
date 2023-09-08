@@ -84,9 +84,20 @@ span.codeDescriptionSpan{
    .wonderText{
       margin-top:250px;
    }
+
    .desktopContainer{
       width:90vw;
       max-width:730px;
+   }
+
+   span.codeDescriptionSpan{
+      font-size:20px;
+      width:70vw;
+      max-width:600px;
+   }
+
+   h2.codeHeading{
+      font-size:180px;
    }
 }
 
@@ -100,16 +111,16 @@ span.codeDescriptionSpan{
       font-size:22px;
    }
 
-   span.designDescriptionSpan{
+   span.codeDescriptionSpan{
       font-size:20px;
       width:70vw;
       max-width:600px;
    }
-   
 
-   span.uniqueDesignClass{
-      font-size:130px;
+   h2.codeHeading{
+      font-size:160px;
    }
+   
 
    .desktopContainer{
       max-width:730px;
@@ -136,7 +147,7 @@ span.codeDescriptionSpan{
    }
 
 
-   span.designDescriptionSpan{
+   span.codeDescriptionSpan{
       font-size:18px;
       width:73vw;
       max-width:430px;
@@ -153,7 +164,9 @@ span.codeDescriptionSpan{
       bottom:25vh;
    }
 
-   
+   h2.codeHeading{
+      font-size:140px;
+   }
       
 }
 
@@ -168,10 +181,14 @@ span.codeDescriptionSpan{
    }
    
 
-   span.designDescriptionSpan{
+   span.codeDescriptionSpan{
       font-size:18px;
       width:55vw;
       
+   }
+
+   h2.codeHeading{
+      font-size:110px;
    }
 
    
@@ -189,5 +206,9 @@ span.codeDescriptionSpan{
 @media only screen and (max-width:340px){
    .desktopContainer{
       width:100vw;
+   }
+
+   h2.codeHeading{
+      font-size:90px;
    }
 }

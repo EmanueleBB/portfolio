@@ -285,6 +285,7 @@
 
 	.iconsBox{
 		transform:scale(0.5);
+		top:55%;
 	}
 }
 
@@ -314,11 +315,11 @@
 	}
 
 	.iconsBox{
-		top:60%;
+		top:55%;
 		transform:scale(0.5);
 	}
 	.bottomCtasDiv{
-		top:80%;
+		top:77.5%;
 	}
 }
 

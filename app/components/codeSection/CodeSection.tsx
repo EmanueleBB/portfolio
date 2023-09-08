@@ -124,7 +124,7 @@ const CodeSection = () => {
             React and Next JS are the two frameworks I worked the most for building fullstack projects
          </span>
          <span className={styles.codeDescriptionSpan} ref={secondCodeDescriptionSpanRef}>
-            On the backEnd side I worked with tools like MongoDB, Firebase, Prisma, GraphQL, REST, Node, Express. You can see more here
+            On the backEnd side I worked with tools like MongoDB, Firebase, Prisma, GraphQL, REST, Node, Express.
          </span>
          <div className={styles.desktopContainer} ref={codeDesktopRef}>
             <Image

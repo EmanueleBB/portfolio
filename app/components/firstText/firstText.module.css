@@ -196,7 +196,6 @@ span.designDescriptionSpan{
    span.designDescriptionSpan{
       font-size:18px;
       width:55vw;
-      
    }
 
    span.uniqueDesignClass{
@@ -207,6 +206,7 @@ span.designDescriptionSpan{
    .desktopContainer{
       width:90vw;
    }
+
 
    div.stickyDesktop{
       position:sticky;
