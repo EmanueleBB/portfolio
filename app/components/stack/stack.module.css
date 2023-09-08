@@ -97,7 +97,7 @@
    box-sizing: border-box;
    position: relative;
    padding:8vh 0px;
-   overflow-y: hidden;
+   overflow: hidden;
 }
 
 
@@ -678,17 +678,43 @@ div .stackDiv.languagesDiv{
 
 
 @media only screen and (max-width:734px){
-   
+   .stackDiv{
+      width:120vw;
+   }
 
-   .stackDiv .introDiv{
+   .stackDiv .generalH2{
+      font-size:32px;
+      font-weight: 600;
+   
+   }
+   
+   .stackDiv .generalP{
+      font-size:17px;
+      width: 80vw;
+   }
+
+   .stackDiv.introDiv{
       width:100vw;
+   }
+   
+   .mockupContainer{
+      width: 100vw ;
+      height:calc(100vw*(835/1370));
+      
+   }
+
+   .mockupContainer::after {
+      width: 150%;
+      height:calc(100vw*(835/1370));
    }
 }
 
 @media only screen and (max-width:471px){
-   
+   .stackDiv{
+      width:130vw;
+   }
 
-   .stackDiv .introDiv{
+   .stackDiv.introDiv{
       width:100vw;
    }
 
