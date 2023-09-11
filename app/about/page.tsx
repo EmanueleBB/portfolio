@@ -17,7 +17,7 @@ const Page = async() => {
    return (
       <div className={styles.mainContainer}>
          <h1>
-            This is the about page
+            Coming soon ...
          </h1>
          <Link href='/'>
             Go home
